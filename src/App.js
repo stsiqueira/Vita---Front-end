@@ -1,3 +1,4 @@
+import NutrientForm from './components/calculator_form'
 import Subscribe from './components/subscribe'
 
 function App() {
@@ -5,6 +6,7 @@ function App() {
     <div className="App">
       <h1>VITA</h1>
       <Subscribe/>
+      <NutrientForm />
     </div>
   );
 }
