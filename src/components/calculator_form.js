@@ -3,11 +3,11 @@ import { useState } from 'react';
 
 const NutrientForm = () => {
     const [gender, setGender] = useState("MALE");
-    const [age, setAge] = useState();
-    const [fstatus, setFstatus] = useState("none");
-    const [weight, setWeight] = useState();
-    const [height, setHeight] = useState();
-    const [activity, setActivity] = useState();
+    const [age, setAge] = useState(0);
+    const [fstatus, setFstatus] = useState("");
+    const [weight, setWeight] = useState(0);
+    const [height, setHeight] = useState(0);
+    const [activity, setActivity] = useState("");
 
     const handleSubmit= (e) => {
         e.preventDefault();
@@ -48,18 +48,6 @@ const NutrientForm = () => {
                             <option value="FEMALE">Female</option>
                     </select>
                 </div>
-                <div>
-                    <label>What is your Age?</label>
-                    <input 
-                        name='age' 
-                        type='number'
-                        min="10"
-                        max="100"
-                        value={age}
-                        onChange={e => setAge(e.target.value)}
-                        required
-                    />
-                </div>
                 { gender !== "MALE" ? (
                     <div>
                         <label>Pregnant or Lactating?</label>
@@ -79,8 +67,20 @@ const NutrientForm = () => {
                                 <option value="lactating1st">Lactating - 0-6 months</option>
                                 <option value="lactating2nd">Lactating - Over 7 months</option>
                         </select>
-                    </div>) : ""
+                    </div>) : <></>
                 }
+                              <div>
+                    <label>What is your Age?</label>
+                    <input 
+                        name='age' 
+                        type='number'
+                        min="10"
+                        max="100"
+                        value={age}
+                        onChange={e => setAge(e.target.value)}
+                        required
+                    />
+                </div>
                 <div>
                     <label>How much do you weight?</label>
                     <input 
