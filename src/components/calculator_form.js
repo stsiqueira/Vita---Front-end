@@ -22,6 +22,7 @@ const NutrientForm = () => {
             "F_STATUS": fstatus,
             "submit": "",
         }
+        console.log(my_obj)
     }
   
     return (
@@ -35,7 +36,7 @@ const NutrientForm = () => {
             </div>
             <form onSubmit={e => { handleSubmit(e) }}>
                 <div>
-                    <label for="gender">What is your Gender?</label>
+                    <label>What is your Gender?</label>
                     <select 
                         name="gender" 
                         id="gender"
@@ -43,7 +44,7 @@ const NutrientForm = () => {
                         onChange={e => setGender(e.target.value)}
                         required
                     >
-                            <option value="MALE" selected>Male</option>
+                            <option value="MALE" defaultValue>Male</option>
                             <option value="FEMALE">Female</option>
                     </select>
                 </div>
@@ -61,7 +62,7 @@ const NutrientForm = () => {
                 </div>
                 { gender !== "MALE" ? (
                     <div>
-                        <label for="F_STATUS">Pregnant or Lactating?</label>
+                        <label>Pregnant or Lactating?</label>
                         <select 
                             name="F_STATUS" 
                             id="F_STATUS" 
