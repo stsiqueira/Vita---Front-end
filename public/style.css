@@ -77,6 +77,74 @@
   width: 15%;
 }
 
+.quizPage .quizAbout {
+  border: 1px solid black;
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  align-items: center;
+  padding: 3rem 2rem;
+  margin: 1rem;
+  gap: 1.5rem;
+}
+.quizPage .quizAbout button {
+  background: #9F9F9F;
+  color: white;
+  padding: 0.5rem 1rem;
+  border: none;
+}
+.quizPage .quiz {
+  border: 1px solid black;
+  margin: 1rem;
+  padding: 1rem 3rem;
+}
+.quizPage .quiz .progress .progressInNumber {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: flex-end;
+}
+.quizPage .quiz .progress .possibleProgress {
+  height: 10px;
+  background-color: #D0D0D0;
+}
+.quizPage .quiz .progress .actualProgress {
+  height: 10px;
+  width: 40%;
+  background-color: #8D8D8D;
+}
+.quizPage .quiz .question {
+  padding: 1rem 0;
+}
+.quizPage .quiz .question h3 {
+  margin-bottom: 0.5rem;
+}
+.quizPage .quiz .question .questionDetail {
+  color: #707070;
+  margin-bottom: 1rem;
+}
+.quizPage .quiz .question .quizAnswer {
+  border: 1px solid #707070;
+  margin-bottom: 0.5rem;
+  display: flex;
+  justify-content: space-between;
+  padding: 0.5rem 1rem;
+  width: 60%;
+}
+.quizPage .quiz .question .quizAnswer .answer {
+  display: flex;
+  gap: 0.3rem;
+}
+.quizPage .quiz .question .nextButton {
+  display: flex;
+  justify-content: flex-end;
+}
+.quizPage .quiz .question .nextButton button {
+  background: #9F9F9F;
+  color: white;
+  padding: 0.5rem 1rem;
+  border: none;
+}
+
 .footer {
   display: flex;
   justify-content: center;

@@ -1,0 +1,74 @@
+
+.quizPage{
+    .quizAbout{
+        border: 1px solid black;
+        display: flex;
+        flex-flow: column nowrap;
+        justify-content: center;
+        align-items: center;
+        padding: 3rem 2rem;
+        margin: 1rem;
+        gap: 1.5rem;
+        button { 
+            background: $bg-color-quizButton;
+            color: $color-text-quizButton;
+            padding: .5rem 1rem;
+            border: none;
+        }
+
+    }
+    .quiz{
+        border: 1px solid black;
+        margin: 1rem;
+        padding: 1rem 3rem;
+        .progress{
+            .progressInNumber{
+                display: flex;
+                flex-flow: row nowrap;
+                justify-content: flex-end;
+            }
+            .possibleProgress{
+                height: 10px;
+                background-color: $bg-color-possible-progress;
+            }
+            .actualProgress{
+                height: 10px;
+                width: 40%;
+                background-color: $bg-color-actual-progress;
+            }
+        }
+        .question{
+            padding: 1rem 0;
+            h3{
+                margin-bottom: .5rem;
+            }
+            .questionDetail{
+                color: $color-detail;
+                margin-bottom: 1rem;
+            }
+            .quizAnswer{
+                border: 1px solid $color-border-answer;
+                margin-bottom: .5rem;
+                display: flex;
+                justify-content: space-between;
+                padding: .5rem 1rem;
+                width: 60%;
+                .answer{
+                    display: flex;
+                    gap: .3rem;
+                }
+            }
+            .nextButton{
+                display: flex;
+                justify-content: flex-end;
+                button { 
+                    background: $bg-color-quizButton;
+                    color: $color-text-quizButton;
+                    padding: .5rem 1rem;
+                    border: none;
+                }
+            }
+        }
+    }
+    
+}
