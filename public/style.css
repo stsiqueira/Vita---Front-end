@@ -6,7 +6,7 @@
 }
 
 .header {
-  background: #707070;
+  background: #D0D0D0;
   display: flex;
   padding: 1rem 2rem;
   justify-content: space-between;
@@ -43,7 +43,7 @@
   text-align: center;
 }
 .navigation ul li {
-  border-bottom: 4px solid #707070;
+  border-bottom: 4px solid #D0D0D0;
 }
 
 .subscribe-container {
@@ -68,4 +68,13 @@
 }
 .subscribe-container form .subscribeBtn {
   width: 15%;
+}
+
+.footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0.8rem 0;
+  background: #D0D0D0;
+  color: black;
 }/*# sourceMappingURL=style.css.map */

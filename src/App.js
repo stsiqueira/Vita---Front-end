@@ -1,6 +1,7 @@
 import NutrientForm from './components/calculator_form'
 import Subscribe from './components/subscribe'
 import Header from './components/html_components/header'
+import Footer from './components/html_components/Footer'
 
 function App() {
   return (
@@ -11,11 +12,7 @@ function App() {
   ====================================================================================== 
   */}
     <Header />
-
-
-
-
-
+    <div className="main">
   {/*
   ======================================================================================
   ==                About Vita Component - TBD
@@ -56,23 +53,15 @@ function App() {
   ==                Subscribe Component - Thiago
   ====================================================================================== 
   */}
-
-
-
-
       <Subscribe/>
       <NutrientForm />
-        {/*
+ {/*
   ======================================================================================
   ==                Footer Component - Thiago
   ====================================================================================== 
   */}
-
-
-
-
-
-
+      </div>
+      <Footer />
     </div>
   );
 }
