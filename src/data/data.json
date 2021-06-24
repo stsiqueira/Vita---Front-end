@@ -1,0 +1,24 @@
+{
+    "fstatusData" : [
+        {"value": "", "text": "Select"}, 
+        {"value": "none", "text": "Not Pregnant or Lactating"},
+        {"value": "pregnant1st", "text": "Pregnant - 1st Trimester"},
+        {"value": "pregnant2nd_1", "text": "Pregnant - 2nd Trimester (Less than 20 Weeks)"},
+        {"value": "pregnant2nd_2", "text": "Pregnant - 2nd Trimester (More than 20 Weeks)"},
+        {"value": "pregnant3rd", "text": "Pregnant - 3rd Trimester"},
+        {"value": "lactating1st", "text": "Lactating - 0-6 months"},
+        {"value": "lactating2nd", "text": "Lactating - Over 7 months"}
+    ],
+    "activityData": [
+        {"value": "", "text": "Select"}, 
+        {"value": "Sedentary", "text": "Sedentary"},
+        {"value": "Low Active", "text": "Low Active"},
+        {"value": "Active", "text": "Active"},
+        {"value": "Very Active", "text": "Very Active"}
+    ],
+    "genderData":[
+        {"value": "MALE", "text": "MALE"},
+        {"value": "FEMALE", "text": "FEMALE"}
+    ]
+
+}

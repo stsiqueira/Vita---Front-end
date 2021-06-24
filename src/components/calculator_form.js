@@ -1,5 +1,7 @@
-import React from 'react';
 import { useState } from 'react';
+import Labels from './compositable_components/label';
+import Select from './compositable_components/select';
+import { fstatusData as fdata, activityData } from '../data/data.json';
 
 const NutrientForm = () => {
     const [gender, setGender] = useState("MALE");
@@ -34,43 +36,33 @@ const NutrientForm = () => {
                     vitamins and minerals daily intake suggestions!
                 </p>
             </div>
+
             <form onSubmit={e => { handleSubmit(e) }}>
                 <div>
-                    <label>What is your Gender?</label>
-                    <select 
+                    <Labels for="gender" text="What is your Gender?"/>
+                    <Select 
                         name="gender" 
-                        id="gender"
                         value={gender}
-                        onChange={e => setGender(e.target.value)}
-                        required
-                    >
-                            <option value="MALE" defaultValue>Male</option>
-                            <option value="FEMALE">Female</option>
-                    </select>
+                        setvalue={setGender} 
+                        options={activityData}
+                    />
                 </div>
+
                 { gender !== "MALE" ? (
                     <div>
-                        <label>Pregnant or Lactating?</label>
-                        <select 
+                        <Labels for="F_STATUS" text="What is your Gender?"/>
+                        <Select 
                             name="F_STATUS" 
-                            id="F_STATUS" 
-                            value={fstatus}
-                            onChange={e => setFstatus(e.target.value)}
-                            required
-                        >
-                                <option value="">- Select -</option>
-                                <option value="none">Not Pregnant or Lactating</option>
-                                <option value="pregnant1st">Pregnant - 1st Trimester</option>
-                                <option value="pregnant2nd_1">Pregnant - 2nd Trimester (Less than 20 Weeks)</option>
-                                <option value="pregnant2nd_2">Pregnant - 2nd Trimester (More than 20 Weeks)</option>
-                                <option value="pregnant3rd">Pregnant - 3rd Trimester</option>
-                                <option value="lactating1st">Lactating - 0-6 months</option>
-                                <option value="lactating2nd">Lactating - Over 7 months</option>
-                        </select>
+                            value={fstatus} 
+                            setvalue={setFstatus} 
+                            options={fdata} 
+                        />
+                        
                     </div>) : <></>
                 }
-                              <div>
-                    <label>What is your Age?</label>
+
+                <div>
+                    <Labels for="age" text="What is your Age?"/>
                     <input 
                         name='age' 
                         type='number'
@@ -81,8 +73,9 @@ const NutrientForm = () => {
                         required
                     />
                 </div>
+
                 <div>
-                    <label>How much do you weight?</label>
+                    <Labels for="weight" text="How much do you weight?"/>
                     <input 
                         name='weight' 
                         type='number' 
@@ -93,8 +86,9 @@ const NutrientForm = () => {
                         required
                     />
                 </div>
+
                 <div>
-                    <label>How much do you height?</label>
+                    <Labels for="height" text="What's your height"/>
                     <input 
                         name='height' 
                         type='number' 
@@ -105,21 +99,15 @@ const NutrientForm = () => {
                         required
                     />
                 </div>
+
                 <div>
-                    <label>How active are you?</label>
-                    <select 
-                    name="ACTIVITY" 
-                    id="ACTIVITY" 
-                    value={activity}
-                    onChange={e => setActivity(e.target.value)}
-                    aria-describedby="description-activity"
-                    required>
-                        <option value="">- Select -</option>
-                        <option value="Sedentary">Sedentary</option>
-                        <option value="Low Active">Low Active</option>
-                        <option value="Active">Active</option>
-                        <option value="Very Active">Very Active</option>
-                    </select>
+                    <Labels for="ACTIVITY" text="How active are you?"/>
+                    <Select 
+                        name="ACTIVITY" 
+                        value={activity}
+                        setvalue={setActivity} 
+                        options={activityData}
+                    />
                 </div>
                 <div>
                     <input 
