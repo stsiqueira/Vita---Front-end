@@ -5,8 +5,45 @@
   line-height: 1.4;
 }
 
-h1 {
-  color: red;
+.header {
+  background: #707070;
+  display: flex;
+  padding: 1rem 2rem;
+  justify-content: space-between;
+}
+.header h1 {
+  color: white;
+}
+
+.navigation {
+  flex: 0 0 50%;
+}
+.navigation ul {
+  display: flex;
+  list-style: none;
+  gap: 1rem;
+}
+.navigation ul a {
+  color: black;
+  text-decoration: none;
+}
+.navigation ul a:hover {
+  color: white;
+}
+.navigation ul a:hover li {
+  border-bottom: 4px solid white;
+}
+.navigation ul a:first-of-type li {
+  flex: 0 0 3%;
+}
+.navigation ul a, .navigation ul li {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+.navigation ul li {
+  border-bottom: 4px solid #707070;
 }
 
 .subscribe-container {

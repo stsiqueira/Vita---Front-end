@@ -28,7 +28,7 @@ const Subscribe = (props) => {
     }
     return (
        <div className="subscribe-container">
-           <h2 className="feature-title">Subscribe for our Project</h2>
+           <h2 className="feature-title">Subscribe for our Newsletters</h2>
            <form onSubmit={pushMail}>
                <input type="email" value={email} 
                     onChange={ (e)=> setEmail(e.target.value) }/>

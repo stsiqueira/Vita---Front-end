@@ -1,0 +1,33 @@
+.navigation{
+    flex: 0 0 50%;
+    ul{
+        display: flex;
+        list-style: none;
+        gap: 1rem;
+        a{
+            color: $color-link-header;
+            text-decoration: none;
+            &:hover{
+                color: $color-link-header-hover;
+            }
+            &:hover li{
+                border-bottom: 4px solid $color-link-border-bottom;
+            }
+        }
+        a:first-of-type{
+            li{
+                flex: 0 0 3%;
+            }
+        }
+        a,li{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+        }
+        li{
+            border-bottom: 4px solid $bg-color-header;
+        }
+    }
+
+}

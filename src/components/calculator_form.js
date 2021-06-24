@@ -1,6 +1,6 @@
 import { useState } from 'react';
-import Labels from './compositable_components/label';
-import Select from './compositable_components/select';
+import Labels from './compositableComponents/label';
+import Select from './compositableComponents/select';
 import { fstatusData as fdata, activityData } from '../data/data.json';
 
 const NutrientForm = () => {
