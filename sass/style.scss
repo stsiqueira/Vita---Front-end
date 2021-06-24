@@ -7,5 +7,8 @@
 @import "variables";
 @import "header/header";
 @import "header/navigation";
+.main{
+    min-height: 88vh;
+}
 @import "subscribe";
 @import "footer/footer";

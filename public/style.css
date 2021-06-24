@@ -12,7 +12,10 @@
   justify-content: space-between;
 }
 .header h1 {
-  color: white;
+  background-color: white;
+  color: black;
+  padding: 0.2rem 0.5rem;
+  border: 2px solid black;
 }
 
 .navigation {
@@ -44,6 +47,10 @@
 }
 .navigation ul li {
   border-bottom: 4px solid #D0D0D0;
+}
+
+.main {
+  min-height: 88vh;
 }
 
 .subscribe-container {
