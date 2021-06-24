@@ -6,5 +6,29 @@
 }
 
 h1 {
-  color: #12317F;
+  color: red;
+}
+
+.subscribe-container {
+  border: 2px solid #ccc;
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  align-items: center;
+  margin: 0 2rem;
+}
+.subscribe-container form {
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  align-items: center;
+  width: 80%;
+}
+.subscribe-container form input {
+  width: 100%;
+  height: 2rem;
+  margin: 0.5rem;
+}
+.subscribe-container form .subscribeBtn {
+  width: 15%;
 }/*# sourceMappingURL=style.css.map */

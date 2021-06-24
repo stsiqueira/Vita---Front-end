@@ -1,0 +1,25 @@
+.subscribe-container{
+   border: 2px solid #ccc;
+   display: flex;
+   flex-flow: column nowrap;
+   justify-content: center;
+   align-items: center;
+   margin: 0 2rem;
+   form{
+       display: flex;
+       flex-flow: column nowrap;
+       justify-content: center;
+       align-items: center;
+
+       width: 80%;
+
+       input{
+           width: 100%;
+           height: 2rem;
+           margin: .5rem;
+       }
+       .subscribeBtn{
+           width: 15%;
+       }
+   }
+}
