@@ -20,6 +20,10 @@
        }
        .subscribeBtn{
            width: 15%;
+           padding: .5rem 0;
+           background: $bg-color-quizButton;
+           color: $color-text-quizButton;
+           border: none;
        }
    }
 }

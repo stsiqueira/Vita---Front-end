@@ -3,6 +3,7 @@
 ////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 import React from 'react';
+import { Link } from 'react-router-dom'
 import Navigation from '../sub_components/Navigation'
 
 
@@ -13,7 +14,9 @@ const Header = (props) => {
        <div className="header">
 {/* ================================REPLACE THE H1 for LOGO IMAGE ===================================*/}
            <div className="logo">
-            <h1>VITA</h1>
+            <Link to="/">
+                <h1>VITA</h1>
+            </Link>
            </div>
             <Navigation />
        </div>

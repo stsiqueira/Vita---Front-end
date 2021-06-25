@@ -17,9 +17,6 @@
   padding: 0.2rem 0.5rem;
   border: 2px solid black;
 }
-.header a {
-  text-decoration: none;
-}
 
 .navigation {
   flex: 0 0 50%;
@@ -78,35 +75,6 @@
 }
 .subscribe-container form .subscribeBtn {
   width: 15%;
-  padding: 0.5rem 0;
-  background: #9F9F9F;
-  color: white;
-  border: none;
-}
-
-.about {
-  margin: 3rem 2rem;
-  display: flex;
-  flex-flow: row nowrap;
-  gap: 1rem;
-}
-.about .description {
-  display: flex;
-  flex-flow: column nowrap;
-  gap: 0.5rem;
-}
-.about .description button {
-  margin-top: 2rem;
-  width: 40%;
-  padding: 0.5rem 0;
-  background: #9F9F9F;
-  color: white;
-  border: none;
-}
-.about .image {
-  height: 200px;
-  width: 800px;
-  border: 1px solid black;
 }
 
 .quizPage .quizAbout {
