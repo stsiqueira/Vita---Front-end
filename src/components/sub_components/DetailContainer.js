@@ -394,12 +394,10 @@ const DetailContainer = ({ itemName, itemType }) => {
 
     ];
 
-
-    let itemDescription = "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Labore quam laboriosam eius odit cum minus, enim saepe sit eos corporis incidunt error consectetur culpa possimus ut deleniti quis, non itaque!" //Fetch from db.json
-    let itemImageUrl = "200x200.png";
+    let itemImageUrl = "200x200.png"; // Fetch
 
     
-    itemDescription = siteContent[0][itemType].find(f=> f.name === itemName).description;
+    let itemDescription = siteContent[0][itemType].find(f=> f.name === itemName).description;
 
     let dispalyTables = false;
     let dispalyImages = false;

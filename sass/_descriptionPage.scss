@@ -4,20 +4,25 @@ height:auto;
 }
 
 .search {
-  max-width: 1200px;
-  text-align: center;
-  display: flex;
-  gap: 1rem;
-  flex-direction: column;
+  // max-width: 1200px;
+  // text-align: center;
+  // display: flex;
+  // gap: 1rem;
+  // flex-direction: column;
 
-  margin: 1rem;
-  border: 1px solid black;
+  // border: 1px solid black;
   padding: 1rem;
+
+  border: 2px solid #ccc;
+  display: flex;
+  flex-flow: column;
+  justify-content: center;
+  align-items: center;
+  margin: 1rem 2rem;
 
   .userSearchControls {
       
     input[type="text"] {
-      width: 50%;
       margin-right: 1rem;
     }
   }

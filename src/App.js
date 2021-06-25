@@ -8,6 +8,7 @@ import Quiz from './components/Quiz'
 import Contact from './components/Contact'
 import Team from './components/Team'
 import Footer from './components/html_components/Footer'
+import DescriptionPage from './components/DescriptionPage';
 
 
 
@@ -47,6 +48,14 @@ function App() {
           <>
             <Contact />{/*****************  CONTACT COMPONENT  ***************************/}
           </>
+        )}/> 
+{/*
+======================================================================================
+===================  DesriptionPage Route - Aman, Glen & Thiago  =====================
+====================================================================================== 
+*/}
+        <Route path="/Description/:itemType/:itemName" render={(props)=>(
+          <DescriptionPage />          
         )}/> 
 {/*
 ======================================================================================
