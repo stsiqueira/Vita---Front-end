@@ -2,14 +2,9 @@
 //                                  HOME PAGE COMPONENT 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////
 import React from 'react';
-<<<<<<< HEAD
 import { useState } from 'react';
 import { Link } from 'react-router-dom'
-import NutrientForm from '../components/calculator_form'
-=======
-
 import NutrientForm from './Calculator'
->>>>>>> nutrient_calculator/#4
 import Subscribe from '../components/subscribe'
 import About from '../components/About'
 

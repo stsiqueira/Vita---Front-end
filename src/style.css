@@ -17,12 +17,9 @@
   padding: 0.2rem 0.5rem;
   border: 2px solid black;
 }
-<<<<<<< HEAD
 .header a {
   text-decoration: none;
 }
-=======
->>>>>>> feat-FoodItemDetail
 
 .navigation {
   flex: 0 0 50%;
@@ -81,7 +78,6 @@
 }
 .subscribe-container form .subscribeBtn {
   width: 15%;
-<<<<<<< HEAD
   padding: 0.5rem 0;
   background: #9F9F9F;
   color: white;
@@ -111,8 +107,6 @@
   height: 200px;
   width: 800px;
   border: 1px solid black;
-=======
->>>>>>> feat-FoodItemDetail
 }
 
 .quizPage .quizAbout {
@@ -183,8 +177,6 @@
   border: none;
 }
 
-<<<<<<< HEAD
-=======
 img {
   max-width: 100%;
   height: auto;
@@ -284,7 +276,6 @@ img {
   gap: 1rem;
 }
 
->>>>>>> feat-FoodItemDetail
 .footer {
   display: flex;
   justify-content: center;
