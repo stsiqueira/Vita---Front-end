@@ -2,9 +2,8 @@
 //                                  HOME PAGE COMPONENT 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////
 import React from 'react';
-import { useState } from 'react';
 
-import NutrientForm from '../components/calculator_form'
+import NutrientForm from './calculator'
 import Subscribe from '../components/subscribe'
 
 
