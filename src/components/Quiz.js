@@ -2,15 +2,39 @@
 //                                  QUIZ PAGE COMPONENT 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-
-
 import React from 'react';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import QuizAnswer from '../components/sub_components/QuizAnswer'
 
 
 const Quiz = (props) => {
-    const [showQuiz, setShowQuiz] = useState(true)
+    const [showQuiz, setShowQuiz] = useState(true);
+    const [showCorrectAnswer, setShowCorrectAnswer] = useState(false)
+    const [quiz, setQuiz] = useState([]);
+    const dbUrl = "http://localhost:5000/questions";
+
+      // Functions
+    const fetchQuiz = async (url) => {
+        const res = await fetch(url);
+        const data = await res.json();
+        return data;
+    }
+    const revealAnswer = (userAnswer)=>{
+        quiz.correct === userAnswer ?
+        console.log(" acerto miseravi")
+        : console.log("nope")
+    }
+
+
+    // First load
+    useEffect(() => {
+        const getQuiz = async (url) => {
+            const quizFromDB = await fetchQuiz(url);
+            setQuiz(quizFromDB.find((question)=> question.id === 1))
+        }
+        getQuiz(dbUrl);
+ 
+    },[]);
 
     return (
        <div className="quizPage">
@@ -36,13 +60,22 @@ const Quiz = (props) => {
                         </div>
 
                         <div className="question">
-                            <h3>Which fruit contains the most potassium?</h3>
-                            <p className="questionDetail">Potassium helps regulate fluid balance, muscle contractions and nerve signals.</p>
-
-                            <QuizAnswer />
-                            <QuizAnswer />
-                            <QuizAnswer />
-                            <QuizAnswer />
+                            <h3>{quiz.question}</h3>
+                            <p className="questionDetail">{quiz.details}</p>
+                            {
+                                quiz.answers ? 
+                                quiz.answers.map((answer)=>(
+                                <>
+                                    <QuizAnswer 
+                                        key={answer.option}
+                                        answer={answer}
+                                        correct={quiz.correct}
+                                        showCorrectAnswer={showCorrectAnswer}
+                                        revealAnswer={revealAnswer}/>
+                                </>
+                                ))
+                                : ""
+                            }
                             <div className="nextButton">
                                 <button>Next</button>
                             </div>
