@@ -3,7 +3,7 @@
 ////////////////////////////////////////////////////////////////////////////////////////////////////////
 import React from 'react';
 
-import NutrientForm from './calculator'
+import NutrientForm from './Calculator'
 import Subscribe from '../components/subscribe'
 
 

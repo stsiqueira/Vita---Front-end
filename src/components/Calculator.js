@@ -1,4 +1,5 @@
-import { useState, useHistory } from 'react';
+import { useState } from 'react';
+import { useHistory } from "react-router-dom";
 import Labels from './compositableComponents/label';
 import Select from './compositableComponents/select';
 import { fstatusData as fdata, activityData, genderData } from '../data/data.json';
@@ -42,11 +43,13 @@ const NutrientForm = () => {
         if (data) {
             const vitaminArr = data.vitamin.filter(vitamins => vitaminList.includes(vitamins.name))
             const mineralArr = data.minerals.filter(minerals => mineralList.includes(minerals.name))
-            // props.history.push({
-            //     pathname: '/template',
-            //     search: '?query=abc',
-            //     state: { detail: response.data }
-            // })
+            history.push({
+                pathname: '/NutrientCalculator/Results',
+                state: { 
+                        vitamin: vitaminArr,
+                        mineral: mineralArr
+                    }
+            })
         }
     }
   
