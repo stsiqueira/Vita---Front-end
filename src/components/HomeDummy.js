@@ -1,17 +1,9 @@
-////////////////////////////////////////////////////////////////////////////////////////////////////////
-//                                  HOME PAGE COMPONENT 
-////////////////////////////////////////////////////////////////////////////////////////////////////////
 import React from 'react';
-import { useState } from 'react';
 import { Link } from 'react-router-dom'
-import NutrientForm from '../components/calculator_form'
-import Subscribe from '../components/subscribe'
-import About from '../components/About'
+import { useState, useEffect } from 'react';
 
 
-
-const Home = (props) => {
-
+const HomeDummy = (props) => {
 
     let siteContent = [
         {
@@ -290,7 +282,7 @@ const Home = (props) => {
                 description: "Zinc is an essential mineral forming a component of more than 300 enzymes in the body with functions including wound healing, immune system function, building proteins and DNA, fertility in adults and growth in children. Zinc is also needed for maintaining the senses of smell and taste. A deficiency in zinc can lead to stunted growth, diarrhea, impotence, hair loss, eye and skin lesions, impaired appetite, and depressed immunity. "
             }]
         }
-    ]; //This Data will be loaded from Mongo
+    ];
 
     const [userSearch, SetUserSearch] = useState("");
     const [itemType, SetItemtype] = useState("");
@@ -324,43 +316,14 @@ const Home = (props) => {
     }
 
     return (
-       <div className="home">
-
-{/*
-======================================================================================
-                About Vita Component - TBD
-====================================================================================== 
-*/}
-            <About />
-
-{/*
-======================================================================================
-==                Search for Fruits and Vegetables Component - Aman
-====================================================================================== 
-*/}
-
-  {/*
-  ======================================================================================
-  ==                Search by Vitamins and Minerals Component - Aman
-  ====================================================================================== 
-  */}
-    <div className="search">
-            <h2> Search for a Fruit or Vegetable </h2>
+        <div className="search">
+            <h3> Search for a Fruit or Vegetable </h3>
             <div className="userSearchControls">
                 <input type="text" required onChange={(e) => searchExists(e)} />
                            { userSearch !=="" && <Link to={`/Description/${itemType}/${userSearch}`}>Search</Link>}
             </div>
         </div>
-
-  {/*
-  ======================================================================================
-  ==                Subscribe Component - Thiago
-  ====================================================================================== 
-  */}
-      <Subscribe/>
-      <NutrientForm />
-       </div>
     )
 }
 
-export default Home;
+export default HomeDummy;
