@@ -153,3 +153,17 @@
   background: #D0D0D0;
   color: black;
 }/*# sourceMappingURL=style.css.map */
+
+.nutrient-results-wrapper {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  flex-flow: column nowrap;
+  gap: 1rem;
+}
+
+.nutrient-calculator-header {
+  max-width: 60%;
+  margin: 0 auto;
+  text-align: center;
+}

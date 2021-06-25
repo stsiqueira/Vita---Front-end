@@ -16,4 +16,10 @@ const Select = (props) => {
     )
 }
 
+Select.defaultProps = {
+    name: "select",
+    value: "select",
+    options: []
+}
+
 export default Select;
