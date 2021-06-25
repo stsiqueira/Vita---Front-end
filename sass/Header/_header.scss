@@ -1,3 +1,13 @@
-h1{
-    color: red;
+.header{
+    background: $bg-color-header;
+    display: flex;
+    padding: 1rem 2rem;
+    justify-content: space-between;
+    h1{
+        background-color: white;
+        color: black;
+        padding: .2rem .5rem;
+        border: 2px solid black;
+    }
 }
+

@@ -5,8 +5,52 @@
   line-height: 1.4;
 }
 
-h1 {
-  color: red;
+.header {
+  background: #D0D0D0;
+  display: flex;
+  padding: 1rem 2rem;
+  justify-content: space-between;
+}
+.header h1 {
+  background-color: white;
+  color: black;
+  padding: 0.2rem 0.5rem;
+  border: 2px solid black;
+}
+
+.navigation {
+  flex: 0 0 50%;
+}
+.navigation ul {
+  display: flex;
+  list-style: none;
+  gap: 1rem;
+}
+.navigation ul a {
+  color: black;
+  text-decoration: none;
+}
+.navigation ul a:hover {
+  color: white;
+}
+.navigation ul a:hover li {
+  border-bottom: 4px solid white;
+}
+.navigation ul a:first-of-type li {
+  flex: 0 0 3%;
+}
+.navigation ul a, .navigation ul li {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+.navigation ul li {
+  border-bottom: 4px solid #D0D0D0;
+}
+
+.main {
+  min-height: 88vh;
 }
 
 .subscribe-container {
@@ -31,4 +75,81 @@ h1 {
 }
 .subscribe-container form .subscribeBtn {
   width: 15%;
+}
+
+.quizPage .quizAbout {
+  border: 1px solid black;
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  align-items: center;
+  padding: 3rem 2rem;
+  margin: 1rem;
+  gap: 1.5rem;
+}
+.quizPage .quizAbout button {
+  background: #9F9F9F;
+  color: white;
+  padding: 0.5rem 1rem;
+  border: none;
+}
+.quizPage .quiz {
+  border: 1px solid black;
+  margin: 1rem;
+  padding: 1rem 3rem;
+}
+.quizPage .quiz .progress .progressInNumber {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: flex-end;
+}
+.quizPage .quiz .progress .possibleProgress {
+  height: 10px;
+  background-color: #D0D0D0;
+}
+.quizPage .quiz .progress .actualProgress {
+  height: 10px;
+  width: 40%;
+  background-color: #8D8D8D;
+}
+.quizPage .quiz .question {
+  padding: 1rem 0;
+}
+.quizPage .quiz .question h3 {
+  margin-bottom: 0.5rem;
+}
+.quizPage .quiz .question .questionDetail {
+  color: #707070;
+  margin-bottom: 1rem;
+}
+.quizPage .quiz .question .quizAnswer {
+  border: 1px solid #707070;
+  margin-bottom: 0.5rem;
+  display: flex;
+  justify-content: space-between;
+  padding: 0.5rem 1rem;
+  width: 60%;
+}
+.quizPage .quiz .question .quizAnswer .answer {
+  display: flex;
+  gap: 0.3rem;
+}
+.quizPage .quiz .question .nextButton {
+  display: flex;
+  justify-content: flex-end;
+}
+.quizPage .quiz .question .nextButton button {
+  background: #9F9F9F;
+  color: white;
+  padding: 0.5rem 1rem;
+  border: none;
+}
+
+.footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0.8rem 0;
+  background: #D0D0D0;
+  color: black;
 }/*# sourceMappingURL=style.css.map */

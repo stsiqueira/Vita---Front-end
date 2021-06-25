@@ -5,7 +5,20 @@
     line-height: 1.4;
 }
 @import "variables";
+
+//============== HEADER =============
 @import "header/header";
+@import "header/navigation";
+
+//============== HOME =============
+.main{
+    min-height: 88vh;
+}
 @import "subscribe";
-@import "descriptionPage";
+
+
+//============== QUIZ =============
+@import "quiz/Quiz";
+
+//============== FOOTER =============
 @import "footer/footer";

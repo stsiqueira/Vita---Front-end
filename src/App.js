@@ -1,23 +1,67 @@
-import { BrowserRouter as Router, Route, Switch, Link } from 'react-router-dom'
-import NutrientForm from './components/calculator_form'
-import Subscribe from './components/subscribe'
-import HomeDummy from './components/HomeDummy'
-import DescriptionPage from './components/DescriptionPage';
+///////////////////////   IMPORT OF TOOLS      ////////////////////////////////////////
+import { Route } from 'react-router-dom';
+
+///////////////////////   IMPORT OF COMPONENTS ////////////////////////////////////////
+import Header from './components/html_components/header'
+import Home from './components/Home'
+import Quiz from './components/Quiz'
+import Contact from './components/Contact'
+import Team from './components/Team'
+import Footer from './components/html_components/Footer'
+
+
+
 
 function App() {
   return (
-    <Router>
-      <div className="App">
-        <Route exact path="/">
-          <h1>Vita</h1>
-          <HomeDummy />
-        </Route>
+    <div className="App">
+      <Header />{/********************   HEADER COMPONENT  ***************************/}
+      <div className="main">
+{/*
+======================================================================================
+===================  Home Route - Aman, Glen & Thiago  ===============================
+====================================================================================== 
+*/}
+        <Route path="/" exact render={(props)=>(
+          <>
+          <Home />{/**************   HOME PAGE COMPONENT  ***************************/}
+          </>
+        )}/> 
 
-        <Route path="/Description/:itemType/:itemName" render={(props)=>(
-          <DescriptionPage />          
+{/*
+======================================================================================
+===================  Quiz Route - Aman, Glen & Thiago  ===============================
+====================================================================================== 
+*/}
+        <Route path="/Quiz" render={(props)=>(
+          <>
+            <Quiz />{/******************   QUIZ COMPONENT  ***************************/}
+          </>
+        )}/> 
+{/*
+======================================================================================
+===================  Contact Route - Aman, Glen & Thiago  ============================
+====================================================================================== 
+*/}
+        <Route path="/Contact" render={(props)=>(
+          <>
+            <Contact />{/*****************  CONTACT COMPONENT  ***************************/}
+          </>
+        )}/> 
+{/*
+======================================================================================
+===================  Team Route - Aman, Glen & Thiago  ===============================
+====================================================================================== 
+*/}
+        <Route path="/Team" render={(props)=>(
+          <>
+            <Team />{/******************   TEAM COMPONENT  ***************************/}
+          </>
         )}/> 
       </div>
-    </Router>
+
+      <Footer /> {/*****************   FOOTER COMPONENT  ***************************/}
+    </div>
   );
 }
 
