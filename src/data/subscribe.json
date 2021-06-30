@@ -1,0 +1,36 @@
+{
+  "emails": [
+    {
+      "id": 1,
+      "email": "thiago@test.com"
+    },
+    {
+      "id": 2,
+      "email": "thiago2@test.com"
+    },
+    {
+      "email": "thiago@langara.ca",
+      "id": 3
+    },
+    {
+      "email": "kaori@langara.ca",
+      "id": 4
+    },
+    {
+      "email": "mayra@langara.ca",
+      "id": 5
+    },
+    {
+      "email": "siqueira@langara.ca",
+      "id": 6
+    },
+    {
+      "email": "glen851@langara.ca",
+      "id": 7
+    },
+    {
+      "email": "kaori@langara.ca",
+      "id": 8
+    }
+  ]
+}
