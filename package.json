@@ -22,7 +22,7 @@
     "eject": "react-scripts eject",
     "serverQuiz": "json-server --watch src/data/quiz.json --port 5000",
     "serverSubscribe": "json-server --watch src/data/subscribe.json --port 5001",
-    "serverTeam": "json-server --watch src/data/subscribe.json --port 5002"
+    "serverTeam": "json-server --watch src/data/team.json --port 5002"
   },
   "eslintConfig": {
     "extends": [
