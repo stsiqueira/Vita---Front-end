@@ -10,6 +10,7 @@ import Team from './components/Team'
 import Footer from './components/html_components/Footer'
 import DescriptionPage from './components/DescriptionPage';
 import NutrientResults from './components/sub_components/NutrientResults';
+import NutrientForm from './components/Calculator'
 
 
 
@@ -73,6 +74,11 @@ function App() {
 ===================  Nutrient Calculator Route - Glen  ============================
 ====================================================================================== 
 */}
+        <Route path="/NutrientCalculator" render={(props)=>(
+                <>
+                  <NutrientForm />{/*****************  NUTRIENT CALCULATOR COMPONENT  ***************************/}
+                </>
+        )}/> 
         <Route path="/NutrientCalculator/Results" render={(props)=>(
           <>
             <NutrientResults />{/*****************  NUTRIENT CALCULATOR COMPONENT  ***************************/}

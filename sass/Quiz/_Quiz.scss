@@ -33,7 +33,6 @@
             }
             .actualProgress{
                 height: 10px;
-                width: 40%;
                 background-color: $bg-color-actual-progress;
             }
         }
@@ -69,6 +68,61 @@
                 }
             }
         }
+    }
+    .showResult{
+        border: 1px solid black;
+        display: flex;
+        flex-flow: column nowrap;
+        justify-content: center;
+        align-items: center;
+        padding: 3rem 2rem;
+        margin: 1rem;
+        gap: 1rem;
+        .result{
+            border: 1px solid black;
+            display: flex;
+            flex-flow: column nowrap;
+            justify-content: center;
+            align-items: center;
+            padding: 1rem;
+            width: 100%;
+            gap: 1rem;
+            p:first-of-type{
+                font-size: 3rem;
+            }
+            button { 
+                background: $bg-color-quizButton;
+                color: $color-text-quizButton;
+                padding: .5rem 1rem;
+                border: none;
+            }
+        }
+        .moreOptions{
+            display: flex;
+            gap: 1rem;
+            .nutrientCalculator,
+            .searchFood{
+                border: 1px solid black;
+                display: flex;
+                gap: .5rem;
+                flex-flow: column nowrap;
+                justify-content: center;
+                align-items: center;
+                padding: 2rem;
+                button { 
+                    background: $bg-color-quizButton;
+                    color: $color-text-quizButton;
+                    padding: .5rem 1rem;
+                    border: none;
+                }
+                p{
+                    text-align: center;
+                    max-width: 80%;
+                }
+            }
+           
+        }
+       
     }
     
 }

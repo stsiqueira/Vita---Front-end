@@ -53,7 +53,7 @@
 }
 
 .main {
-  min-height: 88vh;
+  min-height: 85vh;
 }
 
 .subscribe-container {
@@ -141,7 +141,6 @@
 }
 .quizPage .quiz .progress .actualProgress {
   height: 10px;
-  width: 40%;
   background-color: #8D8D8D;
 }
 .quizPage .quiz .question {
@@ -175,6 +174,61 @@
   color: white;
   padding: 0.5rem 1rem;
   border: none;
+}
+.quizPage .showResult {
+  border: 1px solid black;
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  align-items: center;
+  padding: 3rem 2rem;
+  margin: 1rem;
+  gap: 1rem;
+}
+.quizPage .showResult .result {
+  border: 1px solid black;
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem;
+  width: 100%;
+  gap: 1rem;
+}
+.quizPage .showResult .result p:first-of-type {
+  font-size: 3rem;
+}
+.quizPage .showResult .result button {
+  background: #9F9F9F;
+  color: white;
+  padding: 0.5rem 1rem;
+  border: none;
+}
+.quizPage .showResult .moreOptions {
+  display: flex;
+  gap: 1rem;
+}
+.quizPage .showResult .moreOptions .nutrientCalculator,
+.quizPage .showResult .moreOptions .searchFood {
+  border: 1px solid black;
+  display: flex;
+  gap: 0.5rem;
+  flex-flow: column nowrap;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem;
+}
+.quizPage .showResult .moreOptions .nutrientCalculator button,
+.quizPage .showResult .moreOptions .searchFood button {
+  background: #9F9F9F;
+  color: white;
+  padding: 0.5rem 1rem;
+  border: none;
+}
+.quizPage .showResult .moreOptions .nutrientCalculator p,
+.quizPage .showResult .moreOptions .searchFood p {
+  text-align: center;
+  max-width: 80%;
 }
 
 img {

@@ -4,7 +4,7 @@
 import React from 'react';
 import { useState } from 'react';
 import { Link } from 'react-router-dom'
-import NutrientForm from './Calculator'
+
 import Subscribe from '../components/subscribe'
 import About from '../components/About'
 
@@ -358,7 +358,7 @@ const Home = (props) => {
   ====================================================================================== 
   */}
       <Subscribe/>
-      <NutrientForm />
+      
        </div>
     )
 }

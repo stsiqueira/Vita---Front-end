@@ -3,14 +3,22 @@
 ////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 import React from 'react';
-import { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom'
+import { useState, useEffect, useRef } from 'react';
 import QuizAnswer from '../components/sub_components/QuizAnswer'
 
 
 const Quiz = (props) => {
-    const [showQuiz, setShowQuiz] = useState(true);
+    const [showQuiz, setShowQuiz] = useState(false);
     const [showCorrectAnswer, setShowCorrectAnswer] = useState(false)
-    const [quiz, setQuiz] = useState([]);
+    const [retakeQuiz, setRetakeQuiz] = useState(false)
+    const [showResult, setShowResult] = useState(false)
+    const [searchFood, setSearchFood] = useState(false)
+    const [quiz, setQuiz] = useState([])
+    const [score, setScore] = useState(0)
+    const [progress, setProgress] = useState(-1)
+    const [allQuestions, setAllQuestions] = useState([]);
+    const [currentQuestion, setCurrentQuestion] = useState(0);
     const dbUrl = "http://localhost:5000/questions";
 
       // Functions
@@ -20,54 +28,94 @@ const Quiz = (props) => {
         return data;
     }
     const revealAnswer = (userAnswer)=>{
-        quiz.correct === userAnswer ?
-        console.log(" acerto miseravi")
-        : console.log("nope")
+        setShowCorrectAnswer(true)
+        userAnswer ? setScore(score+1) : console.log("no")
     }
+    const finishQuiz = ()=>{
+        setShowResult(true)
+        setShowQuiz(false)
+    }
+    const getNextQuestion = () =>{
+        setProgress(progress+1);
+        currentQuestion < allQuestions.length ?  
+        setQuiz(allQuestions.find((question)=> question.id === currentQuestion+1))
+        : finishQuiz()
+        setShowCorrectAnswer(false)
 
+    }
+    const restartQuiz = () => {
+        setRetakeQuiz(!retakeQuiz)
+        setShowResult(false)
+        setProgress(-1)
+        setScore(0)
+        setCurrentQuestion(0)
+        setShowQuiz(true)
+    }
 
     // First load
     useEffect(() => {
         const getQuiz = async (url) => {
             const quizFromDB = await fetchQuiz(url);
-            setQuiz(quizFromDB.find((question)=> question.id === 1))
+            setAllQuestions(quizFromDB)
         }
         getQuiz(dbUrl);
  
     },[]);
+    // ====================
 
+    const notInitialRender = useRef(false)
+
+    useEffect(() => {
+        if (notInitialRender.current) {
+                getNextQuestion();
+        } else {
+            notInitialRender.current = true
+        }
+ 
+    },[retakeQuiz]);
+    // ===============================
     return (
        <div className="quizPage">
+           {
+               showResult ? "" : 
+               showQuiz ? "" : 
+          
            <div className="quizAbout">
             <h3> Ready to test your Knowledge?</h3>
             <p className="questionDetail">This quiz is intended for you to test your knowledge about vitamins and vitamins. 
     We recommend you review food items and what nutrients they contain as they might appear in the quiz</p>
-                <button onClick={()=> setShowQuiz(true)}> Take the Quiz </button>
+                <button onClick={()=> {
+                    setShowQuiz(true);
+                    getNextQuestion();
+                    setCurrentQuestion(currentQuestion + 1)
+                
+                }}> Take the Quiz </button>
            </div>
-           
+            }
 
-            {
+           {
                 showQuiz ?
                     <div className="quiz">
                         <div className="progress">
                             <div className="progressInNumber">
-                                <p>4/10</p>
+                                <p>{progress}/10</p>
                             </div>
                             <div className="possibleProgress">
-                                <div className="actualProgress">
+                                <div className="actualProgress" style={{width: `${progress * 10}%`}}>
                                 </div>
                             </div>
                         </div>
 
                         <div className="question">
-                            <h3>{quiz.question}</h3>
-                            <p className="questionDetail">{quiz.details}</p>
+                            <h3>{quiz ? quiz.question : ""}</h3>
+                            <p className="questionDetail">{quiz ? quiz.details : ""}</p>
                             {
-                                quiz.answers ? 
-                                quiz.answers.map((answer)=>(
+                                quiz ? 
+                                quiz.answers.map((answer, key)=>(
                                 <>
                                     <QuizAnswer 
-                                        key={answer.option}
+                                        key={key}
+                                        questionID={quiz.question.id*10 + answer.id}
                                         answer={answer}
                                         correct={quiz.correct}
                                         showCorrectAnswer={showCorrectAnswer}
@@ -77,12 +125,58 @@ const Quiz = (props) => {
                                 : ""
                             }
                             <div className="nextButton">
-                                <button>Next</button>
+                                <button onClick={()=>{
+                                    
+                                    if (showCorrectAnswer) {
+                                    getNextQuestion();
+                                    setCurrentQuestion(currentQuestion + 1)
+                                    }else{
+                                        alert("Please choose an answer")     
+                                    } 
+                                }}>Next</button>
                             </div>
                             
                         </div>
                     </div>
                     :""
+            }
+            {
+                showResult ? 
+                <div className="showResult">
+                    <div className="result">
+                        <p>{(score*10)}%</p>
+                        <p>Well done now you can retake the quiz to polish your knowledge about vitamins and minerals.</p>
+
+                        <button onClick={()=>{
+                                    
+                                    restartQuiz()
+                        }}>Retake Quiz</button>
+
+
+                    </div>
+                        {!searchFood ? 
+                        <>
+                    <div className="moreOptions">
+                        <div className="nutrientCalculator">
+                            <Link to="/nutrientCalculator">
+                            <button>Nutrient Calculator</button>
+                            </Link>
+                            <p>Here you can calculate your daily vitamins and minerals intake</p>
+
+                        </div>
+                        <div className="searchFood">
+                            <Link to="/nutrientCalculator">
+                                <button>Search for Food</button>
+                            </Link>
+
+                            <p>Here you can learn more about different fruits and vegetables</p>
+                        </div>
+
+                    </div>
+                    </>
+                    :" verdadeiro"}
+                </div>
+                : ""
             }
             
        </div>
@@ -90,3 +184,4 @@ const Quiz = (props) => {
 }
 
 export default Quiz;
+
