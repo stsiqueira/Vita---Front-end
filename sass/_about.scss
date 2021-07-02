@@ -1,0 +1,24 @@
+.about{
+    margin: 3rem 2rem;
+    display: flex;
+    flex-flow: row nowrap;
+    gap: 1rem;
+    .description{
+        display: flex;
+        flex-flow: column nowrap;
+        gap: .5rem;
+        button{
+            margin-top: 2rem;
+            width: 40%;
+            padding: .5rem 0;
+            background: $bg-color-quizButton;
+            color: $color-text-quizButton;
+            border: none;
+        }
+    }
+    .image{
+        height: 200px;
+        width: 800px;
+        border: 1px solid black;
+    }
+}

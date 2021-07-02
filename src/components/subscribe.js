@@ -12,6 +12,19 @@ import { useState } from 'react';
 
 const Subscribe = (props) => {
     const [email,setEmail] = useState('');
+    const dbUrl = "http://localhost:5001/emails";
+
+    const addSubscriber = async (subscriber) => {
+		const res = await fetch(dbUrl, {
+			method: 'POST',
+			headers: {
+				'Content-type': 'application/json',
+			},
+			body: JSON.stringify(subscriber)
+		})
+
+		const data = await res.json()
+	}
 
     const pushMail = (e) => { 
         e.preventDefault();
@@ -20,8 +33,9 @@ const Subscribe = (props) => {
             alert("Please add an email"); //Change to a toaster function.
             return
         }
+
         // function to push email
-        
+        addSubscriber({email})
         // clear input
         setEmail('');
 

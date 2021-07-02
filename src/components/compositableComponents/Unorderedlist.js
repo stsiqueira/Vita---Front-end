@@ -19,7 +19,7 @@ const UnorderedList = ({ heading, name, classname, arr }) => {
 }
 
 UnorderedList.defaultProps = {
-    heading: "test",
+    heading: "unorderedlist",
     className: "unorderedlist",
     name: "unorderedlist",
     arr: []    

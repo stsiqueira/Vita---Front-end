@@ -1,0 +1,132 @@
+{
+   "questions":[
+    {
+        "id":1,
+        "typeOfQuestion":1,
+        "question": "Which fruit contains the most potassium?",
+        "details": "Potassium helps regulate fluid balance, muscle contractions and nerve signals.",
+        "answers":[
+            {"value": "Banana", "option": 1},
+            {"value": "Cucumber", "option": 2},
+            {"value": "Cranberries", "option": 3},
+            {"value": "Peas", "option": 4}
+        ],
+        "correct": 1
+    },
+    {
+        "id":2,
+        "typeOfQuestion":1,
+        "question": "Which fruit contains the most potassium? 2",
+        "details": "Potassium helps regulate fluid balance, muscle contractions and nerve signals.",
+        "answers":[
+            {"value": "Banana", "option": 1},
+            {"value": "Cucumber", "option": 2},
+            {"value": "Cranberries", "option": 3},
+            {"value": "Peas", "option": 4}
+        ],
+        "correct": 1
+    },
+    {
+        "id":3,
+        "typeOfQuestion":1,
+        "question": "Which fruit contains the most potassium? 3",
+        "details": "Potassium helps regulate fluid balance, muscle contractions and nerve signals.",
+        "answers":[
+            {"value": "Banana", "option": 1},
+            {"value": "Cucumber", "option": 2},
+            {"value": "Cranberries", "option": 3},
+            {"value": "Peas", "option": 4}
+        ],
+        "correct": 1
+    },    {
+        "id":4,
+        "typeOfQuestion":1,
+        "question": "Which fruit contains the most potassium? 4",
+        "details": "Potassium helps regulate fluid balance, muscle contractions and nerve signals.",
+        "answers":[
+            {"value": "Banana", "option": 1},
+            {"value": "Cucumber", "option": 2},
+            {"value": "Cranberries", "option": 3},
+            {"value": "Peas", "option": 4}
+        ],
+        "correct": 1
+    },
+    {
+        "id":5,
+        "typeOfQuestion":1,
+        "question": "Which fruit contains the most potassium? 5",
+        "details": "Potassium helps regulate fluid balance, muscle contractions and nerve signals.",
+        "answers":[
+            {"value": "Banana", "option": 1},
+            {"value": "Cucumber", "option": 2},
+            {"value": "Cranberries", "option": 3},
+            {"value": "Peas", "option": 4}
+        ],
+        "correct": 1
+    },
+    {
+        "id":6,
+        "typeOfQuestion":1,
+        "question": "Which fruit contains the most potassium? 6",
+        "details": "Potassium helps regulate fluid balance, muscle contractions and nerve signals.",
+        "answers":[
+            {"value": "Banana", "option": 1},
+            {"value": "Cucumber", "option": 2},
+            {"value": "Cranberries", "option": 3},
+            {"value": "Peas", "option": 4}
+        ],
+        "correct": 1
+    },
+    {
+        "id":7,
+        "typeOfQuestion":1,
+        "question": "Which fruit contains the most potassium? 7",
+        "details": "Potassium helps regulate fluid balance, muscle contractions and nerve signals.",
+        "answers":[
+            {"value": "Banana", "option": 1},
+            {"value": "Cucumber", "option": 2},
+            {"value": "Cranberries", "option": 3},
+            {"value": "Peas", "option": 4}
+        ],
+        "correct": 1
+    },
+    {
+        "id":8,
+        "typeOfQuestion":1,
+        "question": "Which fruit contains the most potassium? 8",
+        "details": "Potassium helps regulate fluid balance, muscle contractions and nerve signals.",
+        "answers":[
+            {"value": "Banana", "option": 1},
+            {"value": "Cucumber", "option": 2},
+            {"value": "Cranberries", "option": 3},
+            {"value": "Peas", "option": 4}
+        ],
+        "correct": 1
+    },
+    {
+        "id":9,
+        "typeOfQuestion":1,
+        "question": "Which fruit contains the most potassium? 9",
+        "details": "Potassium helps regulate fluid balance, muscle contractions and nerve signals.",
+        "answers":[
+            {"value": "Banana", "option": 1},
+            {"value": "Cucumber", "option": 2},
+            {"value": "Cranberries", "option": 3},
+            {"value": "Peas", "option": 4}
+        ],
+        "correct": 1
+    },    {
+        "id":10,
+        "typeOfQuestion":1,
+        "question": "Which fruit contains the most potassium? 10",
+        "details": "Potassium helps regulate fluid balance, muscle contractions and nerve signals.",
+        "answers":[
+            {"value": "Banana", "option": 1},
+            {"value": "Cucumber", "option": 2},
+            {"value": "Cranberries", "option": 3},
+            {"value": "Peas", "option": 4}
+        ],
+        "correct": 1
+    }
+   ] 
+}

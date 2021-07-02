@@ -8,6 +8,7 @@ import Quiz from './components/Quiz'
 import Contact from './components/Contact'
 import Team from './components/Team'
 import Footer from './components/html_components/Footer'
+import DescriptionPage from './components/DescriptionPage';
 import NutrientResults from './components/sub_components/NutrientResults';
 import NutrientForm from './components/Calculator'
 import NutrientCalculatorStart from './components/sub_components/NutrientCalculatorStart';
@@ -53,6 +54,14 @@ function App() {
         )}/> 
 {/*
 ======================================================================================
+===================  DesriptionPage Route - Aman, Glen & Thiago  =====================
+====================================================================================== 
+*/}
+        <Route path="/Description/:itemType/:itemName" render={(props)=>(
+          <DescriptionPage />          
+        )}/> 
+{/*
+======================================================================================
 ===================  Team Route - Aman, Glen & Thiago  ===============================
 ====================================================================================== 
 */}
@@ -67,14 +76,14 @@ function App() {
 ====================================================================================== 
 */}
         <Route path="/NutrientCalculator" exact render={()=>(
-          <>
-            <NutrientCalculatorStart />{/*****************  NUTRIENT CALCULATOR COMPONENT  ***************************/}
-          </>
-        )}/>
+                <>
+                  <NutrientForm />{/*****************  NUTRIENT CALCULATOR COMPONENT  ***************************/}
+                </>
+        )}/> 
 
         <Route path="/NutrientCalculator/Start" render={()=>(
           <>
-			<NutrientForm />{/*****************  NUTRIENT CALCULATOR FORM COMPONENT  ***************************/}
+			      <NutrientForm />{/*****************  NUTRIENT CALCULATOR FORM COMPONENT  ***************************/}
           </>
         )}/>
 

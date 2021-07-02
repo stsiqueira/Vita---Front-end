@@ -12,13 +12,18 @@
 
 //============== HOME =============
 .main{
-    min-height: 88vh;
+    min-height: 85vh;
 }
 @import "subscribe";
 
 
+//============== ABOUT=============
+@import "about";
 //============== QUIZ =============
 @import "quiz/Quiz";
+
+//============== DESCRIPTION PAGE =============
+@import "descriptionPage";
 
 //============== FOOTER =============
 @import "footer/footer";

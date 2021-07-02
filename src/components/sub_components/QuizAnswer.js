@@ -8,14 +8,27 @@ import {FaRegCircle} from 'react-icons/fa'
 
 const QuizAnswer = (props) => {
 
+
     return (
-       <div className="quizAnswer">
-           <div className="answer">
+       <div className="quizAnswer" 
+            onClick={(e)=> 
+                props.answer.option === props.correct ?
+                props.revealAnswer(true)
+                : props.revealAnswer(false)}>
+           <div className="answer" >
             <FaRegCircle className="checkBox" />
-            <p>Answer </p>
+            <p>{props.answer.value} </p>
            </div>
            <div className="message">
-               <p>(correct)</p>
+               <p>
+                    {
+                        props.showCorrectAnswer ?
+                        props.answer.option === props.correct ?
+                        "correct"
+                        :" wrong"
+                        : ""
+                    }
+               </p>
            </div>
 
        </div>
