@@ -18,7 +18,9 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "deploy": "aws s3 sync build/ s3://vitabucket --profile bucket",
+    "serverQuiz": "json-server --watch src/data/quiz.json --port 5000"
   },
   "eslintConfig": {
     "extends": [

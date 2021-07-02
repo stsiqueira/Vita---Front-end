@@ -1,0 +1,34 @@
+*{
+    margin:0;
+    padding: 0;
+    box-sizing: border-box;
+    line-height: 1.4;
+}
+@import "../sass/variables";
+
+//============== HEADER =============
+@import "../sass/Header/header";
+@import "../sass/Header/navigation";
+
+//============== HOME =============
+.main{
+    min-height: 88vh;
+}
+@import "../sass/subscribe";
+
+
+//============== ABOUT=============
+// @import "../sass/about";
+//============== QUIZ =============
+@import "../sass/Quiz/Quiz";
+
+//============== NutrientCalculator =============
+@import "../sass/NutrientCalculator/nutrientresults";
+@import "../sass/NutrientCalculator/nutrientcalculator";
+@import "../sass/NutrientCalculator/nutrientstart";
+
+//============== DESCRIPTION PAGE =============
+// @import "../sass/descriptionPage";
+
+//============== FOOTER =============
+@import "../sass/Footer/footer";

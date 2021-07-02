@@ -2,8 +2,8 @@
 //                                  HOME PAGE COMPONENT 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////
 import React from 'react';
-
-import NutrientForm from './Calculator'
+import { useState } from 'react';
+import { Link } from 'react-router-dom'
 import Subscribe from '../components/subscribe'
 
 
@@ -39,7 +39,6 @@ const Home = (props) => {
   ====================================================================================== 
   */}
       <Subscribe/>
-      <NutrientForm />
        </div>
     )
 }
