@@ -11,9 +11,6 @@ import Footer from './components/html_components/Footer'
 import DescriptionPage from './components/DescriptionPage';
 import NutrientResults from './components/sub_components/NutrientResults';
 import NutrientForm from './components/Calculator'
-import NutrientCalculatorStart from './components/sub_components/NutrientCalculatorStart';
-
-
 
 
 function App() {
