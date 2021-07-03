@@ -2,7 +2,7 @@
     margin:0;
     padding: 0;
     box-sizing: border-box;
-    line-height: 1.4;
+
 }
 @import "../sass/variables";
 
@@ -10,15 +10,30 @@
 @import "../sass/Header/header";
 @import "../sass/Header/navigation";
 
+//======BASIC COMPONENT ============
+@import "../sass/basicComponents";
+
 //============== HOME =============
+.App{
+    background: $primary-color-shade;
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: space-between;
+    height: 100vh;
+}
 .main{
-    min-height: 88vh;
+    // min-height: 86vh;
+    flex: 1;
 }
 @import "../sass/subscribe";
 
 
 //============== ABOUT=============
 @import "../sass/about";
+//============== CONTACT ==========
+@import "../sass/contact";
+//============== TEAM =============
+@import "../sass/team";
 //============== QUIZ =============
 @import "../sass/Quiz/Quiz";
 
