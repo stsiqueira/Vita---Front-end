@@ -3,10 +3,9 @@
 // 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-
-
 import React from 'react';
 import { useState } from 'react';
+import SubscribeIcon  from "../img/others/subscribe_icon.svg"
 
 
 
@@ -42,11 +41,13 @@ const Subscribe = (props) => {
     }
     return (
        <div className="subscribe-container">
-           <h2 className="feature-title">Subscribe for our Newsletters</h2>
+           <img src={SubscribeIcon} alt="" />
+           <h2 className="feature-title">Subscribe to our Newsletters</h2>
            <form onSubmit={pushMail}>
                <input type="email" value={email} 
-                    onChange={ (e)=> setEmail(e.target.value) }/>
-               <input type="submit" value='Subscribe' className='btn subscribeBtn'/>
+                    onChange={ (e)=> setEmail(e.target.value) }
+                    placeholder="Your email..."/>
+               <input type="submit" value='Subscribe' className='subscribeBtn'/>
            </form>
        </div>
     )

@@ -1,9 +1,16 @@
 .navigation{
     flex: 0 0 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
     ul{
         display: flex;
+        justify-content: center;
+        align-items: center;
         list-style: none;
         gap: 1rem;
+        height: 100%;
         a{
             color: $color-link-header;
             text-decoration: none;
@@ -11,22 +18,19 @@
                 color: $color-link-header-hover;
             }
             &:hover li{
-                border-bottom: 4px solid $color-link-border-bottom;
+                border-bottom: 6px solid $color-link-border-bottom;
             }
         }
-        a:first-of-type{
-            li{
-                flex: 0 0 3%;
-            }
-        }
+        
         a,li{
             display: flex;
             justify-content: center;
             align-items: center;
             text-align: center;
+            height: 100%;
         }
         li{
-            border-bottom: 4px solid $bg-color-header;
+            border-bottom: 6px solid $bg-color-header;
         }
     }
 

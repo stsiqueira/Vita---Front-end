@@ -1,0 +1,9 @@
+.team{
+    display: flex;
+    flex-flow: column nowrap;
+.teamMember{
+    background: $card-bg-teamMembers;
+    .teamMemberDescription{
+        background: #fff;
+    }
+}}

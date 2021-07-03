@@ -1,0 +1,49 @@
+.btn{
+    font-family: $main-font-family;
+    height: 58px;
+    font-size: 28px;
+    padding: 12px 43px 12px 43px;
+    font-weight: bold;
+    border-radius: 5px;
+    background: $button-bg-defaultColor;
+    color: $button-font-Color-darkBG;
+    &active{
+        background: $button-bg-activeColor;
+    }
+    &:hover{
+        background: $button-bg-hoverColor;
+    }
+    &:focus{
+        background: $button-bg-focusColor;
+    }
+
+    @media screen and (min-width: $desktop-size){
+        height: 72px;
+        font-size: 36px;
+        padding: 13px 50px;
+        
+    }
+}
+input{
+    background: $primary-color-shade;
+    border: none;
+    border-radius: 5px;
+    height: 40px;
+}
+textarea{
+    background: $primary-color-shade;
+    border: none;
+    border-radius: 5px;
+    height: 150px;
+    resize: none;
+}
+input[type="submit"]{
+    font-family: $main-font-family;
+    height: 58px;
+    font-size: 28px;
+    padding: 12px 43px 12px 43px;
+    font-weight: bold;
+    border-radius: 5px;
+    background: $button-bg-defaultColor;
+    color: $button-font-Color-darkBG;
+}

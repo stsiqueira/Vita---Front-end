@@ -1,12 +1,54 @@
 
+// ====================================================
+// Font
+// ====================================================
+$main-font-family: "Quicksand", sans-serif;
+// ====================================================
+// Media Screens
+// ====================================================
+$desktop-size: 900px;
+// ====================================================
+// colors
+// ====================================================
+
+$primary-color:#815497;
+$primary-color-shade:#FAF1FF;
+$card-bg-teamMembers: #FCEDD3;
+
+
+// Vitamins colors===================
+$vitamin-A: #EABB36;
+$vitamin-E: #E8A113;
+$vitamin-C: #F69128;
+$vitamin-B3: #F56224;
+$vitamin-B5: #F1483D;
+$vitamin-B6: #EB3860;
+$vitamin-K: #B71174;
+
+// Vitamins colors===================
+$mineral-P: #6D23B5;
+$mineral-ZN: #1A4BE5;
+$mineral-Ca: #1898E8;
+$mineral-K: #20B6CE;
+$mineral-Fe: #35C985;
+$mineral-Mg: #30B553;
+$mineral-Cu: #168B16;
+
+// buttons colors====================
+$button-bg-defaultColor: #815497;
+$button-bg-hoverColor: #76299B;
+$button-bg-activeColor: #B277CE;
+$button-bg-focusColor: $button-bg-defaultColor;
+$button-bg-disabledColor: #919191;
+$button-font-Color-darkBG: #ffffff;
 
 // ====================================================
 // Header
 // ====================================================
-$bg-color-header: #D0D0D0;
-$color-link-header: black;
+$bg-color-header: $primary-color;
+$color-link-header: #FFF;
 $color-link-header-hover: white;
-$color-link-border-bottom: white;
+$color-link-border-bottom: #F89827;
 
 
 
@@ -28,6 +70,6 @@ $color-border-answer:  #707070;
 // ====================================================
 // Footer
 // ====================================================
-$bg-color-footer: #D0D0D0;
-$color-text-footer: black;
+$bg-color-footer: $primary-color;
+$color-text-footer: #FFFFFF;
 

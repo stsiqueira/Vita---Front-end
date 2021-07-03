@@ -1,0 +1,48 @@
+.contact {
+    background: #FFF;
+    margin: 2rem 3rem;
+    padding-bottom: 3rem;
+    border-radius: 10px;
+    span{
+        color: red;
+    }
+    h2{
+        padding: 2rem;
+        text-align: center;
+        color: $primary-color;
+    }
+    p{
+        padding: 0 1rem;
+    }
+    form{
+        padding: 2.5rem 1rem;
+        display: flex;
+        flex-flow: column nowrap;
+        gap: 1.5rem;
+
+        div{
+            display: flex;
+            flex-flow: column nowrap;
+            gap: 1rem;
+        }
+        .contact-name,
+        .contact-phone{
+            flex-flow: row nowrap;
+            gap: .5rem;
+        }
+        .firstName,
+        .lastName,
+        .country,
+        .phone{
+                flex: 1;
+
+        }
+        .contact-button{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding-top: 2.5rem;
+        }
+
+    }
+}

@@ -16,24 +16,34 @@ const Contact = (props) => {
                     action="https://formspree.io/f/mdoydwow"
                     method="POST">
                    <div className="contact-name">
-                       <label htmlFor="firstName"> First Name</label>
-                       <input type="text" name="firstName"  id="firstName" required/>
-                       <label htmlFor="lastName"> Last Name</label>
-                       <input type="text" name="lastName"  id="lastName" />
+                       <div className="firstName">
+                        <label htmlFor="firstName"> First Name <span className="requiredField">*</span> </label>
+                        <input type="text" name="firstName"  id="firstName" required/>
+                       </div>
+                      <div className="lastName">
+                        <label htmlFor="lastName"> Last Name</label>
+                        <input type="text" name="lastName"  id="lastName" />
+                      </div>
+
                    </div>
                    <div className="contact-email">
 
-                       <label htmlFor="email"> Email</label>
+                       <label htmlFor="email"> Email <span className="requiredField">*</span> </label>
                        <input type="text" name="email"  id="email" required/>
                    </div>
                    <div className="contact-phone">
-                       <label htmlFor="phone"> Phone</label>
-                       <input type="text" name="phone"  id="phone" required/>
-                       <label htmlFor="country"> Country</label>
-                       <input type="text" name="country"  id="country" required/>
+                       <div className="phone">
+                        <label htmlFor="phone"> Phone <span className="requiredField">*</span> </label>
+                        <input type="text" name="phone"  id="phone" required/>
+                       </div>
+                        <div className="country">
+                            <label htmlFor="country"> Country <span className="requiredField">*</span> </label>
+                            <input type="text" name="country"  id="country" required/>
+                        </div>
+
                    </div>
                    <div className="contact-message">
-                       <label htmlFor="message"> Your message</label>
+                       <label htmlFor="message"> Your message <span className="requiredField">*</span> </label>
                        <textarea required>
 
                        </textarea>
