@@ -12,6 +12,8 @@ import VitaBrand from "../img/others/home_vita.svg"
 
 const Quiz = (props) => {
     const [showQuiz, setShowQuiz] = useState(false);
+    const [userAnswer, setUserAnswer] = useState(false);
+    const [checked, setChecked] = useState(false)
     const [showCorrectAnswer, setShowCorrectAnswer] = useState(false)
     const [retakeQuiz, setRetakeQuiz] = useState(false)
     const [showResult, setShowResult] = useState(false)
@@ -29,9 +31,11 @@ const Quiz = (props) => {
         const data = await res.json();
         return data;
     }
-    const revealAnswer = (userAnswer)=>{
+    const revealAnswer = (correct, userAnswer)=>{
+        setUserAnswer(userAnswer);
         setShowCorrectAnswer(true)
-        userAnswer ? setScore(score+1) : console.log("no")
+        setChecked(true)
+        correct ? setScore(score+1) : setScore(score)
     }
     const finishQuiz = ()=>{
         setShowResult(true)
@@ -43,6 +47,8 @@ const Quiz = (props) => {
         setQuiz(allQuestions.find((question)=> question.id === currentQuestion+1))
         : finishQuiz()
         setShowCorrectAnswer(false)
+        setChecked(false)
+        
 
     }
     const restartQuiz = () => {
@@ -123,20 +129,23 @@ const Quiz = (props) => {
                                         answer={answer}
                                         correct={quiz.correct}
                                         showCorrectAnswer={showCorrectAnswer}
-                                        revealAnswer={revealAnswer}/>
+                                        revealAnswer={revealAnswer}
+                                        checked={checked}
+                                        userAnswer={userAnswer}/>
                                 </>
                                 ))
                                 : ""
                             }
                             <div className="nextButton">
-                                <button onClick={()=>{
+                                <button className={showCorrectAnswer ? "btn" : "btn disabled"}
+                                    onClick={()=>{
                                     
-                                    if (showCorrectAnswer) {
-                                    getNextQuestion();
-                                    setCurrentQuestion(currentQuestion + 1)
-                                    }else{
-                                        alert("Please choose an answer")     
-                                    } 
+                                        if (showCorrectAnswer) {
+                                        getNextQuestion();
+                                        setCurrentQuestion(currentQuestion + 1)
+                                        }else{
+                                            alert("Please choose an answer")     
+                                        } 
                                 }}>Next</button>
                             </div>
                             
