@@ -19,6 +19,8 @@
     "genderData":[
         {"value": "MALE", "text": "MALE"},
         {"value": "FEMALE", "text": "FEMALE"}
-    ]
+    ],
+    "nodeDevConnection": "http://localhost:4000/",
+    "nodeServerConnection": ""
 
 }
