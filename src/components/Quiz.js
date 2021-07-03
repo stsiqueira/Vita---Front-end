@@ -6,6 +6,8 @@ import React from 'react';
 import { Link } from 'react-router-dom'
 import { useState, useEffect, useRef } from 'react';
 import QuizAnswer from '../components/sub_components/QuizAnswer'
+import CalculateImg from "../img/others/nutrient_calculator_icon.svg"
+import VitaBrand from "../img/others/home_vita.svg"
 
 
 const Quiz = (props) => {
@@ -81,13 +83,15 @@ const Quiz = (props) => {
                showQuiz ? "" : 
           
            <div className="quizAbout">
+               <img src={VitaBrand} alt="Vita brand" />
             <h3> Ready to test your Knowledge?</h3>
             <p className="questionDetail">This quiz is intended for you to test your knowledge about vitamins and vitamins. 
     We recommend you review food items and what nutrients they contain as they might appear in the quiz</p>
-                <button onClick={()=> {
-                    setShowQuiz(true);
-                    getNextQuestion();
-                    setCurrentQuestion(currentQuestion + 1)
+                <button className="btn"
+                    onClick={()=> {
+                        setShowQuiz(true);
+                        getNextQuestion();
+                        setCurrentQuestion(currentQuestion + 1)
                 
                 }}> Take the Quiz </button>
            </div>
@@ -147,10 +151,11 @@ const Quiz = (props) => {
                         <p>{(score*10)}%</p>
                         <p>Well done now you can retake the quiz to polish your knowledge about vitamins and minerals.</p>
 
-                        <button onClick={()=>{
+                        <button className="btn"
+                            onClick={()=>{
                                     
                                     restartQuiz()
-                        }}>Retake Quiz</button>
+                        }}>Retake</button>
 
 
                     </div>
@@ -158,15 +163,17 @@ const Quiz = (props) => {
                         <>
                     <div className="moreOptions">
                         <div className="nutrientCalculator">
+                            <img src={CalculateImg} alt="Nutrient Calculator Icon" />
                             <Link to="/nutrientCalculator">
-                            <button>Nutrient Calculator</button>
+                                <button className="btn">Calculate</button>
                             </Link>
                             <p>Here you can calculate your daily vitamins and minerals intake</p>
 
                         </div>
                         <div className="searchFood">
+                            <img src={CalculateImg} alt="Search Food Icon" />
                             <Link to="/nutrientCalculator">
-                                <button>Search for Food</button>
+                                <button className="btn">Search</button>
                             </Link>
 
                             <p>Here you can learn more about different fruits and vegetables</p>

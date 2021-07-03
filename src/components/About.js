@@ -3,7 +3,7 @@
 ////////////////////////////////////////////////////////////////////////////////////////////////////////
 import React from 'react';
 import { Link } from 'react-router-dom'
-import AboutVita from "./home_vita.svg"
+import AboutVita from "../img/others/home_vita.svg"
 
 
 

@@ -1,21 +1,40 @@
 
 .quizPage{
     .quizAbout{
-        border: 1px solid black;
+        background: #fff;
+        border-radius: 5px;
         display: flex;
         flex-flow: column nowrap;
         justify-content: center;
         align-items: center;
-        padding: 3rem 2rem;
+        padding: 3rem 2rem 5rem 2rem;
         margin: 1rem;
         gap: 1.5rem;
-        button { 
-            background: $bg-color-quizButton;
-            color: $color-text-quizButton;
-            padding: .5rem 1rem;
-            border: none;
+        img{
+            max-width: 250px;
         }
+        h3{
+            font-size: 2rem;
+            color: $primary-color;
+        }
+        button{
+            margin-top: 5rem;
 
+        }
+        h3,p{
+            max-width: 400px;
+            text-align: center;
+        }
+        @media screen and (min-width:$desktop-size){
+            border-radius: 10px;
+            button{
+                margin-top: 2rem;
+    
+            }
+            h3,p{
+                max-width: 600px;
+            }
+        }
     }
     .quiz{
         border: 1px solid black;
@@ -70,59 +89,76 @@
         }
     }
     .showResult{
-        border: 1px solid black;
+        background: #fff;
+        border-radius: 5px;
         display: flex;
         flex-flow: column nowrap;
         justify-content: center;
         align-items: center;
-        padding: 3rem 2rem;
+        padding: 3rem 1rem;
         margin: 1rem;
         gap: 1rem;
         .result{
-            border: 1px solid black;
+            border: 3px solid $primary-color;
+            border-radius: 5px;
             display: flex;
             flex-flow: column nowrap;
             justify-content: center;
             align-items: center;
-            padding: 1rem;
+            padding: 2rem 1rem 4rem 1rem;
             width: 100%;
             gap: 1rem;
             p:first-of-type{
                 font-size: 3rem;
+                color:$primary-color
             }
-            button { 
-                background: $bg-color-quizButton;
-                color: $color-text-quizButton;
-                padding: .5rem 1rem;
-                border: none;
+            p:last-of-type{
+                margin-bottom: 1.5rem;
+                max-width: 500px;
+                text-align: center;
             }
+
         }
         .moreOptions{
             display: flex;
+            flex-flow: column nowrap;
             gap: 1rem;
+            width: 100%;
+            
             .nutrientCalculator,
             .searchFood{
-                border: 1px solid black;
+                background: $primary-color-shade;
+                border-radius: 5px;
                 display: flex;
-                gap: .5rem;
+                gap: 1.5rem;
                 flex-flow: column nowrap;
                 justify-content: center;
                 align-items: center;
-                padding: 2rem;
-                button { 
-                    background: $bg-color-quizButton;
-                    color: $color-text-quizButton;
-                    padding: .5rem 1rem;
-                    border: none;
+                padding: 2.5rem 0;
+                img{
+                    width: 50%;
                 }
                 p{
                     text-align: center;
-                    max-width: 80%;
+                    max-width: 50%;
                 }
             }
            
         }
-       
+        @media screen and (min-width:$desktop-size) {
+            .moreOptions{
+                flex-flow: row nowrap;
+                border-radius: 10px;
+                justify-content: center;
+                .nutrientCalculator,
+                .searchFood{
+                    width: 100%;
+                }
+            }
+            .result{
+                width: 70%;
+            }
+        }
     }
     
 }
