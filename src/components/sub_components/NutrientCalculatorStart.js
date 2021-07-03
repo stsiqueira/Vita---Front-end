@@ -28,7 +28,7 @@ const NutrientCalculatorStart = () => {
                     Learn more about your nutritional needs, get personalized
                     vitamins and mineral suggestions to add to your daily diet,
                     and find out in which vegetables and fruits they can be found.
-                    All without worrying about your data since we don’t keep it!
+                    All without worrying about your data since we don’t keep it.
                 </p>
                 <div className="button-wrapper">
                     <Button 
