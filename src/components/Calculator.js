@@ -61,7 +61,7 @@ const NutrientForm = () => {
                     <h1>Nutrient Calculator</h1>
                     <p className="">
                         Answer the questions to get your personalized
-                        vitamins and minerals daily intake suggestions!
+                        vitamins and minerals daily intake suggestions..
                     </p>
                 </div>
 
