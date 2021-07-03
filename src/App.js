@@ -13,8 +13,6 @@ import NutrientResults from './components/sub_components/NutrientResults';
 import NutrientForm from './components/Calculator'
 
 
-
-
 function App() {
   return (
     <div className="App">
@@ -74,14 +72,21 @@ function App() {
 ===================  Nutrient Calculator Route - Glen  ============================
 ====================================================================================== 
 */}
-        <Route path="/NutrientCalculator" render={(props)=>(
+        <Route path="/NutrientCalculator" exact render={()=>(
                 <>
                   <NutrientForm />{/*****************  NUTRIENT CALCULATOR COMPONENT  ***************************/}
                 </>
         )}/> 
-        <Route path="/NutrientCalculator/Results" render={(props)=>(
+
+        <Route path="/NutrientCalculator/Start" render={()=>(
           <>
-            <NutrientResults />{/*****************  NUTRIENT CALCULATOR COMPONENT  ***************************/}
+			      <NutrientForm />{/*****************  NUTRIENT CALCULATOR FORM COMPONENT  ***************************/}
+          </>
+        )}/>
+
+        <Route path="/NutrientCalculator/Results" render={()=>(
+          <>
+            <NutrientResults />{/*****************  NUTRIENT CALCULATOR RESULT COMPONENT  ***************************/}
           </>
         )}/> 
       </div>

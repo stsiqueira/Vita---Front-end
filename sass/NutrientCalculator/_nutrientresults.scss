@@ -3,11 +3,42 @@
     margin: 0 auto;
     display: flex;
     flex-flow: column nowrap;
-    gap: 1rem;
+    gap: 2rem;
 
-    .nutrient-calculator-header {
-        max-width: 60%;
-        margin: 0 auto;
-        text-align: center;
+    .nutrient-calculator-introduction {
+        border: 1px solid #ccc;
+        margin-top: 2rem;
+
+        .nutrient-calculator-header {
+            max-width: 60%;
+            margin: 0 auto;
+            text-align: center;
+            padding: .5rem 0 1rem 0;
+        }
+    
+    }
+    
+    .results-wrapper {
+        display: flex;
+        gap: 1rem;
+        flex-flow: column;
+        padding: 1rem;
+        border: 1px solid #ccc;
+
+        .result-heading {
+            text-align: center;
+        }
+
+        .chart-vitamin-result-wrapper,
+        .chart-mineral-result-wrapper {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+        }
+    }
+
+    ul {
+        list-style-type: none;
+        padding-left: 0;
     }
 }
