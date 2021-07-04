@@ -9,11 +9,8 @@ const ItemDescription = ({itemName, itemText, itemImageUrl}) => {
             <div className="itemName"><h2>{itemName}</h2></div>
             <div className="itemContent">
                 
-                    <img src={imgUrl} alt={itemName + "image"} />
-                    
-               
-                
-                    {itemText}
+                    <img className="itemContentImage" src={imgUrl} alt={itemName + " image"} />
+                    <p>{itemText}</p>
                 
             </div>
         </div >
