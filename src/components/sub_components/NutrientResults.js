@@ -5,10 +5,62 @@
 import { useLocation } from "react-router-dom";
 import React from 'react';
 import UnorderedList from '../compositableComponents/Unorderedlist'
+import MyResponsivePie from "./Chart";
+import { useHistory } from "react-router-dom";
+
 
 const NutrientResults = (props) => {
     const location = useLocation()
+    const history = useHistory()
     const { vitamin, mineral } = location.state
+    const clicked = (node) => {
+        console.log("clicked")
+    }
+    const data = [
+        {
+          "id": "scala",
+          "label": "scala",
+          "value": 1,
+          "color": "#ccc",
+          "link": "http:hii"
+        },
+        {
+          "id": "erlang",
+          "label": "erlang",
+          "value": 1,
+          "color": "hsl(147, 70%, 50%)"
+        },
+        {
+            "id": "Copper",
+            "label": "Copper",
+            "value": 1,
+            "color": "hsl(147, 70%, 50%)"
+        },
+        {
+            "id": "Iron",
+            "label": "Iron",
+            "value": 1,
+            "color": "hsl(147, 70%, 50%)"
+        },
+        {
+          "id": "Vitamin",
+          "label": "Vitamin",
+          "value": 1,
+          "color": "hsl(112, 70%, 50%)"
+        },
+        {
+          "id": "hack",
+          "label": "hack",
+          "value": 1,
+          "color": "hsl(34, 70%, 50%)"
+        },
+        {
+          "id": "c",
+          "label": "c",
+          "value": 1,
+          "color": "hsl(303, 70%, 50%)"
+        }
+      ]
     return (
         
        <div className="nutrient-results-wrapper">
@@ -25,6 +77,9 @@ const NutrientResults = (props) => {
                 <div className="chart-vitamin-result-wrapper">
                     <div className="vitamin-result-wrapper">
                         <UnorderedList heading="Vitamin" classname="test" name="test" arr={vitamin}/>
+                    </div>
+                    <div className="test" style={{height: "500px"}}>
+                        <MyResponsivePie data={data} callback={clicked}/>
                     </div>
                     <div className="chart-wrapper">
                         <img src="https://picsum.photos/400" alt="dummy" /> 
