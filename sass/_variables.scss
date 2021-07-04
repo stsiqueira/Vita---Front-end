@@ -58,15 +58,17 @@ $color-link-border-bottom: #F89827;
 // ====================================================
 // Quiz
 // ====================================================
-$bg-color-quizButton: #9F9F9F;
+$bg-color-disabledButton: #707070;
 $color-text-quizButton: white;
-
-$bg-color-possible-progress: #D0D0D0;
-$bg-color-actual-progress: #8D8D8D;
-
+$bg-color-possible-progress: #FFE7CC;
+$bg-color-actual-progress: #FF9B28;
+$bg-color-answers: #FFEDD1;
+$bg-color-correct-answer: #BFF095;
+$bg-color-wrong-answer: #FDBCBC;
 $color-detail: #707070;
-
 $color-border-answer:  #707070;
+
+
 // ====================================================
 // Footer
 // ====================================================

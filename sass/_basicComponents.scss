@@ -24,6 +24,18 @@
         
     }
 }
+.disabled{
+    background: $bg-color-disabledButton;
+    &active{
+        background: $bg-color-disabledButton;
+    }
+    &:hover{
+        background: $bg-color-disabledButton;
+    }
+    &:focus{
+        background: $bg-color-disabledButton;
+    }
+}
 input{
     background: $primary-color-shade;
     border: none;
