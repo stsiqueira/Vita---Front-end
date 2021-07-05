@@ -3,7 +3,7 @@
 ////////////////////////////////////////////////////////////////////////////////////////////////////////
 import React from 'react';
 import {useState} from 'react'
-import {FaRegCircle} from 'react-icons/fa'
+import {FaRegCircle, FaCircle} from 'react-icons/fa'
 
 
 
@@ -23,17 +23,20 @@ const QuizAnswer = (props) => {
                     : "quizAnswer" 
                 }
             onClick={ (e)=> {
+                !props.showCorrectAnswer ?
                 props.answer.option === props.correct ?
                 props.revealAnswer(true, props.answer.option)
                 : props.revealAnswer(false, props.answer.option)
-                }  
+                : alert("You cannot change your answer")
+            }  
             }  
         >
            <div className="answer" >
                { 
-                props.checked ? 
-                    <FaRegCircle className="checkBox checked" />
-                :   <FaRegCircle className="checkBox checked" />
+                props.checked &&
+                props.answer.option === props.userAnswer ? 
+                    <FaCircle className="checkBox checked" /> 
+                :   <FaRegCircle className="checkBox" /> 
                 }
             <p>{props.answer.value} </p>
            </div>
