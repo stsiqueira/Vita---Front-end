@@ -2,14 +2,11 @@
 //                                  TEAM PAGE COMPONENT 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////
 import React from 'react';
-import {useState} from 'react'
 import {FaRegCircle, FaCircle} from 'react-icons/fa'
 
 
 
 const QuizAnswer = (props) => {
-    console.log(props.userAnswer)
-
 
     return (
        <div className=                   

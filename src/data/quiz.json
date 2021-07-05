@@ -15,7 +15,7 @@
     },
     {
         "id":2,
-        "typeOfQuestion":1,
+        "typeOfQuestion":2,
         "question": "Which fruit contains the most potassium? 2",
         "details": "Potassium helps regulate fluid balance, muscle contractions and nerve signals.",
         "answers":[

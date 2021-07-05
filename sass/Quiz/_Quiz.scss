@@ -56,7 +56,7 @@
                 background-color: $bg-color-actual-progress;
             }
         }
-        .question{
+        .questionType1{
             padding: 1rem 0;
             
             h3{
@@ -113,6 +113,81 @@
                 justify-content: center;
                 margin-top: 5rem;
             }
+
+        }
+        .questionType2{
+
+            display: flex;
+            flex-flow: row wrap;
+            h3{
+                flex: 1 0 90%;
+                padding: 1rem 0;
+            }
+            .quizAnswerType2{
+                background:$bg-color-answers;
+                border-radius: 5px;
+                padding: 1rem;
+                flex: 0 0 47%;
+                margin-bottom: 1rem;
+                .answer{
+                    border-radius: 5px;
+                    display: flex;
+                    flex-flow: column nowrap;
+                    justify-content: center;
+                    align-items: center;
+                    padding: 0;
+                    img{
+                        width: 80%;
+                        padding: .5rem;
+                        background: #fff;
+                        border-radius: 5px;
+                    }
+                    p{
+                        width: 100%;
+                        text-align: center;
+                        padding: .5rem 0 0 0;
+                    }
+                }
+            }
+
+            .correct{
+                background:$bg-color-correct-answer;
+                .answer{
+                    .checkBox{
+                        color:#13B226;
+                    }
+                    .checked{
+                        border: 2px solid #fff;
+                    }
+                }
+                
+            }
+            .wrong{
+                background:$bg-color-wrong-answer;
+                .answer{
+                    .checkBox{
+                        color:#96060C;
+                    }
+                    .checked{
+                        border: 2px solid #fff;
+                    }
+                }
+                
+            }
+            .quizAnswerType2:nth-of-type(2),
+            .quizAnswerType2:nth-of-type(4){
+                margin-left: 1rem;
+            }
+
+            .nextButton{
+                display: flex;
+                justify-content: center;
+                margin-top: 3rem;
+                width: 100%;
+            }
+
+           
+
         }
         @media screen and (min-width:$desktop-size) {
             .question{
