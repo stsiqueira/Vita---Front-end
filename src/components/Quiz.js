@@ -6,6 +6,7 @@ import React from 'react';
 import { Link } from 'react-router-dom'
 import { useState, useEffect, useRef } from 'react';
 import QuizAnswer from '../components/sub_components/QuizAnswer'
+import QuizAnswerType2 from '../components/sub_components/QuizAnswerType2'
 import CalculateImg from "../img/others/nutrient_calculator_icon.svg"
 import VitaBrand from "../img/others/home_vita.svg"
 
@@ -116,22 +117,37 @@ const Quiz = (props) => {
                             </div>
                         </div>
 
-                        <div className="question">
+                        <div className={quiz.typeOfQuestion === 1 ?"questionType1" : "questionType2"}>
                             <h3>{quiz ? quiz.question : ""}</h3>
-                            <p className="questionDetail">{quiz ? quiz.details : ""}</p>
                             {
                                 quiz ? 
                                 quiz.answers.map((answer, key)=>(
                                 <>
-                                    <QuizAnswer 
-                                        key={key}
-                                        questionID={quiz.question.id*10 + answer.id}
-                                        answer={answer}
-                                        correct={quiz.correct}
-                                        showCorrectAnswer={showCorrectAnswer}
-                                        revealAnswer={revealAnswer}
-                                        checked={checked}
-                                        userAnswer={userAnswer}/>
+                                {
+                                    quiz.typeOfQuestion === 1 ?
+                                        <QuizAnswer 
+                                            key={key}
+                                            questionID={quiz.question.id*10 + answer.id}
+                                            answer={answer}
+                                            correct={quiz.correct}
+                                            showCorrectAnswer={showCorrectAnswer}
+                                            revealAnswer={revealAnswer}
+                                            checked={checked}
+                                            userAnswer={userAnswer}
+                                            typeOfQuestion={quiz.typeOfQuestion}/>
+                                        : 
+                                        <QuizAnswerType2
+                                            key={key}
+                                            questionID={quiz.question.id*10 + answer.id}
+                                            answer={answer}
+                                            correct={quiz.correct}
+                                            showCorrectAnswer={showCorrectAnswer}
+                                            revealAnswer={revealAnswer}
+                                            checked={checked}
+                                            userAnswer={userAnswer}/>
+                                           
+                                }
+                                    
                                 </>
                                 ))
                                 : ""
