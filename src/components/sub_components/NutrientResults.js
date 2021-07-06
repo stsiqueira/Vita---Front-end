@@ -2,65 +2,87 @@
 // Nutrient Result component. 
 // 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////
-import { useLocation } from "react-router-dom";
+import { useLocation, useHistory } from "react-router-dom";
 import React from 'react';
+import { useState } from 'react';
 import UnorderedList from '../compositableComponents/Unorderedlist'
 import MyResponsivePie from "./Chart";
-import { useHistory } from "react-router-dom";
 
 
 const NutrientResults = (props) => {
     const location = useLocation()
     const history = useHistory()
     const { vitamin, mineral } = location.state
-    const clicked = (node) => {
-        console.log("clicked")
+    const margin = { top: 30, right: 200, bottom: 30, left: 30 };
+
+    // const clicked = (node) => {
+    //     console.log(node["data"]["links"])
+    //     history.push({
+    //         pathname: `/vitamin/${node.id}`,
+    //     })
+    // }
+    const cleanValue = (value) => {
+
+        if (value.includes(","))
+            value = value.replace(",", "")
+
+        if (value.toString().indexOf('.') != -1)
+            return parseFloat(value)
+
+        return parseInt(value)
     }
-    const data = [
-        {
-          "id": "scala",
-          "label": "scala",
-          "value": 1,
-          "color": "#ccc",
-          "link": "http:hii"
+
+    const convertingUnits = (value) => {
+        const splitArray = value.split(" ")
+        const cleanedValue = cleanValue(splitArray[0])
+
+        if(splitArray.length < 2)
+            return cleanedValue * 1000
+
+        if (splitArray[1].includes("mg")) 
+            return cleanedValue * 1000
+
+        else if (value.includes(" g"))
+            return cleanedValue * 1000000
+        
+        // console.log(`new unit encountered please check ${splitArray[1]}`)
+        return cleanedValue
+    }
+
+    const addKeyToJsonArray = (arr) => {
+        const data = arr.map(element => {
+            element["id"] = element.name
+            element["label"] = element.name
+            element["value"] = convertingUnits(element.recommended_intake)
+            return element
+        })
+        
+        return data
+    }
+    const [ vitaminArray, setVitaminArray ] = useState(addKeyToJsonArray(vitamin));
+    const [ mineralArray, setMineralArray ] = useState(addKeyToJsonArray(mineral));
+    console.log(mineralArray)
+    const styles = {
+        root: {
+          textAlign: "center",
+          position: "relative",
         },
-        {
-          "id": "erlang",
-          "label": "erlang",
-          "value": 1,
-          "color": "hsl(147, 70%, 50%)"
-        },
-        {
-            "id": "Copper",
-            "label": "Copper",
-            "value": 1,
-            "color": "hsl(147, 70%, 50%)"
-        },
-        {
-            "id": "Iron",
-            "label": "Iron",
-            "value": 1,
-            "color": "hsl(147, 70%, 50%)"
-        },
-        {
-          "id": "Vitamin",
-          "label": "Vitamin",
-          "value": 1,
-          "color": "hsl(112, 70%, 50%)"
-        },
-        {
-          "id": "hack",
-          "label": "hack",
-          "value": 1,
-          "color": "hsl(34, 70%, 50%)"
-        },
-        {
-          "id": "c",
-          "label": "c",
-          "value": 1,
-          "color": "hsl(303, 70%, 50%)"
+        overlay: {
+          position: "absolute",
+          top: 0,
+          right: margin.right,
+          bottom: 0,
+          left: margin.left,
+          display: "flex",
+          flexDirection: "column",
+          alignItems: "center",
+          justifyContent: "center",
+          color: "#000",
+          textAlign: "center",
+          pointerEvents: "none"
         }
-      ]
+    };
+
     return (
         
        <div className="nutrient-results-wrapper">
@@ -76,23 +98,28 @@ const NutrientResults = (props) => {
                 <h2 className="result-heading">Your Results</h2>
                 <div className="chart-vitamin-result-wrapper">
                     <div className="vitamin-result-wrapper">
-                        <UnorderedList heading="Vitamin" classname="test" name="test" arr={vitamin}/>
+                        <UnorderedList heading="Vitamin" classname="test" name="test" arr={vitamin} flag={true}/>
                     </div>
-                    <div className="test" style={{height: "500px"}}>
-                        <MyResponsivePie data={data} callback={clicked}/>
-                    </div>
-                    <div className="chart-wrapper">
-                        <img src="https://picsum.photos/400" alt="dummy" /> 
+                    <div className="chart-wrapper" >
+                        <MyResponsivePie data={vitaminArray} callback={undefined} />
+
+                        <div className="overlay" style={styles.overlay}>
+                            <span>Vitamins</span>
+                        </div>
                     </div>
                     
                 </div>
                 <div className="chart-mineral-result-wrapper">
                     <div className="mineral-result-wrapper">
-                        <UnorderedList heading="Mineral" classname="test" name="test" arr={mineral}/>
+                        <UnorderedList heading="Mineral" classname="test" name="test" arr={mineral} flag={true}/>
                     </div>
                     <div className="chart-wrapper">
-                        <img src="https://picsum.photos/400" alt="dummy" />      
+                        <MyResponsivePie data={mineralArray} callback={undefined} />
+                        <div className="overlay" style={styles.overlay}>
+                            <span>Minerals</span>
+                        </div>      
                     </div>
+                    
                 </div>
            </div>
            <div>

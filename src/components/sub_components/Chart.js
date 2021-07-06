@@ -8,11 +8,11 @@ import { ResponsivePie } from '@nivo/pie'
 // you'll often use just a few of them.
 
 
-const MyResponsivePie = ({ data }) => (
+const MyResponsivePie = ({ data, callback }) => (
     <ResponsivePie
-        onClick={clicked}
+        onClick={callback}
         data={data}
-        margin={{ top: 40, right: 80, bottom: 80, left: 80 }}
+        margin={{ top: 30, right: 200, bottom: 30, left: 30 }}
         sortByValue={true}
         innerRadius={0.5}
         padAngle={0.7}
@@ -22,7 +22,7 @@ const MyResponsivePie = ({ data }) => (
         borderColor={{ from: 'color', modifiers: [ [ 'darker', 0.2 ] ] }}
         enableArcLinkLabels={false}
         arcLinkLabelsSkipAngle={10}
-        arcLinkLabelsTextColor="#0092d1"
+        arcLinkLabelsTextColor="#000"
         arcLinkLabelsThickness={2}
         arcLinkLabelsColor={{ from: 'color' }}
         arcLabel="id"
