@@ -9,6 +9,7 @@ import Contact from './components/Contact'
 import Team from './components/Team'
 import Footer from './components/html_components/Footer'
 import DescriptionPage from './components/DescriptionPage';
+import NutrientCalculatorStart from './components/sub_components/NutrientCalculatorStart';
 import NutrientResults from './components/sub_components/NutrientResults';
 import NutrientForm from './components/Calculator'
 
@@ -74,7 +75,7 @@ function App() {
 */}
         <Route path="/NutrientCalculator" exact render={()=>(
                 <>
-                  <NutrientForm />{/*****************  NUTRIENT CALCULATOR COMPONENT  ***************************/}
+                  <NutrientCalculatorStart />{/*****************  NUTRIENT CALCULATOR COMPONENT  ***************************/}
                 </>
         )}/> 
 

@@ -18,7 +18,7 @@ const NutrientForm = () => {
 
     const handleSubmit= async (e) => {
         e.preventDefault();
-        const vitaminList = ["Vitamin A", "Vitamin C", "Vitamin B6", "Vitamin E", "Vitamin K"]
+        const vitaminList = ["Vitamin A", "Vitamin C", "Vitamin B6", "Vitamin E", "Vitamin K", "Niacin", "Pantothenic Acid"]
         const mineralList = ["Calcium", "Copper", "Iron", "Magnesium", "Phosphorus", "Zinc"]
         const my_obj = {
             "MEAS_UNITS": "STANDARD",
