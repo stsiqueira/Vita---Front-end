@@ -5,9 +5,11 @@
     gap: 1rem;
     background: #fff;
     .image{
-        order: 2;
-        max-width: 250px;
+        order: 2; 
         margin: 0 auto;
+        img{
+            max-width: 250px;
+        }
     }
     h2{
         text-align: center;

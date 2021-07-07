@@ -4,7 +4,7 @@
 import React from 'react';
 import Subscribe from '../components/subscribe'
 import Search from '../components/Search'
-import SearchNutrient from '../components/SearchNutrient'
+import Recalculate from '../components/sub_components/Recalculate'
 import About from '../components/About'
 
 
@@ -30,10 +30,13 @@ const Home = (props) => {
             <Search/>
   {/*
   ======================================================================================
-  ==                Search by Vitamins and Minerals Component - Aman
+  ==                Nutrient Calculator - Glen
   ====================================================================================== 
   */}      
-            <SearchNutrient/>
+            <Recalculate
+                buttonText="Calculate"
+                descriptionText="Try Our Nutrient Calculator To See Your Daily Needs"
+            />
 
   {/*
   ======================================================================================
