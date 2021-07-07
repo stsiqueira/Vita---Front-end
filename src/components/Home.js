@@ -2,10 +2,9 @@
 //                                  HOME PAGE COMPONENT 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////
 import React from 'react';
-import { useState } from 'react';
-import { Link } from 'react-router-dom'
 import Subscribe from '../components/subscribe'
 import Search from '../components/Search'
+import SearchNutrient from '../components/SearchNutrient'
 import About from '../components/About'
 
 
@@ -28,13 +27,13 @@ const Home = (props) => {
 ==                Search for Fruits and Vegetables Component - Aman
 ====================================================================================== 
 */}
-
+            <Search/>
   {/*
   ======================================================================================
   ==                Search by Vitamins and Minerals Component - Aman
   ====================================================================================== 
-  */}
-      <Search/>
+  */}      
+            <SearchNutrient/>
 
   {/*
   ======================================================================================

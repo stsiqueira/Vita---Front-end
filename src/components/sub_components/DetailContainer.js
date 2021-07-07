@@ -46,13 +46,13 @@ const DetailContainer = ({ itemName, itemType }) => {
             if (siteContent[0]["Vitamins"][0].find(f => element.nutrientName.includes(f.name))) {
                 let linkName = siteContent[0]["Vitamins"][0].find(f => element.nutrientName.includes(f.name)).name;
                 let nName = element.nutrientName;
-                let nValue = element.value == 0 ? `0.1 ${element.unitName}` : `${element.value} ${element.unitName}`;
+                let nValue = element.value === 0 ? `0.1 ${element.unitName}` : `${element.value} ${element.unitName}`;
                 vitaminsTableContent.push({ name: nName, value: nValue, type: "Vitamins", linkName: linkName });
             }
             if (siteContent[0]["Minerals"][0].find(f => element.nutrientName.includes(f.name))) {
                 let linkName = siteContent[0]["Minerals"][0].find(f => element.nutrientName.includes(f.name)).name;
                 let nName = element.nutrientName;
-                let nValue = element.value == 0 ? `0.1 ${element.unitName}` : `${element.value} ${element.unitName}`;
+                let nValue = element.value === 0 ? `0.1 ${element.unitName}` : `${element.value} ${element.unitName}`;
                 mineralsTableContent.push({ name: nName, value: nValue, type: "Minerals", linkName: linkName });
             }
 
