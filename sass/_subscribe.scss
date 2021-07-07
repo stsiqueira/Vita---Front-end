@@ -1,27 +1,40 @@
 .subscribe-container{
-    background: #fff;
-    border-radius: 5px;
-    padding: 1.5rem 0;
+    background: $primary-color-shade;
+    padding: 0 10px 1.5rem;
     display: flex;
     flex-flow: column nowrap;
     justify-content: center;
     align-items: center;
-    margin: 0 2rem;
+    margin: 0 10px 1.5rem;
 
+
+    .image-wrapper{
+        background: #fff;
+        width: 100%;
+        text-align: center;
+        padding-top: 1.5rem;
+    }
     img{
         width: 50%;
         max-width: 200px;
         margin-bottom: 1.5rem;
     }
+    p{
+        background: #fff;
+        width: 100%;
+        text-align: center;
+    }
     form{
+        background: #fff;
         display: flex;
         flex-flow: column nowrap;
         justify-content: center;
         align-items: center;
-        width: 90%;
+        width: 100%;
+        padding-bottom: 2rem;
 
         input[type="email"]{
-            width: 100%;
+            width: 90%;
             margin: .5rem;
             margin: 1rem 0;
             &::placeholder{

@@ -41,8 +41,11 @@ const Subscribe = (props) => {
     }
     return (
        <div className="subscribe-container">
-           <img src={SubscribeIcon} alt="" />
-           <h2 className="feature-title">Subscribe to our Newsletters</h2>
+           <div className="image-wrapper">
+            <img src={SubscribeIcon} alt="Subscribe Icon" />
+           </div>
+           
+           <p className="feature-title">Subscribe to our Newsletters</p>
            <form onSubmit={pushMail}>
                <input type="email" value={email} 
                     onChange={ (e)=> setEmail(e.target.value) }

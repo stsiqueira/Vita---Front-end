@@ -24,8 +24,7 @@
     flex: 1;
 }
 @import "subscribe";
-
-
+@import "search";
 //============== ABOUT=============
 @import "about";
 //============== CONTACT ==========
@@ -35,8 +34,8 @@
 //============== QUIZ =============
 @import "quiz/Quiz";
 
-//============== DESCRIPTION PAGE =============
-@import "descriptionPage";
+// //==== DESCRIPTION PAGE ===========
+// @import "descriptionPage";
 
 //============== FOOTER =============
 @import "footer/footer";
