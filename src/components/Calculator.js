@@ -58,7 +58,7 @@ const NutrientForm = () => {
         <div className="nutrient-calculator-wrapper">
             <div className="child-wrapper">
                 <div className="heading">
-                    <h1>Nutrient Calculator</h1>
+                    <h2>Nutrient Calculator</h2>
                     <p className="">
                         Answer the questions to get your personalized
                         vitamins and minerals daily intake suggestions!
@@ -157,7 +157,7 @@ const NutrientForm = () => {
                     </div>
                     <div className="nutrient-calculator-input-wrapper">
                         <input
-                            className="input-submit" 
+                            className="input-submit btn" 
                             type='submit' 
                             value='Calculate' 
                         />
