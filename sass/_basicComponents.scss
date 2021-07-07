@@ -37,14 +37,13 @@
     }
 }
 input{
-    background: $primary-color-shade;
-    border: none;
+    
+    border: 2px solid $primary-color;
     border-radius: 5px;
     height: 40px;
 }
 textarea{
-    background: $primary-color-shade;
-    border: none;
+    border: 2px solid $primary-color;
     border-radius: 5px;
     height: 150px;
     resize: none;
