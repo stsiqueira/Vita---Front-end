@@ -1,6 +1,6 @@
 .nutrient-results-wrapper {
     max-width: 1200px;
-    margin: 0 auto;
+    margin: 1rem auto;
     display: flex;
     flex-flow: column nowrap;
     gap: 2rem;
@@ -35,6 +35,52 @@
             grid-template-columns: 1fr 1fr;
             gap: 1rem;
         }
+
+        .health-concern-wrapper {
+            display: grid;
+            grid-gap: 1rem;
+
+            .health-concern-description {
+                text-align: center;
+            }
+
+            .options {
+                display: flex;
+                flex-flow: row nowrap;
+                gap: 1rem;
+
+                & > .checkbox-wrapper {
+                    flex: 1 0 20%;
+                    display: grid;
+                    grid-gap: 1rem;
+                    justify-items: center;
+
+                    .wrapper {
+                        display: grid;
+                        
+                        .emoji {
+                            grid-row: 1/-1;
+                            grid-column: 1/-1;
+                        }
+
+                        input {
+                            grid-row: 1;
+                            grid-column: 1/-1;
+                            margin-left: 0.5rem;
+                            z-index: 2;
+                        }
+                    }
+                    
+                }
+            }
+        }
+    }
+
+    .recalculator-wrapper {
+        text-align: center;
+        display: grid;
+        grid-gap: 2rem;
+        padding: 1rem 0;
     }
 
     ul {
