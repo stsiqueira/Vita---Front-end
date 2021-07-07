@@ -6,6 +6,7 @@
 import React from 'react';
 import Button from '../compositableComponents/Button'
 import { useHistory } from "react-router-dom";
+import NutrientCalculatorImg from "../../img/others/nutrient_calculator_home.svg";
 
 
 const NutrientCalculatorStart = () => {
@@ -20,7 +21,7 @@ const NutrientCalculatorStart = () => {
        <div className="calculator-start-wrapper">
            <h2 className="calculator-start-title-mobile">Nutrient Calculator</h2>
            <div className="image-wrapper">
-                <img src="https://picsum.photos/400" alt="dummy" /> 
+                <img src={NutrientCalculatorImg} alt="dummy" /> 
            </div>
            <div className="calculator-start-description">
                 <h2 className="calculator-start-title">Nutrient Calculator</h2>
@@ -33,7 +34,7 @@ const NutrientCalculatorStart = () => {
                 <div className="button-wrapper">
                     <Button 
                         text="Start" 
-                        classname="calculator-start-button" 
+                        classname="calculator-start-button btn" 
                         callback= {buttonClick}
                     />
                 </div> 

@@ -1,52 +1,77 @@
 .calculator-start-wrapper {
     margin: 1rem;
-    max-width: 1200px;
+    max-width: $max-width;
     padding: 1rem;
     display: flex;
-    border: 1px solid #ccc;
+    background: #fff;
+    border-radius: 5px;
     flex-flow: column wrap;
     gap: 2rem;
+    // min-height: 80vh;
 
-    @media only screen and (min-width: 650px) {
+    @media only screen and (min-width: $tablet-size) {
         display: grid;
         grid-template-columns: 1fr 1fr;
     }
 
     .calculator-start-title-mobile {
         text-align: center;
-        @media only screen and (min-width: 650px) {
+        max-width: 150px;
+        margin: auto;
+        color: $primary-color;
+        @media only screen and (min-width: $tablet-size) {
             display: none;
+
         }
     }
 
     .image-wrapper {
         text-align: center;
+        img{
+            max-width: 250px;
+            @media only screen and (min-width: $tablet-size) {
+                max-width: 400px;
+            }
+        }
+        
     }
 
     .calculator-start-description {
-    
-        @media only screen and (min-width: 650px) {
+        p{
+            max-width: 400px;
+            margin: auto;
+            @media only screen and (min-width: $tablet-size) {
+                margin-left: 2rem;
+            }
+
+            
+        }
+        @media only screen and (min-width: $tablet-size) {
             grid-column: 1/2;
             grid-row: 1;
             display: grid;
-            grid-gap: 2rem;
+            grid-gap: .5rem;
         }
         .calculator-start-title {
             display: none;
-
-            @media only screen and (min-width: 650px) {
-                display: block;
+            color: $primary-color;
+            @media only screen and (min-width: $tablet-size) {
+     
+                margin: 0 2rem;
+                display: flex;
+                align-items: flex-end;
             }
         }
 
         .button-wrapper {
             text-align: center;
-
-            button {
-                padding: .5rem 1rem;
-                background: darkgrey;
-                color: white;
-                border: none;
+            margin: 3rem 0;
+        
+            @media only screen and (min-width: $tablet-size) {
+                text-align: left;
+                display: flex;
+                justify-content: flex-start;
+                margin: 2rem;
             }
         }
     }
