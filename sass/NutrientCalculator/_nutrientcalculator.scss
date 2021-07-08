@@ -30,15 +30,35 @@
         flex-flow: column wrap;
         gap: 2rem;
 
+        .input-unit-wrapper {
+            display: flex;
+            flex-flow: row wrap;
+            grid-gap: .5rem;
+            align-items: center;
+            justify-content: flex-end;
+        }
+
+        .input-weight {
+            width: 20%;
+        }
+
+        .metric-wrapper {
+            display: flex;
+            justify-content: space-evenly;
+        }
+
         .nutrient-calculator-height-wrapper {
             display: flex;
-            flex-flow: column nowrap;
-            gap: .5rem;
+            flex-flow: row nowrap;
+            grid-gap: .5rem;
+            justify-content: space-between;
+            align-items: center;
 
             .height-input-wrapper {
                 display: flex;
                 flex-flow: row nowrap;
-                gap: .5rem;
+                align-items: center;
+                grid-gap: .5rem;
             }
         }
 
@@ -47,8 +67,22 @@
             display: flex;
             flex-flow: row nowrap;
             justify-content: space-between;
+            align-items: center;
 
-            input,
+            .gender-options-wrapper {
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+                gap: 1.5rem;
+
+                .gender-options {
+                    display: flex;
+                    align-items: center;
+                    grid-gap: .5rem;
+                }
+            }
+        }
+
+        .preg-lact-wrapper {
             select {
                 width: 20%;
             }
@@ -57,11 +91,11 @@
 
     .nutrient-calculator-activity-wrapper {
         display: flex;
-        flex-flow: column nowrap;
+        flex-flow: row nowrap;
         gap: .5rem;
-        
+        justify-content: space-between;
         input {
-            width: 100%;
+            width: 20%;
         }
     }
 

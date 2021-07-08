@@ -3,12 +3,13 @@ import { useHistory } from "react-router-dom";
 import Labels from './compositableComponents/Label';
 import Select from './compositableComponents/Select';
 import { fstatusData as fdata, activityData, genderData } from '../data/data.json';
+import Button from './compositableComponents/Button';
 
 const NutrientForm = () => {
     const history = useHistory()
-    // const [ metric, setMetric ] = useState(true)
+    const [ metric, setMetric ] = useState("metric")
     const [ gender, setGender ] = useState("MALE");
-    const [ age, setAge ] = useState(5);
+    const [ age, setAge ] = useState(metric === "standard" ? 6 : 11);
     const [ fstatus, setFstatus ] = useState("");
     const [ weight, setWeight ] = useState(0);
     const [ heightfeet, setHeightfeet ] = useState(0);
@@ -53,6 +54,12 @@ const NutrientForm = () => {
             })
         }
     }
+
+    const metricToggle = (value) => {
+        setMetric(value)
+        console.log(value)
+        console.log(age)
+    }
   
     return (
         <div className="nutrient-calculator-wrapper">
@@ -65,104 +72,154 @@ const NutrientForm = () => {
                     </p>
                 </div>
 
-                <form className="nutrient-calculator-form-wrapper" onSubmit={e => { handleSubmit(e) }}>
+                <div className="nutrient-calculator-form-wrapper">
 
-                    <div className="nutrient-calculator-select-wrapper">
-                        <Labels for="gender" text="What is your Gender?"/>
-                        <Select 
-                            name="gender" 
-                            value={gender}
-                            setvalue={setGender} 
-                            options={genderData}
-                        />
+                
+
+                    <div className="metric-wrapper">
+                        {
+                            ["metric", "standard"].map(metric => (
+                                <Button 
+                                    value={metric} 
+                                    classname={`unit-button ${metric}`}
+                                    text={metric}
+                                    callback={metricToggle}
+                                    args={metric}
+                                />
+                            ))
+                        }
                     </div>
 
-                    { gender !== "MALE" ? (
+                    <form className="nutrient-calculator-form-wrapper" onSubmit={e => { handleSubmit(e) }}>
+
                         <div className="nutrient-calculator-input-wrapper">
-                            <Labels for="F_STATUS" text="Lactating or pregnant?"/>
+                            <Labels for="age" text="What is your age?"/>
+                            <div className="input-unit-wrapper">
+                                <input
+                                    className="input-age" 
+                                    name='age' 
+                                    type='number'
+                                    min="5"
+                                    max="100"
+                                    value={age}
+                                    onChange={e => setAge(e.target.value)}
+                                    required
+                                />
+                                <span>years</span>
+                            </div>
+                        </div>
+
+                        <div className="nutrient-calculator-input-wrapper">
+                            <Labels for="weight" text="How much do you weight?"/>
+                            <div className="input-unit-wrapper">
+                                <input
+                                    className="input-weight" 
+                                    name='weight' 
+                                    type='number' 
+                                    
+                                    max={metric === "standard" ? "400" : "250"}
+                                    value={weight}
+                                    onChange={e => setWeight(e.target.value)}
+                                    required
+                                />
+                                
+                                <span>{metric === "standard" ? "pounds" : "kilograms"}</span>
+                            </div>
+                        </div>
+
+                        <div className="nutrient-calculator-height-wrapper" id="height-standard">
+                            <p>What is your height?</p>
+                            <div className="height-input-wrapper">
+                                {
+                                    metric === "standard" ?
+                                    <>
+                                    <input
+                                        className="input-height-feet" 
+                                        name='HEIGHT_FEET' 
+                                        type='number' 
+                                        min="0"
+                                        max="8"
+                                        value={heightfeet}
+                                        onChange={e => setHeightfeet(e.target.value)}
+                                        required
+                                    />
+                                    <Labels for="HEIGHT_FEET" text="feet"/>
+                                    <input
+                                        className="input-height-inches" 
+                                        name='HEIGHT_INCHES' 
+                                        type='number' 
+                                        min="0"
+                                        max="11"
+                                        value={heightinches}
+                                        onChange={e => setHeightinches(e.target.value)}
+                                        required
+                                    />
+                                    <Labels for="HEIGHT_INCHES" text="inches"/> 
+                                    </>:
+                                    <>
+                                        <input
+                                            className="input-height-feet" 
+                                            name='height-centimeters' 
+                                            type='number' 
+                                            min="0"
+                                            max="300"
+                                            value={heightfeet}
+                                            onChange={e => setHeightfeet(e.target.value)}
+                                            required
+                                        />
+                                        <Labels for="height-centimeters" text="centimeters"/>
+                                    </>
+                                }
+                            </div>
+                        </div>
+
+                        <div className="nutrient-calculator-select-wrapper">
+                            <Labels for="gender" text="What is your gender?"/>
+                            <div className="gender-options-wrapper">
+                                {
+                                    genderData.map((gender) => ( 
+                                        <span key={gender.text} className="gender-options">
+
+                                            <input type="radio" id={gender.text} name="gender" className="gender" value={gender.text} onChange={e => setGender(e.target.value)}/>
+
+                                            <Labels for="gender" text={gender.text.charAt(0).toUpperCase()}/>
+                                        </span>
+                                    ))
+                                }
+                            </div>
+                        </div>
+
+                        { gender !== "MALE" ? (
+                            <div className="nutrient-calculator-input-wrapper preg-lact-wrapper">
+                                <Labels for="F_STATUS" text=" Pregnant or Lactating?"/>
+                                <Select 
+                                    name="F_STATUS" 
+                                    value={fstatus} 
+                                    setvalue={setFstatus} 
+                                    options={fdata} 
+                                />
+                                
+                            </div>) : <></>
+                        }
+
+                        <div className="nutrient-calculator-activity-wrapper">
+                            <Labels for="ACTIVITY" text="How active are you?"/>
                             <Select 
-                                name="F_STATUS" 
-                                value={fstatus} 
-                                setvalue={setFstatus} 
-                                options={fdata} 
-                            />
-                            
-                        </div>) : <></>
-                    }
-
-                    <div className="nutrient-calculator-input-wrapper">
-                        <Labels for="age" text="What is your Age?"/>
-                        <input
-                            className="input-age" 
-                            name='age' 
-                            type='number'
-                            min="5"
-                            max="100"
-                            value={age}
-                            onChange={e => setAge(e.target.value)}
-                            required
-                        />
-                    </div>
-
-                    <div className="nutrient-calculator-input-wrapper">
-                        <Labels for="weight" text="How much do you weight? (pounds)"/>
-                        <input
-                            className="input-weight" 
-                            name='weight' 
-                            type='number' 
-                            min="10"
-                            max="400"
-                            value={weight}
-                            onChange={e => setWeight(e.target.value)}
-                            required
-                        />
-                    </div>
-
-                    <div className="nutrient-calculator-height-wrapper" id="height-standard">
-                        <p>What's your height (feet)?</p>
-                        <div className="height-input-wrapper">
-                            <Labels for="HEIGHT_FEET" text="feet:"/>
-                            <input
-                                className="input-height-feet" 
-                                name='HEIGHT_FEET' 
-                                type='number' 
-                                min="0"
-                                max="8"
-                                value={heightfeet}
-                                onChange={e => setHeightfeet(e.target.value)}
-                                required
-                            />
-                            <Labels for="HEIGHT_INCHES" text="inches:"/>
-                            <input
-                                className="input-height-inches" 
-                                name='HEIGHT_INCHES' 
-                                type='number' 
-                                min="0"
-                                max="11"
-                                value={heightinches}
-                                onChange={e => setHeightinches(e.target.value)}
-                                required
+                                name="ACTIVITY" 
+                                value={activity}
+                                setvalue={setActivity} 
+                                options={activityData}
                             />
                         </div>
-                    </div>
-
-                    <div className="nutrient-calculator-activity-wrapper">
-                        <Labels for="ACTIVITY" text="How active are you?"/>
-                        <Select 
-                            name="ACTIVITY" 
-                            value={activity}
-                            setvalue={setActivity} 
-                            options={activityData}
-                        />
-                    </div>
-                    <div className="nutrient-calculator-input-wrapper">
-                        <input
-                            className="input-submit" 
-                            type='submit' 
-                            value='Calculate' 
-                        />
-                    </div>
-                </form>
+                        <div className="nutrient-calculator-input-wrapper">
+                            <input
+                                className="input-submit" 
+                                type='submit' 
+                                value='Calculate' 
+                            />
+                        </div>
+                    </form>
+                </div>
             </div>
       </div>
     )
