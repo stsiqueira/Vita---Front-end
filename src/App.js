@@ -12,12 +12,17 @@ import DescriptionPage from './components/DescriptionPage';
 import NutrientCalculatorStart from './components/sub_components/NutrientCalculatorStart';
 import NutrientResults from './components/sub_components/NutrientResults';
 import NutrientForm from './components/Calculator'
+import { useState } from 'react';
 
 
 function App() {
+  const [showMenu, setShowMenu] = useState(false);
   return (
-    <div className="App">
-      <Header />{/********************   HEADER COMPONENT  ***************************/}
+    <div className={showMenu ? "App blocked" : "App"}>
+      <Header 
+          showMenu={showMenu}
+          setShowMenu={setShowMenu}
+        />{/********************   HEADER COMPONENT  ***************************/}
       <div className="main">
 {/*
 ======================================================================================

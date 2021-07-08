@@ -10,21 +10,31 @@ import { Link } from 'react-router-dom'
 
 const Navigation = (props) => {
 
+
     return (
-       <div className="navigation">
+       <div className={props.showMenu ? "navigation mobileMenu" : "navigation"}>
            <ul>
-               <Link to='/NutrientCalculator'>
-                <li>Nutrient Calculator</li>
-               </Link>
-               <Link to='Quiz'>
-               <li>Quiz</li>
-               </Link>
-               <Link to='Contact'>
-               <li>Contact</li>
-               </Link>
-               <Link to='Team'>
-               <li>Team</li>
-               </Link>
+                <li>
+                    <Link to='/NutrientCalculator' onClick={()=> props.setShowMenu(!props.showMenu)}>
+                        Nutrient Calculator
+                    </Link>
+                </li>
+                <li>
+                    <Link to='Quiz' onClick={()=> props.setShowMenu(!props.showMenu)}> 
+                        Quiz
+                    </Link>   
+                </li>
+                <li>
+                    <Link to='Contact' onClick={()=> props.setShowMenu(!props.showMenu)}>
+                        Contact
+                    </Link>
+                </li>
+                <li>
+                    <Link to='Team' onClick={()=> props.setShowMenu(!props.showMenu)}> 
+                        Team
+                    </Link>        
+                </li>
+
            </ul>
        </div>
     )

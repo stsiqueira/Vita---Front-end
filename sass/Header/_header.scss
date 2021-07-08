@@ -12,5 +12,15 @@
     a{
         text-decoration: none;
     }
+    .menuButton{
+        display: flex;
+        flex-flow: column;
+        justify-content: center;
+        align-items: center;
+        svg{
+            font-size: 2rem;
+            color: white;
+        }
+    }
 }
 
