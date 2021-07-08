@@ -2,7 +2,8 @@
 // ====================================================
 // Font
 // ====================================================
-$main-font-family: sans-serif;
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap');
+$main-font-family: 'Quicksand', sans-serif;
 // ====================================================
 // Media Screens
 // ====================================================
@@ -69,8 +70,10 @@ $bg-color-correct-answer: #BFF095;
 $bg-color-wrong-answer: #FDBCBC;
 $color-detail: #707070;
 $color-border-answer:  #707070;
-
-
+// ====================================================
+// Nutrient Calculator
+// ====================================================
+$bg-color-healthConcern: #FFEDD1;
 // ====================================================
 // Footer
 // ====================================================

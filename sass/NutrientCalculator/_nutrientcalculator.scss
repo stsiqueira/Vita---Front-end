@@ -2,17 +2,14 @@
     margin: 1rem;
     max-width: 1200px;
     padding: 1rem;
-    border: 1px solid #ccc;
+
+    background:#fff;
+    border-radius: 5px;
     
 
-    @media only screen and (min-width: 650px) {
+    @media only screen and (min-width: $tablet-size) {
+        border-radius: 10px;
         max-width: 70%;
-        margin-left: auto;
-        margin-right: auto;
-    }
-
-    @media only screen and (min-width: 950px) {
-        max-width: 40%;
         margin-left: auto;
         margin-right: auto;
     }
@@ -29,6 +26,14 @@
         display: flex;
         flex-flow: column wrap;
         gap: 2rem;
+        .heading{
+            h2{
+                max-width: 150px;
+                margin: 1.5rem auto 2rem;
+                color: $primary-color;
+                text-align: center;
+            }
+        }
 
         .input-unit-wrapper {
             display: flex;
@@ -62,7 +67,6 @@
             }
         }
 
-        .nutrient-calculator-input-wrapper,
         .nutrient-calculator-select-wrapper {
             display: flex;
             flex-flow: row nowrap;
@@ -87,6 +91,13 @@
                 width: 20%;
             }
         }
+        .nutrient-calculator-input-wrapper{
+            border: 1px solid red;
+            .input-submit{
+                margin: auto;
+            }
+        }
+
     }
 
     .nutrient-calculator-activity-wrapper {

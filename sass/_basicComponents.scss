@@ -37,14 +37,13 @@
     }
 }
 input{
-    background: $primary-color-shade;
-    border: none;
+    
+    border: 2px solid $primary-color;
     border-radius: 5px;
     height: 40px;
 }
 textarea{
-    background: $primary-color-shade;
-    border: none;
+    border: 2px solid $primary-color;
     border-radius: 5px;
     height: 150px;
     resize: none;
@@ -58,4 +57,19 @@ input[type="submit"]{
     border-radius: 5px;
     background: $button-bg-defaultColor;
     color: $button-font-Color-darkBG;
+}
+*{
+    font-family: $main-font-family;
+}
+h1{
+    font-size: 45px;
+}
+h2{
+    font-size: 28px;
+}
+h3{
+    font-size: 20px;
+}
+p{
+    font-size: 16px;
 }

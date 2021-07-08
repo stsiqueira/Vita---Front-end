@@ -1,0 +1,40 @@
+.recalculate-wrapper{
+  background: $primary-color-shade;
+  margin: 0 10px;
+  padding: 1.5rem 10px;
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  align-items: center;
+  .image-text-wrapper{
+    background: #fff;
+    width: 100%;
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-items: center;
+    padding: 1.5rem 0;
+    border-radius: 5px;
+    @media only screen and (min-width: $tablet-size) {
+      border-radius: 10px;
+    } 
+    img{
+      width: 50%;
+      max-width: 200px;
+      margin-bottom: 1.5rem;
+
+    }
+
+  }
+  .button-wrapper{
+    background: #fff;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    padding-bottom: 2.5rem;
+    border-radius: 5px;
+    @media only screen and (min-width: $tablet-size) {
+      border-radius: 10px;
+    } 
+  }
+}

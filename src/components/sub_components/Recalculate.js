@@ -1,16 +1,17 @@
 import Button from "../compositableComponents/Button"
+import NutrientCalculatorImg from "../../img/others/nutrient_calculator_icon.svg"
 
 const Recalculate = ({parentClassname, descriptionClassname, descriptionText,buttonWrapperClassname, buttonClassname, buttonText, callback, args}) => {
     return (
         <div className={`recalculate-wrapper ${parentClassname}`}>
             <div className="image-text-wrapper">
-                <img src="https://picsum.photos/200" alt="right wing" />
+                <img src={NutrientCalculatorImg} alt="Nutrient Calculator" />
                 <p className={descriptionClassname}>
                     {descriptionText}
                 </p>
             </div>
             <div className={`button-wrapper ${buttonWrapperClassname}`}>
-                <Button text={buttonText} classname={buttonClassname} callback={callback} />
+                <Button text={buttonText} classname={`${buttonClassname} btn`} callback={callback} />
             </div>
         </div>
     )

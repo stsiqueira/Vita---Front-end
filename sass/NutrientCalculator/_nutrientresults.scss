@@ -1,19 +1,33 @@
 .nutrient-results-wrapper {
-    max-width: 1200px;
+    max-width: $max-width;
     margin: 1rem auto;
     display: flex;
     flex-flow: column nowrap;
     gap: 2rem;
 
     .nutrient-calculator-introduction {
-        border: 1px solid #ccc;
+        margin:0 10px;
+        background: #fff;
+        border-radius: 5px;
         margin-top: 2rem;
+        padding: 0 10px;
+        @media only screen and (min-width: $tablet-size) {
+            border-radius: 10px;
+        }
+
 
         .nutrient-calculator-header {
-            max-width: 60%;
             margin: 0 auto;
             text-align: center;
             padding: .5rem 0 1rem 0;
+            h2{
+                margin-bottom: 2rem;
+            }
+            p{
+                display: flex;
+                text-align: left;
+                max-width: 100%;
+            }
         }
     
     }
@@ -39,21 +53,38 @@
         .health-concern-wrapper {
             display: grid;
             grid-gap: 1rem;
+            border: 1px solid black;
+            background: #fff;
+            border-radius: 5px;
+            padding: 0 10px;
+            @media only screen and (min-width: $tablet-size) {
+                border-radius: 10px;
+            }
 
             .health-concern-description {
-                text-align: center;
+                text-align: left;
+                h2{
+                    text-align: center;
+                    margin: 2rem 0;
+                }
             }
 
             .options {
                 display: flex;
-                flex-flow: row nowrap;
+                flex-flow: row wrap;
                 gap: 1rem;
 
                 & > .checkbox-wrapper {
-                    flex: 1 0 20%;
+                    flex: 0 0 48%;
                     display: grid;
                     grid-gap: 1rem;
                     justify-items: center;
+                    padding: 1rem;
+                    background: $bg-color-healthConcern;
+                    border-radius: 5px;
+                    @media only screen and (min-width: $tablet-size) {
+                        border-radius: 10px;
+                    }
 
                     .wrapper {
                         display: grid;

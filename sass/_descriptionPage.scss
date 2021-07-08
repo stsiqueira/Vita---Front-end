@@ -83,6 +83,15 @@ img {
   }
 }
 
+.searchNutrient{
+
+  display: flex;
+  flex-direction: column;
+  .vitaminsChart, .mineralsChart{
+    height: 350px;    
+  }
+}
+
 .descriptionPage {
   max-width: 1200px;
   margin: auto;

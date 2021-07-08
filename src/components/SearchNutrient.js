@@ -25,12 +25,67 @@ const SearchNutrient = (props) => {
                 {
                     id:element,
                     label:element,
-                    value:1
+                    value:1,
+                    color: assignColor(element)
                 }
             )
         })
         
         return data
+    }
+
+    const assignColor = (nutrientName) => {
+       let color;
+
+       switch(nutrientName) {
+        case "Vitamin A":
+          color ="#EABB36";
+          break;
+        case "Vitamin C":
+         color ="#F69128";
+        break;
+          case "Vitamin B6":
+         color ="#EB3860";
+          break;
+        case "Vitamin E":
+         color ="#E8A113";
+        break;
+          case "Vitamin K":
+         color ="#B71174";
+          break;
+        case "Vitamin B3":
+         color ="#F56224";
+        break;
+          case "Vitamin B5":
+         color ="#F1483D";
+          break;
+        case "Calcium":
+         color ="#1898E8";
+        break;
+          case "Copper":
+         color ="#168B16";
+          break;
+        case "Iron":
+         color ="#35C985";
+        break;
+          case "Magnesium":
+         color ="#30B553";
+          break;
+        case "Phosphorus":
+         color ="#6D23B5";
+        break;
+          case "Pottasium":
+         color ="#20B6CE";
+          break;
+        case "Zinc":
+         color ="#1A4BE5";
+
+          break;
+        default:
+          color = "hotpink" 
+      }
+
+        return color;
     }
 
     //First Load
@@ -53,39 +108,17 @@ const SearchNutrient = (props) => {
         }
     }, []);
 
-    const margin = { top: 30, right: 200, bottom: 30, left: 30 };
-    const styles = {
-        root: {
-          textAlign: "center",
-          position: "relative",
-        },
-        overlay: {
-          position: "absolute",
-          top: 0,
-          right: margin.right,
-          bottom: 0,
-          left: margin.left,
-          display: "flex",
-          flexDirection: "column",
-          alignItems: "center",
-          justifyContent: "center",
-          color: "#000",
-          textAlign: "center",
-          pointerEvents: "none"
-        }
-    };
-
     return (
         <div className="searchNutrient">
 
             <div className="vitaminsChart">
-                <MyResponsivePie data={vitaminArray} callback={undefined} />
+                <MyResponsivePie data={vitaminArray} callback={undefined} legendFlag="false" />
                 {/* <div className="overlay" style={styles.overlay}>
                     <span>Vitamins</span>
                 </div> */}
             </div>
             <div className="mineralsChart">
-                <MyResponsivePie data={mineralArray} callback={undefined} />
+                <MyResponsivePie data={mineralArray} callback={undefined} legendFlag="false" />
                 {/* <div className="overlay" style={styles.overlay}>
                     <span>Minerals</span>
                 </div> */}

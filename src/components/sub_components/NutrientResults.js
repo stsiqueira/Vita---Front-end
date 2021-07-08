@@ -108,14 +108,14 @@ const NutrientResults = (props) => {
         <div className="nutrient-results-wrapper">
            <div className="nutrient-calculator-introduction">
                 <div className="nutrient-calculator-header">
-                    <h2>Nutrient Calculator</h2>
+                    <h2 className="result-heading">Your Results</h2>
                     <p>
                             Here are your results. This suggestions are in no way medical advice. If you are feeling seriously unwell, please, go see a doctor. Your physician’s word is final. This calculator is here to help you to make your daily diet healthier, not to substitute medical advice.
                     </p>
                 </div>
             </div>
             <div className="results-wrapper">
-                <h2 className="result-heading">Your Results</h2>
+                
                 <div className="chart-vitamin-result-wrapper">
                     <div className="vitamin-result-wrapper">
                         <UnorderedList heading="Vitamin" classname="test" name="test" arr={vitamin} flag={true}/>

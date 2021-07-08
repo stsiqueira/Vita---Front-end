@@ -26,6 +26,8 @@
     flex: 1;
 }
 @import "../sass/subscribe";
+@import "../sass/search";
+@import "../sass/recalculate";
 
 
 //============== ABOUT=============
@@ -43,8 +45,8 @@
 @import "../sass/NutrientCalculator/nutrientcalculator";
 @import "../sass/NutrientCalculator/nutrientstart";
 
-//============== DESCRIPTION PAGE =============
-@import "../sass/descriptionPage";
+// //============== DESCRIPTION PAGE =============
+// @import "../sass/descriptionPage";
 
 //============== FOOTER =============
 @import "../sass/Footer/footer";
