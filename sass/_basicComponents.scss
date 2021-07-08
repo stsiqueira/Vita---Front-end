@@ -92,3 +92,11 @@ p{
     justify-content: center;
     background: $primary-color-shade;
 }
+.unit-button{
+    background: #fff;
+    border-radius: 5px;
+    border: 2px solid $primary-color-shade;
+    height: 40px;
+    font-size: 20px;
+    color: $primary-color;
+}
