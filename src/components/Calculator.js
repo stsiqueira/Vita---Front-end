@@ -129,7 +129,7 @@ const NutrientForm = () => {
 
                         <div className="nutrient-calculator-height-wrapper" id="height-standard">
                             <p>What is your height?</p>
-                            <div className="height-input-wrapper">
+                            <div className="height-input-wrapper ">
                                 {
                                     metric === "standard" ?
                                     <>
