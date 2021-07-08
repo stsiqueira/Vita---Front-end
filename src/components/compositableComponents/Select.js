@@ -10,7 +10,7 @@ const Select = (props) => {
             required
         >
             {props.options.map((option) => (
-                <option key={option.value} value={option.value}>{option.text}</option>
+                <option key={option.value} disabled={props.disable} value={option.value}>{option.text}</option>
             ))}
         </select>
     )

@@ -52,6 +52,7 @@ const NutrientResults = (props) => {
             element["label"] = element.name.replace("Vitamin ", "")
             element["value"] = convertingUnits(element.recommended_intake)
             element["color"] = element.name.includes("Vitamin") ? vitaminColor[element.name] : mineralColor[element.name]
+
             if(element.name === "Niacin") {
                 element["color"] = vitaminColor["Niacin"]
                 element["id"] = "Vitamin B3"
@@ -76,7 +77,7 @@ const NutrientResults = (props) => {
 
     const [ mineralArray, setMineralArray ] = useState(addKeyToJsonArray(mineral));
 
-    const [ innerText, setinnerText ] = useState("");
+    // const [ innerText, setinnerText ] = useState("");
 
 
     const recalculateClick = () => {
