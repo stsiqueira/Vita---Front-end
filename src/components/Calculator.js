@@ -189,18 +189,18 @@ const NutrientForm = () => {
                             </div>
                         </div>
 
-                        { gender !== "MALE" ? (
-                            <div className="nutrient-calculator-input-wrapper preg-lact-wrapper">
-                                <Labels for="F_STATUS" text=" Pregnant or Lactating?"/>
-                                <Select 
-                                    name="F_STATUS" 
-                                    value={fstatus} 
-                                    setvalue={setFstatus} 
-                                    options={fdata} 
-                                />
-                                
-                            </div>) : <></>
-                        }
+                        
+                        <div className="nutrient-calculator-input-wrapper preg-lact-wrapper">
+                            <Labels for="F_STATUS" text=" Pregnant or Lactating?"/>
+                            <Select 
+                                name="F_STATUS" 
+                                value={fstatus} 
+                                setvalue={setFstatus} 
+                                options={fdata}
+                                disable={gender === "MALE" ? true : null}
+                            />
+                            
+                        </div>
 
                         <div className="nutrient-calculator-activity-wrapper">
                             <Labels for="ACTIVITY" text="How active are you?"/>
