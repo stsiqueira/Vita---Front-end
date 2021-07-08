@@ -112,13 +112,13 @@ const SearchNutrient = (props) => {
         <div className="searchNutrient">
 
             <div className="vitaminsChart">
-                <MyResponsivePie data={vitaminArray} callback={undefined} legendFlag="false" />
+                <MyResponsivePie data={vitaminArray} callback={undefined} legendFlag="true" />
                 {/* <div className="overlay" style={styles.overlay}>
                     <span>Vitamins</span>
                 </div> */}
             </div>
             <div className="mineralsChart">
-                <MyResponsivePie data={mineralArray} callback={undefined} legendFlag="false" />
+                <MyResponsivePie data={mineralArray} callback={undefined} legendFlag="true" />
                 {/* <div className="overlay" style={styles.overlay}>
                     <span>Minerals</span>
                 </div> */}
