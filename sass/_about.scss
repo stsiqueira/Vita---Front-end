@@ -32,6 +32,7 @@
     @media screen and (min-width:$desktop-size) {
         display: grid;
         grid-template-columns: 1fr 1.5fr;
+        padding: 3rem 10rem;
         .image{
             grid-row: span 2;
             max-width: 300px;

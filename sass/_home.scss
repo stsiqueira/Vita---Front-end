@@ -1,0 +1,29 @@
+.home{
+    
+    @media screen and (min-width:$desktop-size) {
+        display: flex;
+        flex-flow: row wrap;
+
+        .about,
+        .search,
+        .searchNutrient{
+            flex: 1 0 90%;
+        }
+        .recalculate-wrapper,
+        .subscribe-container{
+            flex: 0 0 35%;
+            
+        }
+        
+        .recalculate-wrapper{
+            margin-left: 10rem;
+            padding: 1.5rem 0;
+            
+        }
+        .subscribe-container{
+            margin-right: 10rem;
+            padding: 1.5rem 0;
+        }
+    }
+ 
+}

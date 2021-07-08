@@ -6,9 +6,9 @@
     background:#fff;
     border-radius: 5px;
     padding: 0 10px;
-    margin-bottom: 2rem;
     @media only screen and (min-width: $tablet-size) {
         border-radius: 10px;
+        padding: 0 10rem;
     }
     h2{
         background: $primary-color-shade;
@@ -23,6 +23,9 @@
         background: $primary-color-shade;
         width: 100%;
         padding: 0 10px 2rem;
+        @media only screen and (min-width: $tablet-size) {
+         padding: 0 10rem;
+        }
     }
     .userSearchControls {
         background: $primary-color-shade;
@@ -37,17 +40,38 @@
       input[type="text"] {
         margin-right: 1rem;
         width: 100%;
+        padding: 0 2.5rem;
+        &::placeholder{
+          
+        }
       }
       button{
-          margin: 2rem 0;
+          margin: 2rem 0 2rem 2rem;
       }
+      @media screen and (min-width:$desktop-size) {
+        flex-flow: row nowrap;
+        border-bottom-left-radius: 10px;
+        border-bottom-right-radius: 10px;
+        padding: 0 10rem;
+        input[type="email"]{
+            margin-right: 1rem;
+        }
+    }
     }
   
     /*the container must be positioned relative:*/
     .autocomplete {
       position: relative;
-      display: inline-block;
+      display: inline-blflexck;
       width: 100%;
+      svg{
+        background:#fff;
+        font-size: 1.7rem;
+        position: relative;
+        top: 2.3rem; left: .5rem;
+        color: $primary-color;
+
+      }
     }
   
   

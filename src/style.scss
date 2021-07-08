@@ -14,17 +14,7 @@
 @import "../sass/basicComponents";
 
 //============== HOME =============
-.App{
-    background: $primary-color-shade;
-    display: flex;
-    flex-flow: column nowrap;
-    justify-content: space-between;
-    height: 100vh;
-}
-.main{
-    // min-height: 86vh;
-    flex: 1;
-}
+@import "../sass/home";
 @import "../sass/subscribe";
 @import "../sass/search";
 @import "../sass/recalculate";
