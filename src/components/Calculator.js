@@ -16,6 +16,15 @@ const NutrientForm = () => {
     const [ heightinches, setHeightinches ] = useState(0);
     const [ activity, setActivity ] = useState("");
 
+    // const conditionalHandling = () => {
+    //     if((age < 13 || age > 40) && fstatus) {
+    //         return false
+    //     }
+    //     if (height < -1 || height > 220) {
+    //         return false
+    //     }
+    //     if (weight < -1 )
+    // }
 
     const handleSubmit= async (e) => {
         e.preventDefault();
@@ -116,7 +125,7 @@ const NutrientForm = () => {
                                     name='weight' 
                                     type='number' 
                                     
-                                    max={metric === "standard" ? "400" : "250"}
+                                    max={metric === "standard" ? "280" : "140"}
                                     value={weight}
                                     onChange={e => setWeight(e.target.value)}
                                     required
@@ -137,7 +146,7 @@ const NutrientForm = () => {
                                         name='HEIGHT_FEET' 
                                         type='number' 
                                         min="0"
-                                        max="8"
+                                        max="6"
                                         value={heightfeet}
                                         onChange={e => setHeightfeet(e.target.value)}
                                         required
@@ -161,7 +170,7 @@ const NutrientForm = () => {
                                             name='height-centimeters' 
                                             type='number' 
                                             min="0"
-                                            max="300"
+                                            max="220"
                                             value={heightfeet}
                                             onChange={e => setHeightfeet(e.target.value)}
                                             required
@@ -190,14 +199,14 @@ const NutrientForm = () => {
 
                         
                         <div className="nutrient-calculator-input-wrapper preg-lact-wrapper">
-                            <Labels for="F_STATUS" text=" Pregnant or Lactating?" classname={gender === "MALE" ? "disable" : null}/>
+                            <Labels for="F_STATUS" text=" Pregnant or Lactating?" classname={gender === "MALE" ? "disable" : age > 13 && age < 40? null : "disable"}/>
                             <Select 
                                 name="F_STATUS" 
                                 value={fstatus} 
                                 setvalue={setFstatus} 
                                 options={fdata}
-                                disable={gender === "MALE" ? "disabled" : null}
-                                require={gender === "MALE" ? null : true}
+                                disable={gender === "MALE" ? "disabled" : age > 13 && age < 40? null : "disabled"}
+                                require={gender === "MALE" ? "disabled" : age > 13 && age < 40? null : "disabled"}
                             />
                             
                         </div>

@@ -9,7 +9,7 @@ import { ResponsivePie } from '@nivo/pie'
 
 
 const MyResponsivePie = ({ data, callback, legendFlag, centreText }) => {
-
+    console.log()
     const CenteredMetric = ({ dataWithArc, centerX, centerY, text="Vitamin" }) => {
         return (
             <text
@@ -18,7 +18,7 @@ const MyResponsivePie = ({ data, callback, legendFlag, centreText }) => {
                 textAnchor="middle"
                 dominantBaseline="central"
                 style={{
-                    fontSize: '2rem',
+                    fontSize: `${window.innerWidth < 600 ? "1.5rem" : "2rem"}`,
                     fontWeight: 600,
                 }}
             >
@@ -80,7 +80,7 @@ const MyResponsivePie = ({ data, callback, legendFlag, centreText }) => {
             theme={{
                 "background": "transparent",
                 "textColor": "#ffffff",
-                "fontSize": 24
+                "fontSize": `${window.innerWidth < 600 ? "1.5rem" : "1.7rem"}`
             }}
         />
     )

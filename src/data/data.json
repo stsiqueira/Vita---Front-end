@@ -30,6 +30,15 @@
         "Vitamin B3": "#f56224",
         "Vitamin B5": "#f1483d"
     },
+    "vitaminSort": {
+        "Vitamin A": 1,
+        "Vitamin E": 2,
+        "Vitamin C": 3,
+        "Vitamin B3": 4,
+        "Vitamin B5": 5,
+        "Vitamin B6": 6,
+        "Vitamin K": 7
+    },
     "mineralColor": {
         "Calcium": "#66dbfd",
         "Copper": "#168b16",
@@ -47,7 +56,14 @@
         "Phosphorus": "Ph",
         "Potassium": "K",
         "Zinc": "Zn"
+    },
+    "mineralSort": {
+        "Phosphorus": 1,
+        "Zinc": 2,
+        "Calcium": 3,
+        "Potassium": 4,
+        "Iron": 5,
+        "Magnesium": 6,
+        "Copper": 7
     }
-
-
 }

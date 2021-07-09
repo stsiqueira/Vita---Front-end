@@ -1,21 +1,28 @@
 
-const UnorderedList = ({ heading, name, classname, arr, flag }) => {
-
+const UnorderedList = ({ headflag, heading, name, classname, borderclassname, rectclassname, arr, flag }) => {
+    console.log(headflag)
     return (
         <div className={classname}>
-            <h3>
-                {heading}
-            </h3>
+            {headflag ? 
+                 <></>:
+                <h3>
+                    {heading}
+                </h3>
+            }
             <ul 
                 name={name} 
                 id={name}
             >
                 {flag ? 
                     arr.map((option) => (
-                        <li key={option.name} className="nutrient-color-link-wrapper">
+                        <li key={option.name} className={`nutrient-color-link-wrapper ${borderclassname ? `vitamin${option.sort}border` : `mineral${option.sort}border`}`}>
                             <div className="nutrient-name-color-wrapper">   
                                 <svg>
-                                    <rect width="1rem" height="1rem"/>
+                                    <rect 
+                                    className={rectclassname ? `vitamin${option.sort}` : `mineral${option.sort}`} 
+                                    width="1rem" 
+                                    height="1rem"
+                                />
                                 </svg>
                                 <span className="nutrient-name">{option.name}</span>
                             </div>
