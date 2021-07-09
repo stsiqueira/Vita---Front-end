@@ -8,76 +8,83 @@ import { ResponsivePie } from '@nivo/pie'
 // you'll often use just a few of them.
 
 
-const MyResponsivePie = ({ data, callback, legendFlag, centreText }) => (
-    <ResponsivePie
-        onClick={callback}
-        data={data}
-        margin={{ top: 40, right: 80, bottom: 80, left: 80 }}
-        sortByValue={true}
-        innerRadius={0.5}
-        padAngle={0.7}
-        cornerRadius={3}
-        activeOuterRadiusOffset={8}
-        borderWidth={1}
-        borderColor={{ from: 'color', modifiers: [ [ 'darker', 0.2 ] ] }}
-        colors={{ datum: 'data.color' }}
-        enableArcLinkLabels={false}
-        arcLinkLabelsSkipAngle={10}
-        arcLinkLabelsTextColor="#000"
-        arcLinkLabelsThickness={2}
-        arcLinkLabelsColor={{ from: 'color' }}
-        arcLabel="label"
-        arcLabelsSkipAngle={10}
-        arcLabelsTextColor={{ from: 'color', modifiers: [ [ 'darker', 2 ] ] }}
-        defs={[
-            {
-                id: 'dots',
-                type: 'patternDots',
-                background: 'inherit',
-                color: 'rgba(255, 255, 255, 0.3)',
-                size: 4,
-                padding: 1,
-                stagger: true
-            },
-            {
-                id: 'lines',
-                type: 'patternLines',
-                background: 'inherit',
-                color: 'rgba(255, 255, 255, 0.3)',
-                rotation: -45,
-                lineWidth: 6,
-                spacing: 10
-            }
-        ]}
-        fill={[
-        ]}
-        legends={legendFlag ? undefined : [
-            {
-                anchor: 'bottom',
-                direction: 'row',
-                justify: false,
-                translateX: 0,
-                translateY: 56,
-                itemsSpacing: 0,
-                itemWidth: 100,
-                itemHeight: 18,
-                itemTextColor: '#999',
-                itemDirection: 'left-to-right',
-                itemOpacity: 1,
-                symbolSize: 18,
-                symbolShape: 'square',
-                effects: [
-                    {
-                        on: 'hover',
-                        style: {
-                            itemTextColor: '#000'
+const MyResponsivePie = ({ data, callback, legendFlag, centreText }) => {
+
+    const CenteredMetric = ({ dataWithArc, centerX, centerY, text="Vitamin" }) => {
+        return (
+            <text
+                x={centerX}
+                y={centerY}
+                textAnchor="middle"
+                dominantBaseline="central"
+                style={{
+                    fontSize: '2rem',
+                    fontWeight: 600,
+                }}
+            >
+                {centreText}
+            </text>
+        )
+    }
+
+    return (
+        <ResponsivePie
+            onClick={callback}
+            data={data}
+            margin={{ top: 40, right: 80, bottom: 80, left: 80 }}
+            sortByValue={true}
+            innerRadius={0.5}
+            padAngle={0.7}
+            cornerRadius={3}
+            activeOuterRadiusOffset={8}
+            borderWidth={1}
+            borderColor={{ from: 'color', modifiers: [ [ 'darker', 0.2 ] ] }}
+            colors={{ datum: 'data.color' }}
+            enableArcLinkLabels={false}
+            arcLinkLabelsSkipAngle={10}
+            arcLinkLabelsTextColor="#000"
+            arcLinkLabelsThickness={2}
+            arcLinkLabelsColor={{ from: 'color' }}
+            arcLabel="label"
+            valueFormat={value =>`${Number(value)}%`}
+            arcLabelsSkipAngle={10}
+            arcLabelsTextColor={"white"}
+            fill={[
+            ]}
+            legends={legendFlag ? undefined : [
+                {
+                    anchor: 'bottom',
+                    direction: 'row',
+                    justify: false,
+                    translateX: 0,
+                    translateY: 56,
+                    itemsSpacing: 0,
+                    itemWidth: 100,
+                    itemHeight: 18,
+                    itemTextColor: '#999',
+                    itemDirection: 'left-to-right',
+                    itemOpacity: 1,
+                    symbolSize: 18,
+                    symbolShape: 'square',
+                    effects: [
+                        {
+                            on: 'hover',
+                            style: {
+                                itemTextColor: '#000'
+                            }
                         }
-                    }
-                ]
-            }
-        ]}
-        layers={['arcs', 'arcLabels', 'arcLinkLabels', 'legends', centreText]}
-    />
-)
+                    ]
+                }
+            ]}
+            layers={['arcs', 'arcLabels', 'arcLinkLabels', 'legends', CenteredMetric]}
+            theme={{
+                "background": "transparent",
+                "textColor": "#ffffff",
+                "fontSize": 24
+            }}
+        />
+    )
+}
+
 
 export default MyResponsivePie;

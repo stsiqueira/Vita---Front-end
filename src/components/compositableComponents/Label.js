@@ -1,7 +1,7 @@
 
 const Labels = (props) => {
     return (
-        <label htmlFor={props.for}>{props.text}</label>
+        <label htmlFor={props.for} className={props.classname}>{props.text}</label>
     )
 }
 

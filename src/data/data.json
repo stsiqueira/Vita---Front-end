@@ -27,8 +27,8 @@
         "Vitamin B6": "#eb3860",
         "Vitamin E": "#e8a113",
         "Vitamin K": "#b71174",
-        "Niacin": "#f56224",
-        "Pantothenic Acid": "#f1483d"
+        "Vitamin B3": "#f56224",
+        "Vitamin B5": "#f1483d"
     },
     "mineralColor": {
         "Calcium": "#66dbfd",
@@ -36,7 +36,18 @@
         "Iron": "#35c985",
         "Magnesium": "#29ab4b",
         "Phosphorus": "#6d23b5",
+        "Potassium": "#29ab4b",
         "Zinc": "#1a4be5"
+    },
+    "mineralShortform": {
+        "Calcium": "Ca",
+        "Copper": "Cu",
+        "Iron": "Fe",
+        "Magnesium": "Mg",
+        "Phosphorus": "Ph",
+        "Potassium": "K",
+        "Zinc": "Zn"
     }
+
 
 }

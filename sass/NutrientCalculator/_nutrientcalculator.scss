@@ -5,7 +5,10 @@
 
     background:#fff;
     border-radius: 5px;
-    
+ 
+    label.disable {
+        color: #ccc;
+    }
 
     @media only screen and (min-width: $tablet-size) {
         border-radius: 10px;

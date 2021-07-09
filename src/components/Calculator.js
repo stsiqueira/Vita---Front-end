@@ -19,8 +19,8 @@ const NutrientForm = () => {
 
     const handleSubmit= async (e) => {
         e.preventDefault();
-        const vitaminList = ["Vitamin A", "Vitamin C", "Vitamin B6", "Vitamin E", "Vitamin K", "Niacin", "Pantothenic Acid"]
-        const mineralList = ["Calcium", "Copper", "Iron", "Magnesium", "Phosphorus", "Zinc"]
+        const vitaminList = ["Vitamin A", "Vitamin B6", "Niacin", "Pantothenic Acid", "Vitamin C", "Vitamin K", "Vitamin E"]
+        const mineralList = ["Calcium", "Copper", "Iron", "Magnesium", "Phosphorus", "Potassium", "Zinc"]
         const my_obj = {
             "MEAS_UNITS": "STANDARD",
             "SEX": gender,
@@ -57,8 +57,6 @@ const NutrientForm = () => {
 
     const metricToggle = (value) => {
         setMetric(value)
-        console.log(value)
-        console.log(age)
     }
   
     return (
@@ -80,7 +78,8 @@ const NutrientForm = () => {
                         {
                             ["metric", "standard"].map(metric => (
                                 <Button 
-                                    value={metric} 
+                                    value={metric}
+                                    key={metric}
                                     classname={`unit-button ${metric}`}
                                     text={metric}
                                     callback={metricToggle}
@@ -191,13 +190,14 @@ const NutrientForm = () => {
 
                         
                         <div className="nutrient-calculator-input-wrapper preg-lact-wrapper">
-                            <Labels for="F_STATUS" text=" Pregnant or Lactating?"/>
+                            <Labels for="F_STATUS" text=" Pregnant or Lactating?" classname={gender === "MALE" ? "disable" : null}/>
                             <Select 
                                 name="F_STATUS" 
                                 value={fstatus} 
                                 setvalue={setFstatus} 
                                 options={fdata}
-                                disable={gender === "MALE" ? true : null}
+                                disable={gender === "MALE" ? "disabled" : null}
+                                require={gender === "MALE" ? null : true}
                             />
                             
                         </div>

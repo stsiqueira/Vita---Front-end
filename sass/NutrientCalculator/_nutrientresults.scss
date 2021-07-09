@@ -48,6 +48,10 @@
             display: grid;
             grid-template-columns: 1fr 1fr;
             gap: 1rem;
+
+            .chart-wrapper {
+                font-weight: 700;
+            }
         }
 
         .health-concern-wrapper {
