@@ -24,7 +24,7 @@ const SearchNutrient = (props) => {
             data.push(
                 {
                     id:element,
-                    label:element,
+                    label:element.replace("Vitamin ", ""),
                     value:1,
                     color: assignColor(element)
                 }
@@ -74,7 +74,7 @@ const SearchNutrient = (props) => {
         case "Phosphorus":
          color ="#6D23B5";
         break;
-          case "Pottasium":
+          case "Potassium":
          color ="#20B6CE";
           break;
         case "Zinc":
