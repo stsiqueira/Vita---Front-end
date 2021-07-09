@@ -16,11 +16,20 @@ const NutrientForm = () => {
     const [ heightinches, setHeightinches ] = useState(0);
     const [ activity, setActivity ] = useState("");
 
+    // const conditionalHandling = () => {
+    //     if((age < 13 || age > 40) && fstatus) {
+    //         return false
+    //     }
+    //     if (height < -1 || height > 220) {
+    //         return false
+    //     }
+    //     if (weight < -1 )
+    // }
 
     const handleSubmit= async (e) => {
         e.preventDefault();
-        const vitaminList = ["Vitamin A", "Vitamin C", "Vitamin B6", "Vitamin E", "Vitamin K", "Niacin", "Pantothenic Acid"]
-        const mineralList = ["Calcium", "Copper", "Iron", "Magnesium", "Phosphorus", "Zinc"]
+        const vitaminList = ["Vitamin A", "Vitamin B6", "Niacin", "Pantothenic Acid", "Vitamin C", "Vitamin K", "Vitamin E"]
+        const mineralList = ["Calcium", "Copper", "Iron", "Magnesium", "Phosphorus", "Potassium", "Zinc"]
         const my_obj = {
             "MEAS_UNITS": "STANDARD",
             "SEX": gender,
@@ -57,8 +66,6 @@ const NutrientForm = () => {
 
     const metricToggle = (value) => {
         setMetric(value)
-        console.log(value)
-        console.log(age)
     }
   
     return (
@@ -80,7 +87,8 @@ const NutrientForm = () => {
                         {
                             ["metric", "standard"].map(metric => (
                                 <Button 
-                                    value={metric} 
+                                    value={metric}
+                                    key={metric}
                                     classname={`unit-button ${metric}`}
                                     text={metric}
                                     callback={metricToggle}
@@ -117,7 +125,7 @@ const NutrientForm = () => {
                                     name='weight' 
                                     type='number' 
                                     
-                                    max={metric === "standard" ? "400" : "250"}
+                                    max={metric === "standard" ? "280" : "140"}
                                     value={weight}
                                     onChange={e => setWeight(e.target.value)}
                                     required
@@ -138,7 +146,7 @@ const NutrientForm = () => {
                                         name='HEIGHT_FEET' 
                                         type='number' 
                                         min="0"
-                                        max="8"
+                                        max="6"
                                         value={heightfeet}
                                         onChange={e => setHeightfeet(e.target.value)}
                                         required
@@ -162,7 +170,7 @@ const NutrientForm = () => {
                                             name='height-centimeters' 
                                             type='number' 
                                             min="0"
-                                            max="300"
+                                            max="220"
                                             value={heightfeet}
                                             onChange={e => setHeightfeet(e.target.value)}
                                             required
@@ -191,13 +199,14 @@ const NutrientForm = () => {
 
                         
                         <div className="nutrient-calculator-input-wrapper preg-lact-wrapper">
-                            <Labels for="F_STATUS" text=" Pregnant or Lactating?"/>
+                            <Labels for="F_STATUS" text=" Pregnant or Lactating?" classname={gender === "MALE" ? "disable" : age > 13 && age < 40? null : "disable"}/>
                             <Select 
                                 name="F_STATUS" 
                                 value={fstatus} 
                                 setvalue={setFstatus} 
                                 options={fdata}
-                                disable={gender === "MALE" ? true : null}
+                                disable={gender === "MALE" ? "disabled" : age > 13 && age < 40? null : "disabled"}
+                                require={gender === "MALE" ? "disabled" : age > 13 && age < 40? null : "disabled"}
                             />
                             
                         </div>

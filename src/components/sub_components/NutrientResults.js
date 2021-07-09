@@ -9,15 +9,50 @@ import UnorderedList from '../compositableComponents/Unorderedlist'
 import MyResponsivePie from "./Chart";
 import Recalculate from "./Recalculate";
 import HealthConcerns from "./HealthConcerns";
-import { healthData, vitaminColor, mineralColor } from '../../data/data.json';
+import { healthData, vitaminColor, vitaminSort, mineralSort, mineralColor, mineralShortform } from '../../data/data.json';
 
 
 
-const NutrientResults = (props) => {
+const NutrientResults = () => {
     const location = useLocation()
     const history = useHistory()
     const { vitamin, mineral } = location.state
     
+    const renamedVitamin = vitamin.map(element => {
+        if(element.name === "Niacin") {
+            element["name"] = "Vitamin B3"
+            element["color"] = vitaminColor["Vitamin B3"]
+        }    
+        else if (element.name === "Pantothenic Acid") {
+            element["name"] = "Vitamin B5"
+            element["color"] = vitaminColor["Vitamin B5"]
+        }
+        element["sort"] = vitaminSort[element.name]
+
+        return element
+    })
+
+    const addMineralSort = mineral.map(element => {
+        element["sort"] = mineralSort[element.name]
+        return element
+    })
+
+    const GetSortOrder = (prop) => {    
+        return function(a, b) {    
+            if (a[prop] > b[prop]) {    
+                return 1;    
+            } else if (a[prop] < b[prop]) {    
+                return -1;    
+            }    
+            return 0;    
+        }    
+    }
+
+    renamedVitamin.sort(GetSortOrder("sort"))
+    addMineralSort.sort(GetSortOrder("sort"))
+
+    console.log(vitaminSort)
+
 
     const cleanValue = (value) => {
 
@@ -47,60 +82,41 @@ const NutrientResults = (props) => {
     }
 
     const addKeyToJsonArray = (arr) => {
+        let total = 0
         const data = arr.map(element => {
             element["id"] = element.name
-            element["label"] = element.name.replace("Vitamin ", "")
+            element["label"] = element.name.includes("Vitamin") ? element.name.replace("Vitamin ", "") : mineralShortform[element.name]
             element["value"] = convertingUnits(element.recommended_intake)
+            total += element["value"]
             element["color"] = element.name.includes("Vitamin") ? vitaminColor[element.name] : mineralColor[element.name]
-
-            if(element.name === "Niacin") {
-                element["color"] = vitaminColor["Niacin"]
-                element["id"] = "Vitamin B3"
-                element["label"] = "B3"
-            }    
-            else if (element.name === "Pantothenic Acid") {
-                element["id"] = "Vitamin B5"
-                element["label"] = "B5"
-                element["color"] = vitaminColor["Pantothenic Acid"]
-            }
-
             return element
         })
-        console.log(data)
-        return data
+
+        data.map(element => (
+            element["value"] = ((element["value"]/total) * 100).toFixed(2)
+        ))
+        
+        const filteredData = data.filter(singleData => {
+            if(singleData.value > 5) {
+                return singleData
+            }
+        })
+        return filteredData
     }
 
-    const test = () => {
-        console.log("changed")
+    const handleSubmit = (e) => {
+        e.preventDefault()
+        console.log(e)
     }
-    const [ vitaminArray, setVitaminArray ] = useState(addKeyToJsonArray(vitamin));
 
-    const [ mineralArray, setMineralArray ] = useState(addKeyToJsonArray(mineral));
+    const [ vitaminArray, setVitaminArray ] = useState(addKeyToJsonArray(renamedVitamin));
 
-    // const [ innerText, setinnerText ] = useState("");
-
+    const [ mineralArray, setMineralArray ] = useState(addKeyToJsonArray(addMineralSort));
 
     const recalculateClick = () => {
         history.push({
             pathname: "/NutrientCalculator/Start"
         })
-    }
-
-    const CenteredMetric = ({ dataWithArc, centerX, centerY }) => {
-        return (
-            <text
-                x={centerX}
-                y={centerY}
-                textAnchor="middle"
-                dominantBaseline="central"
-                style={{
-                    fontSize: '2rem',
-                    fontWeight: 600,
-                }}
-            >
-                Vitamin
-            </text>
-        )
     }
 
     return (
@@ -117,26 +133,42 @@ const NutrientResults = (props) => {
             <div className="results-wrapper">
                 
                 <div className="chart-vitamin-result-wrapper">
-                    <div className="vitamin-result-wrapper">
-                        <UnorderedList heading="Vitamin" classname="test" name="test" arr={vitamin} flag={true}/>
-                    </div>
                     <div className="chart-wrapper" >
-                        <MyResponsivePie data={vitaminArray} callback={undefined} legendFlag={true} centreText={CenteredMetric}/>
-
-                        {/* <div className="overlay" style={styles.overlay}>
-                            <span>Vitamins</span>
-                        </div> */}
+                        <MyResponsivePie 
+                            data={vitaminArray} 
+                            callback={undefined} 
+                            legendFlag={true} 
+                            centreText="Vitamins" 
+                        />
                     </div>
-                    
+                    <div className="vitamin-result-wrapper">
+                        <UnorderedList 
+                            headflag={true} classname="vitamins-list"
+                            borderclassname={true}
+                            rectclassname={true} 
+                            name="vitamins" 
+                            arr={renamedVitamin} 
+                            flag={true}
+                        />
+                    </div>
                 </div>
                 <div className="chart-mineral-result-wrapper">
-                    <div className="mineral-result-wrapper">
-                        <UnorderedList heading="Mineral" classname="test" name="test" arr={mineral} flag={true} />
-                    </div>
                     <div className="chart-wrapper">
-                        <MyResponsivePie data={mineralArray} callback={undefined} legendFlag={true} centreText={CenteredMetric}/>
+                        <MyResponsivePie 
+                            data={mineralArray} 
+                            callback={undefined} 
+                            legendFlag={true} 
+                            centreText={"Minerals"}
+                        />
                     </div>
-                    
+                    <div className="mineral-result-wrapper">
+                        <UnorderedList 
+                            headflag={true} 
+                            classname="minerals-list" name="minerals"
+                            arr={addMineralSort} 
+                            flag={true} 
+                        />
+                    </div>
                 </div>
                 <div className="health-concern-wrapper">
                     <div className="health-concern-description">
@@ -147,17 +179,20 @@ const NutrientResults = (props) => {
                         </p>
                     </div>
                     <div className="options">
-                        {healthData.map((element) => {
-                            return <HealthConcerns 
-                                key={element}
-                                wrapperClassname="wrapper"
-                                optionName={element}
-                                imageUrl="https://picsum.photos/800"
-                                imgClassName="emoji"
-                                altText="wow"
-                                callback={test}
-                            />
-                        })}
+                        <form onSubmit={e => { handleSubmit(e)}}>
+                            {healthData.map((element) => {
+                                return <HealthConcerns 
+                                    key={element}
+                                    wrapperClassname="wrapper"
+                                    optionName={element}
+                                    imageUrl="https://picsum.photos/100"
+                                    imgClassName="emoji"
+                                    altText="wow"
+                                    callback={handleSubmit}
+                                />
+                            })}
+                            <input type="submit" value="Submit" />
+                        </form>
                     </div>
                 </div>
                 <Link 

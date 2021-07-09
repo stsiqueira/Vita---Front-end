@@ -7,10 +7,11 @@ const Select = (props) => {
             value={props.value}
             onChange={e => props.setvalue(e.target.value)}
             aria-describedby={`description-${props.name}`}
-            required
+            required={props.require}
+            disabled={props.disable}
         >
             {props.options.map((option) => (
-                <option key={option.value} disabled={props.disable} value={option.value}>{option.text}</option>
+                <option key={option.value}  value={option.value}>{option.text}</option>
             ))}
         </select>
     )
