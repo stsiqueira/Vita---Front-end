@@ -1,8 +1,10 @@
 .contact {
+    max-width: $max-width;
     background: #FFF;
     margin: 2rem 3rem;
     padding-bottom: 3rem;
     border-radius: 10px;
+    width: 100%;
     span{
         color: red;
     }

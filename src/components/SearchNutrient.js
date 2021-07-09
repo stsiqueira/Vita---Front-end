@@ -110,19 +110,34 @@ const SearchNutrient = (props) => {
 
     return (
         <div className="searchNutrient">
+            <div className="title">
+              <h2>Search by Vitamin or Mineral </h2>
+            </div>
+            <div className="details">
+              <p>You can click on the chart to see food items that contain the selected vitamin or mineral. </p>
+            </div>
+            <div className="charts">
+              <div className="vitaminsChart">
+                <div className="VitaminTitle">
+                  <h3>Vitamins</h3>
+                </div>
+                  <MyResponsivePie data={vitaminArray} callback={undefined} legendFlag="true" />
+                  {/* <div className="overlay" style={styles.overlay}>
+                      <span>Vitamins</span>
+                  </div> */}
+              </div>
+              <div className="mineralsChart">
+                <div className="MineralTitle">
+                  <h3>Minerals</h3>
+                </div>
+                  <MyResponsivePie data={mineralArray} callback={undefined} legendFlag="true" />
+                  {/* <div className="overlay" style={styles.overlay}>
+                      <span>Minerals</span>
+                  </div> */}
+              </div>
 
-            <div className="vitaminsChart">
-                <MyResponsivePie data={vitaminArray} callback={undefined} legendFlag="false" />
-                {/* <div className="overlay" style={styles.overlay}>
-                    <span>Vitamins</span>
-                </div> */}
             </div>
-            <div className="mineralsChart">
-                <MyResponsivePie data={mineralArray} callback={undefined} legendFlag="false" />
-                {/* <div className="overlay" style={styles.overlay}>
-                    <span>Minerals</span>
-                </div> */}
-            </div>
+
 
         </div>
     )

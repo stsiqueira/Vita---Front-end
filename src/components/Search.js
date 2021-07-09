@@ -165,16 +165,17 @@ const Search = () => {
             <p>You can search for fruits and vegetables and get precise data about vitamins and minerals that can be found them.</p>
             <div className="userSearchControls">
                 <div className="autocomplete">
-                    <input id="searchItemInput" type="text" required onChange={(e) => searchExists(e)} />
+                   <FaSearch/> 
+                   <input id="searchItemInput" type="text" placeholder="apples..."required onChange={(e) => searchExists(e)} />
                 </div>
                 {
                 userSearch ? 
                     <Link to={`/Description/${itemType}/${userSearch}`}>
-                        <FaSearch style={{ color: searchColor, cursor: 'pointer' }} />
+                        <button className="btn"> Search</button>
                     </Link>
-                : <FaSearch style={{ color: searchColor }} />
+                : <button className="btn"> Search</button>
                 }
-                <button className="btn"> Search</button>
+                
             </div>
         </div>
     )

@@ -4,6 +4,7 @@
 import React from 'react';
 import Subscribe from '../components/subscribe'
 import Search from '../components/Search'
+import SearchNutrient from '../components/SearchNutrient'
 import Recalculate from '../components/sub_components/Recalculate'
 import About from '../components/About'
 
@@ -14,6 +15,8 @@ const Home = (props) => {
 
     return (
        <div className="home">
+
+           
 
 {/*
 ======================================================================================
@@ -30,6 +33,12 @@ const Home = (props) => {
             <Search/>
   {/*
   ======================================================================================
+==                Search for Minerals and Vitamins Component - Aman
+====================================================================================== 
+*/}
+            <SearchNutrient/>
+  {/*
+  ======================================================================================
   ==                Nutrient Calculator - Glen
   ====================================================================================== 
   */}      
@@ -44,6 +53,7 @@ const Home = (props) => {
   ====================================================================================== 
   */}
       <Subscribe/>
+
        </div>
     )
 }

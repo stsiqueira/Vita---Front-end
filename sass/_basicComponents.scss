@@ -41,6 +41,11 @@ input{
     border: 2px solid $primary-color;
     border-radius: 5px;
     height: 40px;
+    color: $primary-color;
+    font-weight: bold;
+    &::placeholder{
+        color: $primary-color;
+    }
 }
 textarea{
     border: 2px solid $primary-color;
@@ -72,4 +77,26 @@ h3{
 }
 p{
     font-size: 16px;
+}
+.App{
+    background: $primary-color-shade;
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: space-between;
+    height: 100vh;
+}
+.main{
+    // min-height: 86vh;
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    background: $primary-color-shade;
+}
+.unit-button{
+    background: #fff;
+    border-radius: 5px;
+    border: 2px solid $primary-color-shade;
+    height: 40px;
+    font-size: 20px;
+    color: $primary-color;
 }
