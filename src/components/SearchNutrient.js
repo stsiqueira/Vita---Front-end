@@ -1,8 +1,16 @@
 import React from 'react';
 import { useState, useEffect } from 'react';
+import { useHistory } from "react-router-dom";
 import MyResponsivePie from "./sub_components/Chart";
 
 const SearchNutrient = (props) => {
+
+  const history = useHistory()
+  const redirect = (e) => {
+    history.push({
+      pathname: e.data.link,
+    });
+  }
 
     const [vitaminArray, setVitaminArray] = useState([]);
     const [mineralArray, setMineralArray] = useState([]);
@@ -18,7 +26,7 @@ const SearchNutrient = (props) => {
         const data = await res.json();
         return data;
     }
-    const addKeyToJsonArray = (arr) => {
+    const addKeyToJsonArray = (arr, type) => {
         let data = [];
         arr.map(element => {
             data.push(
@@ -26,7 +34,8 @@ const SearchNutrient = (props) => {
                     id:element,
                     label:element.replace("Vitamin ", ""),
                     value:1,
-                    color: assignColor(element)
+                    color: assignColor(element),
+                    link: `/Description/${type}/${element}`
                 }
             )
         })
@@ -101,8 +110,8 @@ const SearchNutrient = (props) => {
                 dataContent[0].Minerals[0].map(e => { availableMinerals.push(e.name) });
                 dataContent[0].Vitamins[0].map(e => { availableVitamins.push(e.name) });
 
-                setVitaminArray(addKeyToJsonArray(availableVitamins));
-                setMineralArray(addKeyToJsonArray(availableMinerals));
+                setVitaminArray(addKeyToJsonArray(availableVitamins, "Vitamins"));
+                setMineralArray(addKeyToJsonArray(availableMinerals, "Minerals"));
             }
             fetchNutrientsData();
         }
@@ -121,7 +130,7 @@ const SearchNutrient = (props) => {
                 <div className="VitaminTitle">
                   <h3>Vitamins</h3>
                 </div>
-                  <MyResponsivePie data={vitaminArray} callback={undefined} legendFlag="true" />
+                  <MyResponsivePie data={vitaminArray} callback={redirect} legendFlag="true" />
                   {/* <div className="overlay" style={styles.overlay}>
                       <span>Vitamins</span>
                   </div> */}
@@ -130,7 +139,7 @@ const SearchNutrient = (props) => {
                 <div className="MineralTitle">
                   <h3>Minerals</h3>
                 </div>
-                  <MyResponsivePie data={mineralArray} callback={undefined} legendFlag="true" />
+                  <MyResponsivePie data={mineralArray} callback={redirect} legendFlag="true" />
                   {/* <div className="overlay" style={styles.overlay}>
                       <span>Minerals</span>
                   </div> */}
