@@ -1,9 +1,9 @@
 .btn{
     font-family: $main-font-family;
-    height: 58px;
-    font-size: 28px;
-    padding: 12px 43px 12px 43px;
-    font-weight: bold;
+    height: 52px;
+    font-size: 22px;
+    padding: 12px 40px 12px 40px;
+    font-weight: 500;
     border-radius: 5px;
     background: $button-bg-defaultColor;
     color: $button-font-Color-darkBG;
@@ -18,9 +18,9 @@
     }
 
     @media screen and (min-width: $desktop-size){
-        height: 72px;
-        font-size: 36px;
-        padding: 13px 50px;
+        height: 54px;
+        font-size: 24px;
+        padding: 13px 35px;
         
     }
 }
