@@ -1,6 +1,5 @@
 
 const UnorderedList = ({ headflag, heading, name, classname, borderclassname, rectclassname, arr, flag }) => {
-    console.log(headflag)
     return (
         <div className={classname}>
             {headflag ? 

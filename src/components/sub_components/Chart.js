@@ -8,9 +8,8 @@ import { ResponsivePie } from '@nivo/pie'
 // you'll often use just a few of them.
 
 
-const MyResponsivePie = ({ data, callback, legendFlag, centreText }) => {
-    console.log()
-    const CenteredMetric = ({ dataWithArc, centerX, centerY, text="Vitamin" }) => {
+const MyResponsivePie = ({ data, callback, legendFlag, centreText, subCentreText }) => {
+    const CenteredMetric = ({ dataWithArc, centerX, centerY}) => {
         return (
             <text
                 x={centerX}
@@ -19,10 +18,27 @@ const MyResponsivePie = ({ data, callback, legendFlag, centreText }) => {
                 dominantBaseline="central"
                 style={{
                     fontSize: `${window.innerWidth < 600 ? "1.5rem" : "2rem"}`,
-                    fontWeight: 600,
+                    fontWeight: 600
                 }}
             >
                 {centreText}
+            </text>
+        )
+    }
+
+    const SubCenteredMetric = ({ dataWithArc, centerX, centerY}) => {
+        return (
+            <text
+                x={centerX}
+                y={centerY + 30}
+                textAnchor="middle"
+                className="subcenter-text"
+                dominantBaseline="central"
+                style={{
+                    fontSize: `${window.innerWidth < 600 ? ".7rem" : ".9rem"}`
+                }}
+            >
+                {subCentreText}
             </text>
         )
     }
@@ -32,7 +48,7 @@ const MyResponsivePie = ({ data, callback, legendFlag, centreText }) => {
             onClick={callback}
             data={data}
             margin={{ top: 40, right: 80, bottom: 80, left: 80 }}
-            sortByValue={true}
+            sortByValue={false}
             innerRadius={0.5}
             padAngle={0.7}
             cornerRadius={3}
@@ -76,11 +92,11 @@ const MyResponsivePie = ({ data, callback, legendFlag, centreText }) => {
                     ]
                 }
             ]}
-            layers={['arcs', 'arcLabels', 'arcLinkLabels', 'legends', CenteredMetric]}
+            layers={['arcs', 'arcLabels', 'arcLinkLabels', 'legends', CenteredMetric, SubCenteredMetric]}
             theme={{
                 "background": "transparent",
                 "textColor": "#ffffff",
-                "fontSize": `${window.innerWidth < 600 ? "1.5rem" : "1.7rem"}`
+                "fontSize": `${window.innerWidth < 600 ? "1.5rem" : "1.7    rem"}`
             }}
         />
     )

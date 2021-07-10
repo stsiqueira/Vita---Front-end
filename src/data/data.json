@@ -21,6 +21,12 @@
         {"value": "FEMALE", "text": "FEMALE"}
     ],
     "healthData": ["Hair loss", "Insomnia", "Skin problems", "Fatigue"],
+    "healthTestData": {
+        "hairloss": false, 
+        "insomnia": false, 
+        "skinproblems": false, 
+        "fatigue": false
+    },
     "vitaminColor": {
         "Vitamin A": "#eabb36",
         "Vitamin C": "#f69128",
@@ -53,7 +59,7 @@
         "Copper": "Cu",
         "Iron": "Fe",
         "Magnesium": "Mg",
-        "Phosphorus": "Ph",
+        "Phosphorus": "P",
         "Potassium": "K",
         "Zinc": "Zn"
     },

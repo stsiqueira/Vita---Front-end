@@ -9,7 +9,9 @@ import UnorderedList from '../compositableComponents/Unorderedlist'
 import MyResponsivePie from "./Chart";
 import Recalculate from "./Recalculate";
 import HealthConcerns from "./HealthConcerns";
-import { healthData, vitaminColor, vitaminSort, mineralSort, mineralColor, mineralShortform } from '../../data/data.json';
+import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
+import 'react-tabs/style/react-tabs.css';
+import {  vitaminColor, vitaminSort, mineralSort, mineralColor, mineralShortform } from '../../data/data.json';
 
 
 
@@ -18,7 +20,7 @@ const NutrientResults = () => {
     const history = useHistory()
     const { vitamin, mineral } = location.state
     
-    const renamedVitamin = vitamin.map(element => {
+    const addVitaminSort = vitamin.map(element => {
         if(element.name === "Niacin") {
             element["name"] = "Vitamin B3"
             element["color"] = vitaminColor["Vitamin B3"]
@@ -48,11 +50,8 @@ const NutrientResults = () => {
         }    
     }
 
-    renamedVitamin.sort(GetSortOrder("sort"))
+    addVitaminSort.sort(GetSortOrder("sort"))
     addMineralSort.sort(GetSortOrder("sort"))
-
-    console.log(vitaminSort)
-
 
     const cleanValue = (value) => {
 
@@ -86,8 +85,18 @@ const NutrientResults = () => {
         const data = arr.map(element => {
             element["id"] = element.name
             element["label"] = element.name.includes("Vitamin") ? element.name.replace("Vitamin ", "") : mineralShortform[element.name]
+
             element["value"] = convertingUnits(element.recommended_intake)
+
+            if(element.recommended_intake.length < 2) {
+                element.recommended_intake = element.tolerable_intake
+                element["value"] = convertingUnits(element.tolerable_intake)
+            }
+
             total += element["value"]
+
+            element["link"] = element.name.includes("Vitamin") ? `/Description/Vitamins/${element.name}` : `/Description/"Minerals/${element.name}`
+
             element["color"] = element.name.includes("Vitamin") ? vitaminColor[element.name] : mineralColor[element.name]
             return element
         })
@@ -104,19 +113,77 @@ const NutrientResults = () => {
         return filteredData
     }
 
-    const handleSubmit = (e) => {
-        e.preventDefault()
-        console.log(e)
+    const redirect = (node) => {
+        history.push({
+            pathname: node.data.link
+        });
     }
 
-    const [ vitaminArray, setVitaminArray ] = useState(addKeyToJsonArray(renamedVitamin));
+    const [ vitaminArray, setVitaminArray ] = useState(addKeyToJsonArray(addVitaminSort));
 
     const [ mineralArray, setMineralArray ] = useState(addKeyToJsonArray(addMineralSort));
+
+      const handleSubmit = (data) => {
+        let arr = [...vitaminArray]
+        if(data["fatigue"]) {
+            setVitaminArray(test)
+        }    
+    }
 
     const recalculateClick = () => {
         history.push({
             pathname: "/NutrientCalculator/Start"
         })
+    }
+
+    const tabListVitaminWrapper = () => {
+        return (
+            <div className="chart-vitamin-result-wrapper">
+                <div className="chart-wrapper" >
+                    <MyResponsivePie 
+                        data={vitaminArray} 
+                        callback={redirect} 
+                        legendFlag={true} 
+                        centreText="Vitamins" 
+                        subCentreText="by day"
+                    />
+                </div>
+                <div className="vitamin-result-wrapper">
+                    <UnorderedList 
+                        headflag={true} classname="vitamins-list"
+                        borderclassname={true}
+                        rectclassname={true} 
+                        name="vitamins" 
+                        arr={addVitaminSort} 
+                        flag={true}
+                    />
+                </div>
+            </div>
+        );
+    }
+
+    const tabListMineralWrapper = () => {
+        return (
+            <div className="chart-mineral-result-wrapper">
+                <div className="chart-wrapper">
+                    <MyResponsivePie 
+                        data={mineralArray} 
+                        callback={undefined} 
+                        legendFlag={true} 
+                        centreText={"Minerals"}
+                        subCentreText="by day"
+                    />
+                </div>
+                <div className="mineral-result-wrapper">
+                    <UnorderedList 
+                        headflag={true} 
+                        classname="minerals-list" name="minerals"
+                        arr={addMineralSort} 
+                        flag={true} 
+                    />
+                </div>
+            </div>
+        )
     }
 
     return (
@@ -131,45 +198,22 @@ const NutrientResults = () => {
                 </div>
             </div>
             <div className="results-wrapper">
+                <Tabs>
+                    {window.innerWidth < 600 ?  <TabList className="vitamin-mineral-tab-wrapper">
+                        <Tab>Vitamins</Tab>
+                        <Tab>Minerals</Tab>
+                    </TabList> : <></>}
+                    {window.innerWidth < 600 ?<TabPanel>{tabListVitaminWrapper()}</TabPanel> : <>{tabListVitaminWrapper()}</>}
+                    {window.innerWidth < 600 ? <TabPanel>{tabListMineralWrapper()}</TabPanel> : <>{tabListMineralWrapper()}</>}
+                </Tabs>
+                {window.innerWidth < 600 ? <div className="nutrient-note">
+                        <p>
+                            Click on the nutrient on the chart or the table to see food items where it can be found.
+                        </p> 
+                    </div>:
+                    <></>
+                }
                 
-                <div className="chart-vitamin-result-wrapper">
-                    <div className="chart-wrapper" >
-                        <MyResponsivePie 
-                            data={vitaminArray} 
-                            callback={undefined} 
-                            legendFlag={true} 
-                            centreText="Vitamins" 
-                        />
-                    </div>
-                    <div className="vitamin-result-wrapper">
-                        <UnorderedList 
-                            headflag={true} classname="vitamins-list"
-                            borderclassname={true}
-                            rectclassname={true} 
-                            name="vitamins" 
-                            arr={renamedVitamin} 
-                            flag={true}
-                        />
-                    </div>
-                </div>
-                <div className="chart-mineral-result-wrapper">
-                    <div className="chart-wrapper">
-                        <MyResponsivePie 
-                            data={mineralArray} 
-                            callback={undefined} 
-                            legendFlag={true} 
-                            centreText={"Minerals"}
-                        />
-                    </div>
-                    <div className="mineral-result-wrapper">
-                        <UnorderedList 
-                            headflag={true} 
-                            classname="minerals-list" name="minerals"
-                            arr={addMineralSort} 
-                            flag={true} 
-                        />
-                    </div>
-                </div>
                 <div className="health-concern-wrapper">
                     <div className="health-concern-description">
                         <h2>Health Concerns</h2>
@@ -179,7 +223,14 @@ const NutrientResults = () => {
                         </p>
                     </div>
                     <div className="options">
-                        <form onSubmit={e => { handleSubmit(e)}}>
+                        <HealthConcerns 
+                            wrapperClassname="wrapper"
+                            imageUrl="https://picsum.photos/100"
+                            imgClassName="emoji"
+                            altText="wow"
+                            callback={handleSubmit}
+                        />
+                        {/* <form onSubmit={e => { handleSubmit(e)}}>
                             {healthData.map((element) => {
                                 return <HealthConcerns 
                                     key={element}
@@ -192,7 +243,7 @@ const NutrientResults = () => {
                                 />
                             })}
                             <input type="submit" value="Submit" />
-                        </form>
+                        </form> */}
                     </div>
                 </div>
                 <Link 
