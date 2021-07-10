@@ -57,9 +57,9 @@ const NutrientForm = () => {
             history.push({
                 pathname: '/NutrientCalculator/Results',
                 state: { 
-                        vitamin: vitaminArr,
-                        mineral: mineralArr
-                    }
+                    vitamin: vitaminArr,
+                    mineral: mineralArr
+                }
             })
         }
     }
@@ -80,8 +80,6 @@ const NutrientForm = () => {
                 </div>
 
                 <div className="nutrient-calculator-form-wrapper">
-
-                
 
                     <div className="metric-wrapper">
                         {
