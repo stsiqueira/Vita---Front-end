@@ -1,5 +1,5 @@
 ///////////////////////   IMPORT OF TOOLS      ////////////////////////////////////////
-import { Route } from 'react-router-dom';
+import { Route, Redirect } from 'react-router-dom';
 
 ///////////////////////   IMPORT OF COMPONENTS ////////////////////////////////////////
 import Header from './components/html_components/header'
@@ -97,11 +97,9 @@ function App() {
           </>
         )}/> 
 
-        <Route render={()=>(
-          <>
-            <NotFound />{/*****************  NOT FOUND COMPONENT  ***************************/}
-          </>
-        )}/> 
+        <Route path='/404' component={NotFound} />
+        <Redirect from='*' to='/404' />
+ 
       </div>
 
       <Footer /> {/*****************   FOOTER COMPONENT  ***************************/}
