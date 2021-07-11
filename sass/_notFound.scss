@@ -1,0 +1,97 @@
+.page-not-found-wrapper {
+    .child-wrapper {
+        background: white;
+        margin: 1.5rem 1rem;
+
+        @media only screen and (min-width: $desktop-size) {
+            min-height: 79vh;
+            width: 90%;
+            margin: 1rem auto;
+        }
+
+        .page-not-found {
+            padding: 2rem 1.5rem;
+            display: flex;
+            flex-flow: column;
+            grid-gap: 9.5rem;
+            justify-items: center;
+
+            @media only screen and (min-width: $desktop-size) {
+                grid-gap: 0;
+                padding: 2rem 3.5rem;
+            }
+
+            .svg-text-wrapper {
+                display: flex;
+                flex-flow: column;
+                grid-gap: 2rem;
+                align-items: center;
+
+                @media only screen and (min-width: $desktop-size) {
+                    display: grid;
+                    grid-template-columns: 1fr 1fr;
+                    max-width: $desktop-size;
+                    grid-gap: 0;
+                }
+
+                .svg-wrapper {
+                    text-align: center;
+
+                    @media only screen and (min-width: $desktop-size) {
+                        padding: 6rem 1rem;
+                    }
+                    img {
+                        max-width: 40%;
+
+                        @media only screen and (min-width: $desktop-size) {
+                            max-width: 60%;
+                        }
+                    }
+                }
+                .text-wrapper {
+                    display: flex;
+                    flex-flow: column;
+                    align-items: center;
+                    gap: 1.7rem;
+
+                    @media only screen and (min-width: $desktop-size) {
+                        align-items: flex-start;
+                    }
+
+                    h2 {
+                        color: $button-bg-defaultColor;
+                        font-size: 2.3rem;
+
+                        @media only screen and (min-width: $desktop-size) {
+                            font-size: 4rem;
+                        }
+                    }
+
+                    p {
+                        @media only screen and (min-width: $desktop-size) {
+                            font-size: 1.3rem;
+                        }
+                    }
+                }
+
+                .desktop-button-wrapper {
+                    display: none;
+
+                    @media only screen and (min-width: $desktop-size) {
+                        display: block;
+                    }
+                }
+            }
+
+            .mobile-button-wrapper {
+                @media only screen and (min-width: $desktop-size) {
+                    display: none;
+                }
+                button {
+                    display: block;
+                    width: 100%;
+                }
+            }
+        }
+    }
+}
