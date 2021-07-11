@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { useHistory } from "react-router-dom";
 import Labels from './compositableComponents/Label';
 import Select from './compositableComponents/Select';
-import { fstatusData as fdata, activityData, genderData } from '../data/data.json';
+import { fstatusData as fdata, activityData, genderData, activityLevel } from '../data/data.json';
 import Button from './compositableComponents/Button';
 
 const NutrientForm = () => {
@@ -217,6 +217,9 @@ const NutrientForm = () => {
                                 setvalue={setActivity} 
                                 options={activityData}
                             />
+                        </div>
+                        <div className="activity-level-wrapper">
+                            {activityLevel[activity]}  
                         </div>
                         <div className="nutrient-calculator-input-wrapper">
                             <input
