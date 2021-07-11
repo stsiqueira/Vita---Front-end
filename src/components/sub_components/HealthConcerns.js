@@ -8,6 +8,7 @@ const HealthConcerns = ({wrapperClassname, optionName, imgClassName, imageUrl, a
     const handleSubmit = (e) => {
         e.preventDefault();
         callback(data);
+        setData(healthTestData)
     }
 
     const changed = (target, value) => {
