@@ -1,6 +1,11 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="1064" height="1064" viewBox="0 0 1064 1064">
-  <g id="Group_669" data-name="Group 669" transform="translate(-11891 -2717)">
-    <circle id="Ellipse_1" data-name="Ellipse 1" cx="532" cy="532" r="532" transform="translate(11891 2717)" fill="#006da7"/>
-    <text id="Vitamin_A" data-name="Vitamin A" transform="translate(12212 3286)" fill="#fff" font-size="100" font-family="Quicksand-Bold, Quicksand" font-weight="700"><tspan x="0" y="0">Vitamin A</tspan></text>
+<svg xmlns="http://www.w3.org/2000/svg" width="131.514" height="131.514" viewBox="0 0 131.514 131.514">
+  <g id="Group_1217" data-name="Group 1217" transform="translate(-1617 -321)">
+    <circle id="Ellipse_142" data-name="Ellipse 142" cx="56.727" cy="56.727" r="56.727" transform="translate(1626 332)" fill="#eabb36"/>
+    <path id="Ellipse_143" data-name="Ellipse 143" d="M62.257-3.5A65.757,65.757,0,1,1-3.5,62.257,65.831,65.831,0,0,1,62.257-3.5Zm0,124.514A58.757,58.757,0,1,0,3.5,62.257,58.824,58.824,0,0,0,62.257,121.014Z" transform="translate(1620.5 324.5)"/>
+    <path id="Path_1878" data-name="Path 1878" d="M1576.245,222.083a3.5,3.5,0,0,1-3.321-4.608,51.441,51.441,0,0,1,10.851-18.5,3.5,3.5,0,1,1,5.173,4.715,44.487,44.487,0,0,0-9.383,16A3.5,3.5,0,0,1,1576.245,222.083Z" transform="translate(60.831 153.046)" fill="#fff"/>
+    <path id="Path_1879" data-name="Path 1879" d="M1653.029,200.039a3.485,3.485,0,0,1-2.221-.8,45.249,45.249,0,0,0-48.458-5.7,3.5,3.5,0,1,1-3.069-6.291,52.266,52.266,0,0,1,55.972,6.584,3.5,3.5,0,0,1-2.225,6.2Z" transform="translate(60.831 153.046)" fill="#fff"/>
+    <g id="A" transform="translate(63.187 157.326)" style="isolation: isolate">
+      <text id="A-2" data-name="A" transform="translate(1600.813 253.674)" fill="#fff" font-size="60" font-family="Quicksand-Bold, Quicksand" font-weight="700"><tspan x="0" y="0">A</tspan></text>
+    </g>
   </g>
 </svg>

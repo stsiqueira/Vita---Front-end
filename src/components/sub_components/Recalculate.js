@@ -1,5 +1,5 @@
 import Button from "../compositableComponents/Button"
-import NutrientCalculatorImg from "../../img/others/nutrient_calculator_icon.svg"
+import NutrientCalculatorImg from "../../img/icons/nutrient_calculator_icon.svg"
 
 const Recalculate = ({parentClassname, descriptionClassname, descriptionText,buttonWrapperClassname, buttonClassname, buttonText, callback, args}) => {
     return (
