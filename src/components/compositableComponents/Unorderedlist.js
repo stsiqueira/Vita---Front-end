@@ -1,5 +1,7 @@
+import {Link} from 'react-router-dom'
 
 const UnorderedList = ({ headflag, heading, name, classname, borderclassname, rectclassname, arr, flag }) => {
+    console.log(arr)
     return (
         <div className={classname}>
             {headflag ? 
@@ -14,13 +16,14 @@ const UnorderedList = ({ headflag, heading, name, classname, borderclassname, re
             >
                 {flag ? 
                     arr.map((option) => (
-                        <li key={option.name} className={`nutrient-color-link-wrapper ${borderclassname ? `vitamin${option.sort}border` : `mineral${option.sort}border`}`}>
+                        <li key={option.name} >
+                            <Link to={option.link} className={`nutrient-color-link-wrapper ${borderclassname ? `vitamin${option.sort}border` : `mineral${option.sort}border`}`}>
                             <div className="nutrient-name-color-wrapper">   
                                 <svg>
                                     <rect 
                                     className={rectclassname ? `vitamin${option.sort}` : `mineral${option.sort}`} 
-                                    width="1rem" 
-                                    height="1rem"
+                                    width="1.8rem" 
+                                    height="1.8rem"
                                 />
                                 </svg>
                                 <span className="nutrient-name">{option.name}</span>
@@ -28,7 +31,8 @@ const UnorderedList = ({ headflag, heading, name, classname, borderclassname, re
                             <div className="nutrient-name-color-wrapper">
                                 <span className="nutrient-name">{option.recommended_intake}</span>
                             </div>
-                             
+                            </Link>
+
                         </li>
                     )):
                     arr.map((option) => (

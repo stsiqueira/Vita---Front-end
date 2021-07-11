@@ -21,6 +21,8 @@ const NutrientResults = () => {
     const { vitamin, mineral } = location.state
     
     const addVitaminSort = vitamin.map(element => {
+        element["link"] =  `/Description/Vitamins/${element.name}` 
+
         if(element.name === "Niacin") {
             element["name"] = "Vitamin B3"
             element["color"] = vitaminColor["Vitamin B3"]
@@ -35,6 +37,7 @@ const NutrientResults = () => {
     })
 
     const addMineralSort = mineral.map(element => {
+        element["link"] = `/Description/Minerals/${element.name}`
         element["sort"] = mineralSort[element.name]
         return element
     })
@@ -95,8 +98,6 @@ const NutrientResults = () => {
 
             total += element["value"]
 
-            element["link"] = element.name.includes("Vitamin") ? `/Description/Vitamins/${element.name}` : `/Description/"Minerals/${element.name}`
-
             element["color"] = element.name.includes("Vitamin") ? vitaminColor[element.name] : mineralColor[element.name]
             return element
         })
@@ -106,7 +107,7 @@ const NutrientResults = () => {
         ))
         
         const filteredData = data.filter(singleData => {
-            if(singleData.value > 5) {
+            if(singleData.value > 2) {
                 return singleData
             }
         })
@@ -146,6 +147,8 @@ const NutrientResults = () => {
                         legendFlag={true} 
                         centreText="Vitamins" 
                         subCentreText="by day"
+                        bottomCentreText="Click on the nutrient on the chart or the table to see  
+                        food items where it can be found."
                     />
                 </div>
                 <div className="vitamin-result-wrapper">
@@ -168,10 +171,12 @@ const NutrientResults = () => {
                 <div className="chart-wrapper">
                     <MyResponsivePie 
                         data={mineralArray} 
-                        callback={undefined} 
+                        callback={redirect} 
                         legendFlag={true} 
                         centreText={"Minerals"}
                         subCentreText="by day"
+                        bottomCentreText="Click on the nutrient on the chart or the table to see  
+                        food items where it can be found."
                     />
                 </div>
                 <div className="mineral-result-wrapper">

@@ -8,37 +8,58 @@ import { ResponsivePie } from '@nivo/pie'
 // you'll often use just a few of them.
 
 
-const MyResponsivePie = ({ data, callback, legendFlag, centreText, subCentreText }) => {
-    const CenteredMetric = ({ dataWithArc, centerX, centerY}) => {
+const MyResponsivePie = ({ data, callback, legendFlag, centreText, subCentreText, bottomCentreText }) => {
+    const metric = (text, flag, centerY, centerX, style, classname) => {
         return (
             <text
                 x={centerX}
                 y={centerY}
+                className={classname}
                 textAnchor="middle"
                 dominantBaseline="central"
-                style={{
-                    fontSize: `${window.innerWidth < 600 ? "1.5rem" : "2rem"}`,
-                    fontWeight: 600
-                }}
+                style={style}
             >
-                {centreText}
+                {text}
             </text>
         )
     }
+    const CenteredMetric = ({ dataWithArc, centerX, centerY}) => {
+        const style = {
+            fontSize: `${window.innerWidth < 600 ? "1.5rem" : "2rem"}`,
+            fontWeight: 600
+        }
+        return ( metric(centreText, 0, centerY, centerX, style, "centre-text"))
+    }
 
     const SubCenteredMetric = ({ dataWithArc, centerX, centerY}) => {
+        const style = {
+            fontSize: `${window.innerWidth < 600 ? ".7rem" : ".9rem"}`
+        }
+        return ( metric(subCentreText, 0, centerY+30, centerX, style, "subcenter-text"))
+    }
+
+    const bottomMetric = ({ dataWithArc, centerX, centerY}) => {
+        const style = {
+            fontSize: `${window.innerWidth < 600 ? ".9rem" : ".9rem"}`,
+            wordWrap: "break-word"
+        }
+        console.log(bottomCentreText)
+        let arr = bottomCentreText.split("  ")
         return (
             <text
                 x={centerX}
-                y={centerY + 30}
+                y={(2*centerY) - 40}
+                className="bottomcenter-text"
                 textAnchor="middle"
-                className="subcenter-text"
                 dominantBaseline="central"
-                style={{
-                    fontSize: `${window.innerWidth < 600 ? ".7rem" : ".9rem"}`
-                }}
+                style={style}
             >
-                {subCentreText}
+                <tspan x={centerX} dy="15">
+                    {arr[0]}
+                </tspan>
+                <tspan x={centerX} dy="15">
+                    {arr[1]}
+                </tspan>
             </text>
         )
     }
@@ -62,7 +83,7 @@ const MyResponsivePie = ({ data, callback, legendFlag, centreText, subCentreText
             arcLinkLabelsThickness={2}
             arcLinkLabelsColor={{ from: 'color' }}
             arcLabel="label"
-            valueFormat={value =>`${Number(value)}%`}
+            valueFormat={value =>`${Number(value)}`}
             arcLabelsSkipAngle={10}
             arcLabelsTextColor={"white"}
             fill={[
@@ -92,11 +113,11 @@ const MyResponsivePie = ({ data, callback, legendFlag, centreText, subCentreText
                     ]
                 }
             ]}
-            layers={['arcs', 'arcLabels', 'arcLinkLabels', 'legends', CenteredMetric, SubCenteredMetric]}
+            layers={['arcs', 'arcLabels', 'arcLinkLabels', 'legends', CenteredMetric, SubCenteredMetric, bottomMetric]}
             theme={{
                 "background": "transparent",
                 "textColor": "#ffffff",
-                "fontSize": `${window.innerWidth < 600 ? "1.5rem" : "1.7    rem"}`
+                "fontSize": `${window.innerWidth < 600 ? "1.5rem" : "1.6rem"}`
             }}
         />
     )
