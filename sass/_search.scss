@@ -8,8 +8,11 @@
     padding: 0 10px;
     @media only screen and (min-width: $tablet-size) {
         border-radius: 10px;
-        padding: 0 10rem;
+        padding: 0 20px;
     }
+    @media only screen and (min-width: $desktop-size) {
+      padding: 0 10rem;
+     }
     h2{
         background: $primary-color-shade;
         border-top-left-radius: 5px;
@@ -23,8 +26,9 @@
         background: $primary-color-shade;
         width: 100%;
         padding: 0 10px 2rem;
-        @media only screen and (min-width: $tablet-size) {
-         padding: 0 10rem;
+        @media screen and (min-width:$desktop-size) {
+          padding: 0 10rem 2rem 10rem;
+          text-align: center;
         }
     }
     .userSearchControls {
@@ -41,24 +45,33 @@
         margin-right: 1rem;
         width: 100%;
         padding: 0 2.5rem;
-        &::placeholder{
-          
-        }
       }
       button{
-          margin: 2rem 0 2rem 2rem;
+          margin: 2rem;
       }
       @media screen and (min-width:$desktop-size) {
         flex-flow: row nowrap;
         border-bottom-left-radius: 10px;
         border-bottom-right-radius: 10px;
         padding: 0 10rem;
-        input[type="email"]{
-            margin-right: 1rem;
+        input[type="text"] {
+          height: 54px;
+          font-size: 24px;
+          margin-bottom: 2rem;
+    
         }
+      }
+      @media screen and (min-width: $max-width) {
+        padding-bottom: 3rem;
+        
+      }
     }
+    @media screen and (min-width: $max-width) {
+      h2{
+        padding-top: 3rem;
+      }
+      
     }
-  
     /*the container must be positioned relative:*/
     .autocomplete {
       position: relative;
@@ -70,6 +83,10 @@
         position: relative;
         top: 2.3rem; left: .5rem;
         color: $primary-color;
+        @media screen and (min-width:$desktop-size) {
+          top: 2.8rem;
+      
+        }
 
       }
     }

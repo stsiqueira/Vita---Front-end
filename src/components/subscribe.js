@@ -5,7 +5,7 @@
 
 import React from 'react';
 import { useState } from 'react';
-import SubscribeIcon  from "../img/others/subscribe_icon.svg"
+import SubscribeIcon  from "../img/icons/subscribe_icon.svg"
 
 
 

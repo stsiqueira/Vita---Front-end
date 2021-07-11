@@ -15,9 +15,8 @@ const Home = (props) => {
 
     return (
        <div className="home">
-
-           
-
+        
+        <div className="about-search-nutrient-wrapper">
 {/*
 ======================================================================================
                 About Vita Component - Thiago
@@ -37,6 +36,11 @@ const Home = (props) => {
 ====================================================================================== 
 */}
             <SearchNutrient/>
+        </div>
+           
+
+
+            <div className="home-calculate-subscribe-wrapper">
   {/*
   ======================================================================================
   ==                Nutrient Calculator - Glen
@@ -53,6 +57,9 @@ const Home = (props) => {
   ====================================================================================== 
   */}
       <Subscribe/>
+
+
+            </div>
 
        </div>
     )
