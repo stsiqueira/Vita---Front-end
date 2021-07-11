@@ -5,17 +5,25 @@ img {
 
 
 .searchNutrient{
-
   padding: 1.5rem 10px;
   background: #fff;
   display: flex;
   flex-direction: column;
+  @media screen and (min-width:$tablet-size) {
+    padding: 1.5rem 20px;
+  }
   @media screen and (min-width:$desktop-size) {
     padding: 1.5rem 10rem;
+    .title{
+      border-top-left-radius: 20px;
+      border-top-right-radius: 20px;
+    }
     .charts{
       display: flex;
       flex-flow: row nowrap;
       width: 100%;
+      border-bottom-left-radius: 20px;
+      border-bottom-right-radius: 20px;
       .vitaminsChart, 
       .mineralsChart{ 
         flex: 1 0 50%;
@@ -24,15 +32,29 @@ img {
     }
     p{
       padding: 1rem 5rem !important;
+      @media screen and (min-width:$desktop-size) {
+        padding: 1rem 5rem 0 5rem !important;
+      }
     }
-
+    h3{
+      position: relative;
+      top: 12rem;
+    }
+  }
+  @media screen and (min-width:$max-width) {
+    h3{
+      position: relative;
+      top: 15.5rem;
+      font-size: 2rem;
+    }
   }
 
   .title, 
   p,
   .vitaminsChart, 
   .mineralsChart{ 
-    background: $primary-color-shade;
+    background: $primary-color-shade; 
+
     h3{
       text-align: center;
     }
@@ -48,4 +70,21 @@ img {
   .vitaminsChart, .mineralsChart{
     height: 400px;  
   }
+
+  @media screen and (min-width:$desktop-size) {  
+    .vitaminsChart{
+        border-bottom-left-radius: 20px;
+    }   
+    .mineralsChart{
+        border-bottom-right-radius: 20px;
+    }
+  }
+  @media screen and (min-width: $max-width) {
+    h2{
+      padding-top: 3rem;
+    }
+    .vitaminsChart, .mineralsChart{
+      height: 500px;  
+    }
+}
 }
