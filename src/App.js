@@ -1,5 +1,5 @@
 ///////////////////////   IMPORT OF TOOLS      ////////////////////////////////////////
-import { Route, Redirect } from 'react-router-dom';
+import { Route, Switch } from 'react-router-dom';
 
 ///////////////////////   IMPORT OF COMPONENTS ////////////////////////////////////////
 import Header from './components/html_components/header'
@@ -30,6 +30,7 @@ function App() {
 ===================  Home Route - Aman, Glen & Thiago  ===============================
 ====================================================================================== 
 */}
+      <Switch>
         <Route path="/" exact render={(props)=>(
           <>
           <Home />{/**************   HOME PAGE COMPONENT  ***************************/}
@@ -97,9 +98,13 @@ function App() {
           </>
         )}/> 
 
-        <Route path='/404' component={NotFound} />
-        <Redirect from='*' to='/404' />
- 
+        <Route render={()=>(
+          <>
+            <NotFound />{/*****************  NUTRIENT CALCULATOR RESULT COMPONENT  ***************************/}
+          </>
+        )}/>
+       </Switch> 
+
       </div>
 
       <Footer /> {/*****************   FOOTER COMPONENT  ***************************/}
