@@ -8,7 +8,7 @@ import { ResponsivePie } from '@nivo/pie'
 // you'll often use just a few of them.
 
 
-const MyResponsivePie = ({ data, callback, legendFlag, centreText, subCentreText, bottomCentreText }) => {
+const MyResponsivePie = ({ data, callback, legendFlag, parentFlag, centreText, subCentreText, bottomCentreText }) => {
     const metric = (text, flag, centerY, centerX, style, classname) => {
         return (
             <text
@@ -113,7 +113,7 @@ const MyResponsivePie = ({ data, callback, legendFlag, centreText, subCentreText
                     ]
                 }
             ]}
-            layers={['arcs', 'arcLabels', 'arcLinkLabels', 'legends', CenteredMetric, SubCenteredMetric, bottomMetric]}
+            layers={parentFlag ? ['arcs', 'arcLabels', 'arcLinkLabels', 'legends', CenteredMetric, SubCenteredMetric, bottomMetric] : ['arcs', 'arcLabels', 'arcLinkLabels', 'legends']}
             theme={{
                 "background": "transparent",
                 "textColor": "#ffffff",

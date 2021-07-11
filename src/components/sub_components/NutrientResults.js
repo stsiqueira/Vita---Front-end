@@ -144,7 +144,8 @@ const NutrientResults = () => {
                     <MyResponsivePie 
                         data={vitaminArray} 
                         callback={redirect} 
-                        legendFlag={true} 
+                        legendFlag={true}
+                        parentFlag={true}
                         centreText="Vitamins" 
                         subCentreText="by day"
                         bottomCentreText="Click on the nutrient on the chart or the table to see  
@@ -173,6 +174,7 @@ const NutrientResults = () => {
                         data={mineralArray} 
                         callback={redirect} 
                         legendFlag={true} 
+                        parentFlag={true}
                         centreText={"Minerals"}
                         subCentreText="by day"
                         bottomCentreText="Click on the nutrient on the chart or the table to see  

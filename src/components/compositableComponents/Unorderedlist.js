@@ -1,7 +1,6 @@
 import {Link} from 'react-router-dom'
 
 const UnorderedList = ({ headflag, heading, name, classname, borderclassname, rectclassname, arr, flag }) => {
-    console.log(arr)
     return (
         <div className={classname}>
             {headflag ? 
