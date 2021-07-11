@@ -71,5 +71,11 @@
         "Iron": 5,
         "Magnesium": 6,
         "Copper": 7
+    },
+    "activityLevel": {
+        "Sedentary": "Daily activities such as housework or gardening",
+        "Low Active": "30 minutes of moderate activity per day such as walking",
+        "Active": "60 minutes of moderate activity per day such as walking/jogging",
+        "Very Active": "45-60 minutes of vigorous activity"
     }
 }

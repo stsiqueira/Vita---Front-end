@@ -103,7 +103,7 @@ function App() {
             <NotFound />{/*****************  NUTRIENT CALCULATOR RESULT COMPONENT  ***************************/}
           </>
         )}/>
-       </Switch> 
+      </Switch> 
 
       </div>
 
