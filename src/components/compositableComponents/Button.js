@@ -1,6 +1,6 @@
-const Button = ({text, classname, callback, args}) => {
+const Button = ({text, classname, id, callback, args}) => {
     return (
-        <button className={classname} onClick={(e) => callback(args)}>
+        <button className={classname} id={id} onClick={(e) => callback(args, e)}>
             {text}
         </button>
     )

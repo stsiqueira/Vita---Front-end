@@ -64,7 +64,15 @@ const NutrientForm = () => {
         }
     }
 
-    const metricToggle = (value) => {
+    const classToggle = (button) => {
+        button.className.includes("clicked") ? button.classList.remove('clicked') : button.classList.add("clicked");
+    }
+
+    const metricToggle = (value, e) => {
+        const metric = document.getElementById("metric");
+        const standard = document.getElementById("standard");
+        classToggle(metric)
+        classToggle(standard)
         setMetric(value)
     }
   
@@ -84,11 +92,11 @@ const NutrientForm = () => {
                     <div className="metric-wrapper">
                         {
                             ["metric", "standard"].map(metric => (
-                                <Button 
-                                    value={metric}
+                                <Button
                                     key={metric}
-                                    classname={`unit-button ${metric}`}
-                                    text={metric}
+                                    id={metric}
+                                    classname={`unit-button ${metric} ${metric === "metric" ? "clicked" : ""}`}
+                                    text={metric.charAt(0).toUpperCase() + metric.slice(1)}
                                     callback={metricToggle}
                                     args={metric}
                                 />

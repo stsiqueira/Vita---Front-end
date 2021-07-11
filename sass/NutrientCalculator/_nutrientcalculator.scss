@@ -24,6 +24,12 @@
         input{
             text-align: right;
         }
+
+        .metric-wrapper {
+            .clicked {
+                background-color: #f1d8ff;
+            }
+        }
     }
 
     .child-wrapper {
