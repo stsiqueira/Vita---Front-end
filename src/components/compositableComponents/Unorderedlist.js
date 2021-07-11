@@ -26,7 +26,7 @@ const UnorderedList = ({ headflag, heading, name, classname, borderclassname, re
                                     height="1.8rem"
                                 />
                                 </svg>
-                                <span className="nutrient-name">{option.name}</span>
+                                <span className="nutrient-name">{option.name.toLowerCase().includes("vitamin") ? option.name : `${option.label} - ${option.name}`}</span>
                             </div>
                             <div className="nutrient-name-color-wrapper">
                                 <span className="nutrient-name">{option.recommended_intake}</span>
