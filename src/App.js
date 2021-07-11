@@ -13,6 +13,7 @@ import NutrientCalculatorStart from './components/sub_components/NutrientCalcula
 import NutrientResults from './components/sub_components/NutrientResults';
 import NutrientForm from './components/Calculator'
 import { useState } from 'react';
+import NotFound from './components/sub_components/NotFound';
 
 
 function App() {
@@ -93,6 +94,12 @@ function App() {
         <Route path="/NutrientCalculator/Results" render={()=>(
           <>
             <NutrientResults />{/*****************  NUTRIENT CALCULATOR RESULT COMPONENT  ***************************/}
+          </>
+        )}/> 
+
+        <Route render={()=>(
+          <>
+            <NotFound />{/*****************  NOT FOUND COMPONENT  ***************************/}
           </>
         )}/> 
       </div>
