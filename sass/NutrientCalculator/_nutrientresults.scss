@@ -19,15 +19,28 @@
             margin: 0 auto;
             text-align: center;
             padding: .5rem 0 1rem 0;
-            h2{
+
+            @media only screen and (min-width: $max-width) {
+                padding: .5rem 8rem 1rem 8rem;
+            }
+
+            h2 {
                 font-size: 1.6rem;
                 margin-bottom: 2rem;
+
+                @media only screen and (min-width: $max-width) {
+                    font-size: 4rem;
+                }
             }
-            p{
+            p {
                 display: flex;
                 text-align: left;
                 max-width: 100%;
                 margin-bottom: 1.5rem;
+
+                @media only screen and (min-width: $max-width) {
+                    font-size: 1.2rem;
+                }
             }
         }
     }
@@ -82,7 +95,8 @@
                 width: 100%;
                 font-weight: 700;
 
-                .subcenter-text {
+                .subcenter-text,
+                .bottomcenter-text {
                     font-weight: 500;
                 }
 
@@ -96,7 +110,7 @@
                 bottom: 3rem;
                 position: relative;
                 @media only screen and (min-width: $tablet-size) {
-                    margin-bottom: 3.5rem;
+                    margin-bottom: 1.7rem;
                     position: unset;
                 }
             }
@@ -182,6 +196,7 @@
             align-items: center;
             border-radius: 5px;
             padding: .6rem;
+            text-decoration: none;
         
             .nutrient-name-color-wrapper {
                 display: flex;
