@@ -229,6 +229,11 @@ const NutrientForm = () => {
                         <div className="activity-level-wrapper">
                             {activityLevel[activity]}  
                         </div>
+                        <div className="confidential-wrapper">
+                            <p>
+                                This is a confidential information and is not shared or stored in the database and will be removed when the page refreshes.
+                            </p>  
+                        </div>
                         <div className="nutrient-calculator-input-wrapper">
                             <input
                                 className="input-submit" 

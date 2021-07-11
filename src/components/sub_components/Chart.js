@@ -40,10 +40,8 @@ const MyResponsivePie = ({ data, callback, legendFlag, parentFlag, centreText, s
 
     const bottomMetric = ({ dataWithArc, centerX, centerY}) => {
         const style = {
-            fontSize: `${window.innerWidth < 600 ? ".9rem" : ".9rem"}`,
-            wordWrap: "break-word"
+            fontSize: `${window.innerWidth < 600 ? ".9rem" : ".9rem"}`
         }
-        console.log(bottomCentreText)
         let arr = bottomCentreText.split("  ")
         return (
             <text
@@ -113,7 +111,7 @@ const MyResponsivePie = ({ data, callback, legendFlag, parentFlag, centreText, s
                     ]
                 }
             ]}
-            layers={parentFlag ? ['arcs', 'arcLabels', 'arcLinkLabels', 'legends', CenteredMetric, SubCenteredMetric, bottomMetric] : ['arcs', 'arcLabels', 'arcLinkLabels', 'legends']}
+            layers={parentFlag ? ['arcs', 'arcLabels', 'arcLinkLabels', 'legends', CenteredMetric, SubCenteredMetric, bottomMetric] : ['arcs', 'arcLabels', 'arcLinkLabels', 'legends', CenteredMetric]}
             theme={{
                 "background": "transparent",
                 "textColor": "#ffffff",
