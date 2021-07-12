@@ -9,17 +9,18 @@ const HealthConcerns = ({wrapperClassname, optionName, imgClassName, imageUrl, a
     const healtharr = healthData.map(element => element.replace(" ","").toLowerCase())
     
     const handleSubmit = (e) => {
-        e.preventDefault();
-        callback(data);
+        e.preventDefault()
+        callback(data)
     }
 
     const changed = (target, value) => {
-        const items = {...data}
-        items[target] = value
-        setData(prevState => ({
-            ...prevState,
-            [target]: value
-        }));
+        console.log("hi")
+        // const items = {...data}
+        // items[target] = value
+        // setData(prevState => ({
+        //     ...prevState,
+        //     [target]: value
+        // }));
     }
 
     return (
