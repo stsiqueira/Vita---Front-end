@@ -1,4 +1,4 @@
-import { useState } from 'react/cjs/react.development';
+import { useState } from 'react';
 import { healthTestData, healthData } from '../../data/data.json';
 
 const HealthConcerns = ({wrapperClassname, optionName, imgClassName, imageUrl, altText, callback}) => {
