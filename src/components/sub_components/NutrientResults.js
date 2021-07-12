@@ -299,7 +299,7 @@ const NutrientResults = () => {
                 descriptionClassname="desciption-wrapper"
                 descriptionText="Do you want to use the calculator again? No problem! Just remember to save any data you want from your recent use (we do not store your data)."
                 buttonWrapperClassname="recalculate-button-wrapper" buttonClassname="recalculate-button"
-                buttonText="recalculate"
+                buttonText="Recalculate"
                 classname="buttonClassname"
                 callback={recalculateClick}
             />

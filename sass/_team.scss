@@ -1,9 +1,73 @@
 .team{
     display: flex;
     flex-flow: column nowrap;
+    background: #fff;
+    margin: 1rem 10px;
+    border-radius: 5px;
+    max-width: $max-width;
+    @media screen and (min-width: $tablet-size){
+        border-radius: 10px;
+        margin: 1rem 20px;
+        flex-flow: row wrap;
+        justify-content: space-evenly;
+        align-items: baseline;
+        .teamMember{
+            max-width: 300px;
+        }
+    }
+    .teamMemberImg{
+
+        width: 100%;
+        text-align: center;
+        background: linear-gradient(white 50%, $primary-color 50%);
+
+        img{
+            width: 50%;
+            background: $primary-color-shade;
+            border-radius: 50%;
+        }
+    }
 .teamMember{
-    background: $card-bg-teamMembers;
+    border-radius: 5px;
+    margin: 2rem 10px 2rem 10px;
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-items: center;
+    @media screen and (min-width: $tablet-size){
+        border-radius: 10px;
+        margin: 7rem 20px 2rem 20px;
+    }
+    .teamMemberAbout{
+        text-align: center;
+        background: $primary-color;
+        width: 100%;
+        color: #fff;
+        padding: 1rem 0;
+    }
     .teamMemberDescription{
-        background: #fff;
+        padding: 1rem 30px 1rem 30px;
+        border: 2px solid $primary-color;
+        border-bottom-left-radius: 10px;
+        border-bottom-right-radius: 10px;
+        display: flex;
+        flex-flow: column nowrap;
+        justify-content: space-between;
+        p{
+            flex: 1;
+        }
+        @media screen and (min-width: $tablet-size){
+            min-height: 300px;
+        }
+        .links{
+            font-size: 1.3rem;
+            margin-top: 1rem;
+            display: flex;
+            grid-gap: .3rem;
+            justify-content: flex-end;
+            a[href*="github"]{
+                color: black;
+            }
+        }
     }
 }}
