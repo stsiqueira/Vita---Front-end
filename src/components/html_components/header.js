@@ -7,7 +7,7 @@ import { Link } from 'react-router-dom'
 import Navigation from '../sub_components/Navigation'
 import { FiMenu } from "react-icons/fi"
 import { VscChromeClose } from "react-icons/vsc"
-
+import HeaderLogo from "../../img/vita_logo.svg"
 
 
 const Header = (props) => {
@@ -16,10 +16,9 @@ const Header = (props) => {
 
     return (
        <div className="header">
-{/* ================================REPLACE THE H1 for LOGO IMAGE ===================================*/}
            <div className="logo">
             <Link to="/" onClick={()=> props.showMenu ? props.setShowMenu(false) : ""}>
-                <h1>VITA</h1>
+                <img src={HeaderLogo} alt="Vita Logo" />
             </Link>
            </div>
             <Navigation 

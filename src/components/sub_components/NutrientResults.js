@@ -282,7 +282,7 @@ const NutrientResults = () => {
                     </div>
                 </div>
                 <Link
-                    to={{ pathname: "https://fdc.nal.usda.gov/api-guide.html" }} target="_blank">
+                    to={{ pathname: "https://fdc.nal.usda.gov/api-guide.html" }} target="_blank" className="reference">
                     This data is sourced from U.S. department of agriculture
                 </Link>
             </div>
