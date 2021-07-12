@@ -16,7 +16,7 @@ const QuizAnswer = (props) => {
                             "quizAnswer correct"
                         : props.answer.option === props.userAnswer ?
                         "quizAnswer wrong"
-                        : "quizAnswer" 
+                        : "quizAnswer disabled" 
                     : "quizAnswer" 
                 }
             onClick={ (e)=> {
@@ -24,7 +24,7 @@ const QuizAnswer = (props) => {
                 props.answer.option === props.correct ?
                 props.revealAnswer(true, props.answer.option)
                 : props.revealAnswer(false, props.answer.option)
-                : alert("You cannot change your answer")
+                : props.toastMessage()
             }  
             }  
         >

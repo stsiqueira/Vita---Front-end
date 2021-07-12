@@ -5,6 +5,9 @@
     padding-bottom: 3rem;
     border-radius: 10px;
     width: 100%;
+    @media only screen and (min-width: $max-width) {
+        padding: 1rem 4rem;
+    }
     span{
         color: red;
     }

@@ -27,6 +27,8 @@
 
     .image-wrapper {
         text-align: center;
+        display: flex;
+        align-items: center;
         img{
             max-width: 250px;
             @media only screen and (min-width: $tablet-size) {
