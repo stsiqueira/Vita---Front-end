@@ -13,19 +13,20 @@ import VitaBrand from "../img/others/home_vita.svg"
 
 const quizContent = {
     "questions":[
-     {
-         "id":1,
-         "typeOfQuestion":1,
-         "question": "Which fruit contains the most potassium?",
-         "details": "Potassium helps regulate fluid balance, muscle contractions and nerve signals.",
-         "answers":[
-             {"value": "Banana", "option": 1},
-             {"value": "Cucumber", "option": 2},
-             {"value": "Cranberries", "option": 3},
-             {"value": "Peas", "option": 4}
-         ],
-         "correct": 1
-     },
+        
+    {
+        "id":1,
+        "typeOfQuestion":2,
+        "question": "Which of the following is a popular product of British Columbia?",
+        "details": "Potassium helps regulate fluid balance, muscle contractions and nerve signals.",
+        "answers":[
+            {"value": "Banana", "option": 1, "path":"/img/fruits/banana.svg"},
+            {"value": "Coconut", "option": 2, "path":"/img/fruits/coconut.svg"},
+            {"value": "Blueberries", "option": 3, "path":"/img/fruits/blueberry.svg"},
+            {"value": "Watermelon", "option": 4, "path":"/img/fruits/watermelon.svg"}
+        ],
+        "correct": 3
+    },
      {
          "id":2,
          "typeOfQuestion":1,
@@ -38,20 +39,21 @@ const quizContent = {
              {"value": "Potassium", "option": 4}
          ],
          "correct": 2
-     },
+     },     
      {
-         "id":3,
-         "typeOfQuestion":1,
-         "question": "Which of the following foods contains yeast?",
-         "details": "Potassium helps regulate fluid balance, muscle contractions and nerve signals.",
-         "answers":[
-             {"value": "Coconut", "option": 1},
-             {"value": "Grapes", "option": 2},
-             {"value": "Spinach", "option": 3},
-             {"value": "Garlic", "option": 4}
-         ],
-         "correct": 2
-     },    {
+        "id":3,
+        "typeOfQuestion":2,
+        "question": "Which fruit contains the most potassium?",
+        "details": "Potassium helps regulate fluid balance, muscle contractions and nerve signals.",
+        "answers":[
+            {"value": "Banana", "option": 1, "path":"/img/fruits/banana.svg"},
+            {"value": "Peach", "option": 2, "path":"/img/fruits/peach.svg"},
+            {"value": "Strawberry", "option": 3, "path":"/img/fruits/strawberry.svg"},
+            {"value": "Pear", "option": 4, "path":"/img/fruits/pear.svg"}
+        ],
+        "correct": 1
+    },
+    {
          "id":4,
          "typeOfQuestion":1,
          "question": "Which of the following boosts your immune system and even helps you fight cancer?",
@@ -117,18 +119,19 @@ const quizContent = {
          "correct": 1
      },
      {
-         "id":9,
-         "typeOfQuestion":1,
-         "question": "Which of the following is a popular product of British Columbia?",
-         "details": "Potassium helps regulate fluid balance, muscle contractions and nerve signals.",
-         "answers":[
-             {"value": "Banana", "option": 1},
-             {"value": "Coconut", "option": 2},
-             {"value": "Blueberries", "option": 3},
-             {"value": "Watermelon", "option": 4}
-         ],
-         "correct": 3
-     },    {
+        "id":9,
+        "typeOfQuestion":1,
+        "question": "Which of the following foods contains yeast?",
+        "details": "Potassium helps regulate fluid balance, muscle contractions and nerve signals.",
+        "answers":[
+            {"value": "Coconut", "option": 1},
+            {"value": "Grapes", "option": 2},
+            {"value": "Spinach", "option": 3},
+            {"value": "Garlic", "option": 4}
+        ],
+        "correct": 2
+    },
+       {
          "id":10,
          "typeOfQuestion":1,
          "question": "Which of the following minerals is necessary to maintain strong teeth and bones?",
@@ -204,7 +207,11 @@ const Quiz = (props) => {
         setAllQuestions(quizContent.questions);
     },[]);
     // ====================
-
+    function toastMessage() {
+        var message = document.getElementById("toast");
+        message.className = "show";
+        setTimeout(function(){ message.className = message.className.replace("show", ""); }, 3000);
+    }
     const notInitialRender = useRef(false)
 
     useEffect(() => {
@@ -267,7 +274,9 @@ const Quiz = (props) => {
                                             revealAnswer={revealAnswer}
                                             checked={checked}
                                             userAnswer={userAnswer}
-                                            typeOfQuestion={quiz.typeOfQuestion}/>
+                                            typeOfQuestion={quiz.typeOfQuestion}
+                                            toastMessage={toastMessage}
+                                            />
                                         : 
                                         <QuizAnswerType2
                                             key={key}
@@ -277,7 +286,8 @@ const Quiz = (props) => {
                                             showCorrectAnswer={showCorrectAnswer}
                                             revealAnswer={revealAnswer}
                                             checked={checked}
-                                            userAnswer={userAnswer}/>
+                                            userAnswer={userAnswer}
+                                            toastMessage={toastMessage}/>
                                            
                                 }
                                     
@@ -293,11 +303,11 @@ const Quiz = (props) => {
                                         getNextQuestion();
                                         setCurrentQuestion(currentQuestion + 1)
                                         }else{
-                                            alert("Please choose an answer")     
+                                            toastMessage();    
                                         } 
                                 }}>Next</button>
                             </div>
-                            
+                            <div id="toast">Please choose an answer</div>
                         </div>
                     </div>
                     :""
