@@ -2,7 +2,10 @@ import { useState } from 'react/cjs/react.development';
 import { healthTestData, healthData } from '../../data/data.json';
 
 const HealthConcerns = ({wrapperClassname, optionName, imgClassName, imageUrl, altText, callback}) => {
+    console.log(healthTestData)
+    console.log(healthData)
     const [data , setData] = useState(healthTestData)
+    console.log(data)
     const healtharr = healthData.map(element => element.replace(" ","").toLowerCase())
     
     const handleSubmit = (e) => {
