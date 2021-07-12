@@ -2,11 +2,11 @@
 //                                  TEAM PAGE COMPONENT 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////
 import React from 'react';
-import Watermelon from "../../img/fruits/watermelon.svg"
-
 
 
 const QuizAnswer = (props) => {
+    let itemImageUrl = "/img/fruit/";
+    let test = "WATERMELON";
     return (
                 <div 
                     className=                   
@@ -16,7 +16,7 @@ const QuizAnswer = (props) => {
                                 "quizAnswerType2 correct"
                                 : props.answer.option === props.userAnswer ?
                                 "quizAnswerType2 wrong"
-                                : "quizAnswerType2" 
+                                : "quizAnswerType2 disabled" 
                                 : "quizAnswerType2" 
                             }
                     onClick={ (e)=> {
@@ -24,14 +24,14 @@ const QuizAnswer = (props) => {
                                 props.answer.option === props.correct ?
                                 props.revealAnswer(true, props.answer.option)
                                 : props.revealAnswer(false, props.answer.option)
-                                : alert("You cannot change your answer")
+                                : props.toastMessage()
                             }  
                     }  
                 >
                     <div 
                         className="answer" 
                     >
-                        <img src={Watermelon} alt="fruit" />
+                        <img src={props.answer.path} alt={props.answer.value + " image"} /> 
                         <p>{props.answer.value} </p>
                     </div>
 
