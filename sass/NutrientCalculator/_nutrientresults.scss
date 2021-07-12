@@ -80,20 +80,28 @@
             }
         }
 
+        .react-tabs {
+            @media only screen and (min-width: $desktop-size) {
+                background: #fff;
+                height: 960px;
+                overflow: hidden;
+            }
+        }
+
         .chart-vitamin-result-wrapper,
         .chart-mineral-result-wrapper {
             display: grid;
             align-items: center;
             padding: 1rem;
             padding-bottom: 0;
-            background: #fff;
             border-radius: 5px;
             margin-bottom: 1rem;
-            
+            background-color: #fff;
 
             @media only screen and (min-width: $tablet-size) {
                 grid-template-columns: 1.2fr .8fr;  
-                border-radius: 10px;  
+                border-radius: 10px;
+                background-color: unset;
             }
             .chart-wrapper {
                 height: 25.75rem;
@@ -130,6 +138,21 @@
                     grid-gap: .8rem;
                     font-weight: 600;
                 }   
+            }
+        }
+
+        .chart-vitamin-result-wrapper {
+            @media only screen and (min-width: $desktop-size) {
+                margin-bottom: 0;
+                position: relative;
+                top: -3.5rem;
+            }
+        }
+
+        .chart-mineral-result-wrapper {
+            @media only screen and (min-width: $desktop-size) {
+                position: relative;
+                top: -9.5rem;
             }
         }
 

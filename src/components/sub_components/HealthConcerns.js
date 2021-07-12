@@ -1,20 +1,26 @@
 import { useState } from 'react';
 import { healthTestData, healthData } from '../../data/data.json';
+import fatigue from "../../img/health_concerns/fatigue.svg"
+import hairloss from "../../img/health_concerns/hair_loss.svg"
+import insomnia from "../../img/health_concerns/insomnia.svg"
+import skin_problems from "../../img/health_concerns/skin_problems.svg"
 
-const HealthConcerns = ({wrapperClassname, optionName, imgClassName, imageUrl, altText, callback}) => {
-    console.log(healthTestData)
-    console.log(healthData)
+
+const HealthConcerns = ({wrapperClassname, imgClassName, imageUrl, altText, callback}) => {
+    const healthImage = {
+        "fatigue": fatigue,
+        "hairloss": hairloss,
+        "insomnia": insomnia,
+        "skinproblems": skin_problems,
+    }
     const [data , setData] = useState(healthTestData)
-    console.log(data)
     const healtharr = healthData.map(element => element.replace(" ","").toLowerCase())
-    
     const handleSubmit = (e) => {
         e.preventDefault();
         callback(data);
     }
 
     const changed = (target, value) => {
-        console.log("hi")
         const items = {...data};
         items[target] = value;
         setData(prevState => ({
@@ -28,7 +34,7 @@ const HealthConcerns = ({wrapperClassname, optionName, imgClassName, imageUrl, a
             {healtharr.map(element => (
                 <div key={element} className="checkbox-wrapper">
                     <div className={wrapperClassname}>
-                        <img className={imgClassName} src={imageUrl} alt={altText} />
+                        <img className={imgClassName} src={healthImage[element]} alt={altText} />
                         <input 
                             type="checkbox" 
                             id={element} 

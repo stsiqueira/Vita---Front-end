@@ -20,17 +20,17 @@ const Navigation = (props) => {
                     </Link>
                 </li>
                 <li>
-                    <Link to='Quiz' onClick={()=> props.setShowMenu(false)}> 
+                    <Link to='/Quiz' onClick={()=> props.setShowMenu(false)}> 
                         Quiz
                     </Link>   
                 </li>
                 <li>
-                    <Link to='Contact' onClick={()=> props.setShowMenu(false)}>
+                    <Link to='/Contact' onClick={()=> props.setShowMenu(false)}>
                         Contact
                     </Link>
                 </li>
                 <li>
-                    <Link to='Team' onClick={()=> props.setShowMenu(false)}> 
+                    <Link to='/Team' onClick={()=> props.setShowMenu(false)}> 
                         Team
                     </Link>        
                 </li>
