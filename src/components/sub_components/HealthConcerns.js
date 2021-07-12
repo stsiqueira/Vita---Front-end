@@ -14,8 +14,9 @@ const HealthConcerns = ({wrapperClassname, optionName, imgClassName, imageUrl, a
     }
 
     const changed = (target, value) => {
-        const items = {...data}
-        items[target] = value
+        console.log("hi")
+        const items = {...data};
+        items[target] = value;
         setData(prevState => ({
             ...prevState,
             [target]: value
