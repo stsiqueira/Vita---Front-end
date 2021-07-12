@@ -183,7 +183,7 @@ const DetailContainer = ({ itemName, itemType }) => {
 
     let otherHeading = "Other " + itemType;
     let selectedItemHeading = itemName + " Rich Food";
-
+    console.log(richFoodItems)
     return (
         <>
             <ItemDescription itemName={itemName} itemText={itemDescription} itemImageUrl={itemImageUrl} />
