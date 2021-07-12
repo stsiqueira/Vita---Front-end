@@ -272,13 +272,13 @@ const NutrientResults = () => {
                         </p>
                     </div>
                     <div className="options">
-                        {/* <HealthConcerns
+                        <HealthConcerns
                             wrapperClassname="wrapper"
                             imageUrl="https://picsum.photos/100"
                             imgClassName="emoji"
                             altText="wow"
                             callback={handleSubmit}
-                        /> */}
+                        />
                     </div>
                 </div>
                 <Link
