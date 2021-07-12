@@ -11,6 +11,7 @@ import Recalculate from "./Recalculate";
 import HealthConcerns from "./HealthConcerns";
 import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
 import 'react-tabs/style/react-tabs.css';
+import RichFood from './RichFoods';
 import { vitaminColor, vitaminSort, mineralSort, mineralColor, mineralShortform } from '../../data/data.json';
 import OthetItems from './OtherItems';
 
@@ -19,6 +20,9 @@ const NutrientResults = () => {
     const location = useLocation()
     const history = useHistory()
     const { vitamin, mineral } = location.state
+
+    const [selectedNutrientType, SetSelectedNutrientType] = useState();
+    const [selectedNutrient, SetSelectedNutrient] = useState();
 
     const addVitaminSort = vitamin.map(element => {
         element["link"] = `/Description/Vitamins/${element.name}`
@@ -263,11 +267,9 @@ const NutrientResults = () => {
                 </div> :
                     <></>
                 }
-
-                <div className="item-container">
-                    <OthetItems heading={heading}  />
-                </div>
-
+                { selectedNutrientType && selectedNutrient &&
+                    <RichFood nutrientType = {selectedNutrientType} nutrientName = {selectedNutrient}/>      
+                }
                 <div className="health-concern-wrapper">
                     <div className="health-concern-description">
                         <h2>Health Concerns</h2>
