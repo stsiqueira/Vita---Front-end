@@ -17,4 +17,4 @@ const Recalculate = ({parentClassname, descriptionClassname, descriptionText,but
     )
 }
 
-export default Recalculate
+export default Recalculate;

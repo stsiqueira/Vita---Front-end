@@ -47,4 +47,4 @@ const HealthConcerns = ({wrapperClassname, optionName, imgClassName, imageUrl, a
     )
 }
 
-export default HealthConcerns
+export default HealthConcerns;
