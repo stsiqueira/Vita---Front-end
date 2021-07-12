@@ -12,7 +12,7 @@ import HealthConcerns from "./HealthConcerns";
 import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
 import 'react-tabs/style/react-tabs.css';
 import { vitaminColor, vitaminSort, mineralSort, mineralColor, mineralShortform } from '../../data/data.json';
-
+import OthetItems from './OtherItems';
 
 
 const NutrientResults = () => {
@@ -112,14 +112,18 @@ const NutrientResults = () => {
     }
 
     const redirect = (node) => {
-        history.push({
-            pathname: node.data.link
-        });
+        console.log(node)
+        // history.push({
+        //     pathname: node.data.link
+        // });
+        setHeading(`${node.id} Rich Food`)
     }
 
     const [vitaminArray, setVitaminArray] = useState(addKeyToJsonArray(addVitaminSort));
 
     const [mineralArray, setMineralArray] = useState(addKeyToJsonArray(addMineralSort));
+
+    const [heading, setHeading] = useState("")
 
     const myRef = useRef(null)
 
@@ -259,6 +263,10 @@ const NutrientResults = () => {
                 </div> :
                     <></>
                 }
+
+                <div className="item-container">
+                    <OthetItems heading={heading}  />
+                </div>
 
                 <div className="health-concern-wrapper">
                     <div className="health-concern-description">

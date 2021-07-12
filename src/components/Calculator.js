@@ -3,6 +3,8 @@ import { useHistory } from "react-router-dom";
 import Labels from './compositableComponents/Label';
 import Select from './compositableComponents/Select';
 import { fstatusData as fdata, activityData, genderData, activityLevel } from '../data/data.json';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 import Button from './compositableComponents/Button';
 
 const NutrientForm = () => {
@@ -16,32 +18,68 @@ const NutrientForm = () => {
     const [ heightinches, setHeightinches ] = useState(0);
     const [ activity, setActivity ] = useState("");
 
-    // const conditionalHandling = () => {
-    //     if((age < 13 || age > 40) && fstatus) {
-    //         return false
-    //     }
-    //     if (height < -1 || height > 220) {
-    //         return false
-    //     }
-    //     if (weight < -1 )
-    // }
+    const condition = (metric, gender, age, heightfeet, heightinches) => {
+        let flag = true
+        if(!["STANDARD", "METRIC"].includes(metric.toUpperCase())) {
+            flag = false
+        }
+        console.log(gender)
+        if(!["MALE", "FEMALE"].includes(gender)) {
+            flag = false
+        }
+
+        if(age < 10 || age > 100) {
+            console.log("age");
+            flag = false
+        }
+        
+        if (metric === "metric") {
+            if (heightfeet <= 0 || heightfeet > 220) {
+                console.log("height");
+                flag = false
+            }
+        }
+
+        return flag
+    }
 
     const handleSubmit= async (e) => {
         e.preventDefault();
+
         const vitaminList = ["Vitamin A", "Vitamin B6", "Niacin", "Pantothenic Acid", "Vitamin C", "Vitamin K", "Vitamin E"]
         const mineralList = ["Calcium", "Copper", "Iron", "Magnesium", "Phosphorus", "Potassium", "Zinc"]
+
+        if (!condition(metric, gender, age, heightfeet, heightinches)) {
+            toast.warn('Please Check your inputs', {
+                position: "bottom-center",
+                autoClose: 2000,
+                hideProgressBar: true,
+                closeOnClick: true,
+                pauseOnHover: true,
+                draggable: true,
+                progress: undefined,
+            });
+            return false
+        }
+            
         const my_obj = {
-            "MEAS_UNITS": "STANDARD",
+            "MEAS_UNITS": metric.toUpperCase(),
             "SEX": gender,
             "AGE": age,
             "AGE_TYPE": "YRS",
-            "HEIGHT_FEET": heightfeet,
-            "HEIGHT_INCHES": heightinches,
-            "WEIGHT": 150,
+            "WEIGHT": weight,
             "ACTIVITY": activity,
             "F_STATUS": fstatus,
             "submit": "",
         }
+
+        if(metric === "standard") {
+            my_obj["HEIGHT_FEET"] = heightfeet
+            my_obj["HEIGHT_INCHES"] =  heightinches
+        } else {
+            my_obj["HEIGHT_CM"] = heightfeet
+        }
+
         const res = await fetch("http://ec2-3-131-97-46.us-east-2.compute.amazonaws.com/calculate/", {
 			method: 'POST',
 			headers: {
@@ -113,7 +151,7 @@ const NutrientForm = () => {
                                     className="input-age" 
                                     name='age' 
                                     type='number'
-                                    min="5"
+                                    min="10"
                                     max="100"
                                     value={age}
                                     onChange={e => setAge(e.target.value)}
@@ -131,7 +169,7 @@ const NutrientForm = () => {
                                     name='weight' 
                                     type='number' 
                                     
-                                    max={metric === "standard" ? "280" : "140"}
+                                    max={metric === "standard" ? "260" : "130"}
                                     value={weight}
                                     onChange={e => setWeight(e.target.value)}
                                     required
@@ -242,6 +280,17 @@ const NutrientForm = () => {
                             />
                         </div>
                     </form>
+                    <ToastContainer
+                        position="bottom-center"
+                        autoClose={2000}
+                        hideProgressBar
+                        newestOnTop={false}
+                        closeOnClick
+                        rtl={false}
+                        pauseOnFocusLoss
+                        draggable
+                        pauseOnHover
+                    />
                 </div>
             </div>
       </div>
