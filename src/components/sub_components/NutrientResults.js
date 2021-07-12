@@ -272,27 +272,13 @@ const NutrientResults = () => {
                         </p>
                     </div>
                     <div className="options">
-                        <HealthConcerns
+                        {/* <HealthConcerns
                             wrapperClassname="wrapper"
                             imageUrl="https://picsum.photos/100"
                             imgClassName="emoji"
                             altText="wow"
                             callback={handleSubmit}
-                        />
-                        {/* <form onSubmit={e => { handleSubmit(e)}}>
-                            {healthData.map((element) => {
-                                return <HealthConcerns 
-                                    key={element}
-                                    wrapperClassname="wrapper"
-                                    optionName={element}
-                                    imageUrl="https://picsum.photos/100"
-                                    imgClassName="emoji"
-                                    altText="wow"
-                                    callback={handleSubmit}
-                                />
-                            })}
-                            <input type="submit" value="Submit" />
-                        </form> */}
+                        /> */}
                     </div>
                 </div>
                 <Link
