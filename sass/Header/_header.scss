@@ -3,11 +3,10 @@
     display: flex;
     padding: 0 2rem;
     justify-content: space-between;
-    h1{
-        background-color: white;
-        color: black;
-        padding: .2rem .5rem;
-        border: 2px solid black;
+    img{
+        height: 50px;
+        display: flex;
+        justify-content: flex-end;
     }
     a{
         text-decoration: none;

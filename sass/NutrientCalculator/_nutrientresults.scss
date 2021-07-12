@@ -50,7 +50,6 @@
         // gap: 1rem;
         flex-flow: column;
         margin: 1rem;
-        background-color: white;
         border-radius: .5rem;
 
         .result-heading {
@@ -70,6 +69,7 @@
                 border: unset;
                 border-bottom: 1px solid #92409f;
             }
+
             
             .react-tabs__tab--selected:after {
                 content: "";
@@ -86,9 +86,14 @@
             align-items: center;
             padding: 1rem;
             padding-bottom: 0;
+            background: #fff;
+            border-radius: 5px;
+            margin-bottom: 1rem;
+            
 
             @media only screen and (min-width: $tablet-size) {
-                grid-template-columns: 1.2fr .8fr;    
+                grid-template-columns: 1.2fr .8fr;  
+                border-radius: 10px;  
             }
             .chart-wrapper {
                 height: 25.75rem;
@@ -133,6 +138,16 @@
             position: relative;
             top: -1rem;
         }
+        .reference{
+            background: $primary-color-shade;
+            color:black;
+            padding: .5rem;
+            text-align: center;
+            @media only screen and (min-width: $tablet-size) {
+                text-align: left;
+            }
+
+        }
 
         .health-concern-wrapper {
             display: grid;
@@ -140,7 +155,8 @@
             border: 1px solid black;
             background: #fff;
             border-radius: 5px;
-            padding: 0 10px;
+            padding: 0 10px 3rem 10px;
+            margin-top: 1.5rem;
             @media only screen and (min-width: $tablet-size) {
                 border-radius: 10px;
             }
@@ -153,10 +169,21 @@
                 }
             }
 
-            .options {
+            .options form{
                 display: flex;
                 flex-flow: row wrap;
-                gap: 1rem;
+                grid-gap: 1rem;
+                input[type="submit"]{
+                    margin: auto;
+                }
+                label{
+                    font-weight: bold;
+                }
+                @media only screen and (min-width: $tablet-size) {
+                    margin: .5rem 1rem;
+                    grid-gap: 1.5rem;
+                    justify-content: space-evenly;
+                }
 
                 & > .checkbox-wrapper {
                     flex: 0 0 48%;
@@ -166,16 +193,20 @@
                     padding: 1rem;
                     background: $bg-color-healthConcern;
                     border-radius: 5px;
+
                     @media only screen and (min-width: $tablet-size) {
                         border-radius: 10px;
+                        flex: 0 0 22%;
                     }
 
                     .wrapper {
-                        display: grid;
-                        
+                        display: grid; 
+                        width: 100%;
                         .emoji {
                             grid-row: 1/-1;
                             grid-column: 1/-1;
+                            width: 100%;
+
                         }
 
                         input {
@@ -188,6 +219,7 @@
                     
                 }
             }
+
         }
 
         .nutrient-color-link-wrapper {
@@ -341,6 +373,13 @@
         display: grid;
         grid-gap: 2rem;
         padding: 1rem 0;
+        background-color: #fff;
+        border-radius: 5px;
+
+        @media only screen and (min-width: $tablet-size) {
+            border-radius: 10px;
+        }
+
     }
 
     ul {
