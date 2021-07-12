@@ -127,33 +127,32 @@ const NutrientResults = () => {
     const myRef = useRef(null)
 
     const updateChartData = (arr, vitamin, updatedValue, flag) => {
-        const item = { ...arr.filter(element => element["id"] === vitamin)[0] }
+        const item = { ...arr.filter(element => element["id"] === vitamin)[0] };
         item["value"] = (Number(item["value"]) + updatedValue).toString()
 
         const updatedArray = arr.map(element => {
-            if (element["id"] == vitamin) {
+            if (element["id"] === vitamin) {
                 element = item
             }
             return element
         })
-        console.log(updatedArray)
         { flag ?
         setMineralArray(prevState => {
             let item = updatedArray.filter(element => element["id"] === vitamin)[0]
             let newData = prevState.filter(element => element["id"] !== vitamin)
-            return [...newData, item]
+            return [...newData, item];
         }) : 
         setVitaminArray(prevState => {
             let item = updatedArray.filter(element => element["id"] === vitamin)[0]
             let newData = prevState.filter(element => element["id"] !== vitamin)
             console.log(newData)
-            return [...newData, item]
+            return [...newData, item];
         })
         }
     }
 
     const handleSubmit = (data) => {
-        let arr = [...vitaminArray]
+        let arr = [...vitaminArray];
 
         if (data["fatigue"]) {
             updateChartData(arr, "Vitamin B5", 10)
@@ -164,7 +163,7 @@ const NutrientResults = () => {
         }
 
         if (data["insomnia"]) {
-            let arra = [...mineralArray]
+            let arra = [...mineralArray];
             updateChartData(arra, "Calcium", -5, 1)
         }
 
