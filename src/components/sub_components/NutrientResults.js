@@ -106,11 +106,8 @@ const NutrientResults = () => {
             element["value"] = ((element["value"] / total) * 100).toFixed(2)
         ))
 
-        const filteredData = data.filter(singleData => {
-            if (singleData.value > 2) {
-                return singleData
-            }
-        })
+        const filteredData = data.filter(singleData => singleData.value > 2)
+
         return filteredData
     }
 
@@ -126,9 +123,15 @@ const NutrientResults = () => {
 
     const myRef = useRef(null)
 
+    const stateData = (updatedArray, prevState, vitamin) => {
+        let item = updatedArray.filter(element => element["id"] === vitamin)[0]
+        let newData = prevState.filter(element => element["id"] !== vitamin)
+        return [...newData, item];
+    }
+
     const updateChartData = (arr, vitamin, updatedValue, flag) => {
         const item = { ...arr.filter(element => element["id"] === vitamin)[0] };
-        item["value"] = (Number(item["value"]) + updatedValue).toString()
+        item["value"] = (Number(item["value"]) + updatedValue).toFixed(2).toString()
 
         const updatedArray = arr.map(element => {
             if (element["id"] === vitamin) {
@@ -137,17 +140,12 @@ const NutrientResults = () => {
             return element
         })
         { flag ?
-        setMineralArray(prevState => {
-            let item = updatedArray.filter(element => element["id"] === vitamin)[0]
-            let newData = prevState.filter(element => element["id"] !== vitamin)
-            return [...newData, item];
-        }) : 
-        setVitaminArray(prevState => {
-            let item = updatedArray.filter(element => element["id"] === vitamin)[0]
-            let newData = prevState.filter(element => element["id"] !== vitamin)
-            console.log(newData)
-            return [...newData, item];
-        })
+            setMineralArray(prevState => {
+                return stateData(updatedArray, prevState, vitamin)
+            }) : 
+            setVitaminArray(prevState => {
+                return stateData(updatedArray, prevState, vitamin)
+            })
         }
     }
 
@@ -182,7 +180,7 @@ const NutrientResults = () => {
 
     const tabListVitaminWrapper = () => {
         return (
-            <div ref={myRef} className="chart-vitamin-result-wrapper">
+            <div className="chart-vitamin-result-wrapper">
                 <div className="chart-wrapper" >
                     <MyResponsivePie
                         data={vitaminArray}
@@ -245,7 +243,7 @@ const NutrientResults = () => {
                     </p>
                 </div>
             </div>
-            <div className="results-wrapper">
+            <div ref={myRef} className="results-wrapper">
                 <Tabs>
                     {window.innerWidth < 600 ? <TabList className="vitamin-mineral-tab-wrapper">
                         <Tab>Vitamins</Tab>
