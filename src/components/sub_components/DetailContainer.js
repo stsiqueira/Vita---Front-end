@@ -3,6 +3,7 @@ import { useState, useEffect } from 'react';
 import ItemDescription from './ItemDescription';
 import Table from './Table';
 import OthetItems from './OtherItems';
+import RichFood from './RichFoods';
 
 
 const DetailContainer = ({ itemName, itemType }) => {
@@ -21,7 +22,7 @@ const DetailContainer = ({ itemName, itemType }) => {
     const [mineralCompostion, SetMineralComposition] = useState([{ name: "nName2", value: "nValue2" }]);
     const [dispalyTables, SetDispalyTables] = useState(false);
     const [dispalyImages, SetDispalyImages] = useState(false);
-    const [richFoodItems, SetRichFoodItems] = useState([{}]);
+    const [richFoodData, SetRichFoodData] = useState([{}]);
     const [otherItems, SetOtherItems] = useState([{}]);
     const [itemImageUrl, SetItemImageUrl] = useState(false);
     const [itemDescription, SetItemDescription] = useState(false);
@@ -81,22 +82,22 @@ const DetailContainer = ({ itemName, itemType }) => {
     }
 
     let otherSimilarItemsList = [];
-    let richFoodsItemsList = [];
+    // let richFoodsItemsList = [];
 
 
-    const addToRichIemList = (richFoods, foodType) => {
+    // const addToRichIemList = (richFoods, foodType) => {
 
-        richFoods = richFoods.split(", ");
-        richFoods.forEach(element => {
-            const rich = {
-                name: element,
-                imgUrl: siteContent[0][foodType][0].find(i => i.name === element).imageUrl,
-                type: foodType
-            }
-            richFoodsItemsList.push(rich);
-        });
+    //     richFoods = richFoods.split(", ");
+    //     richFoods.forEach(element => {
+    //         const rich = {
+    //             name: element,
+    //             imgUrl: siteContent[0][foodType][0].find(i => i.name === element).imageUrl,
+    //             type: foodType
+    //         }
+    //         richFoodsItemsList.push(rich);
+    //     });
 
-    }
+    // }
 
     useEffect(() => {
         (async function () {
@@ -145,6 +146,7 @@ const DetailContainer = ({ itemName, itemType }) => {
                     Minerals: nutrientObj.Minerals,
                     Vitamins: nutrientObj.Vitamins
                 })
+                SetRichFoodData(siteContent);
                 console.log(siteContent);
                 SetItemImageUrl(siteContent[0][itemType][0].find(f => f.name === itemName).imageUrl);
                 SetItemDescription(siteContent[0][itemType][0].find(f => f.name === itemName).description);
@@ -165,25 +167,25 @@ const DetailContainer = ({ itemName, itemType }) => {
             SetOtherItems(otherSimilarItemsList);
 
             // Feature - Pull Food Items through Vitamins or Minerals
-            if (itemType === "Minerals" || itemType === "Vitamins") {
+            // if (itemType === "Minerals" || itemType === "Vitamins") {
 
-                let richFoods = siteContent[0][itemType][0].find(i => i.name === itemName).richFruits;
+            //     let richFoods = siteContent[0][itemType][0].find(i => i.name === itemName).richFruits;
 
-                addToRichIemList(richFoods, "Fruits");
-                richFoods = siteContent[0][itemType][0].find(i => i.name === itemName).richVegetables;
+            //     addToRichIemList(richFoods, "Fruits");
+            //     richFoods = siteContent[0][itemType][0].find(i => i.name === itemName).richVegetables;
 
-                addToRichIemList(richFoods, "Vegetables");
+            //     addToRichIemList(richFoods, "Vegetables");
 
-                richFoodsItemsList = shuffle(richFoodsItemsList);
-                richFoodsItemsList.splice(4);
-                SetRichFoodItems(richFoodsItemsList);
-            }
+            //     richFoodsItemsList = shuffle(richFoodsItemsList);
+            //     richFoodsItemsList.splice(4);
+            //     SetRichFoodItems(richFoodsItemsList);
+            // }
         })();
     }, [itemName]);
 
     let otherHeading = "Other " + itemType;
-    let selectedItemHeading = itemName + " Rich Food";
-    console.log(richFoodItems)
+    // let selectedItemHeading = itemName + " Rich Food";
+
     return (
         <>
             <ItemDescription itemName={itemName} itemText={itemDescription} itemImageUrl={itemImageUrl} />
@@ -195,10 +197,10 @@ const DetailContainer = ({ itemName, itemType }) => {
                     </div>
                 }
                 {
-                    dispalyImages &&
-                    <div className="imagesContent">
-                        <OthetItems heading={selectedItemHeading} otherItemsList={richFoodItems} />
-                    </div>
+                    dispalyImages && <RichFood nutrientName = {itemName} nutrientType = {itemType} siteContent = {richFoodData}/>
+                    // <div className="imagesContent">
+                    //     <OthetItems heading={selectedItemHeading} otherItemsList={richFoodItems} />
+                    // </div>
                 }
             </div>
             <div className="otherItemsContainer">
