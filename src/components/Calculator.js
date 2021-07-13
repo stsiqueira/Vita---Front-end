@@ -23,7 +23,7 @@ const NutrientForm = () => {
         if(!["STANDARD", "METRIC"].includes(metric.toUpperCase())) {
             flag = false
         }
-        console.log(gender)
+
         if(!["MALE", "FEMALE"].includes(gender)) {
             flag = false
         }
@@ -243,14 +243,14 @@ const NutrientForm = () => {
 
                         
                         <div className="nutrient-calculator-input-wrapper preg-lact-wrapper">
-                            <Labels for="F_STATUS" text=" Pregnant or Lactating?" classname={gender === "MALE" ? "disable" : age > 13 && age < 40? null : "disable"}/>
+                            <Labels for="F_STATUS" text=" Pregnant or Lactating?" classname={gender === "MALE" ? "disable" : age > 13 && age < 50? null : "disable"}/>
                             <Select 
                                 name="F_STATUS" 
                                 value={fstatus} 
                                 setvalue={setFstatus} 
                                 options={fdata}
-                                disable={gender === "MALE" ? "disabled" : age > 13 && age < 40? null : "disabled"}
-                                require={gender === "MALE" ? "disabled" : age > 13 && age < 40? null : "disabled"}
+                                disable={gender === "MALE" ? "disabled" : age > 13 && age < 50? null : "disabled"}
+                                require={gender === "MALE" ? "disabled" : age > 13 && age < 50? null : "disabled"}
                             />
                             
                         </div>

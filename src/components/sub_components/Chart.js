@@ -1,6 +1,6 @@
 // install (please make sure versions match peerDependencies)
 // yarn add @nivo/core @nivo/pie
-import { ResponsivePie } from '@nivo/pie'
+import { ResponsivePie, Pie } from '@nivo/pie'
 // make sure parent container have a defined height when using
 // responsive component, otherwise height will be 0 and
 // no chart will be rendered.
@@ -8,7 +8,7 @@ import { ResponsivePie } from '@nivo/pie'
 // you'll often use just a few of them.
 
 
-const MyResponsivePie = ({ data, callback, legendFlag, parentFlag, centreText, subCentreText, bottomCentreText }) => {
+const MyResponsivePie = ({ data, callback, removeDataMetrics,legendFlag, parentFlag, centreText, subCentreText, bottomCentreText }) => {
     const metric = (text, flag, centerY, centerX, style, classname) => {
         return (
             <text
@@ -40,7 +40,7 @@ const MyResponsivePie = ({ data, callback, legendFlag, parentFlag, centreText, s
 
     const bottomMetric = ({ dataWithArc, centerX, centerY}) => {
         const style = {
-            fontSize: `${window.innerWidth < 600 ? ".9rem" : ".9rem"}`
+            fontSize: `${window.innerWidth < 600 ? ".5rem" : ".9rem"}`
         }
         let arr = bottomCentreText.split("  ")
         return (
@@ -84,8 +84,27 @@ const MyResponsivePie = ({ data, callback, legendFlag, parentFlag, centreText, s
             valueFormat={value =>`${Number(value)}`}
             arcLabelsSkipAngle={10}
             arcLabelsTextColor={"white"}
-            fill={[
-            ]}
+            fill={[]}
+            tooltip={({ datum: { id, value, color } }) => (
+                <div
+                className="tooltip"
+                style={{
+                    padding: 12,
+                    color: "black",
+                    background: '#fff',
+                }}
+                >
+                    <svg style={{width: "1rem", height: "1rem"}}>
+                        <rect 
+                            style={{fill: color, width: "1rem", height: "1rem"}}
+                        />
+                    </svg>
+                    
+                    <strong>
+                        {id}{removeDataMetrics ? "" : `: ${value}`} 
+                    </strong>
+                </div>
+            )}
             legends={legendFlag ? undefined : [
                 {
                     anchor: 'bottom',
@@ -115,7 +134,7 @@ const MyResponsivePie = ({ data, callback, legendFlag, parentFlag, centreText, s
             theme={{
                 "background": "transparent",
                 "textColor": "#ffffff",
-                "fontSize": `${window.innerWidth < 600 ? "1.5rem" : "1.6rem"}`
+                "fontSize": `${window.innerWidth < 600 ? "1.2rem" : "1.6rem"}`
             }}
         />
     )
