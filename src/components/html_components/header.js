@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////////////////////////////
-// Header component - Thiago
+//                                      Header component - Thiago
 ////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 import React from 'react';
@@ -7,7 +7,6 @@ import { Link } from 'react-router-dom'
 import Navigation from '../sub_components/Navigation'
 import { FiMenu } from "react-icons/fi"
 import { VscChromeClose } from "react-icons/vsc"
-import HeaderLogo from "../../img/vita_logo.svg"
 
 
 const Header = (props) => {
@@ -18,7 +17,7 @@ const Header = (props) => {
        <div className="header">
            <div className="logo">
             <Link to="/" onClick={()=> props.showMenu ? props.setShowMenu(false) : ""}>
-                <img src={HeaderLogo} alt="Vita Logo" />
+                <img src="/img/vita_logo.svg" alt="Vita Logo" />
             </Link>
            </div>
             <Navigation 
