@@ -291,6 +291,12 @@
                     max-width: 50%;
                 }
             }
+            .searchFood{
+                img{
+                    max-height: 130px;
+                }
+
+            }
            
         }
         @media screen and (min-width:$desktop-size) {

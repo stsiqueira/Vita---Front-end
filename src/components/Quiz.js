@@ -7,8 +7,7 @@ import { Link } from 'react-router-dom'
 import { useState, useEffect, useRef } from 'react';
 import QuizAnswer from '../components/sub_components/QuizAnswer'
 import QuizAnswerType2 from '../components/sub_components/QuizAnswerType2'
-import CalculateImg from "../img/others/nutrient_calculator_icon.svg"
-import VitaBrand from "../img/others/home_vita.svg"
+
 
 
 const quizContent = {
@@ -230,7 +229,7 @@ const Quiz = (props) => {
                showQuiz ? "" : 
           
            <div className="quizAbout">
-               <img src={VitaBrand} alt="Vita brand" />
+               <img src="/img/icons/home_vita.svg" alt="Vita brand" />
             <h3> Ready to test your Knowledge?</h3>
             <p className="questionDetail">This quiz is intended for you to test your knowledge about vitamins and vitamins. 
     We recommend you review food items and what nutrients they contain as they might appear in the quiz</p>
@@ -331,7 +330,7 @@ const Quiz = (props) => {
                         <>
                     <div className="moreOptions">
                         <div className="nutrientCalculator">
-                            <img src={CalculateImg} alt="Nutrient Calculator Icon" />
+                        <img src="/img/icons/nutrient_calculator_icon.svg" alt="Nutrient Calculator Icon" />
                             <Link to="/nutrientCalculator">
                                 <button className="btn">Calculate</button>
                             </Link>
@@ -339,7 +338,7 @@ const Quiz = (props) => {
 
                         </div>
                         <div className="searchFood">
-                            <img src={CalculateImg} alt="Search Food Icon" />
+                        <img src="/img/icons/search_icon.svg" alt="Search Food Icon" />
                             <Link to="/nutrientCalculator">
                                 <button className="btn">Search</button>
                             </Link>
