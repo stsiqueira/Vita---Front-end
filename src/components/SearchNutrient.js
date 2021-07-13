@@ -32,14 +32,13 @@ const SearchNutrient = (props) => {
             data.push(
                 {
                     id:element,
-                    label:element.replace("Vitamin ", ""),
+                    label:assignShortName(element),
                     value:1,
                     color: assignColor(element),
                     link: `/Description/${type}/${element}`
                 }
             )
-        })
-        
+        })        
         return data
     }
 
@@ -97,6 +96,41 @@ const SearchNutrient = (props) => {
         return color;
     }
 
+    const assignShortName = (nutrientName) =>{      
+
+      if(nutrientName.includes("Vitamin")){
+        return nutrientName.replace("Vitamin ", "")
+      }
+      else{
+        let short;        
+        switch(nutrientName) {        
+          case "Calcium":
+           short ="Ca";
+          break;
+            case "Copper":
+           short ="Cu";
+            break;
+          case "Iron":
+           short ="Fe";
+          break;
+            case "Magnesium":
+           short ="Mg";
+            break;
+          case "Phosphorus":
+           short ="P";
+          break;
+            case "Potassium":
+           short ="K";
+            break;
+          case "Zinc":
+           short ="Zn";
+            break;
+          
+        }
+        return short;
+      }
+    }
+
     //First Load
     useEffect(() => {
         if (dataContent.length === 0) {
@@ -130,7 +164,7 @@ const SearchNutrient = (props) => {
                 <div className="VitaminTitle">
                   <h3>Vitamins</h3>
                 </div>
-                  <MyResponsivePie data={vitaminArray} callback={redirect} legendFlag="true" />
+                  <MyResponsivePie data={vitaminArray} callback={redirect} />
                   {/* <div className="overlay" style={styles.overlay}>
                       <span>Vitamins</span>
                   </div> */}
@@ -139,7 +173,7 @@ const SearchNutrient = (props) => {
                 <div className="MineralTitle">
                   <h3>Minerals</h3>
                 </div>
-                  <MyResponsivePie data={mineralArray} callback={redirect} legendFlag="true" />
+                  <MyResponsivePie data={mineralArray} callback={redirect} />
                   {/* <div className="overlay" style={styles.overlay}>
                       <span>Minerals</span>
                   </div> */}

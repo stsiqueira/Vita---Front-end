@@ -120,14 +120,14 @@ const quizContent = {
      },
      {
         "id":9,
-        "typeOfQuestion":1,
+        "typeOfQuestion":2,
         "question": "Which of the following foods contains yeast?",
         "details": "Potassium helps regulate fluid balance, muscle contractions and nerve signals.",
         "answers":[
-            {"value": "Coconut", "option": 1},
-            {"value": "Grapes", "option": 2},
-            {"value": "Spinach", "option": 3},
-            {"value": "Garlic", "option": 4}
+            {"value": "Coconut", "option": 1, "path":"/img/fruits/coconut.svg"},
+            {"value": "Grapes", "option": 2, "path":"/img/fruits/grape.svg"},
+            {"value": "Potato", "option": 3, "path":"/img/vegetables/potato.svg"},
+            {"value": "Tomato", "option": 4, "path":"/img/vegetables/tomato.svg"}
         ],
         "correct": 2
     },
