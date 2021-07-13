@@ -1,9 +1,8 @@
 ////////////////////////////////////////////////////////////////////////////////////////////////////////
-//                                  TEAM PAGE COMPONENT 
+//                                  TEAM PAGE COMPONENT  - Thiago
 ////////////////////////////////////////////////////////////////////////////////////////////////////////
 import React from 'react';
 import { Link } from 'react-router-dom'
-import AboutVita from "../img/others/home_vita.svg"
 
 
 
@@ -21,7 +20,7 @@ const About = (props) => {
 
            </div>
            <div className="image">
-            <img src={AboutVita} alt="Home page logo Vita" />
+            <img src="/img/icons/home_vita.svg" alt="Home page about Vita" />
            </div>
        </div>
     )
