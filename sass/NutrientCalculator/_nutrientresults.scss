@@ -113,6 +113,13 @@
                     font-weight: 500;
                 }
 
+                .tooltip {
+                    display: flex;
+                    flex-flow: row;
+                    grid-gap: .5rem;
+                    align-items: center;
+                }
+
                 @media only screen and (min-width: $tablet-size) {
                     height: 35rem;
                 }
@@ -409,4 +416,42 @@
         list-style-type: none;
         padding-left: 0;
     }    
+}
+
+.descriptiveContent{
+    background: #fff;
+    padding: 1rem 10px;
+    border-radius: 5px;
+    @media screen and (min-width: $desktop-size){
+        border-radius: 10px;
+    }
+    h2{
+        text-align: center;
+    }
+    .otherItems{
+        padding: 1rem 0;
+        display: flex;
+        flex-flow: row wrap;
+        grid-gap: .8rem;
+        a{
+            flex: 0 0 40%;
+            border: 1px solid red;
+            background: $bg-color-richFood;
+            padding: .5rem;
+            display: flex;
+            flex-flow: column nowrap;
+            justify-content: center;
+            align-items: center;
+            text-decoration: none;
+            color: black;
+            h4{
+                text-align: center;
+            }
+            border-radius: 5px;
+            @media screen and (min-width: $desktop-size){
+                border-radius: 10px;
+            }
+
+        }
+    }
 }
