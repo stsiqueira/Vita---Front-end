@@ -1,12 +1,16 @@
 .page-not-found-wrapper {
+    display: flex;
+    align-items: center;
+
     .child-wrapper {
         background: white;
         margin: 1.5rem 1rem;
+        border-radius: 10px;
 
         @media only screen and (min-width: $desktop-size) {
             min-height: 76vh;
             width: 90%;
-            margin: 1rem auto;
+            margin: 0rem auto;
         }
 
         .page-not-found {
