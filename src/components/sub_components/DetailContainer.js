@@ -82,23 +82,7 @@ const DetailContainer = ({ itemName, itemType }) => {
     }
 
     let otherSimilarItemsList = [];
-    // let richFoodsItemsList = [];
-
-
-    // const addToRichIemList = (richFoods, foodType) => {
-
-    //     richFoods = richFoods.split(", ");
-    //     richFoods.forEach(element => {
-    //         const rich = {
-    //             name: element,
-    //             imgUrl: siteContent[0][foodType][0].find(i => i.name === element).imageUrl,
-    //             type: foodType
-    //         }
-    //         richFoodsItemsList.push(rich);
-    //     });
-
-    // }
-
+    
     useEffect(() => {
         (async function () {
 
@@ -166,20 +150,6 @@ const DetailContainer = ({ itemName, itemType }) => {
 
             SetOtherItems(otherSimilarItemsList);
 
-            // Feature - Pull Food Items through Vitamins or Minerals
-            // if (itemType === "Minerals" || itemType === "Vitamins") {
-
-            //     let richFoods = siteContent[0][itemType][0].find(i => i.name === itemName).richFruits;
-
-            //     addToRichIemList(richFoods, "Fruits");
-            //     richFoods = siteContent[0][itemType][0].find(i => i.name === itemName).richVegetables;
-
-            //     addToRichIemList(richFoods, "Vegetables");
-
-            //     richFoodsItemsList = shuffle(richFoodsItemsList);
-            //     richFoodsItemsList.splice(4);
-            //     SetRichFoodItems(richFoodsItemsList);
-            // }
         })();
     }, [itemName]);
 
