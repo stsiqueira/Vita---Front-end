@@ -1,6 +1,6 @@
 import {Link} from 'react-router-dom'
 
-const UnorderedList = ({ headflag, heading, name, classname, borderclassname, rectclassname, arr, flag }) => {
+const UnorderedList = ({ headflag, heading, name, classname, borderclassname, rectclassname, arr, flag, callback }) => {
     return (
         <div className={classname}>
             {headflag ? 
@@ -16,8 +16,16 @@ const UnorderedList = ({ headflag, heading, name, classname, borderclassname, re
                 {flag ? 
                     arr.map((option) => (
                         <li key={option.name} >
-                            <Link to={option.link} className={`nutrient-color-link-wrapper ${borderclassname ? `vitamin${option.sort}border` : `mineral${option.sort}border`}`}>
-                            <div className="nutrient-name-color-wrapper">   
+                            <Link 
+                                to=""
+                                onClick={(e) => {
+                                    e.preventDefault()
+                                    let type = option.name.toLowerCase().includes("vitamin") ? "Vitamin" : "Mineral"
+                                    callback(type, option.name)
+                                }} 
+                                className={`nutrient-color-link-wrapper ${borderclassname ? `vitamin${option.sort}border` : `mineral${option.sort}border`}`}>
+                                <div className="nutrient-name-color-wrapper"
+                            >   
                                 <svg>
                                     <rect 
                                     className={rectclassname ? `vitamin${option.sort}` : `mineral${option.sort}`} 

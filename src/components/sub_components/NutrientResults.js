@@ -115,19 +115,19 @@ const NutrientResults = () => {
     }
 
     const redirect = (node) => {
-        console.log(node.id.toLowerCase().includes("vitamin"))
         SetSelectedNutrientType(node.id.toLowerCase().includes("vitamin") ? "Vitamin" : "Minerals")
         SetSelectedNutrient(node.id)
-        // history.push({
-        //     pathname: node.data.link
-        // });
+    }
+
+    const textClickCallback = (type, name) => {
+        SetSelectedNutrientType(type)
+        SetSelectedNutrient(name)
     }
 
     const [vitaminArray, setVitaminArray] = useState(addKeyToJsonArray(addVitaminSort));
 
     const [mineralArray, setMineralArray] = useState(addKeyToJsonArray(addMineralSort));
 
-    // const [heading, setHeading] = useState("")
 
     const myRef = useRef(null)
 
@@ -208,6 +208,7 @@ const NutrientResults = () => {
                         name="vitamins"
                         arr={addVitaminSort}
                         flag={true}
+                        callback={textClickCallback}
                     />
                 </div>
             </div>
@@ -234,6 +235,7 @@ const NutrientResults = () => {
                         classname="minerals-list" name="minerals"
                         arr={addMineralSort}
                         flag={true}
+                        callback={textClickCallback}
                     />
                 </div>
             </div>
