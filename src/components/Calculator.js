@@ -53,7 +53,7 @@ const NutrientForm = () => {
             toast.warn('Please Check your inputs', {
                 position: "bottom-center",
                 autoClose: 2000,
-                hideProgressBar: true,
+                hideProgressBar: false,
                 closeOnClick: true,
                 pauseOnHover: true,
                 draggable: true,
@@ -281,10 +281,11 @@ const NutrientForm = () => {
                         </div>
                     </form>
                     <ToastContainer
-                        position="bottom-center"
+                        position="top-right"
                         autoClose={2000}
-                        hideProgressBar
-                        newestOnTop={false}
+                        hideProgressBar={false}
+                        limit={1}
+                        newestOnTop
                         closeOnClick
                         rtl={false}
                         pauseOnFocusLoss
