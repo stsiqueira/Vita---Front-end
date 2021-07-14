@@ -13,13 +13,16 @@ const DescriptionPage = () => {
             <div className="detailsContainer">                
                 <DetailContainer itemName={itemName} itemType={itemType} />
             </div>
-            {/* Nutrient Calculator Link Container  */}
-            <Recalculate
-                buttonText="Calculate"
-                descriptionText="Try Our Nutrient Calculator To See Your Daily Needs"
-            />
-            {/* Subscribe Container */}
-            <Subscribe/>
+            <div className="subscribe-calculator-wrapper">
+                {/* Nutrient Calculator Link Container  */}
+                <Recalculate
+                    buttonText="Calculate"
+                    descriptionText="Try Our Nutrient Calculator To See Your Daily Needs"
+                />
+                {/* Subscribe Container */}
+                <Subscribe/>
+            </div>
+          
         </div>
     )
 }

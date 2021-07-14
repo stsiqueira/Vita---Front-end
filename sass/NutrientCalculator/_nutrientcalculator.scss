@@ -26,9 +26,13 @@
         }
 
         .metric-wrapper {
+
             .clicked {
                 background-color: #f1d8ff;
-                font-weight: 600;
+                font-weight: 300;
+                border: 2px solid #815497;
+                color: #815497;
+                
             }
         }
     }
@@ -66,6 +70,26 @@
             padding: 0 .5rem;
             .unit-button{
                 flex: 1 0 40%;
+                border: 2px solid #4e3b58;
+                background: #fff;
+                color: #815497;
+                font-weight: 500;
+                &:hover{
+                    background:#FBF2FF;
+                }
+            }
+        }
+        .metric-wrapper {
+
+            .clicked {
+                background-color: #f1d8ff;
+                font-weight: 200;
+                border: 2px solid #815497;
+                color: #815497;
+                &:hover{
+                    background-color: #f1d8ff;
+                }
+                
             }
         }
 
