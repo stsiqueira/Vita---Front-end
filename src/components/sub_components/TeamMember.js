@@ -33,12 +33,12 @@ const TeamMember = (props) => {
                     { 
                     props.teamMember ? 
                         props.teamMember.developer ? 
-                            <Link to={ props.teamMember.github }>
+                            <Link to={ props.teamMember.github } target="_blank">
                                 <FaGithub />
                             </Link>
                             
                         : 
-                            <Link to={ props.teamMember.behance  }>
+                            <Link to={ props.teamMember.behance  } target="_blank">
                                 <FaBehance />
                             </Link>
                     : ""

@@ -42,11 +42,11 @@
       "vitaPosition":"Dev Team",
       "position":"BackEnd developer",
       "description":"I was working as a backend developer in India for 3 years with knowledge in developing web applications and scraping public data. I am currently pursuing a post degree diploma in web and mobile application development.",
-      "stream": "developer",
+      "developer": true,
       "linkedin":"https://www.linkedin.com/in/glen-thomas-4bb9921a3/ ",
       "github":"https://github.com/glen1995",
       "behance":"",
-      "imagePath":"/img/team/Glen.jpg"
+      "imagePath":"/img/team/Glen.png"
     },
     {
       "id": 5,
