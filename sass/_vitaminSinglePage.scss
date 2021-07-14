@@ -94,10 +94,6 @@
         flex-flow: row wrap;
         grid-gap: .8rem;
         justify-content: space-evenly;
-        @media screen and (min-width: $desktop-size){
-            width: 75%;
-            margin: auto;
-        }
         a{
             flex: 1 0 40%;
             background: $bg-color-richFood;
@@ -140,6 +136,7 @@
                         width: 80%;
                         @media screen and (min-width: $desktop-size){
                             width: 65%;
+                            max-width: 90px;
                         }
                     }
 

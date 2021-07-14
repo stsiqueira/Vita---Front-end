@@ -9,6 +9,12 @@
         margin: 0 auto;
         img{
             max-width: 250px;
+            @media screen and (min-width:$desktop-size) {
+                max-width: 400px;
+            }
+            @media screen and (min-width:$max-width) {
+                max-width: 500px;
+            }
         }
     }
     h2{

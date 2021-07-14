@@ -29,8 +29,9 @@
         text-align: center;
         display: flex;
         align-items: center;
+        justify-content: center;
         img{
-            max-width: 250px;
+            max-width: 300px;
             @media only screen and (min-width: $tablet-size) {
                 max-width: 400px;
             }
