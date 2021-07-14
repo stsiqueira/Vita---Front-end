@@ -11,8 +11,11 @@ const Table = ({ tableHeading, tableContent }) => {
         {
           tableContent && tableContent.map((item, key) => (
             <Link key={key} to={`/Description/${item.type}/${item.linkName}`}>
-              <div className="tableContentItem" key={key}>
-                <div className="itemType">{item.name}</div>
+              <div className="tableContentItem" key={key} style={{ backgroundColor: item.backgroundColor }}>
+                <div className="itemType" >
+                <div className="box" style={{ width: "1rem", height: "1rem", backgroundColor: item.legendColor}} />
+                  <div className="itemTypeName">{item.name}</div>
+                </div>
                 <div className="itemValue">{item.value}</div>
               </div>
             </Link>

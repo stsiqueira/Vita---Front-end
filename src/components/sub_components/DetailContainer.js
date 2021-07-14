@@ -4,6 +4,7 @@ import ItemDescription from './ItemDescription';
 import Table from './Table';
 import OthetItems from './OtherItems';
 import RichFood from './RichFoods';
+import { vitaminSort, mineralSort } from '../../data/data.json';
 
 
 const DetailContainer = ({ itemName, itemType }) => {
@@ -30,6 +31,137 @@ const DetailContainer = ({ itemName, itemType }) => {
     let table1Heading = "Vitamins";
     let table2Heading = "Minerals";
 
+    const assignLegendColor = (nutrientName) => {
+        let color;
+
+        switch (nutrientName) {
+            case "Vitamin A":
+                color = "#EABB36";
+                break;
+            case "Vitamin C":
+                color = "#F69128";
+                break;
+            case "Vitamin B6":
+                color = "#EB3860";
+                break;
+            case "Vitamin E":
+                color = "#E8A113";
+                break;
+            case "Vitamin K":
+                color = "#B71174";
+                break;
+            case "Vitamin B3":
+                color = "#F56224";
+                break;
+            case "Vitamin B5":
+                color = "#F1483D";
+                break;
+            case "Calcium":
+                color = "#1898E8";
+                break;
+            case "Copper":
+                color = "#168B16";
+                break;
+            case "Iron":
+                color = "#35C985";
+                break;
+            case "Magnesium":
+                color = "#30B553";
+                break;
+            case "Phosphorus":
+                color = "#6D23B5";
+                break;
+            case "Potassium":
+                color = "#20B6CE";
+                break;
+            case "Zinc":
+                color = "#1A4BE5";
+
+                break;
+            default:
+                color = "hotpink"
+        }
+
+        return color;
+    }
+
+    const assignCellColor = (nutrientName) => {
+        let color;
+
+        switch (nutrientName) {
+            case "Vitamin A":
+                color = "#FFF7E2";
+                break;
+            case "Vitamin C":
+                color = "#FFEFD0";
+                break;
+            case "Vitamin B6":
+                color = "#FFE0E7";
+                break;
+            case "Vitamin E":
+                color = "#FFEFD0";
+                break;
+            case "Vitamin K":
+                color = "#FFEDF8 ";
+                break;
+            case "Vitamin B3":
+                color = "#FFDFD1";
+                break;
+            case "Vitamin B5":
+                color = "#FFE8E6";
+                break;
+            case "Calcium":
+                color = "#E2F4FF";
+                break;
+            case "Copper":
+                color = "#CCFFCC";
+                break;
+            case "Iron":
+                color = "#D9FFEE";
+                break;
+            case "Magnesium":
+                color = "#D6FFE1";
+                break;
+            case "Phosphorus":
+                color = "#F0E4FC";
+                break;
+            case "Potassium":
+                color = "#E0FBFF";
+                break;
+            case "Zinc":
+                color = "#E2E8FD";
+
+                break;
+            default:
+                color = "#FFE8E6"
+        }
+
+        return color;
+    }
+
+    const addMineralSort = (mineralArray) => (
+        mineralArray.map(element => {
+            element["sort"] = mineralSort[element.linkName]
+            return element
+        })
+    );
+    const addVitaminSort = (vitaminArray) => (
+        vitaminArray.map(element => {
+            element["sort"] = vitaminSort[element.linkName]
+            return element
+        })
+    );
+
+    const GetSortOrder = (prop) => {
+        return function (a, b) {
+            if (a[prop] > b[prop]) {
+                return 1;
+            } else if (a[prop] < b[prop]) {
+                return -1;
+            }
+            return 0;
+        }
+    }
 
     const fetchUSDAResponse = async (foodName) => {
 
@@ -48,16 +180,33 @@ const DetailContainer = ({ itemName, itemType }) => {
                 let linkName = siteContent[0]["Vitamins"][0].find(f => element.nutrientName.includes(f.name)).name;
                 let nName = element.nutrientName;
                 let nValue = element.value === 0 ? `0.1 ${element.unitName}` : `${element.value} ${element.unitName}`;
-                vitaminsTableContent.push({ name: nName, value: nValue, type: "Vitamins", linkName: linkName });
+                vitaminsTableContent.push({
+                    name: nName,
+                    value: nValue,
+                    type: "Vitamins",
+                    linkName: linkName,
+                    backgroundColor: assignCellColor(linkName),
+                    legendColor: assignLegendColor(linkName)
+                });
             }
             if (siteContent[0]["Minerals"][0].find(f => element.nutrientName.includes(f.name))) {
                 let linkName = siteContent[0]["Minerals"][0].find(f => element.nutrientName.includes(f.name)).name;
                 let nName = element.nutrientName;
                 let nValue = element.value === 0 ? `0.1 ${element.unitName}` : `${element.value} ${element.unitName}`;
-                mineralsTableContent.push({ name: nName, value: nValue, type: "Minerals", linkName: linkName });
+                mineralsTableContent.push({
+                    name: nName,
+                    value: nValue,
+                    type: "Minerals",
+                    linkName: linkName,
+                    backgroundColor: assignCellColor(linkName),
+                    legendColor: assignLegendColor(linkName)
+                });
             }
 
         });
+
+        addVitaminSort(vitaminsTableContent).sort(GetSortOrder("sort"))
+        addMineralSort(mineralsTableContent).sort(GetSortOrder("sort"))
         SetVitaminComposition(vitaminsTableContent);
         SetMineralComposition(mineralsTableContent);
     }
@@ -82,7 +231,7 @@ const DetailContainer = ({ itemName, itemType }) => {
     }
 
     let otherSimilarItemsList = [];
-    
+
     useEffect(() => {
         (async function () {
 
@@ -154,7 +303,6 @@ const DetailContainer = ({ itemName, itemType }) => {
     }, [itemName]);
 
     let otherHeading = "Other " + itemType;
-    // let selectedItemHeading = itemName + " Rich Food";
 
     return (
         <>
@@ -167,10 +315,7 @@ const DetailContainer = ({ itemName, itemType }) => {
                     </div>
                 }
                 {
-                    dispalyImages && <RichFood nutrientName = {itemName} nutrientType = {itemType} siteContent = {richFoodData}/>
-                    // <div className="imagesContent">
-                    //     <OthetItems heading={selectedItemHeading} otherItemsList={richFoodItems} />
-                    // </div>
+                    dispalyImages && <RichFood nutrientName={itemName} nutrientType={itemType} siteContent={richFoodData} />
                 }
             </div>
             <div className="otherItemsContainer">
