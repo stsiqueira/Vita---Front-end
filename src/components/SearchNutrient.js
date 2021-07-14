@@ -180,7 +180,7 @@ const SearchNutrient = (props) => {
             <h3>Minerals</h3>
           </div>
           <MyResponsivePie data={mineralArray} callback={redirect} legendFlag="false" removeDataMetrics={true} />
-          <div className="legendContainer legendVitamnins">
+          <div className="legendContainer legendMinerals">
             {mineralArray && mineralArray.map((item, key) => (
               <div className="legendItem" key={key}>
                 <div className="box" style={{ width: "1.25rem", height: "0.75rem", backgroundColor: item.color }} />

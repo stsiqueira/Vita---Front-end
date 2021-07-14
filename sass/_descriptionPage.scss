@@ -10,21 +10,6 @@ img {
   display: flex;
   flex-direction: column;
 
-  .legendContainer{
-    display: flex;
-    flex-flow: row wrap;
-    grid-gap: 1rem;
-
-    .legendItem{
-      display: flex;
-      grid-gap: 0.3rem;
-      flex-flow: row nowrap;
-      .box{
-        align-self: center;
-      }
-    }
-  }
-
   @media screen and (min-width:$tablet-size) {
     padding: 1.5rem 20px;    
   }
@@ -40,9 +25,12 @@ img {
       width: 100%;
       border-bottom-left-radius: 20px;
       border-bottom-right-radius: 20px;
+      padding-bottom: 4.5rem;
+      background: $primary-color-shade;
       .vitaminsChart, 
       .mineralsChart{ 
         flex: 1 0 50%;
+        padding-bottom: 1rem;
       } 
 
     }
@@ -87,6 +75,63 @@ img {
     height: 400px;  
   }
 
+  .mineralsChart{
+    border-bottom: 2rem;
+    margin-top: 6.5rem;
+    margin-bottom: 7rem;
+    @media screen and (min-width:$desktop-size) { 
+      margin-top: 0;
+      margin-bottom: 0;
+    }
+  }
+  .legendContainer{
+    background: $primary-color-shade;
+    position: relative;
+    top: -2rem;
+    display: flex;
+    grid-gap: .3rem;
+    flex-flow: row wrap;
+    justify-content: flex-start;
+    padding-left: 3rem;
+    padding-bottom: 1rem;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+    .legendItem{
+      flex: 0 0 40%;
+      display: flex;
+      grid-gap: 0.3rem;
+      flex-flow: row nowrap;
+      .box{
+        align-self: center;
+      }
+
+    }
+
+
+    @media screen and (min-width:$desktop-size) { 
+      position: relative;
+      top: -2rem;
+      display: flex;
+      flex-flow: row wrap;
+      justify-content: space-evenly;
+      border-radius: 10px;
+      width: 80%;
+      margin: auto;
+      border-bottom-left-radius: 10px;
+      border-bottom-right-radius: 10px;
+      .legendItem{
+        flex: 0 0 22%;
+        justify-content: flex-start;
+        label{
+          font-size: 14px;
+        }
+      }
+
+    
+    }
+
+  }
+
   @media screen and (min-width:$desktop-size) {  
     .vitaminsChart{
         border-bottom-left-radius: 20px;
@@ -102,5 +147,5 @@ img {
     .vitaminsChart, .mineralsChart{
       height: 500px;  
     }
-}
+  }
 }
