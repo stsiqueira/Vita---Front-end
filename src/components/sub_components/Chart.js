@@ -25,7 +25,7 @@ const MyResponsivePie = ({ data, callback, removeDataMetrics,legendFlag, parentF
     }
     const CenteredMetric = ({ dataWithArc, centerX, centerY}) => {
         const style = {
-            fontSize: `${window.innerWidth < 600 ? "1.5rem" : "2rem"}`,
+            fontSize: `${window.innerWidth < 600 ? "1.1rem" : "2rem"}`,
             fontWeight: 600
         }
         return ( metric(centreText, 0, centerY, centerX, style, "centre-text"))

@@ -20,7 +20,7 @@ const NutrientResults = () => {
     const history = useHistory()
     const { vitamin, mineral } = location.state
 
-    const [selectedNutrientType, SetSelectedNutrientType] = useState("Vitamin");
+    const [selectedNutrientType, SetSelectedNutrientType] = useState("Vitamins");
     const [selectedNutrient, SetSelectedNutrient] = useState("Vitamin A");
 
     const addVitaminSort = vitamin.map(element => {
@@ -115,7 +115,7 @@ const NutrientResults = () => {
     }
 
     const redirect = (node) => {
-        SetSelectedNutrientType(node.id.toLowerCase().includes("vitamin") ? "Vitamin" : "Minerals")
+        SetSelectedNutrientType(node.id.toLowerCase().includes("vitamin") ? "Vitamins" : "Minerals")
         SetSelectedNutrient(node.id)
     }
 
