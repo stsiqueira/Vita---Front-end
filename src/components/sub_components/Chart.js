@@ -1,6 +1,6 @@
 // install (please make sure versions match peerDependencies)
 // yarn add @nivo/core @nivo/pie
-import { ResponsivePie, Pie } from '@nivo/pie'
+import { ResponsivePie } from '@nivo/pie'
 // make sure parent container have a defined height when using
 // responsive component, otherwise height will be 0 and
 // no chart will be rendered.

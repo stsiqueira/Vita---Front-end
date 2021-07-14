@@ -27,6 +27,12 @@
         "skinproblems": false, 
         "fatigue": false
     },
+    "concerns": {
+        "hairloss": "Hair Loss", 
+        "insomnia": "Insomnia", 
+        "skinproblems": "Skin Problems", 
+        "fatigue": "Fatigue"
+    },
     "vitaminColor": {
         "Vitamin A": "#eabb36",
         "Vitamin C": "#f69128",
