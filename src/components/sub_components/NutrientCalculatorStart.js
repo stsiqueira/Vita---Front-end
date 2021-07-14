@@ -20,7 +20,7 @@ const NutrientCalculatorStart = () => {
        <div className="calculator-start-wrapper">
            <h2 className="calculator-start-title-mobile">Nutrient Calculator</h2>
            <div className="image-wrapper">
-                <img src="/img/icons/nutrient_calculator_home.svg" alt="dummy" /> 
+                <img src="/img/icons/nutrient_calculator_home.svg" alt="Nutrients image" /> 
            </div>
            <div className="calculator-start-description">
                 <h2 className="calculator-start-title">Nutrient Calculator</h2>

@@ -5,7 +5,6 @@
 
 import React from 'react';
 import { useState } from 'react';
-import SubscribeIcon  from "../img/icons/subscribe_icon.svg"
 
 
 
@@ -42,7 +41,7 @@ const Subscribe = (props) => {
     return (
        <div className="subscribe-container">
            <div className="image-wrapper">
-            <img src={SubscribeIcon} alt="Subscribe Icon" />
+            <img src="/img/icons/subscribe_icon.svg" alt="Subscribe Icon" />
            </div>
            
            <p className="feature-title">Subscribe to our Newsletters</p>

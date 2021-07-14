@@ -3,7 +3,7 @@
 ////////////////////////////////////////////////////////////////////////////////////////////////////////
 import React from 'react';
 import { useHistory} from "react-router-dom";
-import VitaBrand from "../../img/404.svg"
+
 import Button from '../compositableComponents/Button';
 
 
@@ -22,7 +22,7 @@ const NotFound = () => {
                 <div className="page-not-found">
                     <div className="svg-text-wrapper">
                         <div className="svg-wrapper">
-                            <img src={VitaBrand} alt="404" />
+                            <img src="/img/404.svg" alt="404" />
                         </div>
                         <div className="text-wrapper">
                             <h2>Oops..!</h2>

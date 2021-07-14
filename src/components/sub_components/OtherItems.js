@@ -34,8 +34,12 @@ const OtherItems = ({ heading, otherItemsList }) => {
                         <Link key={key} to={`/Description/${item.type}/${item.name}`}>
                             <div className="otherItem" >
                                 {/* <img src={item.itemImageUrl} alt={item.itemName + "image"} /> */}
-                                <img src={itemImageUrl + item.imgUrl} alt={item.itemName + "image"} />
-                                <h4>{item.name}</h4>
+                                <div className="image-wrapper">
+                                    <img src={itemImageUrl + item.imgUrl} alt={item.itemName + "image"} />
+                                </div>
+                                <div className="text-wrapper">
+                                    <h4>{item.name}</h4>
+                                </div>
                             </div>
                         </Link>
                     ))
@@ -46,3 +50,8 @@ const OtherItems = ({ heading, otherItemsList }) => {
 }
 
 export default OtherItems;
+
+
+
+
+
