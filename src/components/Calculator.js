@@ -231,9 +231,13 @@ const NutrientForm = () => {
                                 {
                                     genderData.map((gender) => ( 
                                         <span key={gender.text} className="gender-options">
-
-                                            <input type="radio" id={gender.text} name="gender" className="gender" value={gender.text} onChange={e => setGender(e.target.value)}/>
-
+                                            <input 
+                                                type="radio" 
+                                                id={gender.text} name="gender" 
+                                                className={`gender ${gender.text.toLowerCase()}`} 
+                                                value={gender.text} onChange={e => setGender(e.target.value)}
+                                            />
+                             
                                             <Labels for="gender" text={gender.text.charAt(0).toUpperCase()}/>
                                         </span>
                                     ))

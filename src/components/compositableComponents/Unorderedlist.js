@@ -20,7 +20,7 @@ const UnorderedList = ({ headflag, heading, name, classname, borderclassname, re
                                 to=""
                                 onClick={(e) => {
                                     e.preventDefault()
-                                    let type = option.name.toLowerCase().includes("vitamin") ? "Vitamin" : "Mineral"
+                                    let type = option.name.toLowerCase().includes("vitamin") ? "Vitamins" : "Minerals"
                                     callback(type, option.name)
                                 }} 
                                 className={`nutrient-color-link-wrapper ${borderclassname ? `vitamin${option.sort}border` : `mineral${option.sort}border`}`}>
