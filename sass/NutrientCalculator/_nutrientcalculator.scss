@@ -25,16 +25,6 @@
             text-align: right;
         }
 
-        .metric-wrapper {
-
-            .clicked {
-                background-color: #f1d8ff;
-                font-weight: 300;
-                border: 2px solid #815497;
-                color: #815497;
-                
-            }
-        }
     }
     .child-wrapper {
         max-width: 80%;
@@ -48,7 +38,20 @@
                 margin: 1.5rem auto 2rem;
                 color: $primary-color;
                 text-align: center;
+                @media screen and (min-width: $desktop-size){
+                    max-width: 300px;
+                    
+                }
             }
+            @media screen and (min-width: $desktop-size){
+                p{
+                    text-align: center;
+                    max-width: 500px;
+                    margin: auto;
+                }
+                
+            }
+            
         }
 
         .input-unit-wrapper {
@@ -66,14 +69,21 @@
         .metric-wrapper {
             display: flex;
             justify-content: space-evenly;
-            gap: 1rem;
+            grid-gap: 1rem;
             padding: 0 .5rem;
+            @media screen and (min-width: $desktop-size){
+                grid-gap: 1.5rem;
+                justify-content: center;
+             }
             .unit-button{
                 flex: 1 0 40%;
                 border: 2px solid #4e3b58;
                 background: #fff;
                 color: #815497;
                 font-weight: 500;
+                @media screen and (min-width: $desktop-size){
+                   flex: 0 0 30%; 
+                }
                 &:hover{
                     background:#FBF2FF;
                 }
@@ -115,63 +125,108 @@
             .gender-options-wrapper {
                 display: grid;
                 grid-template-columns: 1fr 1fr;
-                gap: 1.5rem;
-                width: 40%;
-
+                grid-gap: 1.5rem;
+                width: 40%; 
+                @media only screen and (min-width: $desktop-size) {
+                    display: flex;
+                    flex-flow: row nowrap;
+                    justify-content: flex-start;
+                    padding-left: 1.5rem;
+                    grid-gap: 2.5rem;
+                    
+                }
                 .gender-options {
                     display: flex;
                     align-items: center;
                     grid-gap: .5rem;
                 }
             }
-        }
-
-        .preg-lact-wrapper {
-            display: flex;
-            flex-flow: column;
-            select {
-                width: 50%;
-                border: 2px solid $primary-color;
-                border-radius: 5px;
-                height: 40px;
-                color: $primary-color;
-                font-weight: bold;
-                margin-top: .5rem;
+            @media only screen and (min-width: $desktop-size) {
+                display: flex;
+                flex-flow: row nowrap;
+                justify-content: space-between;
+                width: 100%;
             }
         }
+
         .nutrient-calculator-input-wrapper{
             .input-unit-wrapper{
                 display: flex;
                 justify-content: flex-start;
                 padding: .5rem 0;
-                input{
-                    width:50%
+                @media only screen and (min-width: $desktop-size) {
+                    display: flex;
+                    flex-flow: row nowrap;
+                    justify-content: flex-start;
+                    width: 40%;
                 }
+
+                input{
+                    width:70%;
+                    max-width: 170px;
+                    @media only screen and (min-width: $desktop-size) {
+                       justify-self: flex-end;
+                       min-width: 170px;
+                    }
+                }
+            }
+            label{
+                display: flex;
+                align-items: center;
             }
             .input-submit{
                 margin: auto;
             }
+            @media only screen and (min-width: $desktop-size) {
+                display: flex;
+                justify-content: space-between;
+            }
+
         }
         .nutrient-calculator-height-wrapper{
 
             display: block;
+            label{
+                display: flex;
+                align-items: center;
+            }
             .height-input-wrapper{
                 display: flex;
                 justify-content: flex-start;
                 padding: .5rem 0;
-                input{
-                    width:50%
+                @media only screen and (min-width: $desktop-size) {
+                    display: flex;
+                    flex-flow: row nowrap;
+                    justify-content: flex-start;
+                    width: 40%;
                 }
+                input{
+                    width:70%;
+                    max-width: 170px;
+                    @media only screen and (min-width: $desktop-size) {
+                        justify-self: flex-end;
+                        min-width: 170px;
+                     }
+                }
+            }
+            @media only screen and (min-width: $desktop-size) {
+                display: flex;
+                justify-content: space-between;
             }
 
         }
  
     }
-
-    .nutrient-calculator-activity-wrapper {
+    .preg-lact-wrapper {
         display: flex;
-        flex-flow: column nowrap;
-        gap: .5rem;
+        flex-flow: column;
+        width: 100%;
+        .select-wrapper{
+            @media only screen and (min-width: $desktop-size) {
+                width: 40%; 
+            }
+
+        }
         select {
             width: 50%;
             border: 2px solid $primary-color;
@@ -180,6 +235,48 @@
             color: $primary-color;
             font-weight: bold;
             margin-top: .5rem;
+            max-width: 170px;
+            @media only screen and (min-width: $desktop-size) {
+                min-width: 170px;
+                
+            }
+           
+        }
+        @media only screen and (min-width: $desktop-size) {
+            display: flex;
+            flex-flow: row;
+            justify-content: space-between;
+            align-items: center;
+        }
+    }
+    .nutrient-calculator-activity-wrapper {
+        display: flex;
+        flex-flow: column nowrap;
+        gap: .5rem;
+        .select-wrapper{
+            @media only screen and (min-width: $desktop-size) {
+                width: 40%; 
+            }
+        }
+
+        select {
+            width: 50%;
+            border: 2px solid $primary-color;
+            border-radius: 5px;
+            height: 40px;
+            color: $primary-color;
+            font-weight: bold;
+            margin-top: .5rem;
+            max-width: 170px;
+            @media only screen and (min-width: $desktop-size) {
+                min-width: 170px;
+            }
+        }
+        @media only screen and (min-width: $desktop-size) {
+            display: flex;
+            flex-flow: row;
+            justify-content: space-between;
+            align-items: center;
         }
     }
 
