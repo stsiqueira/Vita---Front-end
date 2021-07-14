@@ -18,7 +18,7 @@ const NutrientForm = () => {
     const [ heightinches, setHeightinches ] = useState(0);
     const [ activity, setActivity ] = useState("");
 
-    const condition = (metric, gender, age, heightfeet, heightinches) => {
+    const condition = (metric, gender, age, heightfeet, heightinches, activity) => {
         let flag = true
         if(!["STANDARD", "METRIC"].includes(metric.toUpperCase())) {
             flag = false
@@ -35,9 +35,37 @@ const NutrientForm = () => {
         
         if (metric === "metric") {
             if (heightfeet <= 0 || heightfeet > 220) {
-                console.log("height");
                 flag = false
             }
+
+            if(weight <= 20 || weight > 130) {
+                flag = false
+            }
+        }
+
+        if (metric === "standard") {
+            if (heightfeet <= 0 || heightfeet > 6) {
+                flag = false
+            }
+
+            if (heightinches <= 0 || heightinches > 11) {
+                flag = false
+            }
+
+            if(weight <= 40 || weight > 260) {
+                flag = false
+            }
+        }
+
+        if((age > 13 || age < 50) && (gender === "FEMALE")) {
+            if(!["pregnant1st", "pregnant2nd_1", "pregnant2nd_2", "pregnant3rd", "lactating1st", "lactating2nd"].includes(activity)) {
+                flag = false
+            }
+        }
+
+        if(!["Sedentary", "Low Active", "Active", "Very Active"].includes(activity)) {
+            flag=false
+            console.log("activity");
         }
 
         return flag
@@ -49,7 +77,7 @@ const NutrientForm = () => {
         const vitaminList = ["Vitamin A", "Vitamin B6", "Niacin", "Pantothenic Acid", "Vitamin C", "Vitamin K", "Vitamin E"]
         const mineralList = ["Calcium", "Copper", "Iron", "Magnesium", "Phosphorus", "Potassium", "Zinc"]
 
-        if (!condition(metric, gender, age, heightfeet, heightinches)) {
+        if (!condition(metric, gender, age, heightfeet, heightinches, activity)) {
             toast.warn('Please Check your inputs', {
                 position: "bottom-center",
                 autoClose: 2000,
@@ -168,7 +196,7 @@ const NutrientForm = () => {
                                     className="input-weight" 
                                     name='weight' 
                                     type='number' 
-                                    
+                                    min={metric === "standard" ? "40" : "20"}
                                     max={metric === "standard" ? "260" : "130"}
                                     value={weight}
                                     onChange={e => setWeight(e.target.value)}
