@@ -94,7 +94,7 @@ const MyResponsivePie = ({ data, callback, removeDataMetrics,legendFlag, parentF
                     background: '#fff',
                 }}
                 >
-                    <svg style={{width: "1rem", height: "1rem"}}>
+                    <svg style={{width: "1rem", height: "1rem", marginRight: "0.5rem"}}>
                         <rect 
                             style={{fill: color, width: "1rem", height: "1rem"}}
                         />

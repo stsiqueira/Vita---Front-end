@@ -9,8 +9,24 @@ img {
   background: #fff;
   display: flex;
   flex-direction: column;
+
+  .legendContainer{
+    display: flex;
+    flex-flow: row wrap;
+    grid-gap: 1rem;
+
+    .legendItem{
+      display: flex;
+      grid-gap: 0.3rem;
+      flex-flow: row nowrap;
+      .box{
+        align-self: center;
+      }
+    }
+  }
+
   @media screen and (min-width:$tablet-size) {
-    padding: 1.5rem 20px;
+    padding: 1.5rem 20px;    
   }
   @media screen and (min-width:$desktop-size) {
     padding: 1.5rem 10rem;
