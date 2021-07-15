@@ -1,12 +1,6 @@
-// install (please make sure versions match peerDependencies)
-// yarn add @nivo/core @nivo/pie
 import { ResponsivePie } from '@nivo/pie'
 // make sure parent container have a defined height when using
 // responsive component, otherwise height will be 0 and
-// no chart will be rendered.
-// website examples showcase many properties,
-// you'll often use just a few of them.
-
 
 const MyResponsivePie = ({ data, callback, removeDataMetrics,legendFlag, parentFlag, centreText, subCentreText, bottomCentreText }) => {
     const metric = (text, flag, centerY, centerX, style, classname) => {
@@ -85,23 +79,23 @@ const MyResponsivePie = ({ data, callback, removeDataMetrics,legendFlag, parentF
             arcLabelsSkipAngle={10}
             arcLabelsTextColor={"white"}
             fill={[]}
-            tooltip={({ datum: { id, value, color } }) => (
+            tooltip={({datum}) => (
                 <div
                 className="tooltip"
                 style={{
-                    padding: 12,
+                    padding: 10,
                     color: "black",
                     background: '#fff',
                 }}
                 >
                     <svg style={{width: "1rem", height: "1rem", marginRight: "0.5rem"}}>
                         <rect 
-                            style={{fill: color, width: "1rem", height: "1rem"}}
+                            style={{fill: datum.color, width: "1rem", height: "1rem"}}
                         />
                     </svg>
                     
                     <strong>
-                        {id}{removeDataMetrics ? "" : `: ${value}`} 
+                        {datum.id}{removeDataMetrics ? "" : `: ${datum.data.recommended_intake}`} 
                     </strong>
                 </div>
             )}

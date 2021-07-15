@@ -159,25 +159,26 @@ const NutrientResults = () => {
 
     const handleSubmit = (data) => {
         let arr = [...vitaminArray];
-
-        if (data["fatigue"]) {
-            updateChartData(arr, "Vitamin B5", 10)
-        }
-
-        if (data["hairloss"]) {
-            updateChartData(arr, "Vitamin E", 5)
-        }
-
-        if (data["insomnia"]) {
-            let arra = [...mineralArray];
-            updateChartData(arra, "Calcium", -5, 1)
-        }
-
-        if (data["skinproblems"]) {
-            updateChartData(arr, "Vitamin B3", 10)
-        }
-
         myRef.current.scrollIntoView({behavior: "smooth"})
+        setTimeout(function() { 
+       
+            if (data["fatigue"]) {
+                updateChartData(arr, "Vitamin B5", 10)
+            }
+
+            if (data["hairloss"]) {
+                updateChartData(arr, "Vitamin E", 5)
+            }
+
+            if (data["insomnia"]) {
+                let arra = [...mineralArray];
+                updateChartData(arra, "Calcium", -5, 1)
+            }
+
+            if (data["skinproblems"]) {
+                updateChartData(arr, "Vitamin B3", 10)
+            }
+        }.bind(this), 1000)
     }
 
     const recalculateClick = () => {

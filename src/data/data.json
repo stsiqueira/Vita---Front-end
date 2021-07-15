@@ -34,13 +34,13 @@
         "fatigue": "Fatigue"
     },
     "vitaminColor": {
-        "Vitamin A": "#eabb36",
-        "Vitamin C": "#f69128",
-        "Vitamin B6": "#eb3860",
-        "Vitamin E": "#e8a113",
-        "Vitamin K": "#b71174",
-        "Vitamin B3": "#f56224",
-        "Vitamin B5": "#f1483d"
+        "Vitamin A": "#e6cb00",
+        "Vitamin C": "#f79700",
+        "Vitamin B6": "#f2004e",
+        "Vitamin E": "#e7ad00",
+        "Vitamin K": "#bf006e",
+        "Vitamin B3": "#f95800",
+        "Vitamin B5": "#f62300"
     },
     "vitaminSort": {
         "Vitamin A": 1,
@@ -52,13 +52,13 @@
         "Vitamin K": 7
     },
     "mineralColor": {
-        "Calcium": "#66dbfd",
-        "Copper": "#168b16",
-        "Iron": "#35c985",
-        "Magnesium": "#29ab4b",
-        "Phosphorus": "#6d23b5",
-        "Potassium": "#20b6ce",
-        "Zinc": "#1a4be5"
+        "Calcium": "#3b7ded",
+        "Copper": "#009d1c",
+        "Iron": "#00db89",
+        "Magnesium": "#00bf4f",
+        "Phosphorus": "#7e00b7",
+        "Potassium": "#0cb4d3",
+        "Zinc": "#5100e9"
     },
     "mineralShortform": {
         "Calcium": "Ca",
