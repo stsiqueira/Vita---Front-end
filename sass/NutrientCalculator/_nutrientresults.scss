@@ -269,131 +269,131 @@
                 }
 
                 .vitamin1 {
-                    fill: #eabb36;
+                    fill: #e6cb00;
                 }
             
                 .vitamin2 {
-                    fill: #e8a113;
+                    fill: #e7ad00;
                 }
             
                 .vitamin3 {
-                    fill: #f69128;
+                    fill: #f79700;
                 }
             
                 .vitamin4 {
-                    fill: #f1483d;
+                    fill: #f95800;
                 }
             
                 .vitamin5 {
-                    fill: #f1483d;
+                    fill: #f62300;
                 }
             
                 .vitamin6 {
-                    fill: #eb3860;
+                    fill: #f2004e;
                 }
             
                 .vitamin7 {
-                    fill: #b71174;
+                    fill: #bf006e;
                 }
 
                 .mineral1 {
-                    fill: #7630b9;
+                    fill: #7e00b7;
                 }
             
                 .mineral2 {
-                    fill: #2957e6;
+                    fill: #5100e9;
                 }
             
                 .mineral3 {
-                    fill: #2553e6;
+                    fill: #3b7ded;
                 }
             
                 .mineral4 {
-                    fill: #2ab9d0;
+                    fill: #0cb4d3;
                 }
             
                 .mineral5 {
-                    fill: #3ecb8a;
+                    fill: #00db89;
                 }
             
                 .mineral6 {
-                    fill: #33af53;
+                    fill: #00bf4f;
                 }
             
                 .mineral7 {
-                    fill: #219021;
+                    fill: #009d1c;
                 }
             }
         }
 
         .vitamin1border {
-            border: 4px solid #eabb36;
-            color: #eabb36;
+            border: 4px solid #e6cb00;
+            color: #e6cb00;
         }
     
         .vitamin2border {
-            border: 4px solid #e8a113;
-            color: #e8a113;
+            border: 4px solid #e7ad00;
+            color: #e7ad00;
         }
     
         .vitamin3border {
-            border: 4px solid #f69128;
-            color: #f69128;
+            border: 4px solid #f79700;
+            color: #f79700;
         }
     
         .vitamin4border {
-            border: 4px solid #f1483d;
-            color: #f1483d;
+            border: 4px solid #f95800;
+            color: #f95800;
         }
     
         .vitamin5border {
-            border: 4px solid #f1483d;
-            color: #f1483d;
+            border: 4px solid #f62300;
+            color: #f62300;
         }
     
         .vitamin6border {
-            border: 4px solid #eb3860;
-            color: #eb3860;
+            border: 4px solid #f2004e;
+            color: #f2004e;
         }
     
         .vitamin7border {
-            border: 4px solid #b71174;
-            color: #b71174;
+            border: 4px solid #bf006e;
+            color: #bf006e;
         }
 
         .mineral1border {
-            border: 4px solid #7630b9;
-            color: #7630b9;
+            border: 4px solid #7e00b7;
+            color: #7e00b7;
         }
     
         .mineral2border {
-            border: 4px solid #2957e6;
-            color: #2957e6;
+            border: 4px solid #5100e9;
+            color: #5100e9;
         }
     
         .mineral3border {
-            border: 4px solid #2553e6;
-            color: #2553e6;
+            border: 4px solid #3b7ded;
+            color: #3b7ded;
         }
     
         .mineral4border {
-            border: 4px solid #2ab9d0;
-            color: #2ab9d0;
+            border: 4px solid #0cb4d3;
+            color: #0cb4d3;
         }
     
         .mineral5border {
-            border: 4px solid #3ecb8a;
-            color: #3ecb8a;
+            border: 4px solid #00db89;
+            color: #00db89;
         }
     
         .mineral6border {
-            border: 4px solid #33af53;
-            color: #33af53;
+            border: 4px solid #00bf4f;
+            color: #00bf4f;
         }
     
         .mineral7border {
-            border: 4px solid #219021;
-            color: #219021;
+            border: 4px solid #009d1c;
+            color: #009d1c;
         }
     }
 
@@ -420,37 +420,101 @@
 .descriptiveContent{
     background: #fff;
     padding: 1rem 10px;
+    border-bottom-right-radius: 5px;
+    border-bottom-left-radius: 5px;
+
+    @media screen and (min-width: $desktop-size){
+        border-bottom-right-radius: 10px;
+        border-bottom-left-radius: 10px;
+    }
+    h2{
+        text-align: center;
+        @media screen and (min-width: $desktop-size){
+            padding: 2rem;
+        }
+    }
+}
+.otherItemsContainer{
+    margin-top: 1.5rem;
+    background: #fff;
+    padding: 1.5rem 10px;
     border-radius: 5px;
     @media screen and (min-width: $desktop-size){
         border-radius: 10px;
     }
     h2{
         text-align: center;
+        @media screen and (min-width: $desktop-size){
+            padding: 2rem;
+        }
     }
-    .otherItems{
-        padding: 1rem 0;
+
+}
+
+.otherItems{
+    padding: 1rem 0;
+    display: flex;
+    flex-flow: row wrap;
+    grid-gap: .8rem;
+    justify-content: space-evenly;
+    a{
+        flex: 1 0 40%;
+        background: $bg-color-richFood;
+        padding: 1rem;
         display: flex;
-        flex-flow: row wrap;
-        grid-gap: .8rem;
-        a{
-            flex: 0 0 40%;
-            border: 1px solid red;
-            background: $bg-color-richFood;
-            padding: .5rem;
-            display: flex;
-            flex-flow: column nowrap;
-            justify-content: center;
-            align-items: center;
-            text-decoration: none;
-            color: black;
-            h4{
-                text-align: center;
-            }
+        flex-flow: column nowrap;
+        justify-content: center;
+        align-items: center;
+        text-decoration: none;
+        color: black;
+        border-radius: 5px;
+        max-width: 280px;
+        @media screen and (min-width: $desktop-size){
+            flex: 0 0 20%;
+            // max-width: 200px;
+        }
+        
+        .otherItem{
+            width: 100%;
             border-radius: 5px;
             @media screen and (min-width: $desktop-size){
                 border-radius: 10px;
             }
 
+            .image-wrapper{
+                background: #fff;
+                padding: 1rem;
+                width: 100%;
+                text-align: center;
+                min-height: 180px;
+                display: flex;
+                flex-flow: column;
+                justify-content: center;
+                align-items: center;
+                border-radius: 5px;
+                @media screen and (min-width: $desktop-size){
+                    border-radius: 10px;
+                }
+                img{
+                    width: 80%;
+                    @media screen and (min-width: $desktop-size){
+                        width: 65%;
+                        max-width: 90px;
+                    }
+                }
+
+
+            }
+        }
+
+        @media screen and (min-width: $desktop-size){
+            border-radius: 10px;
+        }
+        h4{
+            text-align: center;
+            padding: .5rem 0 0 0;
+            font-size: 24px;
         }
     }
+
 }
