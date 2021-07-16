@@ -8,144 +8,6 @@ import { useState, useEffect, useRef } from 'react';
 import QuizAnswer from '../components/sub_components/QuizAnswer'
 import QuizAnswerType2 from '../components/sub_components/QuizAnswerType2'
 
-
-
-const quizContent = {
-    "questions":[
-        
-    {
-        "id":1,
-        "typeOfQuestion":2,
-        "question": "Which of the following is a popular product of British Columbia?",
-        "details": "Potassium helps regulate fluid balance, muscle contractions and nerve signals.",
-        "answers":[
-            {"value": "Banana", "option": 1, "path":"/img/fruits/banana.svg"},
-            {"value": "Coconut", "option": 2, "path":"/img/fruits/coconut.svg"},
-            {"value": "Blueberries", "option": 3, "path":"/img/fruits/blueberry.svg"},
-            {"value": "Watermelon", "option": 4, "path":"/img/fruits/watermelon.svg"}
-        ],
-        "correct": 3
-    },
-     {
-         "id":2,
-         "typeOfQuestion":1,
-         "question": "Which nutritional deficiency causes hair loss?",
-         "details": "Potassium helps regulate fluid balance, muscle contractions and nerve signals.",
-         "answers":[
-             {"value": "Magnesium", "option": 1},
-             {"value": "Iron", "option": 2},
-             {"value": "Calcium", "option": 3},
-             {"value": "Potassium", "option": 4}
-         ],
-         "correct": 2
-     },     
-     {
-        "id":3,
-        "typeOfQuestion":2,
-        "question": "Which fruit contains the most potassium?",
-        "details": "Potassium helps regulate fluid balance, muscle contractions and nerve signals.",
-        "answers":[
-            {"value": "Banana", "option": 1, "path":"/img/fruits/banana.svg"},
-            {"value": "Peach", "option": 2, "path":"/img/fruits/peach.svg"},
-            {"value": "Strawberry", "option": 3, "path":"/img/fruits/strawberry.svg"},
-            {"value": "Pear", "option": 4, "path":"/img/fruits/pear.svg"}
-        ],
-        "correct": 1
-    },
-    {
-         "id":4,
-         "typeOfQuestion":1,
-         "question": "Which of the following boosts your immune system and even helps you fight cancer?",
-         "details": "Potassium helps regulate fluid balance, muscle contractions and nerve signals.",
-         "answers":[
-             {"value": "Meat", "option": 1},
-             {"value": "Sugar", "option": 2},
-             {"value": "Vegetables", "option": 3},
-             {"value": "Carbohydrates", "option": 4}
-         ],
-         "correct": 3
-     },
-     {
-         "id":5,
-         "typeOfQuestion":1,
-         "question": " What minerals prevent an infection and bleeding of the gums?",
-         "details": "Potassium helps regulate fluid balance, muscle contractions and nerve signals.",
-         "answers":[
-             {"value": "Iron", "option": 1},
-             {"value": "Calcium", "option": 2},
-             {"value": "Vitamin C", "option": 3},
-             {"value": "Vitamin D", "option": 4}
-         ],
-         "correct": 3
-     },
-     {
-         "id":6,
-         "typeOfQuestion":1,
-         "question": "Which of the following vitamins is water soluble?",
-         "details": "Potassium helps regulate fluid balance, muscle contractions and nerve signals.",
-         "answers":[
-             {"value": "Vitamin K", "option": 1},
-             {"value": "Vitamin E", "option": 2},
-             {"value": "Vitamin C", "option": 3},
-             {"value": "Vitamin D", "option": 4}
-         ],
-         "correct": 3
-     },
-     {
-         "id":7,
-         "typeOfQuestion":1,
-         "question": "Which of these nutrients main role is to carry oxygen in the hemoglobin?",
-         "details": "Potassium helps regulate fluid balance, muscle contractions and nerve signals.",
-         "answers":[
-             {"value": "Iodine", "option": 1},
-             {"value": "Calcium", "option": 2},
-             {"value": "Zinc", "option": 3},
-             {"value": "Iron", "option": 4}
-         ],
-         "correct": 4
-     },
-     {
-         "id":8,
-         "typeOfQuestion":1,
-         "question": "Vitamin A deficiency could lead to one of the following diseases?",
-         "details": "Potassium helps regulate fluid balance, muscle contractions and nerve signals.",
-         "answers":[
-             {"value": "Night Blindness", "option": 1},
-             {"value": "Anemia", "option": 2},
-             {"value": "Scurvy", "option": 3},
-             {"value": "Rickets", "option": 4}
-         ],
-         "correct": 1
-     },
-     {
-        "id":9,
-        "typeOfQuestion":2,
-        "question": "Which of the following foods contains yeast?",
-        "details": "Potassium helps regulate fluid balance, muscle contractions and nerve signals.",
-        "answers":[
-            {"value": "Coconut", "option": 1, "path":"/img/fruits/coconut.svg"},
-            {"value": "Grapes", "option": 2, "path":"/img/fruits/grape.svg"},
-            {"value": "Potato", "option": 3, "path":"/img/vegetables/potato.svg"},
-            {"value": "Tomato", "option": 4, "path":"/img/vegetables/tomato.svg"}
-        ],
-        "correct": 2
-    },
-       {
-         "id":10,
-         "typeOfQuestion":1,
-         "question": "Which of the following minerals is necessary to maintain strong teeth and bones?",
-         "details": "Potassium helps regulate fluid balance, muscle contractions and nerve signals.",
-         "answers":[
-             {"value": "Iron", "option": 1},
-             {"value": "Potassium", "option": 2},
-             {"value": "Zinc", "option": 3},
-             {"value": "Calcium", "option": 4}
-         ],
-         "correct": 4
-     }
-    ] 
- }
-
 const Quiz = (props) => {
     const [showQuiz, setShowQuiz] = useState(false);
     const [userAnswer, setUserAnswer] = useState(false);
@@ -200,10 +62,9 @@ const Quiz = (props) => {
     useEffect(() => {
         const getQuiz = async (url) => {
             const quizFromDB = await fetchQuiz(url);
-            // setAllQuestions(quizFromDB)
+            setAllQuestions(quizFromDB[0].questions)
         }
         getQuiz(dbUrl);
-        setAllQuestions(quizContent.questions);
     },[]);
     // ====================
     function toastMessage() {
