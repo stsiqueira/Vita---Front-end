@@ -11,8 +11,8 @@
         padding: 0 20px;
     }
     @media only screen and (min-width: $desktop-size) {
-      padding: 0 10rem;
-     }
+      padding: 0;
+    }
     h2{
         background: $primary-color-shade;
         border-top-left-radius: 5px;
@@ -27,7 +27,6 @@
         width: 100%;
         padding: 0 10px 2rem;
         @media screen and (min-width:$desktop-size) {
-          padding: 0 10rem 2rem 10rem;
           text-align: center;
         }
     }
@@ -84,7 +83,7 @@
         top: -2.1rem; left: .5rem;
         color: $primary-color;
         @media screen and (min-width:$desktop-size) {
-          top: 2.8rem;
+          top: -4.5rem;
       
         }
 

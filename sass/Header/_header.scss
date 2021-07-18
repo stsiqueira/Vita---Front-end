@@ -1,28 +1,42 @@
+
 .header{
     background: $bg-color-header;
-    display: flex;
-    padding: 0 2rem;
-    justify-content: space-between;
-    img{
-        height: 50px;
+    .max-width-wrapper{
+    
         display: flex;
-        justify-content: flex-end;
-    }
-    a{
-        text-decoration: none;
-    }
-    .menuButton{
-        display: flex;
-        flex-flow: column;
-        justify-content: center;
+        padding: 0 2rem;
+        justify-content: space-between;
         align-items: center;
-        svg{
-            font-size: 2rem;
-            color: white;
-            @media screen and (min-width: $desktop-size){
-                display: none;
+        @media screen and (min-width: $desktop-size){
+            width: 80%;
+            max-width: 1400px;
+            margin: auto;
+            padding: 0;
+        }
+        @media screen and (min-width: $max-width){
+            padding: 0;
+        }
+
+        img{
+            height: 50px;
+            display: flex;
+            justify-content: flex-end;
+        }
+        a{
+            text-decoration: none;
+        }
+        .menuButton{
+            display: flex;
+            flex-flow: column;
+            justify-content: center;
+            align-items: center;
+            svg{
+                font-size: 2rem;
+                color: white;
+                @media screen and (min-width: $desktop-size){
+                    display: none;
+                }
             }
         }
     }
 }
-
