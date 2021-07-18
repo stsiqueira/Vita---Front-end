@@ -25,7 +25,7 @@ const TeamMember = (props) => {
                 <div className="links">
                     {
                         props.teamMember.linkedin ? 
-                            <Link to={props.teamMember.linkedin } target="_blank">
+                            <Link to={{ pathname: `${props.teamMember.linkedin}`}} target="_blank" >
                                 <FaLinkedin />
                             </Link>
                         : ""
