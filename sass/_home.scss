@@ -2,24 +2,32 @@
     @media screen and (min-width:$desktop-size) {
         display: flex;
         flex-flow: row wrap;
+        border: 1px solid black;
         .about-search-nutrient-wrapper{
             background: #fff;
             width: 100%;
             padding-bottom: 3rem;
-        }
-
-        .about,
-        .search,
-        .searchNutrient{
-            flex: 1 0 90%;
-            max-width: $max-width;
-            margin: 0 auto;
-            @media screen and (min-width: $max-width) {
-                padding: 2rem 0;
-                // margin: 0 auto;
-                // grid-gap: 5rem;
+            .max-width{
+                padding:0;
+                width: 80%;
+                max-width: 1400px;
+                margin: auto;
+                    
+                
+                @media screen and (min-width: $max-width){
+                    padding: 0;
+                }
+               
             }
 
+            .about,
+            .search,
+            .searchNutrient{
+                width: 100%;
+                @media screen and (min-width: $max-width) {
+                    padding: 2rem 0;
+                }
+            }
         }
 
 
@@ -30,16 +38,23 @@
             
         }
         .home-calculate-subscribe-wrapper{
-            display: flex;
-            grid-gap: 1.5rem;
             width: 100%;
-            padding: 2rem 10rem;
-            @media screen and (min-width: $max-width) {
-                max-width: $max-width;
-                padding: 4rem 0;
-                margin: 0 auto;
-                grid-gap: 5rem;
+            .max-width{
+
+                width: 80%;
+                margin: auto;
+                display: flex;
+                grid-gap: 3rem;
+                padding: 2rem 0;
+                @media screen and (min-width: $max-width) {
+                    max-width: $max-width;
+                    padding: 4rem 0;
+                    grid-gap: 5rem;
+                }
             }
+
+
+
             
         }
         
