@@ -56,7 +56,7 @@ const NutrientForm = () => {
             }
         }
 
-        if((age > 13 || age < 50) && (gender === "FEMALE")) {
+        if((age > 13 && age < 50) && (gender === "FEMALE")) {
             if(!["none", "pregnant1st", "pregnant2nd_1", "pregnant2nd_2", "pregnant3rd", "lactating1st", "lactating2nd"].includes(fstatus)) {
                 flag = false
             }

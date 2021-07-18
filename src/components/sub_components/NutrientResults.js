@@ -56,8 +56,9 @@ const NutrientResults = () => {
         }
     }
 
-    addVitaminSort.sort(GetSortOrder("sort"))
-    addMineralSort.sort(GetSortOrder("sort"))
+    const [sortedVitamin, setSortedVitamin] = useState(addVitaminSort.sort(GetSortOrder("sort")))
+
+    const [sortedMineral, setSortedMineral] = useState(addMineralSort.sort(GetSortOrder("sort")))
 
     const cleanValue = (value) => {
 
@@ -75,24 +76,28 @@ const NutrientResults = () => {
         const cleanedValue = cleanValue(splitArray[0])
 
         if (splitArray.length < 2)
-            return cleanedValue * 1000
+            return [cleanedValue * 1000, "mg"]
 
         if (splitArray[1].includes("mg"))
-            return cleanedValue * 1000
+            return [cleanedValue * 1000, "mg"]
 
         else if (value.includes(" g"))
-            return cleanedValue * 1000000
+            return [cleanedValue * 1000000, "g"]
 
-        return cleanedValue
+        return [cleanedValue, "mcg"]
     }
 
     const addKeyToJsonArray = (arr) => {
         let total = 0
+        let convertedArray
         const data = arr.map(element => {
             element["id"] = element.name
             element["label"] = element.name.includes("Vitamin") ? element.name.replace("Vitamin ", "") : mineralShortform[element.name]
 
-            element["value"] = convertingUnits(element.recommended_intake)
+            convertedArray = convertingUnits(element.recommended_intake)
+
+            element["value"] = convertedArray[0]
+            element["unit"] = convertedArray[1]
 
             if (element.recommended_intake.length < 2) {
                 element.recommended_intake = element.tolerable_intake
@@ -105,12 +110,14 @@ const NutrientResults = () => {
             return element
         })
 
-        data.map(element => (
+        data.map(element => {
+            element["total"] = total
+            element["raw_value"] = element["value"]
             element["value"] = ((element["value"] / total) * 100).toFixed(2)
-        ))
-
-        const filteredData = data.filter(singleData => singleData.value > 2)
-
+            return element
+        })
+        
+        const filteredData = data.filter(singleData => singleData["value"] > 2 )
         return filteredData
     }
 
@@ -124,22 +131,36 @@ const NutrientResults = () => {
         SetSelectedNutrient(name)
     }
 
-    const [vitaminArray, setVitaminArray] = useState(addKeyToJsonArray(addVitaminSort));
+    const [vitaminArray, setVitaminArray] = useState(addKeyToJsonArray(sortedVitamin));
 
     const [mineralArray, setMineralArray] = useState(addKeyToJsonArray(addMineralSort));
 
 
     const myRef = useRef(null)
 
-    const stateData = (updatedArray, prevState, vitamin) => {
+    const stateData = (updatedArray, prevState, vitamin, flag) => {
         let item = updatedArray.filter(element => element["id"] === vitamin)[0]
         let newData = prevState.filter(element => element["id"] !== vitamin)
-        return [...newData, item];
+        return flag ? [...newData, item].sort(GetSortOrder("sort")) : [...newData, item];
+    }
+
+    const standardizeUnit = (item, updatedValue) => {
+        let upr = item["raw_value"] + (item["raw_value"] * (updatedValue/100))
+        if (item["unit"] === "mg")
+            return `${(upr/1000).toFixed(1).toString()} mg`
+
+        else if (item["unit"] === "g")
+            return `${(upr/1000000).toFixed(1).toString()} g`
+
+        else
+            return `${upr} ${item["unit"]}`
+
     }
 
     const updateChartData = (arr, vitamin, updatedValue, flag) => {
         const item = { ...arr.filter(element => element["id"] === vitamin)[0] };
         item["value"] = (Number(item["value"]) + updatedValue).toFixed(2).toString()
+        item["recommended_intake"] = standardizeUnit(item, updatedValue)
 
         const updatedArray = arr.map(element => {
             if (element["id"] === vitamin) {
@@ -147,13 +168,22 @@ const NutrientResults = () => {
             }
             return element
         })
-        { flag ?
-            setMineralArray(prevState => {
-                return stateData(updatedArray, prevState, vitamin)
-            }) : 
-            setVitaminArray(prevState => {
-                return stateData(updatedArray, prevState, vitamin)
-            })
+        { if(flag) {
+                setMineralArray(prevState => {
+                    return stateData(updatedArray, prevState, vitamin)
+                })
+
+                setSortedMineral(previState => {
+                    console.log(previState)
+                    return stateData(updatedArray, previState, vitamin, true)})
+            }
+            else {
+                setVitaminArray(prevState => {
+                    return stateData(updatedArray, prevState, vitamin)
+                })
+                setSortedVitamin(previState => {
+                    return stateData(updatedArray, previState, vitamin, true)})
+            }
         }
     }
 
@@ -178,7 +208,7 @@ const NutrientResults = () => {
             if (data["skinproblems"]) {
                 updateChartData(arr, "Vitamin B3", 10)
             }
-        }.bind(this), 1000)
+        }, 400)
     }
 
     const recalculateClick = () => {
@@ -207,7 +237,7 @@ const NutrientResults = () => {
                         borderclassname={true}
                         rectclassname={true}
                         name="vitamins"
-                        arr={addVitaminSort}
+                        arr={sortedVitamin}
                         flag={true}
                         callback={textClickCallback}
                     />
@@ -234,7 +264,7 @@ const NutrientResults = () => {
                     <UnorderedList
                         headflag={true}
                         classname="minerals-list" name="minerals"
-                        arr={addMineralSort}
+                        arr={sortedMineral}
                         flag={true}
                         callback={textClickCallback}
                     />
