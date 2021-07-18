@@ -49,6 +49,14 @@ input{
     &::placeholder{
         color: $primary-color;
     }
+    &:focus::placeholder{
+        color: #fff;
+    }
+    &:focus ~ svg{
+        
+        color:white !important;
+       
+    }
 }
 textarea{
     border: 2px solid $primary-color;
