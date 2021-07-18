@@ -9,7 +9,7 @@
         border-radius: 10px;
         margin: 1rem 20px;
         flex-flow: row wrap;
-        justify-content: space-evenly;
+        justify-content: center;
         align-items: baseline;
         .teamMember{
             max-width: 300px;
@@ -22,56 +22,80 @@
         background: linear-gradient(white 50%, $primary-color 50%);
 
         img{
-            width: 50%;
+            width: 70%;
             background: $primary-color-shade;
             border-radius: 50%;
         }
     }
-.teamMember{
-    border-radius: 5px;
-    margin: 2rem 10px 2rem 10px;
-    display: flex;
-    flex-flow: column nowrap;
-    justify-content: center;
-    align-items: center;
-    @media screen and (min-width: $tablet-size){
-        border-radius: 10px;
-        margin: 7rem 20px 2rem 20px;
-    }
-    .teamMemberAbout{
-        text-align: center;
-        background: $primary-color;
-        width: 100%;
-        color: #fff;
-        padding: 1rem 0;
-    }
-    .teamMemberDescription{
-        padding: 1rem 30px 1rem 30px;
-        border: 2px solid $primary-color;
-        border-bottom-left-radius: 10px;
-        border-bottom-right-radius: 10px;
+    .teamMember{
+        border-radius: 5px;
+        margin: 2rem 10px 2rem 10px;
         display: flex;
         flex-flow: column nowrap;
-        justify-content: space-between;
-        p{
-            flex: 1;
-        }
+        justify-content: center;
+        align-items: center;
+        width: 80%;
+        margin: 2rem auto;
         @media screen and (min-width: $tablet-size){
-            min-height: 300px;
+            border-radius: 10px;
+            margin: 7rem 20px 2rem 20px;
         }
-        .links{
-            font-size: 1.3rem;
-            margin-top: 1rem;
+        .teamMemberAbout{
+            text-align: center;
+            background: $primary-color;
+            width: 100%;
+            color: #fff;
+            padding: 1rem 0;
+        }
+        .teamMemberDescription{
+            padding: 1rem 30px 1rem 30px;
+            border: 2px solid $primary-color;
+            border-bottom-left-radius: 10px;
+            border-bottom-right-radius: 10px;
             display: flex;
-            grid-gap: .3rem;
-            justify-content: flex-end;
-            a[href*="github"]{
-                color: black;
+            flex-flow: column nowrap;
+            justify-content: space-between;
+            p{
+                flex: 1;
             }
-            a[href*="linkedin"]{
-                color: #0A66C2;
+            @media screen and (min-width: $tablet-size){
+                min-height: 300px;
             }
+            .links{
+                font-size: 1.3rem;
+                margin-top: 1rem;
+                display: flex;
+                grid-gap: .3rem;
+                justify-content: flex-end;
+                a[href*="github"]{
+                    color: black;
+                }
+                a[href*="linkedin"]{
+                    color: #0A66C2;
+                }
 
+            }
         }
     }
-}}
+    .Diana{
+        order: 1;
+    }
+    .Thiago{
+        order: 2;
+    }
+    .Tuong{
+        order: 3;
+    }
+    .Ana{
+        order: 4;
+    }
+    .Glen{
+        order: 5;
+    }
+    .Amandeep{
+        order: 6;
+    }
+    .Munish{
+        order: 7;
+    }
+}

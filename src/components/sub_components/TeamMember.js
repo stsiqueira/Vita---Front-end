@@ -11,7 +11,7 @@ const TeamMember = (props) => {
 
 
     return (
-       <div className="teamMember">
+       <div className={props.teamMember.name ? `teamMember ${props.teamMember.name}`  : "teamMember"}>
            <div className="teamMemberImg">
              <img src={props.teamMember.imagePath ? props.teamMember.imagePath : ""} alt={props.teamMember.name + " image"} /> 
            </div>
