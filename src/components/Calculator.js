@@ -133,11 +133,14 @@ const NutrientForm = () => {
     }
 
     const metricToggle = (value, e) => {
-        const metric = document.getElementById("metric");
-        const standard = document.getElementById("standard");
-        classToggle(metric)
-        classToggle(standard)
-        setMetric(value)
+        const currentClicked = document.getElementsByClassName("clicked");
+        if(currentClicked[0].id !== e.target.id) {
+            const metric = document.getElementById("metric");
+            const standard = document.getElementById("standard");
+            classToggle(metric)
+            classToggle(standard)
+            setMetric(value)
+        }
     }
 
     return (
