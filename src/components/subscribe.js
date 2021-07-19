@@ -69,7 +69,15 @@ const Subscribe = (props) => {
             'user_6lofy9aPrJcOsF3Yfomhd'
         )
         .then((response) => {
-            console.log('SUCCESS!', response.status, response.text);
+            toast.success("Email Sent Successfully", {
+                position: "bottom-center",
+                autoClose: 2000,
+                hideProgressBar: false,
+                closeOnClick: true,
+                pauseOnHover: true,
+                draggable: true,
+                progress: undefined,
+            });
         })
         .catch((err) => {
             console.log('FAILED...', err);

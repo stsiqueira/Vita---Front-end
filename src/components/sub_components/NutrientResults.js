@@ -19,7 +19,6 @@ const NutrientResults = () => {
     const location = useLocation()
     const history = useHistory()
     const { vitamin, mineral } = location.state
-    console.log(`testing from calculator ${vitamin}`);
     const [selectedNutrientType, SetSelectedNutrientType] = useState("Vitamins");
     const [selectedNutrient, SetSelectedNutrient] = useState("Vitamin A");
 
@@ -57,7 +56,6 @@ const NutrientResults = () => {
     }
 
     const [sortedVitamin, setSortedVitamin] = useState(addVitaminSort.sort(GetSortOrder("sort")))
-    console.log(`testing sort ${vitamin}`);
 
     const [sortedMineral, setSortedMineral] = useState(addMineralSort.sort(GetSortOrder("sort")))
 
@@ -137,9 +135,17 @@ const NutrientResults = () => {
         SetSelectedNutrient(name)
     }
 
+    sortedVitamin.map((data) => {
+        console.log(data)
+    })
+    addKeyToJsonArray(sortedVitamin).map(data => {
+        console.log(data);
+    })
     const [vitaminArray, setVitaminArray] = useState(addKeyToJsonArray(sortedVitamin));
-    console.log(`testing sort ${vitaminArray}`);
-
+    
+    vitaminArray.map((data) => {
+        console.log(data)
+    })
     const [mineralArray, setMineralArray] = useState(addKeyToJsonArray(addMineralSort));
 
     const stateData = (updatedArray, prevState, vitamin, flag) => {
@@ -178,7 +184,6 @@ const NutrientResults = () => {
                 })
 
                 setSortedMineral(previState => {
-                    console.log(previState)
                     return stateData(updatedArray, previState, vitamin, true)})
             }
             else {
@@ -220,7 +225,7 @@ const NutrientResults = () => {
             pathname: "/NutrientCalculator/Start"
         })
     }
-    console.log(vitaminArray)
+
     const tabListVitaminWrapper = () => {
         return (
             <div className="chart-vitamin-result-wrapper">
