@@ -1,6 +1,15 @@
 import Button from "../compositableComponents/Button"
+import { useHistory } from "react-router-dom";
+
 
 const Recalculate = ({parentClassname, descriptionClassname, descriptionText,buttonWrapperClassname, buttonClassname, buttonText, callback, args}) => {
+
+    const history = useHistory()
+    const buttonClick = () => {
+        history.push({
+            pathname: '/NutrientCalculator/Start',
+        })
+    }
     return (
         <div className={`recalculate-wrapper ${parentClassname}`}>
             <div className="image-text-wrapper">
@@ -10,7 +19,7 @@ const Recalculate = ({parentClassname, descriptionClassname, descriptionText,but
                 </p>
             </div>
             <div className={`button-wrapper ${buttonWrapperClassname}`}>
-                <Button text={buttonText} classname={`${buttonClassname} btn`} callback={callback} />
+                <Button text={buttonText} classname={`${buttonClassname} btn`} callback={buttonClick} />
             </div>
         </div>
     )
