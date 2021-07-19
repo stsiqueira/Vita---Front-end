@@ -60,7 +60,7 @@ const MyResponsivePie = ({ data, callback, removeDataMetrics,legendFlag, parentF
         <ResponsivePie
             onClick={callback}
             data={data}
-            margin={window.innerWidth > 600 ? { top: 40, right: 80, bottom: 80, left: 80 } : { top: 40, right: 40, bottom: 70, left: 40 }}
+            margin={window.innerWidth > 600 ? { top: 40, right: 80, bottom: 80, left: 80 } : { top: 30, right: 30, bottom: 50, left: 30 }}
             sortByValue={false}
             innerRadius={0.5}
             padAngle={0.7}
