@@ -13,7 +13,6 @@ const Navigation = (props) => {
     const clicked = (e) => {
         const clicked = document.getElementsByClassName("clicked");
         if (clicked[0]) {
-            console.log(clicked[0])
             clicked[0].classList.remove("clicked")
             e.target.classList.add("clicked")
         } else {

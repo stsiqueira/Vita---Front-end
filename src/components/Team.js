@@ -19,6 +19,21 @@ const Team = (props) => {
         return data;
     }
 
+    function shuffle(array) {
+        var currentIndex = array.length,  randomIndex;
+      
+        while (0 !== currentIndex) {
+      
+          randomIndex = Math.floor(Math.random() * currentIndex);
+          currentIndex--;
+      
+          [array[currentIndex], array[randomIndex]] = [
+            array[randomIndex], array[currentIndex]];
+        }
+      
+        return array;
+    }
+
     // First load
     useEffect(() => {
         const getTeam = async (url) => {
@@ -34,7 +49,7 @@ const Team = (props) => {
        <div className="team">
            {
                teamMembers &&
-               teamMembers.map((teamMember)=>(
+               shuffle(teamMembers).map((teamMember)=>(
                     <TeamMember key={teamMember.id} teamMember={teamMember}/>
                ))
                

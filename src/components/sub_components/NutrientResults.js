@@ -135,17 +135,8 @@ const NutrientResults = () => {
         SetSelectedNutrient(name)
     }
 
-    sortedVitamin.map((data) => {
-        console.log(data)
-    })
-    addKeyToJsonArray(sortedVitamin).map(data => {
-        console.log(data);
-    })
     const [vitaminArray, setVitaminArray] = useState(addKeyToJsonArray(sortedVitamin));
     
-    vitaminArray.map((data) => {
-        console.log(data)
-    })
     const [mineralArray, setMineralArray] = useState(addKeyToJsonArray(addMineralSort));
 
     const stateData = (updatedArray, prevState, vitamin, flag) => {
