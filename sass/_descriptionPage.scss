@@ -45,7 +45,8 @@ img {
     padding: 1.5rem 20px;    
   }
   @media screen and (min-width:$desktop-size) {
-    padding: 1.5rem 10rem;
+    // padding: 1.5rem 10rem;
+    padding: 3rem 0;
     .title{
       border-top-left-radius: 20px;
       border-top-right-radius: 20px;

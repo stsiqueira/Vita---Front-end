@@ -7,11 +7,13 @@
     border-radius: 5px;
     flex-flow: column wrap;
     gap: 2rem;
-    // min-height: 80vh;
 
     @media only screen and (min-width: $tablet-size) {
         display: grid;
         grid-template-columns: 1fr 1fr;
+    }
+    @media only screen and (min-width: $max-width) {
+        width: 1400px;
     }
 
     .calculator-start-title-mobile {
@@ -32,8 +34,8 @@
         justify-content: center;
         img{
             max-width: 300px;
-            @media only screen and (min-width: $tablet-size) {
-                max-width: 400px;
+            @media only screen and (min-width: $max-width) {
+                max-width: 500px;
             }
         }
         

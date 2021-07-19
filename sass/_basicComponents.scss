@@ -46,8 +46,17 @@ input{
     height: 40px;
     color: $primary-color;
     font-weight: bold;
+    padding-left: 1rem;
     &::placeholder{
         color: $primary-color;
+    }
+    &:focus::placeholder{
+        color: #fff;
+    }
+    &:focus ~ svg{
+        
+        color:white !important;
+       
     }
 }
 textarea{

@@ -15,23 +15,26 @@ const Header = (props) => {
 
     return (
        <div className="header">
-           <div className="logo">
-            <Link to="/" onClick={()=> props.showMenu ? props.setShowMenu(false) : ""}>
-                <img src="/img/vita_logo.svg" alt="Vita Logo" />
-            </Link>
-           </div>
-            <Navigation 
-                showMenu={props.showMenu}
-                setShowMenu={props.setShowMenu}
-                
-            />
-            <div className="menuButton" onClick={()=> props.setShowMenu(!props.showMenu)}>
-                {
-                    props.showMenu ?
-                        <VscChromeClose /> 
-                    : <FiMenu />
-                }
+           <div className="max-width-wrapper">
+            <div className="logo">
+                <Link to="/" onClick={()=> props.showMenu ? props.setShowMenu(false) : ""}>
+                    <img src="/img/vita_logo.svg" alt="Vita Logo" />
+                </Link>
             </div>
+                <Navigation 
+                    showMenu={props.showMenu}
+                    setShowMenu={props.setShowMenu}
+                    
+                />
+                <div className="menuButton" onClick={()=> props.setShowMenu(!props.showMenu)}>
+                    {
+                        props.showMenu ?
+                            <VscChromeClose /> 
+                        : <FiMenu />
+                    }
+                </div>
+           </div>
+          
        </div>
     )
 }

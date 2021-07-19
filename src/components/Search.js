@@ -165,8 +165,9 @@ const Search = () => {
             <p>You can search for fruits and vegetables and get precise data about vitamins and minerals that can be found them.</p>
             <div className="userSearchControls">
                 <div className="autocomplete">
-                   <FaSearch/> 
+                   
                    <input id="searchItemInput" type="text" placeholder="apples..."required onChange={(e) => searchExists(e)} />
+                   <FaSearch/> 
                 </div>
                 {
                 userSearch ? 
