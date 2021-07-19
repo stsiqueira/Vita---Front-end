@@ -121,12 +121,17 @@ const NutrientResults = () => {
         return filteredData
     }
 
+    const myRef = useRef(null)
+    const scrollToRichFood = useRef(null)
+
     const redirect = (node) => {
+        scrollToRichFood.current.scrollIntoView({behavior: "smooth"})
         SetSelectedNutrientType(node.id.toLowerCase().includes("vitamin") ? "Vitamins" : "Minerals")
         SetSelectedNutrient(node.id)
     }
 
     const textClickCallback = (type, name) => {
+        scrollToRichFood.current.scrollIntoView({behavior: "smooth"})
         SetSelectedNutrientType(type)
         SetSelectedNutrient(name)
     }
@@ -134,9 +139,6 @@ const NutrientResults = () => {
     const [vitaminArray, setVitaminArray] = useState(addKeyToJsonArray(sortedVitamin));
 
     const [mineralArray, setMineralArray] = useState(addKeyToJsonArray(addMineralSort));
-
-
-    const myRef = useRef(null)
 
     const stateData = (updatedArray, prevState, vitamin, flag) => {
         let item = updatedArray.filter(element => element["id"] === vitamin)[0]
@@ -216,7 +218,7 @@ const NutrientResults = () => {
             pathname: "/NutrientCalculator/Start"
         })
     }
-
+    console.log(vitaminArray)
     const tabListVitaminWrapper = () => {
         return (
             <div className="chart-vitamin-result-wrapper">
@@ -300,7 +302,7 @@ const NutrientResults = () => {
                 </div> :
                     <></>
                 }
-                <div className="descriptiveContent">
+                <div ref={scrollToRichFood} className="descriptiveContent">
                     { selectedNutrientType && selectedNutrient &&
                         <RichFood nutrientType = {selectedNutrientType} nutrientName = {selectedNutrient}/>      
                     }
