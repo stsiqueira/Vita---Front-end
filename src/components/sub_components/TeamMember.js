@@ -33,7 +33,7 @@ const TeamMember = (props) => {
                     { 
                     props.teamMember ? 
                         props.teamMember.developer ? 
-                            <Link to={ props.teamMember.github } target="_blank">
+                            <Link to={{ pathname: `${props.teamMember.github}`}} target="_blank">
                                 <FaGithub />
                             </Link>
                             
