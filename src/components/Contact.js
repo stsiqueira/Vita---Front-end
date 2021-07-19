@@ -48,9 +48,9 @@ const Contact = (props) => {
 
                        </textarea>
                    </div>
-                   <dib className="contact-button">
+                   <div className="contact-button">
                        <input type="submit" />
-                   </dib>
+                   </div>
                </form>
            </div>
        </div>

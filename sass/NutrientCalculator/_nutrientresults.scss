@@ -127,7 +127,7 @@
 
             .vitamin-result-wrapper,
             .mineral-result-wrapper {
-                bottom: 3rem;
+                bottom: 2rem;
                 position: relative;
                 @media only screen and (min-width: $tablet-size) {
                     margin-bottom: 1.7rem;
@@ -165,8 +165,13 @@
 
         .nutrient-note {
             padding: 0 1rem;
+            padding-bottom: 1rem;
             position: relative;
+            background-color: white;
             top: -1rem;
+            @media only screen and (min-width: $tablet-size) {
+                display: none;
+            }
         }
         .reference{
             background: $primary-color-shade;

@@ -19,7 +19,7 @@ const MyResponsivePie = ({ data, callback, removeDataMetrics,legendFlag, parentF
     }
     const CenteredMetric = ({ dataWithArc, centerX, centerY}) => {
         const style = {
-            fontSize: `${window.innerWidth < 600 ? "1.1rem" : "2rem"}`,
+            fontSize: `${window.innerWidth < 600 ? "1.3rem" : "2rem"}`,
             fontWeight: 600
         }
         return ( metric(centreText, 0, centerY, centerX, style, "centre-text"))
@@ -27,14 +27,14 @@ const MyResponsivePie = ({ data, callback, removeDataMetrics,legendFlag, parentF
 
     const SubCenteredMetric = ({ dataWithArc, centerX, centerY}) => {
         const style = {
-            fontSize: `${window.innerWidth < 600 ? ".7rem" : ".9rem"}`
+            fontSize: `${window.innerWidth < 600 ? ".8rem" : ".9rem"}`
         }
-        return ( metric(subCentreText, 0, centerY+30, centerX, style, "subcenter-text"))
+        return ( metric(subCentreText, 0, window.innerWidth > 600 ? centerY+30 : centerY+20, centerX, style, "subcenter-text"))
     }
 
     const bottomMetric = ({ dataWithArc, centerX, centerY}) => {
         const style = {
-            fontSize: `${window.innerWidth < 600 ? ".5rem" : ".9rem"}`
+            fontSize: `${window.innerWidth < 600 ? ".8rem" : ".9rem"}`
         }
         let arr = bottomCentreText.split("  ")
         return (
@@ -60,7 +60,7 @@ const MyResponsivePie = ({ data, callback, removeDataMetrics,legendFlag, parentF
         <ResponsivePie
             onClick={callback}
             data={data}
-            margin={{ top: 40, right: 80, bottom: 80, left: 80 }}
+            margin={window.innerWidth > 600 ? { top: 40, right: 80, bottom: 80, left: 80 } : { top: 40, right: 40, bottom: 70, left: 40 }}
             sortByValue={false}
             innerRadius={0.5}
             padAngle={0.7}

@@ -21,6 +21,10 @@
                 border-bottom: 6px solid $color-link-border-bottom;
             }
         }
+
+        .clicked {
+            border-bottom: 6px solid $color-link-border-bottom;
+        }
         
         a,li{
             display: flex;
@@ -30,6 +34,7 @@
             height: 100%;
         }
     }
+    
     display: none;
     @media screen and (min-width: $desktop-size){
         display: flex;
