@@ -21,7 +21,7 @@ const TeamMember = (props) => {
                <p>{props.teamMember.position ? props.teamMember.position : ""}</p>
            </div>
            <div className="teamMemberDescription">
-                <p>{props.teamMember.description ? props.teamMember.description : ""}</p>
+                <p>{ props.teamMember.description ? props.teamMember.description : "" }</p>
                 <div className="links">
                     {
                         props.teamMember.linkedin ? 
