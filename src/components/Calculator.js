@@ -118,6 +118,7 @@ const NutrientForm = () => {
         if (data) {
             const vitaminArr = data.vitamin.filter(vitamins => vitaminList.includes(vitamins.name))
             const mineralArr = data.minerals.filter(minerals => mineralList.includes(minerals.name))
+            console.log(`testing calculator ${vitaminArr}`);
             history.push({
                 pathname: '/NutrientCalculator/Results',
                 state: { 
