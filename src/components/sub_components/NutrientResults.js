@@ -19,7 +19,7 @@ const NutrientResults = () => {
     const location = useLocation()
     const history = useHistory()
     const { vitamin, mineral } = location.state
-
+    console.log(`testing from calculator ${vitamin}`);
     const [selectedNutrientType, SetSelectedNutrientType] = useState("Vitamins");
     const [selectedNutrient, SetSelectedNutrient] = useState("Vitamin A");
 
@@ -57,6 +57,7 @@ const NutrientResults = () => {
     }
 
     const [sortedVitamin, setSortedVitamin] = useState(addVitaminSort.sort(GetSortOrder("sort")))
+    console.log(`testing sort ${vitamin}`);
 
     const [sortedMineral, setSortedMineral] = useState(addMineralSort.sort(GetSortOrder("sort")))
 
@@ -137,6 +138,7 @@ const NutrientResults = () => {
     }
 
     const [vitaminArray, setVitaminArray] = useState(addKeyToJsonArray(sortedVitamin));
+    console.log(`testing sort ${vitaminArray}`);
 
     const [mineralArray, setMineralArray] = useState(addKeyToJsonArray(addMineralSort));
 
