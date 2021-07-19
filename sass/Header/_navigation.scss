@@ -33,6 +33,7 @@
     display: none;
     @media screen and (min-width: $desktop-size){
         display: flex;
+        min-height: 100%;
     }
 }
 .mobileMenu{
