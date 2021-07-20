@@ -11,6 +11,8 @@
             min-height: 76vh;
             width: 90%;
             margin: 0rem auto;
+            display: flex;
+            align-items: center;
         }
 
         .page-not-found {
@@ -19,6 +21,7 @@
             flex-flow: column;
             grid-gap: 9.5rem;
             justify-items: center;
+            align-items: center;
 
             @media only screen and (min-width: $desktop-size) {
                 grid-gap: 0;
