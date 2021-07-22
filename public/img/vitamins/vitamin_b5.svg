@@ -1,12 +1,15 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="131.514" height="131.514" viewBox="0 0 131.514 131.514">
-  <g id="Group_1546" data-name="Group 1546" transform="translate(-1617.394 -1210.697)">
-    <g id="Group_910" data-name="Group 910" transform="translate(60.831 153.046)">
-      <circle id="Ellipse_134" data-name="Ellipse 134" cx="56.727" cy="56.727" r="56.727" transform="translate(1568.044 1068.041)" fill="#eb3860"/>
-      <circle id="Ellipse_135" data-name="Ellipse 135" cx="62.257" cy="62.257" r="62.257" transform="translate(1560.063 1061.15)" fill="none" stroke="#000" stroke-miterlimit="10" stroke-width="7"/>
-      <path id="Path_1869" data-name="Path 1869" d="M1586.362,1090.713a48.275,48.275,0,0,0-10.117,17.253" fill="none" stroke="#fff" stroke-linecap="round" stroke-miterlimit="10" stroke-width="7"/>
-      <path id="Path_1870" data-name="Path 1870" d="M1653.031,1085.923a48.64,48.64,0,0,0-52.215-6.142" fill="none" stroke="#fff" stroke-linecap="round" stroke-miterlimit="10" stroke-width="7"/>
-      <g id="B5" transform="translate(-1.042 -3.953)" style="isolation: isolate">
-        <text id="B5-2" data-name="B5" transform="translate(1586.362 1151.221)" fill="#fff" font-size="60" font-family="Quicksand-Bold, Quicksand" font-weight="700" style="isolation: isolate"><tspan x="0" y="0">B5</tspan></text>
+<svg xmlns="http://www.w3.org/2000/svg" width="196" height="196" viewBox="0 0 196 196">
+  <g id="Group_1936" data-name="Group 1936" transform="translate(-2549 -166)">
+    <g id="Group_1930" data-name="Group 1930" transform="translate(2252 97)">
+      <rect id="Rectangle_1254" data-name="Rectangle 1254" width="196" height="196" rx="5" transform="translate(297 69)" fill="#fff"/>
+    </g>
+    <g id="Group_1914" data-name="Group 1914" transform="translate(2578 195)">
+      <ellipse id="Ellipse_142" data-name="Ellipse 142" cx="60.271" cy="60.271" rx="60.271" ry="60.271" transform="translate(10.462 12.665)" fill="#eb3860"/>
+      <ellipse id="Ellipse_143" data-name="Ellipse 143" cx="68.563" cy="68.563" rx="68.563" ry="68.563" transform="translate(0 0)" fill="none" stroke="#000" stroke-miterlimit="10" stroke-width="7"/>
+      <path id="Path_1878" data-name="Path 1878" d="M1587.387,201.33a53.152,53.152,0,0,0-11.142,19" transform="translate(-1554.686 -160.718)" fill="none" stroke="#fff" stroke-linecap="round" stroke-miterlimit="10" stroke-width="7"/>
+      <path id="Path_1879" data-name="Path 1879" d="M1658.32,197.66a53.567,53.567,0,0,0-57.5-6.764" transform="translate(-1552.197 -162.325)" fill="none" stroke="#fff" stroke-linecap="round" stroke-miterlimit="10" stroke-width="7"/>
+      <g id="A" transform="translate(31.086 31.637)" style="isolation: isolate">
+        <text id="B5" transform="translate(0 65)" fill="#fff" font-size="65" font-family="Quicksand-Bold, Quicksand" font-weight="700"><tspan x="0" y="0">B5</tspan></text>
       </g>
     </g>
   </g>

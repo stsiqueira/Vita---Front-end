@@ -1,14 +1,19 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="135.384" height="121.916" viewBox="0 0 135.384 121.916">
-  <g id="Group_1549" data-name="Group 1549" transform="translate(-1843.735 -502.785)">
-    <g id="Group_921" data-name="Group 921" transform="translate(60.831 153.046)">
-      <path id="Path_1894" data-name="Path 1894" d="M1876.8,359.749h-42.31a15.2,15.2,0,0,0-13.164,7.6l-21.154,36.641a15.2,15.2,0,0,0,0,15.2l21.154,36.641a15.2,15.2,0,0,0,13.164,7.6h42.31a15.2,15.2,0,0,0,13.164-7.6l21.155-36.641a15.2,15.2,0,0,0,0-15.2l-21.155-36.641A15.2,15.2,0,0,0,1876.8,359.749Z" fill="#1a4be5" style="isolation: isolate"/>
-      <path id="Path_1895" data-name="Path 1895" d="M1874.993,353.239H1826.2a15.2,15.2,0,0,0-13.164,7.6l-24.4,42.258a15.2,15.2,0,0,0,0,15.2l24.4,42.258a15.2,15.2,0,0,0,13.164,7.6h48.8a15.2,15.2,0,0,0,13.164-7.6l24.4-42.258a15.2,15.2,0,0,0,0-15.2l-24.4-42.258A15.2,15.2,0,0,0,1874.993,353.239Z" fill="none" stroke="#000" stroke-linejoin="round" stroke-width="7"/>
-      <g id="Zn" style="isolation: isolate">
-        <text id="Zn-2" data-name="Zn" transform="translate(1818.423 428.772)" fill="#fff" font-size="48" font-family="Quicksand-Bold, Quicksand" font-weight="700" style="isolation: isolate"><tspan x="0" y="0">Zn</tspan></text>
-      </g>
-      <g id="Group_804" data-name="Group 804">
-        <path id="Path_1896" data-name="Path 1896" d="M1817.977,383.426l6.826-11.553a8.41,8.41,0,0,1,7.239-4.13h12.311" fill="none" stroke="#fff" stroke-linecap="round" stroke-miterlimit="10" stroke-width="5"/>
-        <line id="Line_311" data-name="Line 311" x1="7.218" y2="11.851" transform="translate(1806.107 391.213)" fill="none" stroke="#fff" stroke-linecap="round" stroke-miterlimit="10" stroke-width="5"/>
+<svg xmlns="http://www.w3.org/2000/svg" width="196" height="196" viewBox="0 0 196 196">
+  <g id="Group_1949" data-name="Group 1949" transform="translate(-3202 -166)">
+    <g id="Group_1933" data-name="Group 1933" transform="translate(2905 97)">
+      <rect id="Rectangle_1254" data-name="Rectangle 1254" width="196" height="196" rx="5" transform="translate(297 69)" fill="#fff"/>
+    </g>
+    <g id="Group_1920" data-name="Group 1920" transform="translate(3227 198)">
+      <g id="Group_921" data-name="Group 921" transform="translate(0 0)">
+        <path id="Path_1894" data-name="Path 1894" d="M1888.118,359.749h-48.4a17.387,17.387,0,0,0-15.058,8.694l-24.2,41.913a17.382,17.382,0,0,0,0,17.387l24.2,41.913a17.387,17.387,0,0,0,15.058,8.694h48.4a17.389,17.389,0,0,0,15.058-8.694l24.2-41.913a17.389,17.389,0,0,0,0-17.387l-24.2-41.913A17.39,17.39,0,0,0,1888.118,359.749Z" transform="translate(-1784.938 -352.302)" fill="#1a4be5" style="isolation: isolate"/>
+        <path id="Path_1895" data-name="Path 1895" d="M1887.712,353.239H1831.9a17.386,17.386,0,0,0-15.058,8.694l-27.911,48.338a17.383,17.383,0,0,0,0,17.387L1816.839,476a17.386,17.386,0,0,0,15.058,8.694h55.816A17.389,17.389,0,0,0,1902.771,476l27.911-48.339a17.388,17.388,0,0,0,0-17.387l-27.911-48.338A17.391,17.391,0,0,0,1887.712,353.239Z" transform="translate(-1786.598 -353.239)" fill="none" stroke="#000" stroke-linejoin="round" stroke-width="7"/>
+        <g id="Zn" transform="translate(43.404 31.495)" style="isolation: isolate">
+          <text id="Zn-2" data-name="Zn" transform="translate(0 54)" fill="#fff" font-size="54" font-family="Quicksand-Bold, Quicksand" font-weight="700" style="isolation: isolate"><tspan x="0" y="0">Zn</tspan></text>
+        </g>
+        <g id="Group_804" data-name="Group 804" transform="translate(22.316 16.591)">
+          <path id="Path_1896" data-name="Path 1896" d="M1817.977,385.683l7.808-13.215a9.62,9.62,0,0,1,8.281-4.724h14.082" transform="translate(-1804.398 -367.743)" fill="none" stroke="#fff" stroke-linecap="round" stroke-miterlimit="10" stroke-width="5"/>
+          <line id="Line_311" data-name="Line 311" x1="8.257" y2="13.556" transform="translate(0 26.847)" fill="none" stroke="#fff" stroke-linecap="round" stroke-miterlimit="10" stroke-width="5"/>
+        </g>
       </g>
     </g>
   </g>

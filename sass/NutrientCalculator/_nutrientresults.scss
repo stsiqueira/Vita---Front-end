@@ -461,7 +461,8 @@
     display: flex;
     flex-flow: row wrap;
     grid-gap: .8rem;
-    justify-content: space-evenly;
+    // justify-content: space-evenly;
+    justify-content: center;
     a{
         flex: 1 0 40%;
         background: $bg-color-richFood;
@@ -488,23 +489,23 @@
 
             .image-wrapper{
                 background: #fff;
-                padding: 1rem;
+                // padding: 1rem;
                 width: 100%;
                 text-align: center;
-                min-height: 180px;
+                // min-height: 180px;
                 display: flex;
                 flex-flow: column;
                 justify-content: center;
-                align-items: center;
+                // align-items: center;
                 border-radius: 5px;
                 @media screen and (min-width: $desktop-size){
                     border-radius: 10px;
                 }
                 img{
-                    width: 80%;
+                    // width: 80%;
                     @media screen and (min-width: $desktop-size){
-                        width: 65%;
-                        max-width: 90px;
+                        // width: 65%;
+                        // max-width: 90px;
                     }
                 }
 

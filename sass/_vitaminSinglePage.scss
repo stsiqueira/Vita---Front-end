@@ -94,6 +94,9 @@
         flex-flow: row wrap;
         grid-gap: .8rem;
         justify-content: space-evenly;
+        max-width: 900px;
+        margin: auto;
+        padding-bottom: 3rem;
         a{
             flex: 1 0 40%;
             background: $bg-color-richFood;
@@ -116,27 +119,29 @@
                 border-radius: 5px;
                 @media screen and (min-width: $desktop-size){
                     border-radius: 10px;
+            
                 }
 
                 .image-wrapper{
-                    background: #fff;
-                    padding: 1rem;
-                    width: 100%;
-                    text-align: center;
-                    min-height: 180px;
-                    display: flex;
-                    flex-flow: column;
-                    justify-content: center;
-                    align-items: center;
+                    // background: #fff;
+                    // // padding: 1rem;
+                    // width: 9rem;
+                    // text-align: center;
+                    // // min-height: 180px;
+                    // display: flex;
+                    // flex-flow: column;
+                    // justify-content: center;
+                    // align-items: center;
                     border-radius: 5px;
                     @media screen and (min-width: $desktop-size){
-                        border-radius: 10px;
+                        border-radius: 5px;
                     }
                     img{
-                        width: 80%;
+                        width: 9rem;
+                        margin: auto;
                         @media screen and (min-width: $desktop-size){
-                            width: 65%;
-                            max-width: 90px;
+                            // width: 65%;
+                            // max-width: 90px;
                         }
                     }
 
@@ -150,7 +155,7 @@
             h4{
                 text-align: center;
                 padding: .5rem 0 0 0;
-                font-size: 24px;
+                font-size: 19px;
             }
         }
 

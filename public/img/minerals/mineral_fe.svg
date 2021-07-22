@@ -1,14 +1,19 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="135.389" height="121.914" viewBox="0 0 135.389 121.914">
-  <g id="Group_1553" data-name="Group 1553" transform="translate(-1843.735 -1039.607)">
-    <g id="Group_918" data-name="Group 918" transform="translate(60.831 153.046)">
-      <path id="Path_1885" data-name="Path 1885" d="M1877.83,896.571H1834.7a15.2,15.2,0,0,0-13.164,7.6l-21.566,37.353a15.2,15.2,0,0,0,0,15.2l21.566,37.353a15.2,15.2,0,0,0,13.164,7.6h43.131a15.2,15.2,0,0,0,13.164-7.6l21.566-37.353a15.2,15.2,0,0,0,0-15.2l-21.569-37.353A15.2,15.2,0,0,0,1877.83,896.571Z" fill="#35c985"/>
-      <path id="Path_1886" data-name="Path 1886" d="M1875,890.061h-48.8a15.2,15.2,0,0,0-13.164,7.6l-24.4,42.257a15.2,15.2,0,0,0,0,15.2l24.4,42.257a15.2,15.2,0,0,0,13.164,7.6H1875a15.2,15.2,0,0,0,13.164-7.6l24.4-42.257a15.2,15.2,0,0,0,0-15.2l-24.4-42.257A15.2,15.2,0,0,0,1875,890.061Z" fill="none" stroke="#000" stroke-linejoin="round" stroke-width="7"/>
-      <g id="Fe" style="isolation: isolate">
-        <text id="Fe-2" data-name="Fe" transform="translate(1826.921 965.52)" fill="#fff" font-size="48" font-family="Quicksand-Bold, Quicksand" font-weight="700" style="isolation: isolate"><tspan x="0" y="0">Fe</tspan></text>
-      </g>
-      <g id="Group_801" data-name="Group 801">
-        <path id="Path_1887" data-name="Path 1887" d="M1819.668,918.822l6.827-11.553a8.4,8.4,0,0,1,7.238-4.13h12.311" fill="none" stroke="#fff" stroke-linecap="round" stroke-miterlimit="10" stroke-width="5"/>
-        <line id="Line_308" data-name="Line 308" x1="7.218" y2="11.851" transform="translate(1807.798 926.609)" fill="none" stroke="#fff" stroke-linecap="round" stroke-miterlimit="10" stroke-width="5"/>
+<svg xmlns="http://www.w3.org/2000/svg" width="196" height="196" viewBox="0 0 196 196">
+  <g id="Group_1952" data-name="Group 1952" transform="translate(-3860 -166)">
+    <g id="Group_1940" data-name="Group 1940" transform="translate(3563 97)">
+      <rect id="Rectangle_1254" data-name="Rectangle 1254" width="196" height="196" rx="5" transform="translate(297 69)" fill="#fff"/>
+    </g>
+    <g id="Group_1917" data-name="Group 1917" transform="translate(3885 198)">
+      <g id="Group_918" data-name="Group 918" transform="translate(0 0)">
+        <path id="Path_1885" data-name="Path 1885" d="M1889.326,896.571h-49.337a17.386,17.386,0,0,0-15.058,8.694l-24.669,42.728a17.383,17.383,0,0,0,0,17.387l24.669,42.728a17.386,17.386,0,0,0,15.058,8.694h49.337a17.389,17.389,0,0,0,15.058-8.694l24.669-42.728a17.388,17.388,0,0,0,0-17.387l-24.673-42.728A17.388,17.388,0,0,0,1889.326,896.571Z" transform="translate(-1784.967 -889.124)" fill="#35c985"/>
+        <path id="Path_1886" data-name="Path 1886" d="M1887.719,890.061H1831.9a17.386,17.386,0,0,0-15.058,8.694l-27.911,48.337a17.383,17.383,0,0,0,0,17.387l27.911,48.337a17.386,17.386,0,0,0,15.058,8.693h55.822a17.39,17.39,0,0,0,15.058-8.693l27.911-48.337a17.388,17.388,0,0,0,0-17.387l-27.911-48.337A17.39,17.39,0,0,0,1887.719,890.061Z" transform="translate(-1786.598 -890.061)" fill="none" stroke="#000" stroke-linejoin="round" stroke-width="7"/>
+        <g id="Fe" transform="translate(50.125 31.41)" style="isolation: isolate">
+          <text id="Fe-2" data-name="Fe" transform="translate(0 53)" fill="#fff" font-size="53" font-family="Quicksand-Bold, Quicksand" font-weight="700" style="isolation: isolate"><tspan x="0" y="0">Fe</tspan></text>
+        </g>
+        <g id="Group_801" data-name="Group 801" transform="translate(24.25 14.96)">
+          <path id="Path_1887" data-name="Path 1887" d="M1819.668,921.079l7.809-13.215a9.614,9.614,0,0,1,8.279-4.724h14.083" transform="translate(-1806.09 -903.139)" fill="none" stroke="#fff" stroke-linecap="round" stroke-miterlimit="10" stroke-width="5"/>
+          <line id="Line_308" data-name="Line 308" x1="8.257" y2="13.556" transform="translate(0 26.847)" fill="none" stroke="#fff" stroke-linecap="round" stroke-miterlimit="10" stroke-width="5"/>
+        </g>
       </g>
     </g>
   </g>

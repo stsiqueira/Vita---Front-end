@@ -1,15 +1,20 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="135.388" height="121.916" viewBox="0 0 135.388 121.916">
-  <g id="Group_1555" data-name="Group 1555" transform="translate(-1843.735 -1397.486)">
-    <g id="Group_1221" data-name="Group 1221">
-      <g id="Group_923" data-name="Group 923" transform="translate(60.831 153.046)">
-        <path id="Path_1900" data-name="Path 1900" d="M1876.805,1254.45h-42.31a15.2,15.2,0,0,0-13.164,7.6l-21.154,36.641a15.2,15.2,0,0,0,0,15.2l21.154,36.641a15.2,15.2,0,0,0,13.164,7.6h42.31a15.2,15.2,0,0,0,13.164-7.6l21.155-36.641a15.2,15.2,0,0,0,0-15.2l-21.155-36.641A15.2,15.2,0,0,0,1876.805,1254.45Z" fill="#168b16"/>
-        <g id="Cu" style="isolation: isolate">
-          <text id="Cu-2" data-name="Cu" transform="translate(1818.647 1320.494)" fill="#fff" font-size="48" font-family="Quicksand-Bold, Quicksand" font-weight="700" style="isolation: isolate"><tspan x="0" y="0">Cu</tspan></text>
-        </g>
-        <path id="Path_1901" data-name="Path 1901" d="M1875,1247.94h-48.8a15.2,15.2,0,0,0-13.164,7.6l-24.4,42.258a15.2,15.2,0,0,0,0,15.2l24.4,42.258a15.2,15.2,0,0,0,13.164,7.6H1875a15.2,15.2,0,0,0,13.163-7.6l24.4-42.258a15.2,15.2,0,0,0,0-15.2l-24.4-42.258A15.2,15.2,0,0,0,1875,1247.94Z" fill="none" stroke="#000" stroke-linejoin="round" stroke-width="7"/>
-        <g id="Group_806" data-name="Group 806">
-          <path id="Path_1902" data-name="Path 1902" d="M1819.816,1276.7l6.827-11.552a8.4,8.4,0,0,1,7.238-4.13h12.311" fill="none" stroke="#fff" stroke-linecap="round" stroke-miterlimit="10" stroke-width="5"/>
-          <line id="Line_313" data-name="Line 313" x1="7.218" y2="11.851" transform="translate(1807.946 1284.487)" fill="none" stroke="#fff" stroke-linecap="round" stroke-miterlimit="10" stroke-width="5"/>
+<svg xmlns="http://www.w3.org/2000/svg" width="196" height="196" viewBox="0 0 196 196">
+  <g id="Group_1954" data-name="Group 1954" transform="translate(-4297 -166)">
+    <g id="Group_1942" data-name="Group 1942" transform="translate(4000 97)">
+      <rect id="Rectangle_1254" data-name="Rectangle 1254" width="196" height="196" rx="5" transform="translate(297 69)" fill="#fff"/>
+    </g>
+    <g id="Group_1922" data-name="Group 1922" transform="translate(4322 198)">
+      <g id="Group_1221" data-name="Group 1221" transform="translate(0 0)">
+        <g id="Group_923" data-name="Group 923">
+          <path id="Path_1900" data-name="Path 1900" d="M1888.124,1254.45h-48.4a17.386,17.386,0,0,0-15.058,8.694l-24.2,41.913a17.383,17.383,0,0,0,0,17.387l24.2,41.913a17.387,17.387,0,0,0,15.058,8.693h48.4a17.39,17.39,0,0,0,15.058-8.693l24.2-41.913a17.388,17.388,0,0,0,0-17.387l-24.2-41.913A17.39,17.39,0,0,0,1888.124,1254.45Z" transform="translate(-1784.937 -1247.003)" fill="#168b16"/>
+          <g id="Cu" transform="translate(45.66 28.088)" style="isolation: isolate">
+            <text id="Cu-2" data-name="Cu" transform="translate(0 53)" fill="#fff" font-size="53" font-family="Quicksand-Bold, Quicksand" font-weight="700" style="isolation: isolate"><tspan x="0" y="0">Cu</tspan></text>
+          </g>
+          <path id="Path_1901" data-name="Path 1901" d="M1887.719,1247.94H1831.9a17.386,17.386,0,0,0-15.058,8.694l-27.911,48.339a17.383,17.383,0,0,0,0,17.387l27.911,48.339a17.384,17.384,0,0,0,15.058,8.694h55.822a17.386,17.386,0,0,0,15.057-8.694l27.911-48.339a17.389,17.389,0,0,0,0-17.387l-27.911-48.339A17.391,17.391,0,0,0,1887.719,1247.94Z" transform="translate(-1786.598 -1247.94)" fill="none" stroke="#000" stroke-linejoin="round" stroke-width="7"/>
+          <g id="Group_806" data-name="Group 806" transform="translate(24.42 14.961)">
+            <path id="Path_1902" data-name="Path 1902" d="M1819.816,1278.958l7.809-13.214a9.612,9.612,0,0,1,8.279-4.724h14.083" transform="translate(-1806.238 -1261.019)" fill="none" stroke="#fff" stroke-linecap="round" stroke-miterlimit="10" stroke-width="5"/>
+            <line id="Line_313" data-name="Line 313" x1="8.257" y2="13.556" transform="translate(0 26.845)" fill="none" stroke="#fff" stroke-linecap="round" stroke-miterlimit="10" stroke-width="5"/>
+          </g>
         </g>
       </g>
     </g>

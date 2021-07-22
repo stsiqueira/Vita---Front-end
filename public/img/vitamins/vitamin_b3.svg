@@ -1,12 +1,15 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="131.514" height="131.514" viewBox="0 0 131.514 131.514">
-  <g id="Group_1544" data-name="Group 1544" transform="translate(-1617.394 -854.943)">
-    <g id="Group_913" data-name="Group 913" transform="translate(60.831 153.046)">
-      <circle id="Ellipse_138" data-name="Ellipse 138" cx="56.727" cy="56.727" r="56.727" transform="translate(1568.044 712.289)" fill="#f56224"/>
-      <circle id="Ellipse_139" data-name="Ellipse 139" cx="62.257" cy="62.257" r="62.257" transform="translate(1560.063 705.396)" fill="none" stroke="#000" stroke-miterlimit="10" stroke-width="7"/>
-      <path id="Path_1874" data-name="Path 1874" d="M1586.362,734.959a48.292,48.292,0,0,0-10.118,17.253" fill="none" stroke="#fff" stroke-linecap="round" stroke-miterlimit="10" stroke-width="7"/>
-      <path id="Path_1875" data-name="Path 1875" d="M1653.029,730.169a48.641,48.641,0,0,0-52.216-6.142" fill="none" stroke="#fff" stroke-linecap="round" stroke-miterlimit="10" stroke-width="7"/>
-      <g id="B3" style="isolation: isolate">
-        <text id="B3-2" data-name="B3" transform="translate(1588.355 795.175)" fill="#fff" font-size="60" font-family="Quicksand-Bold, Quicksand" font-weight="700" style="isolation: isolate"><tspan x="0" y="0">B3</tspan></text>
+<svg xmlns="http://www.w3.org/2000/svg" width="196" height="196" viewBox="0 0 196 196">
+  <g id="Group_1934" data-name="Group 1934" transform="translate(-2112 -166)">
+    <g id="Group_1928" data-name="Group 1928" transform="translate(1815 97)">
+      <rect id="Rectangle_1254" data-name="Rectangle 1254" width="196" height="196" rx="5" transform="translate(297 69)" fill="#fff"/>
+    </g>
+    <g id="Group_1912" data-name="Group 1912" transform="translate(2141 195)">
+      <ellipse id="Ellipse_142" data-name="Ellipse 142" cx="60.271" cy="60.271" rx="60.271" ry="60.271" transform="translate(10.462 12.665)" fill="#f56224"/>
+      <ellipse id="Ellipse_143" data-name="Ellipse 143" cx="68.563" cy="68.563" rx="68.563" ry="68.563" transform="translate(0 0)" fill="none" stroke="#000" stroke-miterlimit="10" stroke-width="7"/>
+      <path id="Path_1878" data-name="Path 1878" d="M1587.387,201.33a53.152,53.152,0,0,0-11.142,19" transform="translate(-1554.686 -160.718)" fill="none" stroke="#fff" stroke-linecap="round" stroke-miterlimit="10" stroke-width="7"/>
+      <path id="Path_1879" data-name="Path 1879" d="M1658.32,197.66a53.567,53.567,0,0,0-57.5-6.764" transform="translate(-1552.197 -162.325)" fill="none" stroke="#fff" stroke-linecap="round" stroke-miterlimit="10" stroke-width="7"/>
+      <g id="A" transform="translate(35.792 29.241)" style="isolation: isolate">
+        <text id="B3" transform="translate(0 65)" fill="#fff" font-size="65" font-family="Quicksand-Bold, Quicksand" font-weight="700"><tspan x="0" y="0">B3</tspan></text>
       </g>
     </g>
   </g>

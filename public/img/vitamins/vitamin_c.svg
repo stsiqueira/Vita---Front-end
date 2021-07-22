@@ -1,12 +1,15 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="131.514" height="131.514" viewBox="0 0 131.514 131.514">
-  <g id="Group_1218" data-name="Group 1218" transform="translate(-1617.394 -677.066)">
-    <g id="Group_912" data-name="Group 912" transform="translate(60.831 153.046)">
-      <circle id="Ellipse_136" data-name="Ellipse 136" cx="56.727" cy="56.727" r="56.727" transform="translate(1568.044 534.41)" fill="#f69128"/>
-      <path id="Ellipse_137" data-name="Ellipse 137" d="M62.257-3.5A65.757,65.757,0,1,1-3.5,62.257,65.831,65.831,0,0,1,62.257-3.5Zm0,124.514A58.757,58.757,0,1,0,3.5,62.257,58.824,58.824,0,0,0,62.257,121.014Z" transform="translate(1560.063 527.52)"/>
-      <path id="Path_1872" data-name="Path 1872" d="M1576.245,577.835a3.5,3.5,0,0,1-3.321-4.608,51.462,51.462,0,0,1,10.85-18.5,3.5,3.5,0,0,1,5.174,4.715,44.5,44.5,0,0,0-9.384,16A3.5,3.5,0,0,1,1576.245,577.835Z" fill="#fff"/>
-      <path id="Path_1873" data-name="Path 1873" d="M1653.027,555.792a3.485,3.485,0,0,1-2.221-.8,45.247,45.247,0,0,0-48.458-5.7,3.5,3.5,0,0,1-3.07-6.291,52.264,52.264,0,0,1,55.974,6.584,3.5,3.5,0,0,1-2.225,6.2Z" fill="#fff"/>
-      <g id="C" style="isolation: isolate">
-        <text id="C-2" data-name="C" transform="translate(1600.813 610.902)" fill="#fff" font-size="60" font-family="Quicksand-Bold, Quicksand" font-weight="700" style="isolation: isolate"><tspan x="0" y="0">C</tspan></text>
+<svg xmlns="http://www.w3.org/2000/svg" width="196" height="196" viewBox="0 0 196 196">
+  <g id="Group_1927" data-name="Group 1927" transform="translate(-1896 -166)">
+    <g id="Group_1924" data-name="Group 1924" transform="translate(1599 97)">
+      <rect id="Rectangle_1254" data-name="Rectangle 1254" width="196" height="196" rx="5" transform="translate(297 69)" fill="#fff"/>
+    </g>
+    <g id="Group_1911" data-name="Group 1911" transform="translate(1925 195)">
+      <ellipse id="Ellipse_142" data-name="Ellipse 142" cx="60.271" cy="60.271" rx="60.271" ry="60.271" transform="translate(10.462 12.665)" fill="#f69128"/>
+      <ellipse id="Ellipse_143" data-name="Ellipse 143" cx="68.563" cy="68.563" rx="68.563" ry="68.563" transform="translate(0 0)" fill="none" stroke="#000" stroke-miterlimit="10" stroke-width="7"/>
+      <path id="Path_1878" data-name="Path 1878" d="M1587.387,201.33a53.152,53.152,0,0,0-11.142,19" transform="translate(-1554.686 -160.718)" fill="none" stroke="#fff" stroke-linecap="round" stroke-miterlimit="10" stroke-width="7"/>
+      <path id="Path_1879" data-name="Path 1879" d="M1658.32,197.66a53.567,53.567,0,0,0-57.5-6.764" transform="translate(-1552.197 -162.325)" fill="none" stroke="#fff" stroke-linecap="round" stroke-miterlimit="10" stroke-width="7"/>
+      <g id="A" transform="translate(47.906 29.184)" style="isolation: isolate">
+        <text id="C" transform="translate(0 65)" fill="#fff" font-size="65" font-family="Quicksand-Bold, Quicksand" font-weight="700"><tspan x="0" y="0">C</tspan></text>
       </g>
     </g>
   </g>

@@ -1,14 +1,19 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="135.384" height="121.916" viewBox="0 0 135.384 121.916">
-  <g id="Group_1548" data-name="Group 1548" transform="translate(-1843.735 -323.845)">
-    <g id="Group_920" data-name="Group 920" transform="translate(60.831 153.046)">
-      <path id="Path_1891" data-name="Path 1891" d="M1876.8,180.809h-42.306a15.2,15.2,0,0,0-13.164,7.6l-21.155,36.641a15.2,15.2,0,0,0,0,15.2l21.155,36.641a15.2,15.2,0,0,0,13.164,7.6H1876.8a15.2,15.2,0,0,0,13.164-7.6l21.155-36.641a15.2,15.2,0,0,0,0-15.2l-21.155-36.641A15.2,15.2,0,0,0,1876.8,180.809Z" fill="#6d23b5"/>
-      <path id="Path_1892" data-name="Path 1892" d="M1874.994,174.3h-48.8a15.2,15.2,0,0,0-13.164,7.6l-24.4,42.258a15.2,15.2,0,0,0,0,15.2l24.4,42.258a15.2,15.2,0,0,0,13.164,7.6h48.8a15.2,15.2,0,0,0,13.164-7.6l24.4-42.258a15.2,15.2,0,0,0,0-15.2l-24.4-42.258A15.2,15.2,0,0,0,1874.994,174.3Z" fill="none" stroke="#000" stroke-linejoin="round" stroke-width="7"/>
-      <g id="P" transform="translate(0.657 7.381)" style="isolation: isolate">
-        <text id="P-2" data-name="P" transform="translate(1836.992 247.769)" fill="#fff" font-size="60" font-family="Quicksand-Bold, Quicksand" font-weight="700" style="isolation: isolate"><tspan x="0" y="0">P</tspan></text>
-      </g>
-      <g id="Group_803" data-name="Group 803">
-        <path id="Path_1893" data-name="Path 1893" d="M1819.433,204.486l6.827-11.553a8.412,8.412,0,0,1,7.238-4.13h12.312" fill="none" stroke="#fff" stroke-linecap="round" stroke-miterlimit="10" stroke-width="5"/>
-        <line id="Line_310" data-name="Line 310" x1="7.218" y2="11.851" transform="translate(1807.563 212.273)" fill="none" stroke="#fff" stroke-linecap="round" stroke-miterlimit="10" stroke-width="5"/>
+<svg xmlns="http://www.w3.org/2000/svg" width="196" height="196" viewBox="0 0 196 196">
+  <g id="Group_1948" data-name="Group 1948" transform="translate(-2986 -166)">
+    <g id="Group_1932" data-name="Group 1932" transform="translate(2689 97)">
+      <rect id="Rectangle_1254" data-name="Rectangle 1254" width="196" height="196" rx="5" transform="translate(297 69)" fill="#fff"/>
+    </g>
+    <g id="Group_1919" data-name="Group 1919" transform="translate(3011 198)">
+      <g id="Group_920" data-name="Group 920" transform="translate(0 0)">
+        <path id="Path_1891" data-name="Path 1891" d="M1888.119,180.809h-48.393a17.387,17.387,0,0,0-15.058,8.694l-24.2,41.913a17.383,17.383,0,0,0,0,17.387l24.2,41.913a17.387,17.387,0,0,0,15.058,8.694h48.4a17.389,17.389,0,0,0,15.058-8.694l24.2-41.913a17.389,17.389,0,0,0,0-17.387l-24.2-41.913A17.389,17.389,0,0,0,1888.119,180.809Z" transform="translate(-1784.937 -173.362)" fill="#6d23b5"/>
+        <path id="Path_1892" data-name="Path 1892" d="M1887.713,174.3H1831.9a17.386,17.386,0,0,0-15.058,8.694l-27.911,48.338a17.383,17.383,0,0,0,0,17.387l27.911,48.338a17.386,17.386,0,0,0,15.058,8.694h55.816a17.389,17.389,0,0,0,15.058-8.694l27.911-48.338a17.388,17.388,0,0,0,0-17.387l-27.911-48.338A17.389,17.389,0,0,0,1887.713,174.3Z" transform="translate(-1786.598 -174.299)" fill="none" stroke="#000" stroke-linejoin="round" stroke-width="7"/>
+        <g id="P" transform="translate(58.396 23.851)" style="isolation: isolate">
+          <text id="P-2" data-name="P" transform="translate(0 67)" fill="#fff" font-size="67" font-family="Quicksand-Bold, Quicksand" font-weight="700" style="isolation: isolate"><tspan x="0" y="0">P</tspan></text>
+        </g>
+        <g id="Group_803" data-name="Group 803" transform="translate(23.981 16.591)">
+          <path id="Path_1893" data-name="Path 1893" d="M1819.433,206.743l7.809-13.215a9.622,9.622,0,0,1,8.28-4.724h14.084" transform="translate(-1805.855 -188.803)" fill="none" stroke="#fff" stroke-linecap="round" stroke-miterlimit="10" stroke-width="5"/>
+          <line id="Line_310" data-name="Line 310" x1="8.257" y2="13.556" transform="translate(0 26.847)" fill="none" stroke="#fff" stroke-linecap="round" stroke-miterlimit="10" stroke-width="5"/>
+        </g>
       </g>
     </g>
   </g>
