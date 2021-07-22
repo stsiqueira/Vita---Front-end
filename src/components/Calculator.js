@@ -174,7 +174,7 @@ const NutrientForm = () => {
                     <form className="nutrient-calculator-form-wrapper" onSubmit={e => { handleSubmit(e) }}>
 
                         <div className="nutrient-calculator-input-wrapper">
-                            <Labels for="age" text="What is your age?"/>
+                            <Labels for="age" text="How old are you?"/>
                             <div className="input-unit-wrapper">
                                 <input
                                     className="input-age" 
@@ -191,7 +191,7 @@ const NutrientForm = () => {
                         </div>
 
                         <div className="nutrient-calculator-input-wrapper">
-                            <Labels for="weight" text="How much do you weight?"/>
+                            <Labels for="weight" text="What is your weight?"/>
                             <div className="input-unit-wrapper">
                                 <input
                                     className="input-weight" 
@@ -209,7 +209,7 @@ const NutrientForm = () => {
                         </div>
 
                         <div className="nutrient-calculator-height-wrapper" id="height-standard">
-                            <p>What is your height?</p>
+                            <p>How tall are you?</p>
                             <div className="height-input-wrapper ">
                                 {
                                     metric === "standard" ?
@@ -255,7 +255,7 @@ const NutrientForm = () => {
                         </div>
 
                         <div className="nutrient-calculator-select-wrapper">
-                            <Labels for="gender" text="What is your gender?"/>
+                            <Labels for="gender" text="What is your biological sex?"/>
                             <div className="gender-options-wrapper">
                                 {
                                     genderData.map((gender) => ( 
@@ -308,7 +308,7 @@ const NutrientForm = () => {
                         </div>
                         <div className="confidential-wrapper">
                             <p>
-                                This is a confidential information and is not shared or stored in the database and will be removed when the page refreshes.
+                                This is confidential information and is not shared or stored in database. The information will be deleted when the page refreshes.
                             </p>  
                         </div>
                         <div className="nutrient-calculator-input-wrapper">
