@@ -2,7 +2,8 @@
 const Select = (props) => {
     return (
         <select 
-            name={props.name} 
+            name={props.name}
+            className={props.classname}
             id={props.name}
             value={props.value}
             onChange={e => props.setvalue(e.target.value)}
@@ -11,7 +12,7 @@ const Select = (props) => {
             disabled={props.disable}
         >
             {props.options.map((option) => (
-                <option key={option.value}  value={option.value}>{option.text}</option>
+                <option key={option.value}  value={props.flag ? option.label : option.value}>{props.flag ? option.label : option.text}</option>
             ))}
         </select>
     )

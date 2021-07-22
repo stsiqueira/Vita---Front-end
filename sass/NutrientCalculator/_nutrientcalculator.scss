@@ -21,9 +21,9 @@
         display: flex;
         flex-flow: column;
         gap: 1rem;
-        input{
-            text-align: right;
-        }
+        // input{
+        //     text-align: right;
+        // }
 
     }
     .child-wrapper {
@@ -112,7 +112,7 @@
 
             .height-input-wrapper {
                 display: flex;
-                flex-flow: row nowrap;
+                flex-flow: row wrap;
                 align-items: center;
                 grid-gap: .5rem;
             }
@@ -196,7 +196,7 @@
                 padding: .5rem 0;
                 @media only screen and (min-width: $desktop-size) {
                     display: flex;
-                    flex-flow: row nowrap;
+                    flex-flow: row wrap;
                     justify-content: flex-start;
                     width: 40%;
                 }

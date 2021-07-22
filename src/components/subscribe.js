@@ -11,24 +11,24 @@ import { ToastContainer, toast } from 'react-toastify';
 
 const Subscribe = (props) => {
     const [email,setEmail] = useState('');
-    const dbUrl = "http://localhost:5001/emails";
+    // const dbUrl = "http://localhost:5001/emails";
 
     function validateEmail(email) {
         const re = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
         return re.test(String(email).toLowerCase());
     }
 
-    const addSubscriber = async (subscriber) => {
-		const res = await fetch(dbUrl, {
-			method: 'POST',
-			headers: {
-				'Content-type': 'application/json',
-			},
-			body: JSON.stringify(subscriber)
-		})
+    // const addSubscriber = async (subscriber) => {
+	// 	const res = await fetch(dbUrl, {
+	// 		method: 'POST',
+	// 		headers: {
+	// 			'Content-type': 'application/json',
+	// 		},
+	// 		body: JSON.stringify(subscriber)
+	// 	})
 
-		await res.json()
-	}
+	// 	await res.json()
+	// }
 
     const pushMail = (e) => { 
         e.preventDefault();
@@ -85,7 +85,7 @@ const Subscribe = (props) => {
 
 
         // function to push email
-        addSubscriber({email})
+        // addSubscriber({email})
         // clear input
         setEmail('');
 

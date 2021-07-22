@@ -39,8 +39,11 @@
         .lastName,
         .country,
         .phone{
-                flex: 1;
+            flex: 1;
 
+        }
+        .country-select {
+            background-color: white;
         }
         .contact-button{
             display: flex;
