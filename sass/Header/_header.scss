@@ -1,6 +1,11 @@
 
 .header{
     background: $bg-color-header;
+    position: sticky;
+    top: 0; left:0; right: 0;
+    z-index: 100;
+
+
     .max-width-wrapper{
     
         display: flex;
