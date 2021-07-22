@@ -128,11 +128,18 @@ img {
     padding-bottom: 1rem;
     border-bottom-left-radius: 5px;
     border-bottom-right-radius: 5px;
+    @media screen and (min-width:$desktop-size) { 
+      padding-left: 0;
+      padding-bottom: 0;
+    }
     .legendItem{
       flex: 0 0 40%;
       display: flex;
       grid-gap: 0.3rem;
       flex-flow: row nowrap;
+      @media screen and (min-width:$desktop-size) { 
+        font-size: .7em;
+      }
       .box{
         align-self: center;
       }
