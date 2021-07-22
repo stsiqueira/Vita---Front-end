@@ -119,6 +119,9 @@
             color: black;
             border-radius: 5px;
             max-width: 280px;
+            // &:hover{
+            //     background: #bg-hover-color-richFood;
+            // }
 
             @media screen and (min-width: $desktop-size){
                 flex: 0 0 20%;

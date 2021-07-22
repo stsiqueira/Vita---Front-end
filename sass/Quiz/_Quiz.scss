@@ -102,7 +102,7 @@
                 }
 
                 &:hover{
-                    filter: brightness(90%);
+                    filter: saturate(2)
                 }
                 .answer{
                     display: flex;
@@ -173,6 +173,9 @@
                 @media screen and (min-width:$tablet-size) {
                     flex: 1 0 20%;
 
+                }
+                &:hover{
+                    filter: saturate(2)
                 }
                 .answer{
                     border-radius: 5px;
