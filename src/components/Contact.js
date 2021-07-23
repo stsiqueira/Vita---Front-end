@@ -31,6 +31,18 @@ const Contact = (props) => {
 
     const handleSubmit = (e) => {
         e.preventDefault()
+        if(!firstName) {
+            toast.warn("Please add your first name", {
+                position: "bottom-center",
+                autoClose: 2000,
+                hideProgressBar: false,
+                closeOnClick: true,
+                pauseOnHover: true,
+                draggable: true,
+                progress: undefined,
+            });
+            return
+        }
         if(!email) {
             toast.warn("Please add an email", {
                 position: "bottom-center",
@@ -82,7 +94,6 @@ const Contact = (props) => {
             });
             return
         }
-
         emailjs.sendForm('service_hthvolu', 'template_0ql7h9g', e.target, "user_6lofy9aPrJcOsF3Yfomhd")
         .then((response) => {
             toast.success("Email Sent Successfully", {
@@ -144,11 +155,12 @@ const Contact = (props) => {
                    </div>
                    <div className="contact-phone">
                        <div className="phone">
-                            <label htmlFor="phone"> Phone <span className="requiredField">*</span> </label>
+                            <label htmlFor="phone"> Phone<span className="requiredField">*</span> </label>
                             <input 
                                 type="tel" 
                                 name="phone"  
                                 id="phone"
+                                placeholder="Format: +1 (234) 567-8999"
                                 minLength={6}
                                 maxLength={13}
                                 value={phone}
