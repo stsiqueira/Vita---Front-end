@@ -236,6 +236,7 @@
                     .wrapper {
                         display: grid; 
                         width: 100%;
+                        overflow: hidden;
                         .emoji {
                             grid-row: 1/-1;
                             grid-column: 1/-1;
@@ -251,6 +252,12 @@
                         }
                     }
                     
+                    &:hover {
+                        filter: saturate(2);
+                    }
+                    &:hover  img{
+                        transform: scale(1.05);
+                    }
                 }
             }
 
@@ -498,6 +505,7 @@
                 justify-content: center;
                 // align-items: center;
                 border-radius: 5px;
+                overflow: hidden;
                 @media screen and (min-width: $desktop-size){
                     border-radius: 10px;
                 }
@@ -522,5 +530,10 @@
             font-size: 24px;
         }
     }
-
+    a:hover{
+        filter: saturate(1.5);
+    }
+    a:hover img{
+        transform: scale(1.05);
+    }
 }
