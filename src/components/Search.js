@@ -185,7 +185,7 @@ const Search = () => {
                         <Link to={`/Description/${itemType}/${userSearch}`}>
                             <button className="btn"> Search</button>
                         </Link>
-                        : <button className="btn" style={{ backgroundColor: "#9780a0" }}> Search</button>
+                        : <button className="btn"> Search</button>
                 }
 
             </div>

@@ -2,7 +2,7 @@
     @media screen and (min-width:$desktop-size) {
         display: flex;
         flex-flow: row wrap;
-        border: 1px solid black;
+        width: 100%;
         .about-search-nutrient-wrapper{
             background: #fff;
             width: 100%;
