@@ -84,6 +84,15 @@ input[type="submit"]{
         height: 54px;
         font-size: 24px;
         padding: 13px 35px;
+        &active{
+            background: $button-bg-activeColor;
+        }
+        &:hover{
+            background: $button-bg-hoverColor;
+        }
+        &:focus{
+            background: $button-bg-focusColor;
+        }
         
     }
 }
