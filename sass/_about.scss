@@ -19,6 +19,11 @@
     }
     h2{
         text-align: center;
+        font-size: 2.5rem;
+        color: $primary-color;
+        @media screen and (min-width:$desktop-size) {
+            font-size: 3.5rem;
+        }
     }
     .description{
         display: flex;
