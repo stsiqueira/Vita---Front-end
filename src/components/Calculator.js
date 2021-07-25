@@ -255,7 +255,7 @@ const NutrientForm = () => {
                         </div>
 
                         <div className="nutrient-calculator-select-wrapper">
-                            <Labels for="gender" text="What is your biological sex?"/>
+                            <Labels for="gender" text="What is your biological gender?"/>
                             <div className="gender-options-wrapper">
                                 {
                                     genderData.map((gender) => ( 
