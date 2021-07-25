@@ -157,6 +157,7 @@
                     // flex-flow: column;
                     // justify-content: center;
                     // align-items: center;
+                    overflow: hidden;
                     border-radius: 5px;
                     @media screen and (min-width: $desktop-size){
                         border-radius: 5px;
@@ -185,6 +186,9 @@
         }
         a:hover{
             filter: saturate(1.5);
+        }
+        a:hover img{
+            transform: scale(1.05);
         }
 
     }

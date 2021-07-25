@@ -139,30 +139,6 @@ const DetailContainer = ({ itemName, itemType }) => {
         return color;
     }
 
-    const addMineralSort = (mineralArray) => (
-        mineralArray.map(element => {
-            element["sort"] = mineralSort[element.linkName]
-            return element
-        })
-    );
-    const addVitaminSort = (vitaminArray) => (
-        vitaminArray.map(element => {
-            element["sort"] = vitaminSort[element.linkName]
-            return element
-        })
-    );
-
-    const GetSortOrder = (prop) => {
-        return function (a, b) {
-            if (a[prop] > b[prop]) {
-                return 1;
-            } else if (a[prop] < b[prop]) {
-                return -1;
-            }
-            return 0;
-        }
-    }
-
     const fetchUSDAResponse = async (foodName) => {
 
         var vitaminsTableContent = [];
@@ -181,7 +157,7 @@ const DetailContainer = ({ itemName, itemType }) => {
                 let nName = element.nutrientName;
                 let nValue = element.value === 0 ? `0.1 ${element.unitName}` : `${element.value} ${element.unitName}`;
                 vitaminsTableContent.push({
-                    name: nName,
+                    name: linkName,
                     value: nValue,
                     type: "Vitamins",
                     linkName: linkName,
@@ -205,10 +181,37 @@ const DetailContainer = ({ itemName, itemType }) => {
 
         });
 
-        addVitaminSort(vitaminsTableContent).sort(GetSortOrder("sort"))
-        addMineralSort(mineralsTableContent).sort(GetSortOrder("sort"))
-        SetVitaminComposition(vitaminsTableContent);
-        SetMineralComposition(mineralsTableContent);
+        let mineralSort = ['Phosphorus', 'Zinc', 'Calcium', 'Potassium', 'Iron', 'Magnesium', 'Copper'];
+        let vitaminSort = ['Vitamin A', 'Vitamin E', 'Vitamin C', 'Vitamin B3', 'Vitamin B5', 'Vitamin K']
+        let mineralSortResult = []
+        let vitaminSortResult = []
+
+        mineralSort.forEach(function (key) {
+            var found = false;
+            mineralsTableContent = mineralsTableContent.filter(function (item) {
+                if (!found && item.linkName == key) {
+                    mineralSortResult.push(item);
+                    found = true;
+                    return false;
+                } else
+                    return true;
+            })
+        })
+        vitaminSort.forEach(function (key) {
+            var found = false;
+            vitaminsTableContent = vitaminsTableContent.filter(function (item) {
+                if (!found && item.linkName == key) {
+                    vitaminSortResult.push(item);
+                    found = true;
+                    return false;
+                } else
+                    return true;
+            })
+        })
+
+
+        SetVitaminComposition(vitaminSortResult);
+        SetMineralComposition(mineralSortResult);
     }
 
 
@@ -232,6 +235,11 @@ const DetailContainer = ({ itemName, itemType }) => {
 
     let otherSimilarItemsList = [];
 
+    function scrollToJustAbove(element, margin = 20) {
+        let dims = element.getBoundingClientRect();
+        let gap = dims.top - margin;
+        window.scrollTo({behavior: 'smooth', top: gap});
+    }
     useEffect(() => {
         (async function () {
 
@@ -245,6 +253,9 @@ const DetailContainer = ({ itemName, itemType }) => {
                 SetDispalyImages(true);
                 SetDispalyTables(false);
             }
+
+            scrollToJustAbove(document.getElementById('ItemDescription'))
+
         })();
     }, [itemName]);
 

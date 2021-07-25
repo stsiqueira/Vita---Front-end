@@ -5,7 +5,7 @@ const ItemDescription = ({itemName, itemText, itemImageUrl}) => {
 
     let imgUrl = "/img/" + itemImageUrl;
     return (
-        <div className="itemDescription">
+        <div id="ItemDescription" className="itemDescription">
             <div className="itemName"><h1>{itemName}</h1></div>
             <div className="itemContent">
                 
