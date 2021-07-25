@@ -3,13 +3,19 @@
 ////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 import React from 'react';
-import { Link } from 'react-router-dom'
-
-
+import { Link, useLocation } from 'react-router-dom'
 
 
 const Navigation = (props) => {
 
+	const location = useLocation();
+    if(location.pathname === '/') {
+        const clicked = document.getElementsByClassName("clicked")[0];
+        if(clicked) {
+            console.log(clicked.classList)
+            clicked.classList.remove("clicked")
+        } 
+    }
     const clicked = (e) => {
         const clicked = document.getElementsByClassName("clicked");
         if (clicked[0]) {
