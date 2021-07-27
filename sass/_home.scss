@@ -12,8 +12,6 @@
                 width: 80%;
                 max-width: 1400px;
                 margin: auto;
-                    
-                
                 @media screen and (min-width: $max-width){
                     padding: 0;
                 }
@@ -29,9 +27,6 @@
                 }
             }
         }
-
-
-
         .recalculate-wrapper,
         .subscribe-container{
             flex: 0 0 35%;
@@ -40,7 +35,6 @@
         .home-calculate-subscribe-wrapper{
             width: 100%;
             .max-width{
-
                 width: 80%;
                 margin: auto;
                 display: flex;
@@ -52,14 +46,9 @@
                     grid-gap: 5rem;
                 }
             }
-
-
-
-            
         }
         
         .recalculate-wrapper{
-            // margin-left: 10rem;
             padding: 0;
             flex: 1 0 40%;
             margin: 0;

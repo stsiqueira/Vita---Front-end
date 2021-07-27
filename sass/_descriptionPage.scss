@@ -90,6 +90,9 @@ img {
   .vitaminsChart, 
   .mineralsChart{ 
     background: $primary-color-shade; 
+    svg{
+      width: 100%;
+    }
 
     h3{
       text-align: center;
