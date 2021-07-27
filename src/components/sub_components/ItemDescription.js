@@ -2,6 +2,9 @@ import React from 'react';
 
 const ItemDescription = ({itemName, itemText, itemImageUrl}) => {
 
+    let x = document.getElementById("itemText");
+
+    if(x) x.innerHTML = itemText;
 
     let imgUrl = "/img/" + itemImageUrl;
     return (
@@ -10,7 +13,7 @@ const ItemDescription = ({itemName, itemText, itemImageUrl}) => {
             <div className="itemContent">
                 
                     <img className="itemContentImage" src={imgUrl} alt={itemName + " image"} />
-                    <p>{itemText}</p>
+                    <p id="itemText"></p>
                 
             </div>
         </div >
