@@ -1,9 +1,10 @@
 .nutrient-results-wrapper {
-    max-width: $desktop-size;
+    max-width: $max-width;
     margin: 1rem auto;
     display: flex;
     flex-flow: column nowrap;
-    gap: 2rem;
+    gap: 2rem;            
+
 
     .nutrient-calculator-introduction {
         margin:0 .6rem;
@@ -149,6 +150,7 @@
         }
 
         .chart-vitamin-result-wrapper {
+
             @media only screen and (min-width: $desktop-size) {
                 margin-bottom: 0;
                 position: relative;

@@ -10,13 +10,14 @@
         justify-content: center;
         align-items: center;
         list-style: none;
-        gap: 1rem;
+        // gap: 1rem;
         height: 100%;
 
         a{
             color: $color-link-header;
             text-decoration: none;
             border-bottom: 6px solid $primary-color;
+            padding: 0 .6rem;
             &:hover {
                 border-bottom: 6px solid $color-link-border-bottom;
             }
