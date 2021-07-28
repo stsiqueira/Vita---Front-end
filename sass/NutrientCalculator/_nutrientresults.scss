@@ -38,6 +38,9 @@
                 text-align: left;
                 max-width: 100%;
                 margin-bottom: 1.5rem;
+                @media only screen and (min-width: 1100px) {
+                    text-align: center;
+                }
 
                 @media only screen and (min-width: $max-width) {
                     font-size: 1.2rem;
@@ -84,7 +87,7 @@
         .react-tabs {
             @media only screen and (min-width: $desktop-size) {
                 background: #fff;
-                height: 960px;
+                // height: 930px;
                 overflow: hidden;
             }
         }
@@ -100,7 +103,7 @@
             background-color: #fff;
 
             @media only screen and (min-width: $tablet-size) {
-                grid-template-columns: 1.2fr .8fr;  
+                grid-template-columns: 1fr .8fr;  
                 border-radius: 10px;
                 background-color: unset;
             }
@@ -122,7 +125,7 @@
                 }
 
                 @media only screen and (min-width: $tablet-size) {
-                    height: 35rem;
+                    height: 34rem;
                 }
             }
 
@@ -133,6 +136,7 @@
                 @media only screen and (min-width: $tablet-size) {
                     margin-bottom: 1.7rem;
                     position: unset;
+                    margin-right: 4rem;
                 }
             }
 
@@ -154,14 +158,14 @@
             @media only screen and (min-width: $desktop-size) {
                 margin-bottom: 0;
                 position: relative;
-                top: -3.5rem;
+                top: 0rem;
             }
         }
 
         .chart-mineral-result-wrapper {
             @media only screen and (min-width: $desktop-size) {
                 position: relative;
-                top: -9.5rem;
+                top: -1.5rem;
             }
         }
 

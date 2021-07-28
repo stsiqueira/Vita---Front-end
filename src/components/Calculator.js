@@ -106,7 +106,7 @@ const NutrientForm = () => {
             my_obj["HEIGHT_CM"] = heightfeet
         }
 
-        const res = await fetch("http://ec2-3-131-97-46.us-east-2.compute.amazonaws.com/calculate/", {
+        const res = await fetch("http://ec2-3-129-58-239.us-east-2.compute.amazonaws.com/calculate/", {
 			method: 'POST',
 			headers: {
 				'Content-type': 'application/json',

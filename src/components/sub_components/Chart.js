@@ -40,7 +40,7 @@ const MyResponsivePie = ({ data, callback, removeDataMetrics,legendFlag, parentF
         return (
             <text
                 x={centerX}
-                y={(2*centerY) - 40}
+                y={(2*centerY) + 10}
                 className="bottomcenter-text"
                 textAnchor="middle"
                 dominantBaseline="central"
