@@ -5,6 +5,22 @@
     margin: 1rem 10px;
     border-radius: 5px;
     max-width: $max-width;
+    .team-title{
+        flex: 0 0 100%;
+        display: flex;
+        flex-flow: column nowrap;
+        justify-content: center;
+        align-items: center;
+        padding-top: 3rem;
+        .title{
+            margin-bottom: 1rem;
+            color: $primary-color;
+        }
+        .description{
+            max-width: 70%;
+            text-align: center;
+        }
+    }
     @media screen and (min-width: $tablet-size){
         border-radius: 10px;
         margin: 1rem 20px;
@@ -29,7 +45,7 @@
     }
     .teamMember{
         border-radius: 5px;
-        margin: 2rem 10px 2rem 10px;
+        margin: 1rem 10px 2rem 10px;
         display: flex;
         flex-flow: column nowrap;
         justify-content: center;
@@ -38,7 +54,7 @@
         margin: 2rem auto;
         @media screen and (min-width: $tablet-size){
             border-radius: 10px;
-            margin: 7rem 20px 2rem 20px;
+            margin: 3rem 20px 2rem 20px;
         }
         .teamMemberAbout{
             text-align: center;
@@ -59,7 +75,7 @@
                 flex: 1;
             }
             @media screen and (min-width: $tablet-size){
-                min-height: 300px;
+                min-height: 320px;
             }
             .links{
                 font-size: 1.3rem;

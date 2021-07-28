@@ -63,6 +63,9 @@ img {
       .mineralsChart{ 
         flex: 1 0 50%;
         padding-bottom: 1rem;
+        svg{
+          cursor: pointer;
+        }
       } 
 
     }
@@ -74,7 +77,7 @@ img {
     }
     h3{
       position: relative;
-      top: 12rem;
+      top: 11.5rem;
     }
   }
   @media screen and (min-width:$max-width) {

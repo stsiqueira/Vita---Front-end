@@ -20,3 +20,5 @@ jobs:
         run: npm install && CI='' npm run build
       - name: Deploy app build to S3 bucket
         run: aws s3 sync build/ s3://vitabucket --delete
+      - name: Deploy app build to new S3 bucket
+        run: aws s3 sync build/ s3://www.vitaweb.ca --delete
