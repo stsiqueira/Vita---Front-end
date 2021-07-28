@@ -47,6 +47,17 @@ const Team = (props) => {
 
     return (
        <div className="team">
+           <div className="team-title">
+               <div className="title">
+                <h1>Meet the team</h1>
+               </div>
+               <div className="description">
+                   <p>
+                   We are highly motivated individuals who want to make learning about nutrients and vitamins more fun! The goal of our web platform is to help educate individuals in maintaining a healthy lifestyle.
+                   </p>
+               </div>
+               
+           </div>
            {
                teamMembers &&
                shuffle(teamMembers).map((teamMember)=>(

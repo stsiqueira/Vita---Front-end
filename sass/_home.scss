@@ -52,9 +52,17 @@
             padding: 0;
             flex: 1 0 40%;
             margin: 0;
+            justify-content: baseline;
             p{
-                margin: .4rem 0;
                 max-width: 440px;
+                @media screen and (min-width: $tablet-size) {
+                    margin: .7rem 0;
+                }
+                @media screen and (min-width: $desktop-size) {
+                    margin: .6rem 0;
+                }
+
+
             }
 
             
