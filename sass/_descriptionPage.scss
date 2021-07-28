@@ -63,6 +63,9 @@ img {
       .mineralsChart{ 
         flex: 1 0 50%;
         padding-bottom: 1rem;
+        svg{
+          cursor: pointer;
+        }
       } 
 
     }
