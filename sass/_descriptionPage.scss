@@ -10,6 +10,7 @@ img {
   a{
     color: black;
     text-decoration: none;
+
   }  
 
   .tableContentItem{
@@ -20,6 +21,9 @@ img {
     margin: 0.5rem 0;
     border-radius: 5px;
     width: 100%;
+    &:hover{
+      filter: saturate(2);
+    }
   }
   .itemType{
     display: flex;
