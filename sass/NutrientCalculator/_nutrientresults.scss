@@ -141,9 +141,9 @@
 
             .vitamins-list,
             .minerals-list {
-                    // @media only screen and (min-width: $tablet-size) {
-                    //     max-width: 50%;
-                    // }
+                    @media only screen and (min-width: $tablet-size) {
+                        max-width: 80%;
+                    }
                 ul {
                     display: grid;
                     grid-gap: .8rem;
@@ -156,9 +156,8 @@
 
             @media only screen and (min-width: $desktop-size) {
                 margin-bottom: 0;
-                padding: 0rem;
-                max-width: 98%;
-                margin: 0 auto;
+                position: relative;
+                top: 0;
             }
         }
 
