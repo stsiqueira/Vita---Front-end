@@ -18,7 +18,14 @@
     }
     &:focus{
         background: $button-bg-focusColor;
+        box-shadow:
+        0 0 0 3px #fff,
+        0 0 0 6px $primary-color;
+    
+
+                
     }
+
 
     @media screen and (min-width: $desktop-size){
         height: 54px;
@@ -55,7 +62,6 @@ input,
         color: #fff;
     }
     &:focus ~ svg{
-        
         color:white !important;
        
     }
@@ -75,11 +81,14 @@ input[type="submit"]{
     font-family: $main-font-family;
     height: 58px;
     font-size: 28px;
-    padding: 12px 43px 12px 43px;
+    padding: 12px 40px 12px 40px;
     font-weight: bold;
     border-radius: 5px;
     background: $button-bg-defaultColor;
     color: $button-font-Color-darkBG;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
     @media screen and (min-width: $desktop-size){
         height: 54px;
         font-size: 24px;
@@ -92,6 +101,10 @@ input[type="submit"]{
         }
         &:focus{
             background: $button-bg-focusColor;
+            outline: none;
+            box-shadow:
+            0 0 0 3px #fff,
+            0 0 0 6px $primary-color;
         }
         
     }

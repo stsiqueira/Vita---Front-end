@@ -6,7 +6,6 @@
         .about-search-nutrient-wrapper{
             background: #fff;
             width: 100%;
-            padding-bottom: 3rem;
             .max-width{
                 padding:0;
                 width: 80%;
@@ -14,6 +13,7 @@
                 margin: auto;
                 @media screen and (min-width: $max-width){
                     padding: 0;
+                    padding-bottom: 2rem;
                 }
                
             }
