@@ -32,8 +32,12 @@
         }
         .contact-name,
         .contact-phone{
-            flex-flow: row nowrap;
-            gap: .5rem;
+            flex-flow: column;
+            gap: 1rem;
+            @media only screen and (min-width: $tablet-size) {
+                flex-flow: row nowrap;
+                gap: .5rem;
+            } 
         }
         .firstName,
         .lastName,
