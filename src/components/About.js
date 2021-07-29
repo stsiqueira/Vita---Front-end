@@ -13,7 +13,8 @@ const About = (props) => {
           
             <h2> Welcome to Vita!</h2>
             <div className="description">
-                <p>Vita is a data-driven responsive web platform educating users about vitamins and minerals present in natural food sources. Vita has a built-in nutrition calculator to suggest vegetables and fruits that can help maintain a balanced diet</p>
+                <p>Do you want to optimize your daily lifestyle, get  healthier, and learn more about how the food you eat can provide you with the nutrients you need?</p>
+                <p>We have made a nutrient calculator to help you on your journey!</p>
                 <Link to="/NutrientCalculator">
                     <button className="btn btnCalculateHome"> Try it out</button>
                 </Link>
