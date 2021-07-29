@@ -31,8 +31,16 @@
             border: none;
             &:hover{
                 background: #FF6231;
-                }
+            }
+            &:focus{
+                box-shadow:
+                0 0 0 3px #fff,
+                0 0 0 6px #FF6231 !important;
+            }
     
+        }
+        &:focus{
+            outline: none;
         }
     }
     @media screen and (min-width:$desktop-size) {
