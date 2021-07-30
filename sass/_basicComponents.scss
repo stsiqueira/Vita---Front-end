@@ -20,13 +20,8 @@
         background: $button-bg-focusColor;
         box-shadow:
         0 0 0 3px #fff,
-        0 0 0 6px $primary-color;
-    
-
-                
+        0 0 0 6px $primary-color;     
     }
-
-
     @media screen and (min-width: $desktop-size){
         height: 54px;
         font-size: 24px;
@@ -79,10 +74,10 @@ textarea{
 }
 input[type="submit"]{
     font-family: $main-font-family;
-    height: 58px;
-    font-size: 28px;
+    height: 52px;
+    font-size: 22px;
     padding: 12px 40px 12px 40px;
-    font-weight: bold;
+    font-weight: 500;
     border-radius: 5px;
     background: $button-bg-defaultColor;
     color: $button-font-Color-darkBG;
