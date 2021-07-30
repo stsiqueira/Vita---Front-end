@@ -125,6 +125,8 @@ const Search = () => {
                 if (currentFocus > -1) {
                     /*and simulate a click on the "active" item:*/
                     if (x) x[currentFocus].click();
+                    let srchBtn = document.getElementById("searchBtn");
+                        if (srchBtn) srchBtn.click();
                 }
             }                
         });
@@ -183,9 +185,9 @@ const Search = () => {
                 {
                     userSearch ?
                         <Link to={`/Description/${itemType}/${userSearch}`}>
-                            <button className="btn"> Search</button>
-                        </Link>
-                        : <button className="btn"> Search</button>
+                            <button id="searchBtn" className="btn"> Search</button>
+                        </Link >
+                        : <button id="searchBtn" className="btn"> Search</button>
                 }
 
             </div>
