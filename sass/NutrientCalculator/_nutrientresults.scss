@@ -103,7 +103,7 @@
             background-color: #fff;
             
             @media only screen and (min-width: 700px) {
-                grid-template-columns: 1.2fr .8fr;  
+                grid-template-columns: 1fr 1fr;  
                 border-radius: 10px;
                 background-color: unset;
             }
