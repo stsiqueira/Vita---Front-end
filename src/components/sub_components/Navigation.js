@@ -12,7 +12,6 @@ const Navigation = (props) => {
     if(location.pathname === '/') {
         const clicked = document.getElementsByClassName("clicked")[0];
         if(clicked) {
-            console.log(clicked.classList)
             clicked.classList.remove("clicked")
         } 
     }
