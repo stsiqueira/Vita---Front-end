@@ -76,7 +76,7 @@ const NutrientForm = () => {
         const mineralList = ["Calcium", "Copper", "Iron", "Magnesium", "Phosphorus", "Potassium", "Zinc"]
 
         if (!condition(metric, gender, age, heightfeet, heightinches, fstatus, activity)) {
-            toast.warn('Please Check your inputs', {
+            toast.warn('All input values are required', {
                 position: "bottom-center",
                 autoClose: 2000,
                 hideProgressBar: false,
