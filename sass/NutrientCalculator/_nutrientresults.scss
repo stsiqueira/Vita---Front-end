@@ -101,8 +101,8 @@
             border-radius: 5px;
             margin-bottom: 1rem;
             background-color: #fff;
-
-            @media only screen and (min-width: $tablet-size) {
+            
+            @media only screen and (min-width: 700px) {
                 grid-template-columns: 1.2fr .8fr;  
                 border-radius: 10px;
                 background-color: unset;
@@ -141,7 +141,7 @@
 
             .vitamins-list,
             .minerals-list {
-                    @media only screen and (min-width: $tablet-size) {
+                    @media only screen and (min-width: 700px) {
                         max-width: 80%;
                     }
                 ul {
@@ -213,7 +213,11 @@
             }
 
             .options {
-                @media only screen and (min-width: $tablet-size) {
+                @media only screen and (min-width: 600px) {
+                    max-width: 99%;
+                    margin: 0 auto;
+                }
+                @media only screen and (min-width: 750px) {
                     max-width: 91%;
                     margin: 0 auto;
                 }
@@ -223,6 +227,7 @@
                 display: flex;
                 flex-flow: row wrap;
                 grid-gap: 1rem;
+                justify-content: center;
                 input[type="submit"]{
                     margin: auto;
                 }
@@ -247,6 +252,10 @@
 
                     @media only screen and (min-width: $tablet-size) {
                         border-radius: 10px;
+                        flex: 0 0 21%;
+                    }
+
+                    @media only screen and (min-width: 700px) {
                         flex: 0 0 22%;
                     }
 

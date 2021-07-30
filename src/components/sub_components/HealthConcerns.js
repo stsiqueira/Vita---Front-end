@@ -56,7 +56,9 @@ const HealthConcerns = ({wrapperClassname, imgClassName, imageUrl, altText, call
                     </div>
                 </div>
             ))}
-            <input type="submit" value="Update Results" />
+            <div className="test">
+                <input type="submit" value="Update Results" />
+            </div>
         </form>
     )
 }
