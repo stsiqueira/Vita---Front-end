@@ -162,6 +162,12 @@ const Search = () => {
         document.addEventListener("click", function (e) {
             closeAllLists(e.target);
         });
+        // REMOVE logo from search box if any value present
+        if(document.getElementById("searchItemInput") &&  document.getElementById("searchItemInput").value != ""){
+            let srchLogo = document.getElementById("searchLogo");
+           if(srchLogo) document.getElementById("searchLogo").style.display = 'none';           
+        }
+        else document.getElementById("searchLogo").style.display = 'block';
     }
 
     const searchExists = (e) => {
@@ -179,8 +185,8 @@ const Search = () => {
             <div className="userSearchControls">
                 <div className="autocomplete">
 
-                    <input id="searchItemInput" type="text" placeholder="apples..." required onInput={(e) => searchExists(e)} />
-                    <FaSearch />
+                    <input id="searchItemInput" type="text" autoComplete="off" placeholder="apples..." required onInput={(e) => searchExists(e)} />
+                    <FaSearch id ="searchLogo" />
                 </div>
                 {
                     userSearch ?
