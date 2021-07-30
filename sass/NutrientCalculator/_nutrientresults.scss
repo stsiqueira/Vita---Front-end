@@ -298,31 +298,31 @@
                 }
 
                 .vitamin1 {
-                    fill: #987720;
+                    fill: #EABB36;
                 }
             
                 .vitamin2 {
-                    fill: #e7ad00;
+                    fill: #E8A113;
                 }
             
                 .vitamin3 {
-                    fill: #f79700;
+                    fill: #F69128;
                 }
             
                 .vitamin4 {
-                    fill: #f95800;
+                    fill: #F56224;
                 }
             
                 .vitamin5 {
-                    fill: #f62300;
+                    fill: #F1483D;
                 }
             
                 .vitamin6 {
-                    fill: #f2004e;
+                    fill: #EB3860;
                 }
             
                 .vitamin7 {
-                    fill: #bf006e;
+                    fill: #B71174;
                 }
 
                 .mineral1 {
@@ -356,73 +356,143 @@
         }
 
         .vitamin1border {
-            border: 4px solid #e6cb00;
-            color: #987720;
+            border: 4px solid #EABB36;
+            color: #7B5B00;
+            transition: background-color 0.7s;
+
+            &:hover {
+                background-color: #FFF8E8;
+            }
         }
     
         .vitamin2border {
-            border: 4px solid #e7ad00;
-            color: #e7ad00;
+            border: 4px solid #E8A113;
+            color: #6E4900;
+            transition: background-color 0.7s;
+
+            &:hover {
+                background-color: #FDF2DF;
+            }
         }
     
         .vitamin3border {
-            border: 4px solid #f79700;
-            color: #f79700;
+            border: 4px solid #F69128;
+            color: #603202;
+            transition: background-color 0.7s;
+
+            &:hover {
+                background-color: #FFEAD5;
+            }
         }
     
         .vitamin4border {
-            border: 4px solid #f95800;
-            color: #f95800;
+            border: 4px solid #F56224;
+            color: #603202;
+            transition: background-color 0.7s;
+
+            &:hover {
+                background-color: #FFEDE5;
+            }
         }
     
         .vitamin5border {
-            border: 4px solid #f62300;
-            color: #f62300;
+            border: 4px solid #F1483D;
+            color: #6F0701;
+            transition: background-color 0.7s;
+
+            &:hover {
+                background-color: #FFE8E6;
+            }
         }
     
         .vitamin6border {
-            border: 4px solid #f2004e;
-            color: #f2004e;
+            border: 4px solid #EB3860;
+            color: #640017;
+            transition: background-color 0.7s;
+
+            &:hover {
+                background-color: #FFE8ED;
+            }
         }
     
         .vitamin7border {
-            border: 4px solid #bf006e;
-            color: #bf006e;
+            border: 4px solid #B71174;
+            color: #6A003F;
+            transition: background-color 0.7s;
+
+            &:hover {
+                background-color: #FFEDF8;
+            }
         }
 
         .mineral1border {
             border: 4px solid #7e00b7;
-            color: #7e00b7;
+            color: #4E0793;
+            transition: background-color 0.7s;
+
+            &:hover {
+                background-color: #F0E4FC;
+            }
         }
     
         .mineral2border {
             border: 4px solid #5100e9;
-            color: #5100e9;
+            color: #022696;
+            transition: background-color 0.7s;
+
+            &:hover {
+                background-color: #E2E8FD;
+            }
         }
     
         .mineral3border {
             border: 4px solid #3b7ded;
-            color: #3b7ded;
+            color: #013D62;
+            transition: background-color 0.7s;
+
+            &:hover {
+                background-color: #E2F4FF;
+            }
         }
     
         .mineral4border {
             border: 4px solid #0cb4d3;
-            color: #0cb4d3;
+            color: #054D58;
+            transition: background-color 0.7s;
+
+            &:hover {
+                background-color: #E0FBFF;
+            }
         }
     
         .mineral5border {
             border: 4px solid #00db89;
-            color: #00db89;
+            color: #024E2B;
+            transition: background-color 0.7s;
+
+            &:hover {
+                background-color: #D3FCEA;
+            }
         }
     
         .mineral6border {
             border: 4px solid #00bf4f;
-            color: #00bf4f;
+            color: #044D17;
+            transition: background-color 0.7s;
+
+            &:hover {
+                background-color: #E3FADC;
+            }
         }
     
         .mineral7border {
             border: 4px solid #009d1c;
-            color: #009d1c;
+            color: #2B4A00;
+            transition: background-color 0.7s;
+
+            &:hover {
+                background-color: #DDFCDD;
+            }
         }
     }
 
