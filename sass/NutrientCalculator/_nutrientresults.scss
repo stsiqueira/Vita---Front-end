@@ -103,7 +103,7 @@
             background-color: #fff;
             
             @media only screen and (min-width: 700px) {
-                grid-template-columns: 1fr 1fr;  
+                grid-template-columns: 1.1fr .9fr;  
                 border-radius: 10px;
                 background-color: unset;
             }
@@ -142,7 +142,7 @@
             .vitamins-list,
             .minerals-list {
                     @media only screen and (min-width: 700px) {
-                        max-width: 80%;
+                        max-width: 70%;
                     }
                 ul {
                     display: grid;
