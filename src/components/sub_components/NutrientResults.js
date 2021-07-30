@@ -293,14 +293,14 @@ const NutrientResults = () => {
             </div>
             <div ref={myRef} className="results-wrapper">
                 <Tabs>
-                    {window.innerWidth < 600 ? <TabList className="vitamin-mineral-tab-wrapper">
+                    {window.innerWidth < 700 ? <TabList className="vitamin-mineral-tab-wrapper">
                         <Tab>Vitamins</Tab>
                         <Tab>Minerals</Tab>
                     </TabList> : <></>}
-                    {window.innerWidth < 600 ? <TabPanel>{tabListVitaminWrapper()}</TabPanel> : <>{tabListVitaminWrapper()}</>}
-                    {window.innerWidth < 600 ? <TabPanel>{tabListMineralWrapper()}</TabPanel> : <>{tabListMineralWrapper()}</>}
+                    {window.innerWidth < 700 ? <TabPanel>{tabListVitaminWrapper()}</TabPanel> : <>{tabListVitaminWrapper()}</>}
+                    {window.innerWidth < 700 ? <TabPanel>{tabListMineralWrapper()}</TabPanel> : <>{tabListMineralWrapper()}</>}
                 </Tabs>
-                {window.innerWidth < 600 ? <div className="nutrient-note">
+                {window.innerWidth < 700 ? <div className="nutrient-note">
                     <p>
                         Click on the nutrient on the chart or the table to see food items where it can be found.
                         </p>

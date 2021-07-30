@@ -19,7 +19,7 @@ const MyResponsivePie = ({ data, callback, removeDataMetrics,legendFlag, parentF
     }
     const CenteredMetric = ({ dataWithArc, centerX, centerY}) => {
         const style = {
-            fontSize: `${window.innerWidth < 600 ? "1.3rem" : "2rem"}`,
+            fontSize: `${window.innerWidth < 800 ? "1.3rem" : "2rem"}`,
             fontWeight: 600
         }
         return ( metric(centreText, 0, centerY, centerX, style, "centre-text"))
@@ -27,7 +27,7 @@ const MyResponsivePie = ({ data, callback, removeDataMetrics,legendFlag, parentF
 
     const SubCenteredMetric = ({ dataWithArc, centerX, centerY}) => {
         const style = {
-            fontSize: `${window.innerWidth < 600 ? ".8rem" : ".9rem"}`
+            fontSize: `${window.innerWidth < 800 ? ".8rem" : ".9rem"}`
         }
         return ( metric(subCentreText, 0, window.innerWidth > 600 ? centerY+30 : centerY+20, centerX, style, "subcenter-text"))
     }
