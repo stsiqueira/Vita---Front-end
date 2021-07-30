@@ -30,12 +30,12 @@
             background: #FF6231;
             border: none;
             &:hover{
-                background: #FF6231;
+                background: #c72f00;
             }
             &:focus{
                 box-shadow:
                 0 0 0 3px #fff,
-                0 0 0 6px #FF6231 !important;
+                0 0 0 6px #c72f00 !important;
             }
     
         }
