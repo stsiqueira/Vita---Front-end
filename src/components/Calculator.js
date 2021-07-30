@@ -11,11 +11,11 @@ const NutrientForm = () => {
     const history = useHistory()
     const [ metric, setMetric ] = useState("metric")
     const [ gender, setGender ] = useState("MALE");
-    const [ age, setAge ] = useState(metric === "standard" ? 6 : 11);
+    const [ age, setAge ] = useState("");
     const [ fstatus, setFstatus ] = useState("");
-    const [ weight, setWeight ] = useState(0);
-    const [ heightfeet, setHeightfeet ] = useState(0);
-    const [ heightinches, setHeightinches ] = useState(0);
+    const [ weight, setWeight ] = useState("");
+    const [ heightfeet, setHeightfeet ] = useState("");
+    const [ heightinches, setHeightinches ] = useState("");
     const [ activity, setActivity ] = useState("");
 
     const condition = (metric, gender, age, heightfeet, heightinches, fstatus, activity) => {
@@ -98,7 +98,6 @@ const NutrientForm = () => {
             "F_STATUS": fstatus,
             "submit": "",
         }
-
         if(metric === "standard") {
             my_obj["HEIGHT_FEET"] = heightfeet
             my_obj["HEIGHT_INCHES"] =  heightinches
@@ -142,7 +141,6 @@ const NutrientForm = () => {
             setMetric(value)
         }
     }
-
     return (
         <div className="nutrient-calculator-wrapper">
             <div className="child-wrapper">
@@ -184,6 +182,7 @@ const NutrientForm = () => {
                                     max="100"
                                     value={age}
                                     onChange={e => setAge(e.target.value)}
+                                    placeholder={metric === "standard" ? "6" : "11"}
                                     required
                                 />
                                 <span>years</span>
@@ -201,6 +200,7 @@ const NutrientForm = () => {
                                     max={metric === "standard" ? "260" : "130"}
                                     value={weight}
                                     onChange={e => setWeight(e.target.value)}
+                                    placeholder="0"
                                     required
                                 />
                                 
@@ -221,6 +221,7 @@ const NutrientForm = () => {
                                         min="0"
                                         max="6"
                                         value={heightfeet}
+                                        placeholder="0"
                                         onChange={e => setHeightfeet(e.target.value)}
                                         required
                                     />
@@ -231,6 +232,7 @@ const NutrientForm = () => {
                                         type='number' 
                                         min="0"
                                         max="11"
+                                        placeholder="0"
                                         value={heightinches}
                                         onChange={e => setHeightinches(e.target.value)}
                                         required
@@ -244,6 +246,7 @@ const NutrientForm = () => {
                                             type='number' 
                                             min="0"
                                             max="220"
+                                            placeholder="0"
                                             value={heightfeet}
                                             onChange={e => setHeightfeet(e.target.value)}
                                             required
