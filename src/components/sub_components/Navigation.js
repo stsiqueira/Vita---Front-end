@@ -9,19 +9,20 @@ import { Link, useLocation } from 'react-router-dom'
 const Navigation = (props) => {
 
 	const location = useLocation();
+    
     if(location.pathname === '/') {
-        const clicked = document.getElementsByClassName("clicked")[0];
+        const clicked = document.getElementsByClassName("header-clicked")[0];
         if(clicked) {
-            clicked.classList.remove("clicked")
+            clicked.classList.remove("header-clicked")
         } 
     }
     const clicked = (e) => {
-        const clicked = document.getElementsByClassName("clicked");
+        const clicked = document.getElementsByClassName("header-clicked");
         if (clicked[0]) {
-            clicked[0].classList.remove("clicked")
-            e.target.classList.add("clicked")
+            clicked[0].classList.remove("header-clicked")
+            e.target.classList.add("header-clicked")
         } else {
-            e.target.classList.add("clicked")
+            e.target.classList.add("header-clicked")
         }
         
     }

@@ -92,12 +92,16 @@
         .metric-wrapper {
 
             .clicked {
-                background-color: #f1d8ff;
+                // font-weight: 200;
+                // border: 2px solid #815497;
+                // color: #815497;
                 font-weight: 200;
-                border: 2px solid #815497;
-                color: #815497;
+                border: 4px solid #815497;
+                color: #623E70;
+                font-weight: 800;
+                background-color: #f1d8ff;
                 &:hover{
-                    background-color: #f1d8ff;
+                    background-color: #F6EBFC;
                 }
                 
             }
@@ -176,6 +180,7 @@
             }
             .input-submit{
                 margin: auto;
+                line-height: 15px;
             }
             @media only screen and (min-width: $desktop-size) {
                 display: flex;
@@ -278,6 +283,11 @@
             justify-content: space-between;
             align-items: center;
         }
+    }
+
+    .activity-level-wrapper {
+        color: #815497;
+        font-weight: 600;
     }
 
 }
