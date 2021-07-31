@@ -200,7 +200,7 @@ const Quiz = (props) => {
                         </div>
                         <div className="searchFood">
                         <img src="/img/icons/search_icon.svg" alt="Search Food Icon" />
-                            <Link to="/nutrientCalculator">
+                            <Link to="/">
                                 <button className="btn">Search</button>
                             </Link>
 
