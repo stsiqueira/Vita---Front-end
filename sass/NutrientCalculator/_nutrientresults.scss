@@ -28,9 +28,8 @@
             h2 {
                 font-size: 1.6rem;
                 margin-bottom: 2rem;
-
-                @media only screen and (min-width: $max-width) {
-                    font-size: 4rem;
+                @media only screen and (min-width: $tablet-size) {
+                    font-size: 3rem;
                 }
             }
             p {
@@ -38,8 +37,14 @@
                 text-align: left;
                 max-width: 100%;
                 margin-bottom: 1.5rem;
-                @media only screen and (min-width: 1100px) {
+                @media only screen and (min-width: $tablet-size) {
                     text-align: center;
+                    max-width: 70%;
+                    margin-right: auto;
+                    margin-left: auto;
+                    margin-top: 1.5rem;
+                    margin-bottom: 1.5rem;
+                    line-height: 1.4;
                 }
 
                 @media only screen and (min-width: $max-width) {
@@ -87,7 +92,6 @@
         .react-tabs {
             @media only screen and (min-width: $desktop-size) {
                 background: #fff;
-                // height: 930px;
                 overflow: hidden;
             }
         }
@@ -111,7 +115,12 @@
                 height: 25.75rem;
                 width: 100%;
                 font-weight: 700;
-
+                & > div {
+                    @media only screen and (min-width: $tablet-size) {
+                        position: relative;
+                        top: 2%;
+                    }
+                }
                 .subcenter-text,
                 .bottomcenter-text {
                     font-weight: 500;
@@ -125,7 +134,7 @@
                 }
 
                 @media only screen and (min-width: $tablet-size) {
-                    height: 30rem;
+                    height: 32.5rem;
                 }
             }
 
@@ -178,6 +187,7 @@
                 display: none;
             }
         }
+
         .reference{
             background: $primary-color-shade;
             color:black;
@@ -369,7 +379,7 @@
         }
 
         .vitamin1border {
-            border: 4px solid #EABB36;
+            border: 3px solid #EABB36;
             color: #7B5B00;
             transition: background-color 0.7s;
 
@@ -379,7 +389,7 @@
         }
     
         .vitamin2border {
-            border: 4px solid #E8A113;
+            border: 3px solid #E8A113;
             color: #6E4900;
             transition: background-color 0.7s;
 
@@ -389,7 +399,7 @@
         }
     
         .vitamin3border {
-            border: 4px solid #F69128;
+            border: 3px solid #F69128;
             color: #603202;
             transition: background-color 0.7s;
 
@@ -399,7 +409,7 @@
         }
     
         .vitamin4border {
-            border: 4px solid #F56224;
+            border: 3px solid #F56224;
             color: #603202;
             transition: background-color 0.7s;
 
@@ -409,7 +419,7 @@
         }
     
         .vitamin5border {
-            border: 4px solid #F1483D;
+            border: 3px solid #F1483D;
             color: #6F0701;
             transition: background-color 0.7s;
 
@@ -419,7 +429,7 @@
         }
     
         .vitamin6border {
-            border: 4px solid #EB3860;
+            border: 3px solid #EB3860;
             color: #640017;
             transition: background-color 0.7s;
 
@@ -429,7 +439,7 @@
         }
     
         .vitamin7border {
-            border: 4px solid #B71174;
+            border: 3px solid #B71174;
             color: #6A003F;
             transition: background-color 0.7s;
 
@@ -439,7 +449,7 @@
         }
 
         .mineral1border {
-            border: 4px solid #7e00b7;
+            border: 3px solid #7e00b7;
             color: #4E0793;
             transition: background-color 0.7s;
 
@@ -449,7 +459,7 @@
         }
     
         .mineral2border {
-            border: 4px solid #5100e9;
+            border: 3px solid #5100e9;
             color: #022696;
             transition: background-color 0.7s;
 
@@ -459,7 +469,7 @@
         }
     
         .mineral3border {
-            border: 4px solid #3b7ded;
+            border: 3px solid #3b7ded;
             color: #013D62;
             transition: background-color 0.7s;
 
@@ -469,7 +479,7 @@
         }
     
         .mineral4border {
-            border: 4px solid #0cb4d3;
+            border: 3px solid #0cb4d3;
             color: #054D58;
             transition: background-color 0.7s;
 
@@ -479,7 +489,7 @@
         }
     
         .mineral5border {
-            border: 4px solid #00db89;
+            border: 3px solid #00db89;
             color: #024E2B;
             transition: background-color 0.7s;
 
@@ -489,7 +499,7 @@
         }
     
         .mineral6border {
-            border: 4px solid #00bf4f;
+            border: 3px solid #00bf4f;
             color: #044D17;
             transition: background-color 0.7s;
 
@@ -499,7 +509,7 @@
         }
     
         .mineral7border {
-            border: 4px solid #009d1c;
+            border: 3px solid #009d1c;
             color: #2B4A00;
             transition: background-color 0.7s;
 

@@ -21,6 +21,12 @@
       text-align: center;
       font-weight: 600;
       font-size: 20px;
+      @media only screen and (min-width: $tablet-size) {
+        max-width: 70%;
+        margin-left: auto;
+        margin-right: auto;
+        padding: 0;
+      }
 
     }
     @media only screen and (min-width: $tablet-size) {
