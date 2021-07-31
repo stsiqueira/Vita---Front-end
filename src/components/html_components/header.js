@@ -3,7 +3,6 @@
 ////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 import React from 'react';
-import { useState } from 'react';
 import { Link, useLocation } from 'react-router-dom'
 import Navigation from '../sub_components/Navigation'
 import { FiMenu } from "react-icons/fi"
