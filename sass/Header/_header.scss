@@ -53,6 +53,7 @@
     .max-width-wrapper {
         @media screen and (min-width: $desktop-size) {
             width: 70%;
+            max-width: unset;
             margin: auto;
             padding: 0;
         }
