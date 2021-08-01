@@ -14,17 +14,20 @@ import NutrientResults from './components/sub_components/NutrientResults';
 import NutrientForm from './components/Calculator'
 import { useState } from 'react';
 import NotFound from './components/sub_components/NotFound';
+import { useLocation } from 'react-router-dom'
 
 
 function App() {
   const [showMenu, setShowMenu] = useState(false);
+  const location = useLocation()
+
   return (
     <div className={showMenu ? "App blocked" : "App"}>
       <Header 
           showMenu={showMenu}
           setShowMenu={setShowMenu}
         />{/********************   HEADER COMPONENT  ***************************/}
-      <div className="main">
+      <div className={`main ${location.pathname === '/NutrientCalculator/Start' ? "start-main" : ""}`}>
 {/*
 ======================================================================================
 ===================  Home Route - Aman, Glen & Thiago  ===============================
