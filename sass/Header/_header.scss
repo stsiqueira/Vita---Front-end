@@ -1,6 +1,7 @@
 
 .header{
     background: $bg-color-header;
+    position: sticky;
     position: fixed;
     top: 0; left:0; right: 0;
     z-index: 100;
@@ -11,7 +12,7 @@
         display: flex;
         padding: 0 2rem;
         justify-content: space-between;
-        align-items: center;
+        align-items: stretch;
         height: 100%;
     
         @media screen and (min-width: $desktop-size){
