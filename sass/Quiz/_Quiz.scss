@@ -156,10 +156,20 @@
             .disabled{
                 filter: grayscale(100%);
             }
+            .disabled.quizAnswer:hover{
+                filter: saturate(0) !important
+            }
+            .wrong.quizAnswer:hover{
+                filter: none !important;
+            }
+            .correct.quizAnswer:hover
+            {
+                filter: none !important;
+            }  
             .nextButton{
                 display: flex;
                 justify-content: center;
-                margin-top: 20rem;
+                margin-top: 10rem;
                 @media screen and (min-width:$desktop-size) {
                     margin-top: 2rem;
                     justify-content: flex-end
@@ -248,6 +258,16 @@
             .disabled{
                 filter: grayscale(100%);
             }
+            .disabled.quizAnswerType2:hover{
+                filter: saturate(0) !important
+            }
+            .wrong.quizAnswerType2:hover{
+                filter: none !important;
+            }
+            .correct.quizAnswerType2:hover
+            {
+                filter: none !important;
+            }  
             .quizAnswerType2:nth-of-type(2),
             .quizAnswerType2:nth-of-type(4){
                 margin-left: 1rem;
@@ -362,7 +382,7 @@
     // Toast
     #toast {
         visibility: hidden;
-        min-width: 250px;
+        width: 250px;
         margin-left: -125px;
         background-color: #f1c40f;
         color:black;
