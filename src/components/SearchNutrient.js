@@ -164,7 +164,9 @@ const SearchNutrient = (props) => {
           <div className="VitaminTitle">
             <h3>Vitamins</h3>
           </div>
-          <MyResponsivePie data={vitaminArray} callback={redirect} legendFlag="false" removeDataMetrics={true} />
+          <MyResponsivePie data={vitaminArray} callback={redirect} legendFlag="false" removeDataMetrics={true}
+          //  centreText={"Minerals"}
+            />
           <div className="legendContainer legendVitamnins">
             {vitaminArray && vitaminArray.map((item, key) => (
               <div className="legendItem" key={key}>
@@ -179,7 +181,9 @@ const SearchNutrient = (props) => {
           <div className="MineralTitle">
             <h3>Minerals</h3>
           </div>
-          <MyResponsivePie data={mineralArray} callback={redirect} legendFlag="false" removeDataMetrics={true} />
+          <MyResponsivePie data={mineralArray} callback={redirect} legendFlag="false" removeDataMetrics={true} 
+          // centreText={"Minerals"} 
+          />
           <div className="legendContainer legendMinerals">
             {mineralArray && mineralArray.map((item, key) => (
               <div className="legendItem" key={key}>
