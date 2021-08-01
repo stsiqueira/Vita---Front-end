@@ -22,8 +22,25 @@ const Quiz = (props) => {
     const [allQuestions, setAllQuestions] = useState([]);
     const [currentQuestion, setCurrentQuestion] = useState(0);
     const dbUrl = "http://54.70.7.254:3000/getAllQuiz";
-
+    var randomQuiz;
       // Functions
+      function shuffle(array) {
+        var currentIndex = array.length, randomIndex;
+
+        // While there remain elements to shuffle...
+        while (0 !== currentIndex) {
+
+            // Pick a remaining element...
+            randomIndex = Math.floor(Math.random() * currentIndex);
+            currentIndex--;
+
+            // And swap it with the current element.
+            [array[currentIndex], array[randomIndex]] = [
+                array[randomIndex], array[currentIndex]];
+        }
+
+        return array;
+    }
     const fetchQuiz = async (url) => {
         const res = await fetch(url);
         const data = await res.json();
@@ -42,7 +59,7 @@ const Quiz = (props) => {
     const getNextQuestion = () =>{
         setProgress(progress+1);
         currentQuestion < allQuestions.length ?  
-        setQuiz(allQuestions.find((question)=> question.id === currentQuestion+1))
+        setQuiz(allQuestions.find((question)=> question.randomQuestionID === currentQuestion+1))
         : finishQuiz()
         setShowCorrectAnswer(false)
         setChecked(false)
@@ -50,6 +67,11 @@ const Quiz = (props) => {
 
     }
     const restartQuiz = () => {
+        randomQuiz = shuffle(allQuestions);
+            for (let index = 0; index < randomQuiz.length; index++) {
+                randomQuiz[index]["randomQuestionID"] = index + 1;                
+            }
+        setAllQuestions(randomQuiz);
         setRetakeQuiz(!retakeQuiz)
         setShowResult(false)
         setProgress(-1)
@@ -62,21 +84,29 @@ const Quiz = (props) => {
     useEffect(() => {
         const getQuiz = async (url) => {
             const quizFromDB = await fetchQuiz(url);
-            setAllQuestions(quizFromDB[0].questions)
+            randomQuiz = shuffle(quizFromDB[0].questions);
+            for (let index = 0; index < randomQuiz.length; index++) {
+                randomQuiz[index]["randomQuestionID"] = index + 1;                
+            }
+            setAllQuestions(randomQuiz);
         }
         getQuiz(dbUrl);
     },[]);
     // ====================
-    function toastMessage() {
+    function toastMessage(str) {
         var message = document.getElementById("toast");
-        message.className = "show";
-        setTimeout(function(){ message.className = message.className.replace("show", ""); }, 3000);
+        message.innerText = str;
+        if(str != ""){
+            message.className = "show";
+            setTimeout(function(){ message.className = message.className.replace("show", ""); }, 3000);
+        }
     }
     const notInitialRender = useRef(false)
 
     useEffect(() => {
         if (notInitialRender.current) {
                 getNextQuestion();
+                setCurrentQuestion(currentQuestion + 1)
         } else {
             notInitialRender.current = true
         }
@@ -92,8 +122,8 @@ const Quiz = (props) => {
            <div className="quizAbout">
                <img src="/img/icons/home_vita.svg" alt="Vita brand" />
             <h3> Ready to test your Knowledge?</h3>
-            <p className="questionDetail">This quiz is intended for you to test your knowledge about vitamins and vitamins. 
-    We recommend you review food items and what nutrients they contain as they might appear in the quiz</p>
+            <p className="questionDetail">This quiz is intended for you to test your knowledge about vitamins and minerals. 
+    We recommend you review food items and what nutrients they contain as they might appear in the quiz.</p>
                 <button className="btn"
                     onClick={()=> {
                         setShowQuiz(true);
@@ -135,7 +165,7 @@ const Quiz = (props) => {
                                             checked={checked}
                                             userAnswer={userAnswer}
                                             typeOfQuestion={quiz.typeOfQuestion}
-                                            toastMessage={toastMessage}
+                                            toastMessage={ () => {toastMessage("Answer already selected, click Next")}}
                                             />
                                         : 
                                         <QuizAnswerType2
@@ -147,7 +177,8 @@ const Quiz = (props) => {
                                             revealAnswer={revealAnswer}
                                             checked={checked}
                                             userAnswer={userAnswer}
-                                            toastMessage={toastMessage}/>
+                                            toastMessage={() => {toastMessage("Answer already selected, click Next")}}
+                                            />
                                            
                                 }
                                     
@@ -163,11 +194,11 @@ const Quiz = (props) => {
                                         getNextQuestion();
                                         setCurrentQuestion(currentQuestion + 1)
                                         }else{
-                                            toastMessage();    
+                                            toastMessage("Please choose an answer"); 
                                         } 
                                 }}>Next</button>
                             </div>
-                            <div id="toast">Please choose an answer</div>
+                            <div id="toast"></div>
                         </div>
                     </div>
                     :""
@@ -177,7 +208,7 @@ const Quiz = (props) => {
                 <div className="showResult">
                     <div className="result">
                         <p>{(score*10)}%</p>
-                        <p>Well done now you can retake the quiz to polish your knowledge about vitamins and minerals.</p>
+                        <p>Well done! Retake the quiz to strengthen your knowledge about vitamins and minerals.</p>
 
                         <button className="btn"
                             onClick={()=>{
