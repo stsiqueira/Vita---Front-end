@@ -4,7 +4,7 @@
 ////////////////////////////////////////////////////////////////////////////////////////////////////////
 import { useLocation, useHistory, Link } from "react-router-dom";
 import React from 'react';
-import { useState, useRef } from 'react';
+import { useState, useRef, useLayoutEffect } from 'react';
 import UnorderedList from '../compositableComponents/Unorderedlist'
 import MyResponsivePie from "./Chart";
 import Recalculate from "./Recalculate";
@@ -21,6 +21,7 @@ const NutrientResults = () => {
     const { vitamin, mineral } = location.state
     const [selectedNutrientType, SetSelectedNutrientType] = useState("Vitamins");
     const [selectedNutrient, SetSelectedNutrient] = useState("Vitamin A");
+    
 
     const addVitaminSort = vitamin.map(element => {
         element["link"] = `/Description/Vitamins/${element.name}`
@@ -280,6 +281,24 @@ const NutrientResults = () => {
         )
     }
 
+    function useWindowSize() {
+        const [size, setSize] = useState([0, 0]);
+        useLayoutEffect(() => {
+          function updateSize() {
+            setSize([window.innerWidth, window.innerHeight]);
+          }
+          window.addEventListener('resize', updateSize);
+          updateSize();
+          return () => window.removeEventListener('resize', updateSize);
+        }, []);
+        return size;
+    }
+
+    function ShowWindowDimensions(props) {
+        const width = useWindowSize()[0];
+        return width
+    }
+
     return (
 
         <div className="nutrient-results-wrapper">
@@ -293,14 +312,14 @@ const NutrientResults = () => {
             </div>
             <div ref={myRef} className="results-wrapper">
                 <Tabs>
-                    {window.innerWidth < 700 ? <TabList className="vitamin-mineral-tab-wrapper">
+                    {ShowWindowDimensions() < 700 ? <TabList className="vitamin-mineral-tab-wrapper">
                         <Tab>Vitamins</Tab>
                         <Tab>Minerals</Tab>
                     </TabList> : <></>}
-                    {window.innerWidth < 700 ? <TabPanel>{tabListVitaminWrapper()}</TabPanel> : <>{tabListVitaminWrapper()}</>}
-                    {window.innerWidth < 700 ? <TabPanel>{tabListMineralWrapper()}</TabPanel> : <>{tabListMineralWrapper()}</>}
+                    {ShowWindowDimensions() < 700 ? <TabPanel>{tabListVitaminWrapper()}</TabPanel> : <>{tabListVitaminWrapper()}</>}
+                    {ShowWindowDimensions() < 700 ? <TabPanel>{tabListMineralWrapper()}</TabPanel> : <>{tabListMineralWrapper()}</>}
                 </Tabs>
-                {window.innerWidth < 700 ? <div className="nutrient-note">
+                {ShowWindowDimensions() < 700 ? <div className="nutrient-note">
                     <p>
                         Click on the nutrient on the chart or the table to see food items where it can be found.
                         </p>
