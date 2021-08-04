@@ -140,7 +140,7 @@ const NutrientResults = () => {
     addKeyToJsonArray(sortedVitamin).map(data => {
         if (flag === 0) {
             setFlag(1)
-            console.log(data["sort"])
+            data["sort"].toString().replace(" ", "");
         }
     })
 
@@ -148,8 +148,7 @@ const NutrientResults = () => {
     vitaminArray.map((data) => {
         if (flag === 0) {
             setFlag(2)
-            console.log(data["label"])
-            console.log(flag)
+            data["label"].replace(" ", "");
         }
     })
     const [mineralArray, setMineralArray] = useState(addKeyToJsonArray(addMineralSort));
