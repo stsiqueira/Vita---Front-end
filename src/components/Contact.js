@@ -2,7 +2,7 @@
 //                                  TEAM PAGE COMPONENT 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////
 import React from 'react';
-import { useState, useMemo } from 'react';
+import { useState, useMemo, useEffect } from 'react';
 import emailjs from 'emailjs-com';
 import { ToastContainer, toast } from 'react-toastify';
 import Select from './compositableComponents/Select';
@@ -18,6 +18,14 @@ const Contact = (props) => {
     const [ country, setCountry ] = useState("");
     const [ message, setMessage ] = useState("");
     const options = useMemo(() => countryList().getData(), [])
+
+    useEffect(() => {
+        (async function () {
+            let header = document.querySelector(".header > .max-width-wrapper");
+            header.style.removeProperty("width");
+            header.style.removeProperty("margin");
+        })();
+    }, []);
 
     function validateEmail(email) {
         const re = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;

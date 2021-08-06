@@ -11,6 +11,14 @@ const Team = (props) => {
 
     const [teamMembers, setTeamMembers] = useState()
 
+    useEffect(() => {
+        (async function () {
+            let header = document.querySelector(".header > .max-width-wrapper");
+            header.style.removeProperty("width");
+            header.style.removeProperty("margin");
+        })();
+    }, []);
+    
     const dbUrl = "http://54.70.7.254:3000/getAllTeam";
 
     const fetchTeam = async (url) => {

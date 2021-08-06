@@ -4,7 +4,7 @@
 ////////////////////////////////////////////////////////////////////////////////////////////////////////
 import { useLocation, useHistory, Link } from "react-router-dom";
 import React from 'react';
-import { useState, useRef, useLayoutEffect } from 'react';
+import { useState, useRef, useLayoutEffect, useEffect } from 'react';
 import UnorderedList from '../compositableComponents/Unorderedlist'
 import MyResponsivePie from "./Chart";
 import Recalculate from "./Recalculate";
@@ -21,6 +21,13 @@ const NutrientResults = () => {
     const { vitamin, mineral } = location.state
     const [selectedNutrientType, SetSelectedNutrientType] = useState("Vitamins");
     const [selectedNutrient, SetSelectedNutrient] = useState("Vitamin A");
+    
+
+    useEffect(() => {
+        (async function () {
+            window.scrollTo(0, 10);
+        })();
+    }, []);
     
 
     const addVitaminSort = vitamin.map(element => {
