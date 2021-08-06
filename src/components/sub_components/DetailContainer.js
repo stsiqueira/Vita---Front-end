@@ -240,6 +240,15 @@ const DetailContainer = ({ itemName, itemType }) => {
         let gap = dims.top - margin;
         window.scrollTo({behavior: 'smooth', top: gap});
     }
+
+    useEffect(() => {
+        (async function () {
+            let header = document.querySelector(".header > .max-width-wrapper");
+            header.style.removeProperty("width");
+            header.style.removeProperty("margin");
+        })();
+    }, []);
+
     useEffect(() => {
         (async function () {
 

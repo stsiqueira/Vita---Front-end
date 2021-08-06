@@ -6,7 +6,7 @@
 import React from 'react';
 import Button from '../compositableComponents/Button'
 import { useHistory } from "react-router-dom";
-
+import { useEffect } from 'react';
 
 const NutrientCalculatorStart = () => {
     const history = useHistory()
@@ -15,6 +15,14 @@ const NutrientCalculatorStart = () => {
             pathname: '/NutrientCalculator/Start',
         })
     }
+
+    useEffect(() => {
+        (async function () {
+            let header = document.querySelector(".header > .max-width-wrapper");
+            header.style.removeProperty("width");
+            header.style.removeProperty("margin");
+        })();
+    }, []);
 
     return (
        <div className="calculator-start-wrapper">

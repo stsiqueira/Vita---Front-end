@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { useHistory } from "react-router-dom";
 import Labels from './compositableComponents/Label';
 import Select from './compositableComponents/Select';
@@ -17,6 +17,14 @@ const NutrientForm = () => {
     const [ heightfeet, setHeightfeet ] = useState("");
     const [ heightinches, setHeightinches ] = useState("");
     const [ activity, setActivity ] = useState("");
+
+    useEffect(() => {
+        (async function () {
+            let header = document.querySelector(".header > .max-width-wrapper");
+            header.style.removeProperty("width");
+            header.style.removeProperty("margin");
+        })();
+    }, []);
 
     const condition = (metric, gender, age, heightfeet, heightinches, fstatus, activity) => {
         let flag = true

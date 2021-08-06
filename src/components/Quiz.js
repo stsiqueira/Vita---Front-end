@@ -112,6 +112,14 @@ const Quiz = (props) => {
         }
  
     },[retakeQuiz]);
+    
+    useEffect(() => {
+        (async function () {
+            let header = document.querySelector(".header > .max-width-wrapper");
+            header.style.removeProperty("width");
+            header.style.removeProperty("margin");
+        })();
+    }, []);
     // ===============================
     return (
        <div className="quizPage">

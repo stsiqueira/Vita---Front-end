@@ -10,19 +10,20 @@
     .max-width-wrapper{
     
         display: flex;
-        padding: 0 2rem;
+        padding: 0 1rem;
         justify-content: space-between;
         align-items: stretch;
         height: 100%;
     
         @media screen and (min-width: $desktop-size){
-            width: 80%;
+            // width: 80%;
             max-width: 1400px;
-            margin: auto;
+            margin: 0 2rem;
             padding: 0;
         }
         @media screen and (min-width: $max-width){
             padding: 0;
+            margin: auto;
         }
 
         img{
